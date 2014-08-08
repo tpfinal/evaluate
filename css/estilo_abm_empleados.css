@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-
 /**/
 /* defaults */
 /**/
@@ -9,7 +8,9 @@
 	font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
 	background-color: #000000;
 }
-
+.radios{
+	font: 15px/19px 'Open Sans', Helvetica, Arial, sans-serif;
+	}
 .abm_empleados header {
 	display: block;
 	padding: 10px 20px;	
@@ -23,7 +24,6 @@
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 .abm_empleados fieldset {
-	display: block;	
 	padding: 25px 30px 5px;
 	border: none;
 	background: rgba(255,255,255,.9);
@@ -32,15 +32,13 @@
 	border-top: 1px solid rgba(0,0,0,.1);
 }
 .abm_empleados section {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
-
 .abm_empleados .label {
 	display: block;
 	margin-bottom: 6px;
 	line-height: 19px;
 }
-
 .abm_empleados .input,
 .abm_empleados .select,
 .abm_empleados .textarea,
@@ -51,7 +49,6 @@
 	position: relative;
 	display: block;
 }
-
 .abm_empleados .input input,
 .abm_empleados .select select,
 .abm_empleados .textarea textarea {
@@ -72,8 +69,6 @@
 	-moz-appearance: none;
 	-webkit-appearance: none;
 }
-
-
 /**/
 /* textareas */
 /**/
@@ -90,8 +85,6 @@
 .abm_empleados .textarea-expandable textarea:focus {
 	height: auto;
 }
-
-
 /**/
 /* buttons */
 /**/
@@ -108,8 +101,6 @@
 	color: #fff;
 	cursor: pointer;
 }
-
-
 /**/
 /* tooltips */
 /**/
@@ -138,7 +129,6 @@
 .abm_empleados .textarea textarea:focus + .tooltip {
 	opacity: 1;	
 }
-
 .abm_empleados .tooltip-top-right {
 	bottom: 100%;
 	margin-bottom: 15px;
@@ -156,7 +146,6 @@
 	left: auto;
 	margin-bottom: 5px;
 }
-
 .abm_empleados .tooltip-top-left {
 	bottom: 100%;
 	margin-bottom: 15px;
@@ -174,7 +163,6 @@
 	left: 0;
 	margin-bottom: 5px;
 }
-
 .abm_empleados .tooltip-right {
 	top: 9px;
 	white-space: nowrap;
@@ -192,7 +180,6 @@
 	left: 100%;
 	margin-left: 5px;
 }
-
 .abm_empleados .tooltip-left {
 	top: 9px;
 	white-space: nowrap;
@@ -211,7 +198,6 @@
 	left: auto;
 	margin-right: 5px;
 }
-
 .abm_empleados .tooltip-bottom-right {
 	top: 100%;
 	margin-top: 15px;
@@ -229,7 +215,6 @@
 	left: auto;
 	margin-top: 5px;
 }
-
 .abm_empleados .tooltip-bottom-left {
 	top: 100%;
 	margin-top: 15px;
@@ -247,8 +232,6 @@
 	left: 0;
 	margin-top: 5px;
 }
-
-
 /**/
 /* normal state */
 /**/
@@ -294,8 +277,6 @@
 .abm_empleados .icon-prepend {
 	color: #ccc;
 }
-
-
 /**/
 /* hover state */
 /**/
@@ -314,8 +295,6 @@
 .abm_empleados .button:hover {
 	opacity: 1;
 }
-
-
 /**/
 /* focus state */
 /**/

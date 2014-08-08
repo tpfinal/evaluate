@@ -24,9 +24,6 @@
 	<div class="container_12">
 	<div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">	
-
-			
-			
 			<form class="abm_empleados" action="">
                 <header>
                     Alta De Empleados
@@ -40,7 +37,6 @@
                             </b>
                         </label>
                     </section>
-					
 					<section>
                         <label class="input">
                             <input type="text" placeholder="Apellido"></input>
@@ -49,7 +45,6 @@
                             </b>
                         </label>
                     </section>
-					
                     <section>
                         <label class="input">
                             <input type="numbers" placeholder="Dni"></input>
@@ -58,7 +53,6 @@
                             </b>
                         </label>
                     </section>
-					
 					<section>
                         <label class="input">
                             <input type="text" placeholder="Email"></input>
@@ -75,17 +69,33 @@
                             </b>
                         </label>
                     </section>
-					
+                    <section>
+                        <label class="input">
+                            <input type="password" placeholder="Contraseña"></input>
+                            <b class="tooltip tooltip-bottom-right">
+							Ingrese una contraseña.
+							</b>
+                        </label>
+                    </section>
+                    <section>
+                        <label class="input">
+                            <input type="password" placeholder="Repita Contraseña"></input>
+                            <b class="tooltip tooltip-bottom-right">
+							Confirme la contraseña.
+                            </b>
+                        </label>
+                    </section>
+					<section class="radios">
+						<input type="radio" name="rol" value="administrador">Administrador</input>
+						<input type="radio" name="rol" value="evaluador">Evaluador</input>
+					</section>
                 </fieldset>
                     <button class="button" type="submit">Guardar</button>
             </form>
-			
-			
 	</div>
 	</div>
 <!--==============================Flecha Atras =================================-->
 	           <div class="clear"></div>
-
 		<div class="grid_1" id="flecha_atras">
         <a href="home_admin.php">
           <img src="images/flecha_atras.png" alt="ATRAS">

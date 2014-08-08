@@ -245,7 +245,4 @@ nav{ position:relative;padding: 0px 0 0 0;}
 	text-shadow: 0.03em 0.03em #248348;
 		}	
 
-	input[type=name],[type=password] {
-	max-width:30%;
-	}
 }
