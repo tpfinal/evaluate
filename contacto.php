@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="es">
+	<head>
 	<?php include("metadata.php"); ?>
 	</head>
-     <body id="">
-     
+ <body class="page1" id="top">
 <!--==============================header=================================--> 
-	<?php include("header.php"); ?>
+<div class="container_12">
+<div class="grid_12">
+<?php include("header.php"); ?>
+<!--==============================menu=================================--> 
+<div class="menu_block ">
+          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+            <ul class="sf-menu">
+                 <li><a href="home.php">Home</a></li>
+                 <li><a href="">Menu Principal</a></li>
+               </ul>
+            </nav>
+           <div class="clear"></div>
+</div>
+</div>
+</div>
 <!--==============================Content=================================-->
   <div class="container_12">
     <div class="content">
@@ -30,7 +43,7 @@
             <form id="form">
                             
                       <div class="success_wrapper">
-                      <div class="success-message">Contact form submitted</div>
+                      <div class="success-message">Formulario Enviado !</div>
                       </div>
                       <label class="name">
                       <input type="text" placeholder="Nombre:" data-constraints="@Required @JustLetters" />

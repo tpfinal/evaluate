@@ -15,6 +15,9 @@
 	<link rel="stylesheet" href="css/skeleton.css"/>
 	<link rel="stylesheet" href="css/superfish.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/estilo_abm_empleados.css"/> <!--CSS DEL FORMULARIO DE ABM DE EMPLEADOS -->
+	
+	
      <script src="js/jquery.js"></script>
      <script src="js/jquery-migrate-1.2.1.js"></script>
      <script src="js/script.js"></script> 

@@ -5,7 +5,21 @@
 	</head>
  <body class="page1" id="top">
 <!--==============================header=================================--> 
-	<?php include("header.php"); ?>
+<div class="container_12">
+<div class="grid_12">
+<?php include("header.php"); ?>
+<!--==============================menu=================================--> 
+<div class="menu_block ">
+          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+            <ul class="sf-menu">
+                 <li><a href="contacto.php">Contacto</a></li>
+                 <li><a href="">Menu Principal</a></li>
+               </ul>
+            </nav>
+           <div class="clear"></div>
+</div>
+</div>
+</div>
 <!--==============================Content 1 (slider) =================================-->
 	<?php include("slider_home.php"); ?>
 <!--==============================Content 2 (texto - contenido) =================================-->

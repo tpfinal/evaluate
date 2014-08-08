@@ -1,6 +1,5 @@
 @import "reset.css";
 @import "skeleton.css";
-@import "font-awesome.css";
 @import "superfish.css";
 
 
@@ -175,6 +174,7 @@ body {
 	position: relative;
 	min-width: 1024px;
 	background-image:url(../images/fondo1.png);
+
     color: #666;
     font: 300 14px/20px 'Open Sans', sans-serif;
 
