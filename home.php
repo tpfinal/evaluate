@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -7,21 +8,13 @@
 <!--==============================header=================================--> 
 <div class="container_12">
 <div class="grid_12">
-<?php include("header.php"); ?>
+<?php include("header/header.php"); ?>
 <!--==============================menu=================================--> 
-<div class="menu_block ">
-          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
-            <ul class="sf-menu">
-                 <li><a href="contacto.php">Contacto</a></li>
-                 <li><a href="">Menu Principal</a></li>
-               </ul>
-            </nav>
-           <div class="clear"></div>
-</div>
+<?php include("menu/menu.php"); ?>
 </div>
 </div>
 <!--==============================Content 1 (slider) =================================-->
-	<?php include("slider_home.php"); ?>
+	<?php include("content/slider_home.php"); ?>
 <!--==============================Content 2 (texto - contenido) =================================-->
 	<div class="container_12">
 	<div class="content" >
@@ -37,6 +30,6 @@ Vivamus nec feugiat tellus. In hac habitasse platea dictumst.</p>
 	</div>
 </div>
 <!--==============================footer=================================-->
-<?php include("pie.php"); ?>
+<?php include("footer/pie.php"); ?>
 </body>
 </html>

@@ -7,17 +7,9 @@
 <!--==============================header=================================--> 
 <div class="container_12">
 <div class="grid_12">
-<?php include("header.php"); ?>
+<?php include("header/header.php"); ?>
 <!--==============================menu=================================--> 
-<div class="menu_block ">
-          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
-            <ul class="sf-menu">
-                 <li><a href="home.php">Home</a></li>
-                 <li><a href="">Menu Principal</a></li>
-               </ul>
-            </nav>
-           <div class="clear"></div>
-</div>
+<?php include("menu/menu.php"); ?>
 </div>
 </div>
 <!--==============================Content=================================-->
@@ -78,7 +70,7 @@
   </div>
 </div>
 <!--==============================footer=================================-->
-	<?php include("pie.php"); ?>
+	<?php include("footer/pie.php"); ?>
 </body>
 </html>
 

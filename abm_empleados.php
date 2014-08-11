@@ -1,3 +1,11 @@
+<?php session_start();
+/* 
+ * Página asegurada
+ * Simplemente hay que añadir esta línea de PHP al principio.
+ */
+require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -7,17 +15,9 @@
 <!--==============================header=================================--> 
 <div class="container_12">
 <div class="grid_12">
-<?php include("header.php"); ?>
+<?php include("header/header.php"); ?>
 <!--==============================menu=================================--> 
-<div class="menu_block ">
-          <nav class="horizontal-nav full-width horizontalNav-notprocessed">
-            <ul class="sf-menu">
-                 <li><a href="contacto.html">Contacto</a></li>
-                 <li><a href="pantalla_principal.html">Menu Principal</a></li>
-               </ul>
-            </nav>
-           <div class="clear"></div>
-</div>
+<?php include("menu/menu.php"); ?>
 </div>
 </div>
 <!--==============================Content (texto - contenido) =================================-->
@@ -103,6 +103,6 @@
 		</div>		
 </div>
 <!--==============================footer=================================-->
-<?php include("pie.php"); ?>
+<?php include("footer/pie.php"); ?>
 </body>
 </html>
