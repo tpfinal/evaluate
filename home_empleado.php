@@ -5,7 +5,6 @@
  */
 require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -22,18 +21,32 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 </div>
 <!--==============================Content=================================-->
   <div class="container_12">
-    <div class="content">
-<div class="clear cl1"></div>
-    <div class="grid_4 prefix_4">
+    <div class="clear cl1"></div>
+<div class="content">
+    <div class="grid_4 prefix_2">
       <div class="opcion">
-		<a href="abm_empleados.php"><img src="images/abm_empleados.jpg" alt="ABM EMPLEADOS"/></a>
+		<a href=""><img src="images/mis_objetivos.jpg" alt="MIS OBJETIVOS"/></a>
 	  </div>
     </div>
-	<div class="clear"></div>
+	<div class="grid_4">
+      <div class="opcion">
+		<a href=""><img src="images/mis_competencias.jpg" alt="MIS COMPETENCIAS"/></a>
+	  </div>
     </div>
-  </div>
+	<div class="grid_4 prefix_2">
+      <div class="opcion">
+		<a href=""><img src="images/evaluar_pares.jpg" alt="EVALUAR PARES"/></a>
+	  </div>
+    </div>
+	<div class="grid_4">
+      <div class="opcion">
+		<a href=""><img src="images/ver_historial.jpg" alt="VER HISTORIAL"/></a>
+	  </div>
+    </div>
+<div class="clear"></div>
+</div>
+</div>
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>
 </html>
-

@@ -83,7 +83,7 @@ function login($usuario,$pass) {
  * Veridica si el usuario está logeado
  * @return bool
  */
-function estoy_logeado () {
+function estoy_logueado () {
     @session_start(); //inicia sesion (la @ evita los mensajes de error si la session ya está iniciada)
     
     if (!isset($_SESSION['USUARIO'])) return false; //no existe la variable $_SESSION['USUARIO']. No logeado.

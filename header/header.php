@@ -11,7 +11,7 @@ include_once('php_lib/login.lib.php'); //incluimos las funciones
 		<div class="prefix_7"> 
 	<div id="container" >
 		<?php 
-		if (!estoy_logeado()) { // si no estoy logeado
+		if (!estoy_logueado()) { // si no estoy logueado
 		include("login.php"); 
 		}
 		else	{
