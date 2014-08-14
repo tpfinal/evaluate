@@ -46,12 +46,12 @@
                       <label class="email">
                       <input type="text" placeholder="E-mail:" data-constraints="@Required @Email" />
                       <span class="empty-message">*CAMPO OBLIGATORIO.</span>
-                      <span class="error-message">*FORMATO DE EMAIL INVALIDO.</span>
+                      <span class="error-message">*FORMATO INVALIDO.</span>
                       </label>
                        <label class="phone">
                           <input type="text" placeholder="Telefono:" data-constraints="@Required @JustNumbers"/>
                           <span class="empty-message">*CAMPO OBLIGATORIO.</span>
-                          <span class="error-message">*FORMATO DE TELEFONO INVALIDO.</span>
+                          <span class="error-message">*FORMATO INVALIDO.</span>
                           </label>
                       <label class="message">
                       <textarea placeholder="Mensaje:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>

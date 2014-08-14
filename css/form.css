@@ -103,19 +103,18 @@
 
 
 #form .error-message, #form .empty-message {
-	color: #E02A05;
-	font-size: 11px;
-	line-height:14px;
+	color: #FF0000;
 	width:auto;
 	position: absolute;
 	z-index: 999;
-	top: 10px;
-	opacity: 0;
+	top: 7px;
 	right: 5px;
 	float:left;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
 	-webkit-transition: 0.5s ease;
+	font: 12px 'Open Sans', Times New Roman;
+
 }
 
 /*#form .message .error-message, #form .message .empty-message {

@@ -13,28 +13,16 @@
 		$messageBody .= '<p>Visitor: ' . $_POST["name"] . '</p>' . "\n";
 		$messageBody .= '<br>' . "\n";
 	}
-	if($_POST['name']!='false'){
-		$messageBody .= '<p>Country: ' . $_POST["country"] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
 	if($_POST['email']!='false'){
 		$messageBody .= '<p>Email Address: ' . $_POST['email'] . '</p>' . "\n";
 		$messageBody .= '<br>' . "\n";
 	}else{
 		$headers = '';
 	}
-	if($_POST['state']!='false'){		
-		$messageBody .= '<p>State: ' . $_POST['state'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
 	if($_POST['phone']!='false'){		
 		$messageBody .= '<p>Phone Number: ' . $_POST['phone'] . '</p>' . "\n";
 		$messageBody .= '<br>' . "\n";
 	}	
-	if($_POST['fax']!='false'){		
-		$messageBody .= '<p>Fax Number: ' . $_POST['fax'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
 	if($_POST['message']!='false'){
 		$messageBody .= '<p>Message: ' . $_POST['message'] . '</p>' . "\n";
 	}
