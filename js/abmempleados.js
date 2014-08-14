@@ -1,8 +1,18 @@
-/*EXTENSION QUE HICE A MANO PARA QUE VALIDE QUE SEAN SOLO LETRAS, YA QUE EL PLUGIN NO LO TRAE DE FABRICA */
+/*EXTENSION QUE HICE A MANO PARA QUE VALIDE QUE SEAN SOLO LETRAS SIN ESPACIOS NI SIMBOLOS, YA QUE EL PLUGIN NO LO TRAE DE FABRICA */
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
   return this.optional(element) || /^[a-z]+$/i.test(value);
 }, "Solo se permiten letras"); 
+
+/*EXTENSION QUE HICE A MANO PARA QUE VALIDE QUE SEAN SOLO LETRAS Y ESPACIOS, YA QUE EL PLUGIN NO LO TRAE DE FABRICA */
+
+jQuery.validator.addMethod("letras_y_simbolos", function(value, element) {
+  return this.optional(element) || /^([a-z ñáéíóú]{2,60})$/i.test(value);
+}, "No se permiten numeros ni signos especiales."); 
+
+
+
+
 
 
 /* VALIDACION DE TODO EL RESTO DEL FORMULARIO */
@@ -19,11 +29,11 @@ jQuery.validator.addMethod("lettersonly", function(value, element) {
                 rules: {
                     nombre: {
                         required: true,
-						lettersonly:true
+						letras_y_simbolos: true
                     },
 					apellido: {
                         required: true,
-						lettersonly:true
+						letras_y_simbolos: true
                     },
 					dni: {
                         required: true,
