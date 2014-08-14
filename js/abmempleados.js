@@ -1,3 +1,11 @@
+/*EXTENSION QUE HICE A MANO PARA QUE VALIDE QUE SEAN SOLO LETRAS, YA QUE EL PLUGIN NO LO TRAE DE FABRICA */
+
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Solo se permiten letras"); 
+
+
+/* VALIDACION DE TODO EL RESTO DEL FORMULARIO */
 (function($,W,D)
 {
     var JQUERY4U = {};
@@ -11,14 +19,15 @@
                 rules: {
                     nombre: {
                         required: true,
-						
+						lettersonly:true
                     },
 					apellido: {
-                        required: true
+                        required: true,
+						lettersonly:true
                     },
 					dni: {
                         required: true,
-						number : true,
+						number : true
                     },
                     email: {
                         required: true,
@@ -41,8 +50,12 @@
                 },
 				
                 messages: {
-                    nombre: "Ingrese un nombre",
-                    apellido: "Ingrese un apellido",
+                    nombre:{
+							required: "Ingrese un nombre",
+							},
+					apellido:{
+							required: "Ingrese un apellido",
+							},
                     dni: {
 							required: "Ingrese su dni",
 							number: "Ingrese solo numeros"

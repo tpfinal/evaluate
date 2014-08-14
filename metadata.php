@@ -32,11 +32,8 @@
      <script src="js/jquery.mobilemenu.js"></script><!--COMPATIBILIDAD MOVIL (NO CHEQUEADO)-->
      <script src="js/camera.js"></script><!--SLIDER DEL HOME-->
      <script src="js/touchTouch.jquery.js"></script><!--COMPATIBILIDAD MOVIL (NO CHEQUEADO)-->
-	
-
-	
-	
-
+	<script  src="js/jquery.validate.js"></script> <!-- PLUGIN PARA VALIDACION JQUERY -->
+	<script  src="js/abmempleados.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ABM DE EMPLEADOS -->
 	 
 	 
 	 

@@ -10,11 +10,6 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 <html lang="es">
 	<head>
 	<?php include("metadata.php"); ?>
-	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script  src="js/jquery.validate.js"></script>
-<script  src="js/abmempleados.js"></script>
-
 	</head>
 	
 	
