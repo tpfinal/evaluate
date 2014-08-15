@@ -95,6 +95,19 @@ function estoy_logueado () {
 
 }
 
+function mi_rol () {
+    @session_start(); //inicia sesion (la @ evita los mensajes de error si la session ya está iniciada)
+    
+    if (!isset($_SESSION['USUARIO'])) return false; //no existe la variable $_SESSION['USUARIO']. No logeado.
+    if (!is_array($_SESSION['USUARIO'])) return false; //la variable no es un array $_SESSION['USUARIO']. No logeado.
+    if (empty($_SESSION['USUARIO']['user'])) return false; //no tiene almacenado el usuario en $_SESSION['USUARIO']. No logeado.
+	if (empty($_SESSION['USUARIO']['rol'])) return false; //no tiene almacenado el rol en $_SESSION['USUARIO']. No logeado.
+
+    //cumple las condiciones anteriores, entonces es un usuario validado
+    return $_SESSION['USUARIO']['rol'];
+
+}
+
 /**
  * Vacia la sesion con los datos del usuario validado
  */

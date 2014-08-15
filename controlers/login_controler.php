@@ -9,13 +9,22 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 
     //verificamos el usuario y contraseña mandados 
     if (login($_POST['usuario'],$_POST['pass'])) {
-			
-       //acciones a realizar cuando un usuario se identifica
-       //Aqui deberenos identificar el rol y derivar a la paginas que correspondan
-        
-		//entramos al área restringida
-        header('Location: ../home_admin.php');
-        die();
+			if ($_SESSION['USUARIO']['rol']==1){
+				header('Location: ../home_admin.php');
+				die();
+			}
+			if ($_SESSION['USUARIO']['rol']==2){
+				header('Location: ../home_evaluador.php');
+				die();
+			}
+			if ($_SESSION['USUARIO']['rol']==3){
+				header('Location: ../home_admin.php');
+				die();
+			}
+			if ($_SESSION['USUARIO']['rol']==0){
+				header('Location: ../home_empleado.php');
+				die();
+			}
     } 
 	//si el usuario no es valido
 	else {
