@@ -4,6 +4,7 @@
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
+require('php_lib/solo_administradores.php');//restringe acceso a roles diferentes de 1 y 3 
 ?>
 
 <!DOCTYPE html>

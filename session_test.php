@@ -5,8 +5,9 @@ session_start();
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 
-//require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
+require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
 //require('php_lib/solo_administradores.php'); 
+include('php_lib/solo_evaluadores.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

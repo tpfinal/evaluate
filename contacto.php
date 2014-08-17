@@ -28,7 +28,7 @@
       <p>Evaluate<br>
       Florencio Varela 1903 San Justo</br>
 	  Buenos Aires, Argentina</p>
-      Teléfono (54-11) 4480-8900<br>
+      Tel&eacute;fono (54-11) 4480-8900<br>
     </div>
     <div class="grid_9">
       <h4 class="head1">Contacto</h4>

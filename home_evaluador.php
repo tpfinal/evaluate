@@ -4,6 +4,7 @@
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
+include('php_lib/solo_evaluadores.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
