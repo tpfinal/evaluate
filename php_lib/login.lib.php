@@ -28,7 +28,7 @@ function login($usuario,$pass) {
 
     //2 - preparamos la consulta SQL a ejecutar utilizando sólo el usuario y evitando ataques de inyección SQL.
     $query='SELECT usuario,pass,rol
-			FROM usuario 
+			FROM usuarios 
 			WHERE usuario ="'.  mysql_real_escape_string($usuario).'" 
 			LIMIT 1 '; //la tabla y el campo se definen en los parametros globales, se limita una respuesta
     $result = mysql_query($query);
@@ -101,7 +101,7 @@ function mi_rol () {
     if (!isset($_SESSION['USUARIO'])) return false; //no existe la variable $_SESSION['USUARIO']. No logeado.
     if (!is_array($_SESSION['USUARIO'])) return false; //la variable no es un array $_SESSION['USUARIO']. No logeado.
     if (empty($_SESSION['USUARIO']['user'])) return false; //no tiene almacenado el usuario en $_SESSION['USUARIO']. No logeado.
-	if (empty($_SESSION['USUARIO']['rol'])) return false; //no tiene almacenado el rol en $_SESSION['USUARIO']. No logeado.
+	//if (empty($_SESSION['USUARIO']['rol'])) return false; //no tiene almacenado el rol en $_SESSION['USUARIO']. No logeado.
 
     //cumple las condiciones anteriores, entonces es un usuario validado
     return $_SESSION['USUARIO']['rol'];

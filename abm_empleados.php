@@ -29,7 +29,7 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
 	<div class="grid_6 prefix_3">
 
 	
-				<form action="" method="post" id="abm_empleados" novalidate="novalidate">
+				<form action="controlers/alta_controler.php" method="post" id="abm_empleados" novalidate="novalidate">
 				<header>
                     Alta De Empleados
                 </header>
@@ -80,15 +80,15 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
                     </section>
                     <section>
                         <label class="input">
-							<input id="password" name="password" placeholder="Contrasena"/>
+							<input id="password" type="password" name="password" placeholder="Contrase&ntilde;a"/>
                             <b class="tooltip tooltip-bottom-right">
-							Ingrese una contraseña.
+							Ingrese una contrase&ntilde;a.
 							</b>
                         </label>
 						<label class="input">
-							<input id="password_again" name="password_again" placeholder="Repita Contrasena" />
+							<input id="password_again" type="password" name="password_again" placeholder="Repita Contrase&ntilde;a" />
                             <b class="tooltip tooltip-bottom-right">
-							Confirme la contraseña.
+							Confirme la contrase&ntilde;a.
                             </b>
                         </label>
                     </section>
@@ -98,8 +98,8 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
                    
 					
 					<section name="rol" class="radios">
-						<input type="radio" name="rol" value="administrador">Administrador</input>
-						<input type="radio" name="rol" value="evaluador">Evaluador</input>
+						<input type="checkbox" name="rol1" value=1>Administrador</input>
+						<input type="checkbox" name="rol2" value=2>Evaluador</input>
 					</section>
                 </fieldset>
 				
