@@ -1,25 +1,22 @@
 <?php session_start();
-/* 
+/*
  * Página asegurada
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
-require('php_lib/solo_administradores.php');//restringe acceso a roles diferentes de 1 y 3 
+require('php_lib/solo_administradores.php');//restringe acceso a roles diferentes de 1 y 3
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 	<head>
 	<?php include("metadata.php"); ?>
 	</head>
-	
-	
  <body class="page1" id="top">
-<!--==============================header=================================--> 
+<!--==============================header=================================-->
 <div class="container_12">
 <div class="grid_12">
 <?php include("header/header.php"); ?>
-<!--==============================menu=================================--> 
+<!--==============================menu=================================-->
 <?php include("menu/menu.php"); ?>
 </div>
 </div>
@@ -27,15 +24,11 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
 	<div class="container_12">
 	<div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
-
-	
 				<form action="controlers/alta_controler.php" method="post" id="abm_empleados" novalidate="novalidate">
 				<header>
                     Alta De Empleados
                 </header>
-				
                 <fieldset>
-				
 						<section>
                         <label class="input">
                             <input type="text" name="nombre" placeholder="Nombre"></input>
@@ -43,8 +36,7 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
                                 Solo se admiten letras.
                             </b>
                         </label>
-                    </section>					
-					
+                    </section>
 					<section>
                         <label class="input">
                             <input type="text" name="apellido" placeholder="Apellido"></input>
@@ -53,7 +45,6 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
                             </b>
                         </label>
                     </section>
-					
                     <section>
                         <label class="input">
                             <input type="numbers" name="dni" placeholder="Dni"></input>
@@ -92,30 +83,14 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
                             </b>
                         </label>
                     </section>
-					
-                    
-                        
-                   
-					
-					<section name="rol" class="radios">
-						<input type="checkbox" name="rol1" value=1>Administrador</input>
-						<input type="checkbox" name="rol2" value=2>Evaluador</input>
+					<section>
+						<input type="checkbox"  name="rol1" value="1">Administrador</input>
+						<input type="checkbox"  name="rol2" value="2">Evaluador</input>
+						<label class="aclaracion">*Si no selecciona ninguno, sera un simple empleado.</label>
 					</section>
                 </fieldset>
-				
-															
-				
-				
                     <button class="button" type="submit">Guardar</button>
             </form>
-			
-			
-		
-			
-			
-			
-			
-			
 	</div>
 	</div>
 <!--==============================Flecha Atras =================================-->
@@ -124,7 +99,7 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
         <a href="home_admin.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
-		</div>		
+		</div>
 </div>
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>

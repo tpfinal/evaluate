@@ -45,11 +45,7 @@ jQuery.validator.addMethod("letras_y_simbolos", function(value, element) {
                     },
 					puesto: {
                         required: true
-                    },
-					rol:{
-						required:true
-					},
-					
+                    },					
 					password:{
 						required:true
 					},
@@ -75,7 +71,6 @@ jQuery.validator.addMethod("letras_y_simbolos", function(value, element) {
 							email: "Formato incorrecto"
 						},
                     puesto: "Ingrese un puesto",
-					rol: "Debe seleccionar un rol",
 					password:{
 						required:"Ingrese una contrasena"
 					},

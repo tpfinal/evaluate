@@ -108,8 +108,7 @@ private $obj_empleado;
 		{
 			$obj_cliente=new sQuery();
 			$result=$obj_cliente->executeQuery("SELECT * FROM empleados WHERE dni = $nro"); // ejecuta la consulta para traer al cliente 
-			$row=mysql_fetch_array($result);
-			
+			$row=mysql_fetch_array($result);		
 			$this->id=$row['id_empleado'];
 			$this->nombre=$row['nombre'];
 			$this->apellido=$row['apellido'];

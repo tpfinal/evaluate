@@ -3,21 +3,27 @@
 
 /***************************************************************************************************************/
 
+
+
+
+.aclaracion{
+
+	text-align: center;
+	font:17px Simplified Arabic Fixed;
+	display: block;
+	color:#248348;
+}
+
+
 label.error {
 	color: red; 
 	font-size: 14px;
 	}
 
-
-
-
-
-
 #abm_empleados {
 	margin-top: 50px;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
-	font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
-	background-color: #000000;
+	font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;	
 }
 .radios{
 	font: 15px/19px 'Open Sans', Helvetica, Arial, sans-serif;
@@ -33,11 +39,12 @@ label.error {
 	text-align:center;
     font-weight: normal;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	background-color: #E5E5E5;
 }
 #abm_empleados fieldset {
 	padding: 25px 30px 5px;
 	border: none;
-	background: rgba(255,255,255,.9);
+	background-color: #F0F0F0;
 }
 #abm_empleados fieldset + fieldset {
 	border-top: 1px solid rgba(0,0,0,.1);
@@ -45,11 +52,7 @@ label.error {
 #abm_empleados section {
 	margin-bottom: 15px;
 }
-#abm_empleados .label {
-	display: block;
-	margin-bottom: 6px;
-	line-height: 19px;
-}
+
 #abm_empleados .input,
 #abm_empleados .select,
 #abm_empleados .textarea,
@@ -306,6 +309,10 @@ label.error {
 }
 #abm_empleados .button:hover {
 	opacity: 1;
+}
+#abm_empleados .button:active {
+	opacity: 1;
+	background-color: #248348;
 }
 /**/
 /* focus state */
