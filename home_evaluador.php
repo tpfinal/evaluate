@@ -26,7 +26,7 @@ include('php_lib/solo_evaluadores.php');
 <div class="content">
     <div class="grid_4">
       <div class="opcion">
-		<a href=""><img src="images/crear_perfil.jpg" alt="CREAR PERFIL"/></a>
+		<a href="alta_perfil.php"><img src="images/crear_perfil.jpg" alt="CREAR PERFIL"/></a>
 	  </div>
     </div>
 	<div class="grid_4">

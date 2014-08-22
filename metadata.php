@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/skeleton.css"/>
 	<link rel="stylesheet" href="css/superfish.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/estilo_abm_empleados.css"/> <!--CSS DEL FORMULARIO DE ABM DE EMPLEADOS -->
+	<link rel="stylesheet" href="css/estilo_abm.css"/> <!--CSS DE LOS FORMULARIOS DE ABM -->
 	
 	
 	
@@ -34,6 +34,9 @@
      <script src="js/touchTouch.jquery.js"></script><!--COMPATIBILIDAD MOVIL (NO CHEQUEADO)-->
 	<script  src="js/jquery.validate.js"></script> <!-- PLUGIN PARA VALIDACION JQUERY -->
 	<script  src="js/abmempleados.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ABM DE EMPLEADOS -->
+	
+
+	<script  src="js/valida_alta_perfil.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ALTA DE PERFILES -->
 	 
 	 
 	 
