@@ -1,6 +1,6 @@
 
 
-/* VALIDACION DE TODO EL RESTO DEL FORMULARIO */
+/* VALIDACION DE TODO EL FORMULARIO */
 (function($,W,D)
 {
     var JQUERY4U = {};
@@ -26,6 +26,10 @@
 				},
                 submitHandler: function(form) {
                     form.submit();
+
+
+			
+					
                 }
             });
         }

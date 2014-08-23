@@ -83,10 +83,14 @@ jQuery.validator.addMethod("letras_y_simbolos", function(value, element) {
 				},
                 submitHandler: function(form) {
                     form.submit();
+					
                 }
             });
         }
     }
+
+	
+	
 
     //when the dom has loaded setup form validation rules
     $(D).ready(function($) {

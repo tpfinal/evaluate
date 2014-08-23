@@ -23,19 +23,15 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <!--==============================Content (formulario de alta)=================================-->
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
-					
 	<div class="grid_6 prefix_3">
-	
 		<form action="" method="post" id="abm_perfil" novalidate="novalidate">
-			<header>Alta De Perfil
-				<label class="aclaracion">.:Realice el alta de un nuevo perfil:.</label>
-            </header>
+			<header>Nuevo Objetivo</header>
 			<fieldset>
 				<section>
 				<label class="input">
                             <input type="text" name="nombre_perfil"  placeholder="Nombre"></input>
                             <b class="tooltip tooltip-bottom-right">
-							Ingrese un nombre del perfil
+							Ingrese un nombre para el objetivo
 							</b>  
                 </label>
 				</section>
@@ -43,19 +39,19 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					<label class="input">
 								<input type="text" name="descripcion_perfil"  placeholder="Descripcion"></input>
 								<b class="tooltip tooltip-bottom-right">
-								Ingrese una descripcion para el perfil
+								Ingrese una descripcion para el objetivo
 								</b>  
 					</label>					
 				</section>
-				<button class="button" type="submit">Siguiente</button>
+				<button class="button" type="submit">Guardar</button>
         </fieldset>
         </form>
-	</div>	
+	</div>
     </div>
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
-        <a href="home_evaluador.php">
+        <a href="alta_perfil.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>
