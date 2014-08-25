@@ -26,7 +26,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					
 	<div class="grid_6 prefix_3">
 	
-		<form action="" method="post" id="abm_perfil" novalidate="novalidate">
+		<form action="" method="post" id="alta_perfil" class="abm_perfil" novalidate="novalidate">
 			<header>Alta De Perfil
 				<label class="aclaracion">.:Realice el alta de un nuevo perfil:.</label>
             </header>
@@ -50,8 +50,13 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				<button class="button" type="submit">Siguiente</button>
         </fieldset>
         </form>
-	</div>	
+			</div>	
+			
+
     </div>
+
+
+		
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">

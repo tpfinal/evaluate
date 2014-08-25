@@ -25,7 +25,6 @@
      <script src="js/script.js"></script> <!--SLIDER DEL HOME-->
      <script src="js/superfish.js"></script><!--SLIDER DEL HOME-->
      <script src="js/jquery.ui.totop.js"></script><!--FLECHA QUE SUBE HACIA EL TOP DE LA PAGINA -->
-	 <script src="js/validar_form_contacto.js"></script><!--VALIDACION DE FORMULARIO DE CONTACTO-->
      <script src="js/jquery.easing.1.3.js"></script><!--SLIDER DEL HOME-->
      <script src="js/html5shiv.js"></script> <!-- PARA COMPATIBILIDAD DE INTERNET EXPLORER CON HTML5-->
       <script src="js/jquery.tooltipster.js"></script><!--SLIDER DEL HOME-->
@@ -33,11 +32,10 @@
      <script src="js/camera.js"></script><!--SLIDER DEL HOME-->
      <script src="js/touchTouch.jquery.js"></script><!--COMPATIBILIDAD MOVIL (NO CHEQUEADO)-->
 	<script  src="js/jquery.validate.js"></script> <!-- PLUGIN PARA VALIDACION JQUERY -->
-	<script  src="js/abmempleados.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ABM DE EMPLEADOS -->
-	
+	<script  src="js/valida_empleado.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ABM DE EMPLEADOS -->
+	<script  src="js/valida_perfil.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ALTA DE PERFILES -->
+	<script src="js/valida_contacto.js"></script><!--VALIDACION DE FORMULARIO DE CONTACTO-->
 
-	<script  src="js/valida_alta_perfil.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ALTA DE PERFILES -->
-	 
 	 
 	 
 	 

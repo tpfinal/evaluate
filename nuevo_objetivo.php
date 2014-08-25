@@ -24,12 +24,12 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
-		<form action="" method="post" id="abm_perfil" novalidate="novalidate">
+		<form action="" method="post" id="alta_objetivo" class="abm_perfil" novalidate="novalidate">
 			<header>Nuevo Objetivo</header>
 			<fieldset>
 				<section>
 				<label class="input">
-                            <input type="text" name="nombre_perfil"  placeholder="Nombre"></input>
+                            <input type="text" name="nombre_objetivo"  placeholder="Nombre"></input>
                             <b class="tooltip tooltip-bottom-right">
 							Ingrese un nombre para el objetivo
 							</b>  
@@ -37,15 +37,24 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				</section>
 				<section>
 					<label class="input">
-								<input type="text" name="descripcion_perfil"  placeholder="Descripcion"></input>
+								<input type="text" name="descripcion_objetivo"  placeholder="Descripcion"></input>
 								<b class="tooltip tooltip-bottom-right">
 								Ingrese una descripcion para el objetivo
 								</b>  
 					</label>					
 				</section>
-				<button class="button" type="submit">Guardar</button>
-        </fieldset>
+				<button class="button" type="submit">Guardar Objetivo</button>
+</fieldset>
         </form>
+		
+		<button onClick=" window.location.href='home_evaluador.php' ">Finalizar carga</button>
+
+
+
+		
+		
+		
+		
 	</div>
     </div>
   <!--==============================Flecha Atras =================================-->
