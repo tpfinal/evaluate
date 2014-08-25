@@ -150,49 +150,43 @@ private $obj_empleado;
 		$obj_sQuery->executeQuery($query2); // ejecuta la consulta para insertar usuario
 	}
 	
+//metodo que modifica los datos del empleado en la BD
+	public function updateEmpleado($obj_empleado)
+	{
+	$this->nombre=$obj_empleado->getNombre();
+	$this->apellido=$obj_empleado->getApellido();
+	$this->dni=$obj_empleado->getDni();
+	$this->email=$obj_empleado->getEmail();
+	$this->puesto=$obj_empleado->getPuesto();
+	$this->usuario=$obj_empleado->getUsuario();
+	$this->pass=$obj_empleado->getPass();
+	$this->rol=$obj_empleado->getRol();
 	
-	
-	
-	
-	
-//---------------------------------------------------------------------------------------------------------------//
-
-//Metodos modelos: no cumplen funcion en el sitio
-
-	
-	function getClientes() // este metodo podria no estar en esta clase, se incluye para simplificar el codigo, lo que hace es traer todos los clientes 
-		{
-			$obj_cliente=new sQuery();
-			$result=$obj_cliente->executeQuery("select * from clientes"); // ejecuta la consulta para traer al cliente 
-			return $result; // retorna todos los clientes
-		}
+		$obj_sQuery=new sQuery();
+		$query="UPDATE empleados SET nombre='$this->nombre', apellido='$this->apellido', email='$this->email', puesto='$this->puesto'
+				WHERE dni=$this->dni ";
+				
+		$obj_sQuery->executeQuery($query); // ejecuta la consulta para modificar empleado
 		
-
-	function updateCliente()	// actualiza el cliente cargado en los atributos
-	{
-			$obj_cliente=new sQuery();
-			$query="update clientes set nombre='$this->nombre', apellido='$this->apellido',fecha_nac='$this->fecha',peso='$this->peso' where id = $this->id";
-			$obj_cliente->executeQuery($query); // ejecuta la consulta para traer al cliente 
-			return $query .'<br/>Registros afectados: '.$obj_cliente->getAffect(); // retorna todos los registros afectados
-	
-	}
-	function insertCliente()	// inserta el cliente cargado en los atributos
-	{
-			$obj_cliente=new sQuery();
-			$query="insert into clientes( nombre, apellido, fecha_nac,peso)values('$this->nombre', '$this->apellido','$this->fecha','$this->peso')";
+	//obtenemos en numero de id del empleado
+	$this->id=$this->getIdByDni($this->dni);
+		
+		$query2="UPDATE usuarios SET pass='$this->pass', rol='$this->rol'
+				 WHERE id_empleado=$this->id "; 
 			
-			$obj_cliente->executeQuery($query); // ejecuta la consulta para traer al cliente 
-			return $query .'<br/>Registros afectados: '.$obj_cliente->getAffect(); // retorna todos los registros afectados
+		$obj_sQuery->executeQuery($query2); // ejecuta la consulta para insertar usuario
+	}
 	
-	}	
-	function deleteCliente($val)	// elimina el cliente
+//Borra los registros de las tablas Empleados y Usuarios usando el id del 
+		function eliminarEmpleado($id)	
 	{
 			$obj_cliente=new sQuery();
-			$query="delete from clientes where id=$val";
-			$obj_cliente->executeQuery($query); // ejecuta la consulta para  borrar el cliente
-			return $query .'<br/>Registros afectados: '.$obj_cliente->getAffect(); // retorna todos los registros afectados
-	
+			$query1="DELETE FROM empleados WHERE id_empleado=$id";
+			$query2="DELETE FROM usuarios WHERE id_empleado=$id";
+			$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del empleado
+			$obj_cliente->executeQuery($query2); // ejecuta la consulta para  borrar el registro del usuario
 	}	
+
 	
 }
 

@@ -42,11 +42,12 @@ $ado = new adoEmpleado();
 			echo "<h2>Test de objeto empleado</h2>";
 		//getEmpleado regresa un objeto con los datos del empleado
 			$obj_empleado=$ado->getEmpleado($_SESSION['USUARIO']['user']);
-			
+			if($obj_empleado){
 			echo $obj_empleado->getNombre();
 			echo '</br>';
 			echo $obj_empleado->getDni();
-
+			}else
+			echo '<h3>***SUPER USUARIO***</h3>';
 			
 			?>
         </p>

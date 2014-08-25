@@ -1,9 +1,9 @@
 <?php session_start();
 /* 
- * PÃ¡gina asegurada
- * Simplemente hay que aÃ±adir esta lÃ­nea de PHP al principio.
+ * Página asegurada
+ * Simplemente hay que añadir esta línea de PHP al principio.
  */
-require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la pÃ¡gina de login.php
+require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
 require('php_lib/solo_administradores.php');
 ?>
 <!DOCTYPE html>
@@ -21,8 +21,8 @@ require('php_lib/solo_administradores.php');
 </div>
 </div>
 <!--==============================Content=================================-->
-	<?php include("content/buscar.php"); ?>
-	<?php include("content/resultado.php"); ?>
+	<?php include("content/form_mod.php"); ?>
+
 <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
