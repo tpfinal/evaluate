@@ -21,16 +21,21 @@ require('php_lib/solo_administradores.php');
 </div>
 </div>
 <!--==============================Content=================================-->
-	<?php include("content/buscar.php"); ?>
-	<?php include("content/resultado.php"); ?>
+	<div class="container_12">
+		<div class="content">
+
+			<?php include("content/buscar.php"); ?>
+				<div class="clear cl2"></div>
+			<?php include("content/resultado.php"); ?>
+		</div>
+			<div class="clear"></div>
 <!--==============================Flecha Atras =================================-->
-	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
-        <a href="home_admin.php">
-          <img src="images/flecha_atras.png" alt="ATRAS">
-        </a>
+			<a href="home_admin.php">
+			  <img src="images/flecha_atras.png" alt="ATRAS">
+			</a>
 		</div>
-		</div>
+	</div>
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

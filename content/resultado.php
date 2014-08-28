@@ -1,3 +1,5 @@
+<div class="grid_12">
+<p class="subtitulo">
 <?php
 
 
@@ -15,19 +17,20 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por EL FORM?
 	
 	if($empleado->getNombre() )
 	{
-		echo 'Registro encontrado:';
-		echo '</br>';
+
+
 		echo $empleado->getNombre()." ".$empleado->getApellido();
 		echo ' | ';
+		echo '<a href="modificar_registro.php" class="modificar"> MODIFICAR </a>';	
 		$_SESSION['borrar']=$empleado->getDni();
-		echo '<a href="controlers/eliminar_controler.php">ELIMINAR</a>';
 		echo ' | ';
 		$_SESSION['modificar']=$empleado->getDni();
-		echo '<a href="modificar_registro.php">MODIFICAR</a>';
+		echo '<a href="controlers/eliminar_controler.php" class="eliminar">ELIMINAR</a>';
+
 	}
 	else
 	{
-		echo 'No se encontro empelado';
+		echo 'No se encontro empleado';
 	}
 }
 	if(@$_SESSION['borrar']=='borrado'){
@@ -38,5 +41,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por EL FORM?
 	$_SESSION['modificar']="";
 		echo 'Registro Modificado';
 	}
-
+	
 ?>
+</p>
+</div>

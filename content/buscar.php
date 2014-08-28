@@ -1,7 +1,4 @@
-<div class="container_12">
-    <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
-	
 		<form action="buscar_registro.php" method="post" id="abm_empleados">
 				<header>Buscar Registro
 				<label class="aclaracion">.:Realice la busqueda mediante el DNI del empleado:.</label>
@@ -17,14 +14,6 @@
 				</section>
 				<button class="button" type="submit">Buscar</button>
                 </fieldset>
-          </form>
-			
-			
-			
-			
-			
-			
-			
+          </form>	
 	<div class="clear"></div>
 	</div>
-    </div>

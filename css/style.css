@@ -3,17 +3,30 @@
 @import "superfish.css";
 
 
-#columna1, #columna2 {
-text-align:center;
+.eliminar {
+color:#FF0000;
+font-size:15px;
+}
+
+.eliminar:hover{
+color:#FF0000;
+text-shadow: 1px 1px 1px #A3A3A3;
+}
+
+.modificar {
+color:#1500FF;
+font-size:15px;
+}
+
+.modificar:hover{
+color:#1500FF;
+text-shadow: 1px 1px 1px #A3A3A3;
 }
 
 
-
-
-
-
-
-
+#columna1, #columna2 {
+text-align:center;
+}
 
 #guardar{
 text-align:right;
