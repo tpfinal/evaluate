@@ -24,7 +24,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
-		<form action="" method="post" id="alta_objetivo" class="abm_perfil" novalidate="novalidate">
+	
+		<form action="controlers/objetivo_controler.php" method="post" id="alta_objetivo" class="abm_perfil" novalidate="novalidate">
 			<header>Nuevo Objetivo</header>
 			<fieldset>
 				<section>
@@ -37,17 +38,37 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				</section>
 				<section>
 					<label class="input">
-								<input type="text" name="descripcion_objetivo"  placeholder="Descripcion"></input>
-								<b class="tooltip tooltip-bottom-right">
-								Ingrese una descripcion para el objetivo
-								</b>  
+							<input type="text" name="descripcion_objetivo"  placeholder="Descripcion"></input>
+							<b class="tooltip tooltip-bottom-right">
+							Ingrese una descripcion para el objetivo
+							</b>  
 					</label>					
 				</section>
 				<button class="button" type="submit">Guardar Objetivo</button>
-</fieldset>
+			</fieldset>
         </form>
 		
-		<button onClick=" window.location.href='home_evaluador.php' ">Finalizar carga</button>
+		<h4>Este form funciona</h4>
+		
+		<form action="controlers/objetivo_controler.php" method="post" id="nuevo_objetivo" ">
+			<header>Nuevo Objetivo</header>
+		
+                            <input type="text" name="nombre_objetivo"  placeholder="Nombre"></input>
+                            <b class="tooltip tooltip-bottom-right">
+							Ingrese un nombre para el objetivo
+							</b>  
+			
+							<input type="text" name="descripcion_objetivo"  placeholder="Descripcion"></input>
+							<b class="tooltip tooltip-bottom-right">
+							Ingrese una descripcion para el objetivo
+							</b>  
+							
+				<button class="button" type="submit">Guardar Objetivo</button>
+		
+        </form>
+		
+		
+		<!--<button onClick=" window.location.href='home_evaluador.php' ">Finalizar carga</button>-->
 
 
 
