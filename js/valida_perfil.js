@@ -67,13 +67,12 @@
 					nombre_objetivo: "Ingrese un nombre para el objetivo",
                     descripcion_objetivo: "Ingrese una descripcion para el objetivo"						
 				},
+				
                 submitHandler: function(form) {
-
-						
-
-			
-					
+				alert('Objetivo guardado!');
+				form.submit();
                 }
+				
             });
         }
     }
