@@ -35,36 +35,15 @@
 	<script  src="js/valida_empleado.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ABM DE EMPLEADOS -->
 	<script  src="js/valida_perfil.js"></script> <!-- SCRIPT DE VALIDACION FORMULARIO DE ALTA DE PERFILES -->
 	<script src="js/valida_contacto.js"></script><!--VALIDACION DE FORMULARIO DE CONTACTO-->
+	<script src="js/valida_login.js"></script><!--VALIDACION DE FORMULARIO DE LOGIN-->
+	<script src="js/flecha_arriba.js"></script><!--SCRIPT FLECHA ARRIBA-->
+	<script src="js/camera_wrap.js"></script><!--SLIDER DEL HOME (ADAPTACION)-->
 
-	 
+	 <!--	<script src="js/efecto_login.js"></script>TOOLTIP DEL LOGIN-->
+
 	 
 	 
 	 
      <!--if (gt IE 9)|!(IE)]><!-->
      <script src="js/jquery.mobile.customized.min.js"></script>
      <!--<![endif]-->
-	 
-	
-   <script> //flecha hacia arriba
-       $(document).ready(function(){
-        $().UItoTop({ easingType: 'easeOutQuart' });
-        $('.tooltip').tooltipster();
-        });
-     </script>
-	 
-   <script> /*IMPORTANTE!!!*/
-       $(document).ready(function(){
-        jQuery('#camera_wrap').camera({
-            loader: 'pie',
-            pagination: true ,
-            minHeight: '200',
-            thumbnails: true,
-            height: '40.85106382978723%',
-            caption: true,
-            navigation: true,
-            fx: 'mosaic'
-          });
-        $().UItoTop({ easingType: 'easeOutQuart' });
-               $('.tooltip').tooltipster();
-        });
-	</script>

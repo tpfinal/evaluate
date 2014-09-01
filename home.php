@@ -26,7 +26,7 @@ Praesent volutpat pretium est at lobortis.</p>
 <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 Mauris sodales velit nulla. Vestibulum congue aliquam pellentesque. Curabitur non neque id nisi adipiscing tincidunt.
 Vivamus nec feugiat tellus. In hac habitasse platea dictumst.</p>
-			</div>
+			</div>			
 	</div>
 </div>
 <!--==============================footer=================================-->

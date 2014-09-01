@@ -26,7 +26,7 @@ require('php_lib/solo_administradores.php');
 <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
-        <a href="home_admin.php">
+        <a href="buscar_registro.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>

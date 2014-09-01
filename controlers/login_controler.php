@@ -30,9 +30,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	else {
         //acciones a realizar en un intento fallido
         //Ej: mostrar captcha para evitar ataques fuerza bruta, bloqueas durante un rato esta ip, ....
-
         //preparamos un mensaje de error y continuamos para mostrar el formulario de login
-        //$mensaje='Usuario o contraseña incorrecto.';
+		//$mensaje='Usuario o contraseña incorrecto.';
 		
 		header('Location: ../home.php');
 		die();

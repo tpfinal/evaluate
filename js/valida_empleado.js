@@ -82,8 +82,7 @@ jQuery.validator.addMethod("letras_y_simbolos", function(value, element) {
 				
 				},
                 submitHandler: function(form) {
-                    form.submit();
-					
+					form.submit();
                 }
             });
         }

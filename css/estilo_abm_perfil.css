@@ -2,10 +2,6 @@
 
 
 /***************************************************************************************************************/
-
-
-
-
 .aclaracion{
 
 	text-align: center;
@@ -19,6 +15,7 @@ label.error {
 	color: red; 
 	font-size: 14px;
 	}
+		
 
   .abm_perfil {
 	margin-top: 50px;

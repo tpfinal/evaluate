@@ -1,8 +1,14 @@
+ <form class="login" action="controlers/login_controler.php" method="post">		
+				
+		<input name="usuario" type="name" id="tooltip_usuario"/>
+		
+		<!--<div class="tooltip_login">Usuario</div>-->
+			
+		<input name="pass" type="password" id="tooltip_password"/>
+		
+		<!--<div class="tooltip_login">Password</div>-->
 
-
-<form class="login" action="controlers/login_controler.php" enctype="multipart/form-data" method="post">	
-			<input name="usuario" type="name" value="usuario" onBlur="if(this.value=='')this.value='usuario'" onFocus="if(this.value=='usuario')this.value=''"/>
-			<input name="pass" type="password" value="pass" onBlur="if(this.value=='')this.value='pass'" onFocus="if(this.value=='pass')this.value=''"/>
+				
 			<input type="submit" value="Login"/> 
 			<a href="#"><img src="images/user_icon.jpg"></a>
 </form>

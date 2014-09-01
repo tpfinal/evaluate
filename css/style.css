@@ -630,45 +630,6 @@ header {
     -o-background-size:  auto auto !important;
     background-size:  auto auto !important;
 }
-#bookingForm {
-    margin-right: 0;
-}
-.tmRadio p {
-   padding-left: 0;
-   padding-top: 10px;
-}
-.tmRadio {
-    margin-left: 0 !important;
-}
-.tmRadio strong {
-    margin-left: 0;
-}
-#bookingForm > strong + .controlHolder {
-    width: 280px;
-}
-.camera_prev {
-    margin-left: 0;
-    left: 20px;
-    bottom: 60px;
-    top: auto;
-    margin-top: 0;
-} 
-.camera_next  {
-    margin-right: 0;
-    right: 20px;
-    bottom: 60px;
-    top: auto;
-    margin-top: 0;
-}
-.banner img {
-    width: 100%;
-}
-.banner {
-    margin-bottom: 25px;
-} 
-.block1 {
-    margin-bottom: 30px;
-}
 .map address +address {
     margin-left: 0;
     float: none;
@@ -678,22 +639,13 @@ header {
     float: none;
     overflow: hidden;
 }
-.copy {
-    float: none;
-    padding-top: 40px;
-}
+
 header h1 {
 	display: block;
 	width: auto;
     position: relative;
 	height: auto;
     margin-bottom: 20px;
-}
-.img_inner {
-    width: 100% !important;
-    float: none !important;
-    margin-right: 0 !important;
-    margin-bottom: 20px !important;
 }
 h1 a {
 	max-width: 90%;
@@ -775,6 +727,8 @@ margin-top:25px;
     left: 50% !important;
     margin-left: -140px;
 }
+
+
 #espacio{
 display:none;
 }
