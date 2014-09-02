@@ -26,7 +26,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					
 	<div class="grid_6 prefix_3">
 	
-		<form action="" method="post" id="alta_perfil" class="abm_perfil" novalidate="novalidate">
+		<form action="controlers/perfil_controler.php" method="post" id="alta_perfil" class="abm_perfil" >
 			<header>Alta De Perfil
 				<label class="aclaracion">.:Realice el alta de un nuevo perfil:.</label>
             </header>

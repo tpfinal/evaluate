@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
     @$nombre=$_POST['nombre_objetivo'];
 	@$descripcion=$_POST['descripcion_objetivo'];
 	@$tipo='o';
+	@$id_perfil=$_SESSION['id_perfil'];
 
 //echos de prueba
 	echo $nombre;
@@ -20,9 +21,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	echo '</br>';
 	echo $tipo;
 	echo '</br>';
+	echo $id_perfil;
+	echo '</br>';
 	
 //creamos el objeto objetivo con los datos recividos
-	$obj = new objetivo($nombre,$descripcion,$tipo);
+	$obj = new objetivo($nombre,$descripcion,$tipo,$id_perfil);
 	
 	//echos de prueba
 	echo $obj->getNombre();
@@ -30,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	echo $obj->getDescripcion();
 	echo '</br>';
 	echo $obj->getTipo();
+		echo '</br>';
+	echo $obj->getId_perfil();
 
 //guardamos el empleado en la BD
 	$ado=new adoObjetivo();
