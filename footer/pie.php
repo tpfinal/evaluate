@@ -4,7 +4,7 @@
       <div class="grid_12">
         <div class="socials">
       <section id="facebook">
-        <a href="#" target="_blank"><span id="fackbook" class="tooltip" title="Seguinos en Facebook">f</span></a>
+        <a href="#" target="_blank"><span  class="tooltip" title="Seguinos en Facebook">f</span></a>
         </section>
         <section id="twitter">
         <a href="#" target="_blank"><span id="twitter-default" class="tooltip" title="Seguinos en Twitter">t</span></a>

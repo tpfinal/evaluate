@@ -322,59 +322,13 @@ a.btn {
 a.btn:hover {
     background-color: #000;
 }
-/****classes****/
-.mb0 {
-	margin-bottom: 0px !important;
-}
-.m0 {
-	margin: 0 !important;
-}
-.pad0 {
-	padding: 0 !important;
-}
-.pad1 {
-}
-.img_inner {
-	max-width: 100%;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
-	margin-bottom: 12px;
-	margin-top: 5px;
-}
-.fleft {
-	float: left;
-	width: auto !important;
-	margin-right: 20px;
-	margin-bottom: 0px;
-	margin-top: 3px;
-}
-.oh {
-	overflow: hidden;
-}
-.fright {
-	float: right !important;
-}
-.upp {
-	text-transform: uppercase;
-}
-.alright {
-	text-align: right;
-}
-.center {
-	text-align: center;
-}
-.wrapper, .extra_wrapper {
-	overflow: hidden;
-}
+
 .clear {
 	float: none !important;
 	clear: both;
 }
-.nowrap {
-    white-space: nowrap;
-}
+
+
 /*header*/
 header {
 	display: block;
@@ -412,11 +366,6 @@ header h1 a img {
 .tt-grid-wrapper {
     margin-bottom: 6px;
 }
-.hor {
-    padding-top: 43px;
-    border-bottom: 1px solid #d9d9d9;
-}
-
 
 .opcion img{
 border-radius: 15px;

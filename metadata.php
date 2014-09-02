@@ -39,7 +39,6 @@
 	<script src="js/flecha_arriba.js"></script><!--SCRIPT FLECHA ARRIBA-->
 	<script src="js/camera_wrap.js"></script><!--SLIDER DEL HOME (ADAPTACION)-->
 
-	 <!--	<script src="js/efecto_login.js"></script>TOOLTIP DEL LOGIN-->
 
 	 
 	 
