@@ -31,7 +31,7 @@ include('php_lib/solo_evaluadores.php');
     </div>
 	<div class="grid_4">
       <div class="opcion">
-		<a href=""><img src="images/crear_periodo.jpg" alt="CREAR PERIODO"/></a>
+		<a href="crear_periodo.php"><img src="images/crear_periodo.jpg" alt="CREAR PERIODO"/></a>
 	  </div>
     </div>
 	<div class="grid_4">

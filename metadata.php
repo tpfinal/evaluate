@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/estilo_login.css"/>
 	<link rel="stylesheet" href="css/form.css"/>
 	<link rel="stylesheet" href="css/touchTouch.css"/>
-	<link rel="stylesheet" href="css/estilo_tabla.css"/>
+	<!--<link rel="stylesheet" href="css/estilo_tabla.css"/>-->
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/skeleton.css"/>
 	<link rel="stylesheet" href="css/superfish.css"/>
