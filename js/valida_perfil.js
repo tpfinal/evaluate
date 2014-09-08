@@ -23,13 +23,7 @@
                     descripcion_perfil: "Ingrese una descripcion para el perfil"					
 				},
                 submitHandler: function(form) {
-
-						alert('Perfil Creado! Ahora agrega los objetivos para ese perfil.');
-						window.location="nuevo_objetivo.php";
-
-
-			
-					
+				form.submit();
                 }
             });
         }
