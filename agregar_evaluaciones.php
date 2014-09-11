@@ -24,42 +24,34 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <?php include("menu/menu.php"); ?>
 </div>
 </div>
-<!--==============================Content (formulario de alta)=================================-->
+<!--==============================Content (formulario de ingreso de fechas)=================================-->
+<?php
+		//recibimos los datos por post
+    @$nombre=$_POST['nombre_periodo'];
+	@$inicio=$_POST['theDate1'];
+	@$fin=$_POST['theDate2'];
+	@$cantidad=$_POST['cantidad'];
+
+?>
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
 	
-		<form action="agregar_evaluaciones.php" method="post" id="crear_periodo" name="crear_periodo" class="abm_perfil">
-			<header>Crear Periodo</header>
+		<form action="" method="post" id="crear_periodo" name="crear_periodo" class="abm_perfil">
+			<header>Fechas de Evaluacion</header>
+			Periodo desde <?php echo $inicio?> hasta <?php echo $fin?>
 			<fieldset>
+			<?php
+			for($i=1 ; $i<=$cantidad ; $i++)
+			{
+			echo'
 				<section>
-				<label class="input">
-                            <input type="text" name="nombre_periodo"  placeholder="Nombre"></input>
-                            <b class="tooltip tooltip-bottom-right">
-							Ingrese un nombre para el periodo
-							</b>  
-                </label>
+					Evaluacion N '.$i.': <input type="text" value="" readonly name="theDate'.$i.'">
+									  <input type="button" value="Cal" onclick="displayCalendar(document.crear_periodo.theDate'.$i.',\'dd/mm/yyyy\',this)">
 				</section>
-				<section>
-						Fecha Inicio: <input type="text" value="" readonly name="theDate1">
-									  <input type="button" value="Cal" onclick="displayCalendar(document.crear_periodo.theDate1,'dd/mm/yyyy',this)">
-				</section>
-							
-				<section>
-						Fecha Finalizacion: <input type="text" value="" readonly name="theDate2">
-									  <input type="button" value="Cal" onclick="displayCalendar(document.crear_periodo.theDate2,'dd/mm/yyyy',this)">
-				</section>
-				
-				<section>
-				<label class="input">
-                            <input type="text" name="cantidad"  placeholder="cantidad de evaluaciones"></input>
-                            <b class="tooltip tooltip-bottom-right">
-							Ingrese una cantidad de evaluaciones
-							</b>  
-                </label>
-				</section>
-	
-				
+				';
+			};
+			?>
 				<button class="button" type="submit">Siguiente</button>
 			
 			</fieldset>
