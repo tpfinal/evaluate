@@ -15,12 +15,10 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="css/estilo_abm_empleados.css"/> <!--CSS DE LOS FORMULARIOS DE ABM EMPLEADOS -->
 	<link rel="stylesheet" href="css/estilo_abm_perfil.css"/> <!--CSS DE LOS FORMULARIOS DE ABM PERFILES -->
-	
+	<link rel="stylesheet" href="css/estilo_periodo.css"/> <!--CSS DE LOS FORMULARIOS DE PERIODOS Y EVALUACIONES -->
 
-	
-	
-	
-     <script src="js/jquery.js"></script> <!--JQUERY TRADICIONAL-->
+	<script src="js/jquery.js"></script> <!--JQUERY TRADICIONAL-->
+	 <script src="js/valida_periodo.js"></script><!--VALIDACION DE FORMULARIO DE ALTA DE PERIODO Y SUS RESPECTIVAS FECHAS-->
      <script src="js/jquery-migrate-1.2.1.js"></script><!--SLIDER DEL HOME-->
      <script src="js/script.js"></script> <!--SLIDER DEL HOME-->
      <script src="js/superfish.js"></script><!--SLIDER DEL HOME-->
@@ -40,7 +38,6 @@
 	<script src="js/camera_wrap.js"></script><!--SLIDER DEL HOME (ADAPTACION)-->
 
 
-	 
 	 
 	 
      <!--if (gt IE 9)|!(IE)]><!-->

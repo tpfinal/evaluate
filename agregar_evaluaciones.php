@@ -37,17 +37,21 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
 	
-		<form action="agregar_empleados.php" method="post" id="crear_periodo" name="crear_periodo" class="abm_perfil">
+
+		<form action="agregar_empleados.php" method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas">
+
 			<header>Fechas de Evaluacion</header>
-			Periodo desde <?php echo $inicio?> hasta <?php echo $fin?>
+			
+			<p class="subtitulo">Periodo desde <?php echo $inicio?> hasta <?php echo $fin?></p>
+			
 			<fieldset>
 			<?php
 			for($i=1 ; $i<=$cantidad ; $i++)
 			{
 			echo'
-				<section>
-					Evaluacion N '.$i.': <input type="text" value="" readonly name="theDate'.$i.'">
-									  <input type="button" value="Cal" onclick="displayCalendar(document.crear_periodo.theDate'.$i.',\'dd/mm/yyyy\',this)">
+				<section class="fechas">
+					 <input type="text" value="" readonly name="theDate'.$i.'" placeholder="Evaluacion N '.$i.'">
+					 <input type="button" value="Seleccionar fecha" onclick="displayCalendar(document.crear_periodo.theDate'.$i.',\'dd/mm/yyyy\',this)">
 				</section>
 				';
 			};
@@ -57,13 +61,12 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			</fieldset>
         </form>	
 		
-		
 	</div>
     </div>
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
-        <a href="alta_perfil.php">
+        <a href="crear_periodo.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>

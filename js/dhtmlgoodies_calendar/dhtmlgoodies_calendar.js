@@ -48,7 +48,7 @@ Version 2.1.2 8/30/2007 gfb  - Add switch to start week on Sunday
 */
 var turnOffYearSpan = false;     // true = Only show This Year and Next, false = show +/- 5 years
 var weekStartsOnSunday = false;  // true = Start the week on Sunday, false = start the week on Monday
-var showWeekNumber = true;  // true = show week number,  false = do not show week number
+var showWeekNumber = false;  // true = show week number,  false = do not show week number
 
 var languageCode = 'es';	// Possible values: 	en,ge,no,nl,es,pt-br,fr
 							// en = english, ge = german, no = norwegian,nl = dutch, es = spanish, pt-br = portuguese, fr = french, da = danish, hu = hungarian(Use UTF-8 doctype for hungarian)
@@ -858,7 +858,7 @@ function writeTopBar()
 	var monthPicker = createMonthDiv();
 	monthPicker.style.left = '37px';
 	monthPicker.style.top = monthDiv.offsetTop + monthDiv.offsetHeight + 1 + 'px';
-	monthPicker.style.width ='60px';
+	monthPicker.style.width ='90px';
 	monthPicker.id = 'monthDropDown';
 
 	calendarDiv.appendChild(monthPicker);
