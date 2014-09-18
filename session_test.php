@@ -49,7 +49,14 @@ $ado = new adoEmpleado();
 			}else
 			echo '<h3>***SUPER USUARIO***</h3>';
 			
-			?>
+		//test de adoPerfil
+echo "<h2>Test de funciones ado Perfil</h2>";
+	require('model/class.perfil.php');
+		
+	@$array_perfiles=$ado->getAllPerfiles();
+	var_dump($array_perfiles); //para ver el contenido del array
+		
+?>
         </p>
         <p>Si quieres cerrar la sesión puedes hacer un 
 		<a href='php_lib/logout.php' title="Cerrar mi sesion como usuario validado">logout</a>

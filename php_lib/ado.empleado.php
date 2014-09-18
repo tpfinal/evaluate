@@ -1,80 +1,11 @@
 <?php
-include_once('config.ini.php'); //incluimos configuración
-class Conexion  // se declara una clase para hacer la conexion con la base de datos
-{
-	var $con;
-	function Conexion()
-		   	 
-	{
-		// se definen los datos del servidor de base de datos 
-		$conection['server']=SERVIDOR_MYSQL;   //host
-		$conection['user']=USUARIO_MYSQL;      //usuario
-		$conection['pass']=PASSWORD_MYSQL;	   //password
-		$conection['base']=BASE_DATOS;		   //base de datos
-		
-		
-		// crea la conexion pasandole el servidor , usuario y clave
-		$conect= mysql_pconnect($conection['server'],$conection['user'],$conection['pass']);
 
-
-			
-		if ($conect) // si la conexion fue exitosa , selecciona la base
-		{
-			mysql_select_db($conection['base']);			
-			$this->con=$conect;
-		}
-	}
-	function getConexion() // devuelve la conexion
-	{
-		return $this->con;
-	}
-	function Close()  // cierra la conexion
-	{
-		mysql_close($this->con);
-	}	
-
-}
-
-
-
-
-class sQuery   // se declara una clase para poder ejecutar las consultas, esta clase llama a la clase anterior
-{
-
-	var $pconeccion;
-	var $pconsulta;
-	var $resultados;
-	function sQuery()  // constructor, solo crea una conexion usando la clase "Conexion"
-	{
-		$this->pconeccion= new Conexion();
-	}
-	function executeQuery($cons)  // metodo que ejecuta una consulta y la guarda en el atributo $pconsulta
-	{
-		$this->pconsulta= mysql_query($cons,$this->pconeccion->getConexion());
-		return $this->pconsulta;
-	}	
-	function getResults()   // retorna la consulta en forma de result.
-	{return $this->pconsulta;}	
-	
-	function Close()		// cierra la conexion
-	{$this->pconeccion->Close();}	
-	
-	function Clean() // libera la consulta
-	{mysql_free_result($this->pconsulta);}
-	
-	function getResultados() // devuelve la cantidad de registros encontrados
-	{return mysql_affected_rows($this->pconeccion->getConexion()) ;}
-	
-	function getAffect() // devuelve las cantidad de filas afectadas
-	{return mysql_affected_rows($this->pconeccion->getConexion()) ;}
-}
-
-
-
+include_once('conexion.php'); //incluimos configuración
 
 class adoEmpleado
 {
 //se declaran los atributos de la clase, que son los atributos de la clase empleado
+private $id;
 private $nombre;
 private $apellido;
 private $dni;
@@ -84,16 +15,21 @@ private $puesto;
 private $usuario;
 private $pass;
 private $rol;
+
 private $obj_empleado;
+
+private $array_empleados=array();
+private $array_perfiles=array();
+
 
 //metodo que obtiene el id del empleado pasando como argumento el numero de dni
 	
-	function getIdByDni($nro=0) // declara el constructor, si trae el numero de cliente lo busca , si no, no hace nada.
+	function getIdByDni($dni=0) // 
 	{
-	if ($nro!=0)
+	if ($dni!=0)
 		{
 			$obj_cliente=new sQuery();
-			$result=$obj_cliente->executeQuery("select id_empleado from empleados where dni = $nro"); // ejecuta la consulta para traer al cliente 
+			$result=$obj_cliente->executeQuery("select id_empleado from empleados where dni = $dni"); // ejecuta la consulta para traer al empleado 
 			$row=mysql_fetch_array($result);
 			$this->id=$row['id_empleado'];
 			
@@ -106,8 +42,8 @@ private $obj_empleado;
 	{
 	if ($nro!=0)
 		{
-			$obj_cliente=new sQuery();
-			$result=$obj_cliente->executeQuery("SELECT * FROM empleados WHERE dni = $nro"); // ejecuta la consulta para traer al cliente 
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("SELECT * FROM empleados WHERE dni = $nro"); // ejecuta la consulta para traer al cliente 
 			$row=mysql_fetch_array($result);		
 			$this->id=$row['id_empleado'];
 			$this->nombre=$row['nombre'];
@@ -185,8 +121,102 @@ private $obj_empleado;
 			$query2="DELETE FROM usuarios WHERE id_empleado=$id";
 			$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del empleado
 			$obj_cliente->executeQuery($query2); // ejecuta la consulta para  borrar el registro del usuario
+	}
+
+//Retorna un array con los nombres de todos los empleados y sus IDs como indices
+		function getAllEmpleados()
+		{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("SELECT * FROM empleados"); // ejecuta la consulta para traer al cliente 
+			//$row=mysql_fetch_row($result);
+
+	//llenamos el array de empleados con los datos recividos
+	;
+		while($row=mysql_fetch_array($result))
+		{
+		$this->array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
+		}
+			
+		//var_dump($this->array_empleados); //para ver el contenido del array
+	
+		return $this->array_empleados;
+		}
+
+/*------------------------------Funciones para Perfi-------------------------------------------*/
+		
+//metodo que obtiene el id del perfil pasando como argumento el nombre
+	
+	function getIdPerfil($nombre) 
+	{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("SELECT id_perfil FROM perfil WHERE nombre_perfil = '$nombre' "); // ejecuta la consulta para encontrar el id
+			$row=mysql_fetch_array($result);
+			$this->id=$row['id_perfil'];
+			
+			return $this->id;
+	}
+	
+//metodo que regresa el objeto perfil pasando como parametro el nombre
+	function getPerfil($nombre) 
+	{
+	if ($nombre)
+		{
+			$obj_cliente=new sQuery();
+			$result=$obj_cliente->executeQuery("SELECT * FROM perfil WHERE nombre_perfil = $nombre"); // ejecuta la consulta para traer el objetivo
+			$row=mysql_fetch_array($result);		
+			$this->id=$row['id_perfil'];
+			$this->nombre=$row['nombre_perfil'];
+			$this->descripcion=$row['descripcion_perfil'];
+			
+	//creamos el objeto objetivo con los datos recividos
+		$this->obj_perfil = new perfil($this->id,$this->nombre,$this->descripcion,$this->tipo);
+		return $this->obj_perfil;
+		}
+	}
+
+//metodo que almacena los datos del perfil en la BD
+	public function guardarPerfil($obj_perfil)
+	{
+	$this->nombre=$obj_perfil->getNombre();
+	$this->descripcion=$obj_perfil->getDescripcion();
+	
+		$obj_sQuery=new sQuery();
+		$query="INSERT INTO perfil(nombre_perfil,descripcion_perfil)
+				VALUES('$this->nombre','$this->descripcion')";
+				
+		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
+		
+	}
+
+	
+//Borra los registros de las tablas Perfil usando el id del perfil
+		function eliminarPeril($id)	
+	{
+			$obj_cliente=new sQuery();
+			$query1="DELETE FROM perfil WHERE id_perfil=$id";
+
+			$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro 
+		
 	}	
 
+//Retorna un array con los nombres de todos los Perfiles y sus IDs como indices
+		function getAllPerfiles()
+		{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("SELECT * FROM perfil"); // ejecuta la consulta para traer los perfiles
+			//$row=mysql_fetch_row($result);
+
+	//llenamos el array de perfiles con los datos recividos
+	;
+		while($row=mysql_fetch_array($result))
+		{
+		$this->array_perfiles[$row['id_perfil']]=$row['nombre_perfil'];
+		}
+			
+		//var_dump($this->array_perfiles); //para ver el contenido del array
+	
+		return $this->array_perfiles;
+		}
 	
 }
 
