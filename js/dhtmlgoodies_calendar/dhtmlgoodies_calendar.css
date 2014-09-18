@@ -1,13 +1,13 @@
 #calendarDiv{
-	position:absolute;
-	width:205px;
-	border:1px solid #317082;
-	padding:1px;
-	background-color: #FFF;
-	font-family:arial;
-	font-size:10px;
+	position: absolute;
+	width: 300px;
+	border: 1px solid #000;
+	padding: 1px 2px 20px;
+	background-color: #ECECEC;
 	padding-bottom:20px;
 	visibility:hidden;
+	color:#000;
+	font-weight: 600;
 }
 #calendarDiv span,#calendarDiv img{
 	float:left;
@@ -58,7 +58,7 @@
 }
 
 #calendarDiv .topBar{
-	height:16px;
+	height:18px;
 	padding:2px;
 	background-color: #317082;
 
@@ -109,7 +109,7 @@
 
 }
 #calendarDiv #monthSelect{
-	width:70px;
+	width:100px;
 }
 #calendarDiv .monthYearPicker div{
 	float:none;
