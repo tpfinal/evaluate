@@ -48,6 +48,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			</fieldset>
         </form>	
 		
+		<a href="home_evaluador.php">Finalizar Perfil</a>
+		
 		
 	</div>
     </div>

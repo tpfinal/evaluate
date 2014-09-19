@@ -6,7 +6,7 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario?
     require('../model/class.perfil.php'); //incluimos la clase perfil
-	require('../php_lib/ado.perfil.php');//incluimos la clase de acceso a datos
+	require('../php_lib/ado.empleado.php');//incluimos la clase de acceso a datos
 	
 	//recibimos los datos por post
     @$nombre=$_POST['nombre_perfil'];
@@ -18,12 +18,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 
 
 //guardamos el empleado en la BD
-	$ado=new adoPerfil();
+	$ado=new adoEmpleado();
 	$ado->guardarPerfil($obj_perfil);
 	
 //guardamos en session el id del perfil para mandarselo al objetivo
 	
-	$_SESSION['id_perfil']=$ado->getIdByName($nombre);
+	$_SESSION['id_perfil']=$ado->getIdPerfil($nombre);
 	
 	
 //vamos a nuevo_objetivo.php
