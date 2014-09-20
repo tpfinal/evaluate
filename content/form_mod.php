@@ -1,7 +1,7 @@
 <?php
 //incluimos el archivo de la clase empleado y el del ado y creamos el objeto
 //require('model/class.empleado.php');
-//require('php_lib/ado.empleado.php');
+	require_once('php_lib/conexion.php'); //incluimos la clase conexion
 	$ado = new adoEmpleado();
 
 //getEmpleado regresa un objeto con los datos del empleado

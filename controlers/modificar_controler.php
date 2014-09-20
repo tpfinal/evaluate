@@ -5,8 +5,9 @@ session_start();
  */
 
 if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario?
-    require('../model/class.empleado.php'); //incluimos la clase empleado
-	require('../php_lib/ado.empleado.php');//incluimos la clase de acceso a datos
+    require_once('../model/class.empleado.php'); //incluimos la clase empleado
+	require_once('../php_lib/conexion.php'); //incluimos la clase conexion
+	require_once('../php_lib/ado.empleado.php');//incluimos la clase de acceso a datos
 	
 	//recibimos los datos por post
     @$nombre=$_POST['nombre'];

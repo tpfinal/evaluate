@@ -3,6 +3,7 @@ session_start();
 /*
  * Recibe un numero por SESSION de dni que usaremos para eliminar al empleado
  */
+	require_once('../php_lib/conexion.php'); //incluimos la clase conexion
 	require_once('../php_lib/ado.empleado.php');//incluimos la clase de acceso a datos
 	
 	//Creamos el objeto ado
