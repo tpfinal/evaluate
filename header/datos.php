@@ -1,6 +1,7 @@
 <?php
 //incluimos el archovo de la clase empleado y la clase ado y creamos el objeto ado
 require_once('model/class.empleado.php');
+require_once('php_lib/conexion.php');
 require_once('php_lib/ado.empleado.php');
 $ado = new adoEmpleado();
 
