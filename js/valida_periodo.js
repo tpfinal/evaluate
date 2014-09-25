@@ -1,3 +1,4 @@
+
 /************************** VALIDACION DEL FORMULARIO DE ALTA DE PERIODO ***********************************/
 (function($,W,D)
 {
@@ -45,6 +46,7 @@
 							
                 submitHandler: function(form) {
 					form.submit();
+
                 }
 				
             });
@@ -57,10 +59,6 @@
     });
 
 })(jQuery, window, document);
-
-
-
-
 
 /************************** VALIDACION DEL FORMULARIO DE ALTA DE FECHAS DE EVALUACION ***********************************/
 (function($,W,D)

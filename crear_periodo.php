@@ -43,14 +43,17 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					</label>
 				</section>
 				<section >
-						<input type="text" value="" readonly name="theDate1" placeholder="Fecha de inicio" id="fecha"></input>
-						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate1,'dd/mm/yyyy',this)"/>
+						<input type="text" value="" readonly name="theDate1" placeholder="Fecha de inicio" class="fecha" id="fecha_inicio"/>
+						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate1,'mm/dd/yyyy',this)"/>
+						<p>* La fecha se expresa en el formato mes/dia/ano</p>
 				</section>
 				<section >
-						<input type="text" value="" readonly name="theDate2" placeholder="Fecha de finalizacion" id="fecha"/>
-						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate2,'dd/mm/yyyy',this)"/>
+						<input type="text" value="" readonly name="theDate2" placeholder="Fecha de finalizacion" class="fecha"/ id="fecha_final">
+						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate2,'mm/dd/yyyy',this)"/>
+						<p>* La fecha se expresa en el formato mes/dia/ano</p>
+
 				</section>
-				<button class="button" type="submit">Siguiente</button>
+				<button class="button" type="submit" onclick="validar_fecha_periodo()">Siguiente</button>
 			</fieldset>
         </form>	
 		

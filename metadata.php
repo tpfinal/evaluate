@@ -36,7 +36,8 @@
 	<script src="js/valida_login.js"></script><!--VALIDACION DE FORMULARIO DE LOGIN-->
 	<script src="js/flecha_arriba.js"></script><!--SCRIPT FLECHA ARRIBA-->
 	<script src="js/camera_wrap.js"></script><!--SLIDER DEL HOME (ADAPTACION)-->
-
+	
+	<script src="js/validar_fecha_periodo.js"></script><!--VALIDA QUE UNA FECHA SEA POSTERIOR A LA OTRA-->
 
 	 
 	 
