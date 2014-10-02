@@ -10,10 +10,15 @@ private $creador;
 public function __construct($nombre,$inicio,$fin,$creador,$id=0)
 {
 	$this->nombre=$nombre;
-	$this->inicio=$inicio;
-	$this->fin=$fin;
+//formateamos la fecha al estilo mysql
+	$sql_date = new DateTime($inicio);
+	$this->inicio= $sql_date->format('Y-m-d'); 
+//formateamos la fecha al estilo mysql	
+	$sql_date = new DateTime($fin);
+	$this->fin= $sql_date->format('Y-m-d'); 
+	
 	$this->creador=$creador;
-	$this->creador=$id;
+	$this->id=$id;
 }
 
 // metodos que devuelven valores

@@ -39,33 +39,39 @@ private $array_periodos=array();
 	}
 
 	
-//metodo que regresa el objeto perfil pasando como parametro el nombre
-	function getPerfil($nombre) 
+//metodo que regresa el objeto perfil pasando como parametro el id
+	function getPeriodo($id_periodo) 
 	{
-	if ($nombre)
+	if ($id_periodo)
 		{
-			$obj_cliente=new sQuery();
-			$result=$obj_cliente->executeQuery("SELECT * FROM perfil WHERE nombre_perfil = $nombre"); // ejecuta la consulta para traer el objetivo
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("SELECT * FROM periodo WHERE nombre_periodo = $id_periodo"); // ejecuta la consulta para traer el objetivo
 			$row=mysql_fetch_array($result);		
-			$this->id=$row['id_perfil'];
-			$this->nombre=$row['nombre_perfil'];
-			$this->descripcion=$row['descripcion_perfil'];
+			$this->id=$row['id_periodo'];
+			$this->nombre=$row['nombre_periodo'];
+			$this->inicio=$row['inicio_periodo'];
+			$this->fin=$row['fin_periodo'];
+			$this->creador=$row['id_creador'];
 			
 	//creamos el objeto objetivo con los datos recividos
-		$this->obj_perfil = new perfil($this->id,$this->nombre,$this->descripcion,$this->tipo);
+		$this->obj_periodo = new periodo($this->nombre,$this->inicio,$this->fin,$this->creador,$this->id);
 		return $this->obj_perfil;
 		}
 	}
 
 //metodo que almacena los datos del perfil en la BD
-	public function guardarPerfil($obj_perfil)
+	public function guardarPeriodo($obj_periodo)
 	{
-	$this->nombre=$obj_perfil->getNombre();
-	$this->descripcion=$obj_perfil->getDescripcion();
+	$this->nombre=$obj_periodo->getNombre();
+	$this->inicio=$obj_periodo->getInicio();
+	$this->fin=$obj_periodo->getFin();
+	$this->creador=$obj_periodo->getIdCreador();
+	
+	//var_dump($obj_periodo); //para ver el contenido del objeto
 	
 		$obj_sQuery=new sQuery();
-		$query="INSERT INTO perfil(nombre_perfil,descripcion_perfil)
-				VALUES('$this->nombre','$this->descripcion')";
+		$query="INSERT INTO periodo(nombre_periodo,inicio_periodo,fin_periodo,id_creador)
+				VALUES('$this->nombre','$this->inicio','$this->fin','$this->creador')";
 				
 		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
 		
@@ -73,33 +79,44 @@ private $array_periodos=array();
 
 	
 //Borra los registros de las tablas Perfil usando el id del perfil
-		function eliminarPeril($id)	
+		function eliminarPeriodo($id)	
 	{
-			$obj_cliente=new sQuery();
-			$query1="DELETE FROM perfil WHERE id_perfil=$id";
+			$obj_sQuery=new sQuery();
+			$query1="DELETE FROM periodo WHERE id_perfil=$id";
 
-			$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro 
+			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  borrar el registro 
 		
 	}	
 
 //Retorna un array con los nombres de todos los Perfiles y sus IDs como indices
-		function getAllPerfiles()
+		function getAllPeriodos()
 		{
 			$obj_sQuery=new sQuery();
-			$result=$obj_sQuery->executeQuery("SELECT * FROM perfil"); // ejecuta la consulta para traer los perfiles
-			//$row=mysql_fetch_row($result);
+			$result=$obj_sQuery->executeQuery("SELECT * FROM periodo"); // ejecuta la consulta para traer una lista
 
-	//llenamos el array de perfiles con los datos recividos
+	//llenamos el array  con los datos recividos
 	;
 		while($row=mysql_fetch_array($result))
 		{
-		$this->array_perfiles[$row['id_perfil']]=$row['nombre_perfil'];
+		$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
 		}
 			
 		//var_dump($this->array_perfiles); //para ver el contenido del array
 	
-		return $this->array_perfiles;
+		return $this->array_periodos;
 		}
+		
+//Guardar fechas de evaluacion del periodo
+
+	function guardarFecha($fecha,$id_periodo)
+	{
+			$obj_sQuery=new sQuery();
+			$query1="	INSERT INTO evaluacion (fecha_evaluacion,id_periodo) 
+						VALUES ($fecha,$id_periodo)";
+
+			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
+	}
+	
 	
 }
 

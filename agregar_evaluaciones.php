@@ -27,10 +27,10 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <!--==============================Content (formulario de ingreso de fechas)=================================-->
 <?php
 		//recibimos los datos por post
-    @$nombre=$_POST['nombre_periodo'];
-	@$inicio=$_POST['theDate1'];
-	@$fin=$_POST['theDate2'];
-	@$cantidad=$_POST['cantidad'];
+    @$nombre=$_SESSION['TEMP']['nombre_periodo'];
+	@$inicio=$_SESSION['TEMP']['inicio'];
+	@$fin=$_SESSION['TEMP']['fin'];
+	@$cantidad=$_SESSION['TEMP']['cantidad'];
 
 ?>
 	<div class="container_12">
@@ -38,7 +38,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="grid_6 prefix_3">
 	
 
-		<form action="agregar_empleados.php" method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas">
+		<form action="controlers/evaluaciones_controler.php" method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas">
 
 			<header>Fechas de Evaluacion</header>
 			

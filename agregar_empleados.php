@@ -28,17 +28,19 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <?php
 	//creamos el ado perfil
 	require_once('model/class.perfil.php');
+	require('php_lib/ado.perfil.php');//incluimos la clase de acceso a datos
+	$adoP=new adoPerfil();
 
 	//recibimos los datos por post
-    @$id_periodo=$_POST['id_periodo'];
-	@$listaEmpleados=$ado->getAllEmpleados();
-	@$listaPerfiles=$ado->getAllPerfiles();
+    //@$id_periodo=$_POST['id_periodo'];
+	$listaEmpleados=$ado->getAllEmpleados();
+	$listaPerfiles=$adoP->getAllPerfiles();
 ?>
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
 	
-		<form action="" method="post" id="empleados" name="empleados" class="abm_perfil">
+		<form action="controlers/guardar_periodo_controler.php" method="post" id="empleados" name="empleados" class="abm_perfil">
 			<header>Agregar Empleados al Periodo <?php echo ''?></header>
 			
 			<fieldset>
