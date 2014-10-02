@@ -32,7 +32,11 @@ function fechaSQL($fecha)
 //recibimos los datos por session
 	$cantidad=$_SESSION['TEMP']['cantidad'];
 	
-
+//recibimos las fechas por post y las guardamos en session
+   for($i=1 ; $i<=$cantidad ; $i++)
+   {
+   $_SESSION['TEMP'][$i]=$_POST['theDate'.$i];
+	}
    
 //creamose el objeto periodo
 	@$obj_periodo= new periodo($nombre, $inicio, $fin, $id_creador);
@@ -46,18 +50,16 @@ function fechaSQL($fecha)
 //Guardamos las fechas
    for($i=1 ; $i<=$cantidad ; $i++)
    {
-   
-		//$adoP->guardarFecha($_SESSION['TEMP'][$i],$id_periodo);
-		$fecha=$_SESSION['TEMP'][$i];
-		//$newFecha=fechaSQL($fecha);
-		ECHO $fecha;
-		echo '</br>';
+   		$fecha=$_SESSION['TEMP'][$i];
+		$fechaSQL=fechaSQL($fecha);
+		
+		$adoP->guardarFecha($fechaSQL,$id_periodo);
+
    }	
-	echo $inicio;
+
 	
-	
-//vamos a agregar_evaluaciones.php
-	//header('Location: ../agregar_empleados.php');
-	//die();
+//vamos a agregar_empleados.php
+	header('Location: ../agregar_empleados.php');
+	die();
 } 
 ?>

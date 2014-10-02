@@ -112,7 +112,7 @@ private $array_periodos=array();
 	{
 			$obj_sQuery=new sQuery();
 			$query1="	INSERT INTO evaluacion (fecha_evaluacion,id_periodo) 
-						VALUES ($fecha,$id_periodo)";
+						VALUES ('$fecha','$id_periodo')";
 
 			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
 	}
