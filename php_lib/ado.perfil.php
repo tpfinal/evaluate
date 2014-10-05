@@ -40,7 +40,30 @@ private $array_perfiles=array();
 			$this->descripcion=$row['descripcion_perfil'];
 			
 	//creamos el objeto objetivo con los datos recividos
-		$this->obj_perfil = new perfil($this->id,$this->nombre,$this->descripcion,$this->tipo);
+		$this->obj_perfil = new perfil($this->nombre,$this->descripcion,$this->id);
+		
+		return $this->obj_perfil;
+		
+		}
+	}
+	
+//metodo que regresa el objeto perfil pasando como parametro el ID
+	function getPerfilById($id) 
+	{
+	if ($id)
+		{
+			$obj_cliente=new sQuery();
+			$result=$obj_cliente->executeQuery("SELECT * FROM perfil WHERE id_perfil = $id"); // ejecuta la consulta para traer el objetivo
+			$row=mysql_fetch_array($result);		
+			$this->id=$row['id_perfil'];
+			$this->nombre=$row['nombre_perfil'];
+			$this->descripcion=$row['descripcion_perfil'];
+			
+	//creamos el objeto objetivo con los datos recividos
+		$this->obj_perfil = new perfil($this->nombre,$this->descripcion,$this->id);
+		
+		//var_dump($this->obj_perfil); //para ver el contenido del objeto
+		
 		return $this->obj_perfil;
 		}
 	}

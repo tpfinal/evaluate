@@ -36,13 +36,34 @@ private $array_empleados=array();
 		}
 	}
 	
-//metodo que trae los datos del empleado y regresa un objeto empleado(sin los datos de usuario)
-	function getEmpleado($nro=0) // declara el constructor, si trae el numero de cliente lo busca , si no, no hace nada.
+//metodo que trae los datos del empleado y regresa un objeto empleado por el DNI(sin los datos de usuario)
+	function getEmpleado($dni=0) // declara el constructor, si trae el numero de cliente lo busca , si no, no hace nada.
 	{
-	if ($nro!=0)
+	if ($dni!=0)
 		{
 			$obj_sQuery=new sQuery();
-			$result=$obj_sQuery->executeQuery("SELECT * FROM empleados WHERE dni = $nro"); // ejecuta la consulta para traer al cliente 
+			$result=$obj_sQuery->executeQuery("SELECT * FROM empleados WHERE dni = $dni"); // ejecuta la consulta para traer al cliente 
+			$row=mysql_fetch_array($result);		
+			$this->id=$row['id_empleado'];
+			$this->nombre=$row['nombre'];
+			$this->apellido=$row['apellido'];
+			$this->dni=$row['dni'];
+			$this->email=$row['email'];
+			$this->puesto=$row['puesto'];
+			
+	//creamos el objeto empleado con los datos recividos
+		$this->obj_empleado = new empleado($this->nombre,$this->apellido,$this->dni,$this->email,$this->puesto);
+		return $this->obj_empleado;
+		}
+	}
+	
+//metodo que trae los datos del empleado y regresa un objeto empleado por el ID(sin los datos de usuario)
+	function getEmpleadoById($id=0) // declara el constructor, si trae el numero de cliente lo busca , si no, no hace nada.
+	{
+	if ($id!=0)
+		{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("SELECT * FROM empleados WHERE id_empleado = $id"); // ejecuta la consulta para traer al cliente 
 			$row=mysql_fetch_array($result);		
 			$this->id=$row['id_empleado'];
 			$this->nombre=$row['nombre'];

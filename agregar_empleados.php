@@ -40,20 +40,20 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
 	
-		<form action="controlers/guardar_periodo_controler.php" method="post" id="empleados" name="empleados" class="abm_perfil">
+		<form action="agregar_empleados.php" method="post" id="empleados" name="empleados" class="abm_perfil">
 			<header>Agregar Empleados al Periodo <?php echo ''?></header>
 			
 			<fieldset>
 		Empleado: 
-		<select>
+		<select name="id_empleado">
 		<?php
 			foreach($listaEmpleados as $key=>$valor) {
-			echo '<option value='. $key .'>' . $valor .'</option>';
+			echo '<option  value='. $key .'>' . $valor .'</option>';
 			}
 		?>
 		</select>
 		Perfil: 
-		<select>
+		<select name="id_perfil">
 		<?php
 			foreach($listaPerfiles as $key=>$valor) {
 			echo '<option value='. $key .'>' . $valor .'</option>';
@@ -66,9 +66,11 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			</fieldset>
         </form>	
 		
-
 	</div>
-    </div>
+	
+	<?php include("content/lista_empleados.php"); ?>
+	
+ </div>
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
