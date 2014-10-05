@@ -41,7 +41,6 @@
 				
 				errorContainer: $("#divErrores"),
 				errorLabelContainer: "#divErrores ul",
-				errorElement: "span",
 				wrapper: "li",
 							
                 submitHandler: function(form) {

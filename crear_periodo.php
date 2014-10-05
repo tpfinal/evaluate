@@ -54,12 +54,14 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 						<p>* La fecha se expresa en el formato mes/dia/ano</p>
 
 				</section>
-				<button class="button" type="submit" onclick="validar_fecha_periodo()">Siguiente</button>
+				<button class="button" type="submit" onclick="return validar_fecha_periodo()">Siguiente</button>
 			</fieldset>
         </form>	
 		
 	<div id="divErrores">
 		<ul id="lista"></ul>
+		<span id="error1" style='display:none'> * La fecha de inicio no puede coincidir con la fecha de finalizacion </br> </span>
+		<span id="error2" style='display:none'> * La fecha de inicio no puede ser posterior a la fecha de finalizacion </br> </span>
 	</div>
 						
 						
