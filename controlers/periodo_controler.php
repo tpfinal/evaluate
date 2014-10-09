@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	$adoE=new adoEmpleado();
 	$id= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 	
-//recibimos los datos por post
+//recibimos los datos por post y los guardamos en variables
     @$nombre=$_POST['nombre_periodo'];
 	@$inicio=$_POST['theDate1'];
 	@$fin=$_POST['theDate2'];
@@ -28,8 +28,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	$_SESSION['TEMP']['nombre_perido']=$nombre;
 	$_SESSION['TEMP']['inicio']=$inicio;
 	$_SESSION['TEMP']['fin']=$fin;
-	$_SESSION['TEMP']['cantidad']=$cantidad;
-	
+	$_SESSION['TEMP']['cantidad']=$cantidad;	
 	
 //vamos a agregar_evaluaciones.php
 	header('Location: ../agregar_evaluaciones.php');

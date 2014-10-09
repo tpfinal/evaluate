@@ -4,32 +4,37 @@ session_start();
  * 
  */
 
-if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario?
     require('../model/class.periodo.php'); //incluimos la clase periodo
 	require_once('../php_lib/conexion.php'); //incluimos la clase conexion
-	require('../php_lib/ado.empleado.php');//incluimos la clase de acceso a datos	
 	require('../php_lib/ado.periodo.php');//incluimos la clase de acceso a datos
 	
-	$adoE=new adoEmpleado();
+//$adoE=new adoEmpleado();
 	$adoP=new adoPeriodo();
-	$id_creador= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
-	
 	
 //tomamos los DATOS del Periodo
-	
 	$nombre=$_SESSION['TEMP']['nombre_perido'];
+	
+//Lista con los nombres y los perfiles de los empleados
+	$lista=$_SESSION['lista'];
+	//echo var_dump($lista);	
 		
 //obtenemos el id asignado por la BD
 	$id_periodo=$adoP->getIdPeriodo($nombre);	
-
-//recivimos por post el id del empleado y el id del perfil
-	$id_empleado=$_POST['id_empleado'];
-	$id_perfil=$_POST['id_perfil'];
 	
 //guardamos los empleados
+foreach ($lista as $key=>$id)
+{
+	$adoP->guardarEmpleado($key,$id[2],$id_periodo);
+	//echo 'key = id_empleado: '.$key;
+	//echo '</br>';
+	//echo 'id_perfil: '.$id[2];
+	//echo '</br>';
+}
+//limpiamos las variables guardadas en sesion
+unset($_SESSION['lista']);
+unset($_SESSION['TEMP']);
 
-//vamos a agregar_empleados.php
-	//header('Location: ../agregar_empleados.php');
-	//die();
-} 
+//vamos al menu principal
+	header('Location: ../home_evaluador.php');
+	die();
 ?>

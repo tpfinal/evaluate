@@ -26,7 +26,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 </div>
 <!--==============================Content (formulario de ingreso de fechas)=================================-->
 <?php
-		//recibimos los datos por post
+//recibimos los datos por la variable de session
     @$nombre=$_SESSION['TEMP']['nombre_periodo'];
 	@$inicio=$_SESSION['TEMP']['inicio'];
 	@$fin=$_SESSION['TEMP']['fin'];

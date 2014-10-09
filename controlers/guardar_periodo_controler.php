@@ -52,9 +52,7 @@ function fechaSQL($fecha)
    {
    		$fecha=$_SESSION['TEMP'][$i];
 		$fechaSQL=fechaSQL($fecha);
-		
 		$adoP->guardarFecha($fechaSQL,$id_periodo);
-
    }	
 
 	

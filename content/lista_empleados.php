@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST' ) { // ¿Nos mandan datos por EL FORM?
 
 
 //cargamos el array con los datos
-@$_SESSION['lista'][$id_empleado]=array($empleado->getNombre()." ".$empleado->getApellido(),$perfil->getNombre());
+@$_SESSION['lista'][$id_empleado]=array($empleado->getNombre()." ".$empleado->getApellido(),$perfil->getNombre(),$id_perfil);
 		
 //echo var_dump($_SESSION['lista']);
 	
@@ -49,7 +49,8 @@ foreach ($lista as $key=>$id)
 	}
 	
 }
-	
+	echo '</br>';
+	echo '<a href="controlers/agregar_empleados_controler.php">GUARDAR</a>';
 ?>
 </p>
 </div>
