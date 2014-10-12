@@ -59,42 +59,52 @@
 
 })(jQuery, window, document);
 
-/************************** VALIDACION DEL FORMULARIO DE ALTA DE FECHAS DE EVALUACION ***********************************/
+/************************** VALIDACION DEL FORMULARIO DE EVALUAR/SEGUIR UN PERIODO (Valida el dropdownlist) ***********************************/
+
 (function($,W,D)
 {
-    var validador = {};
+    var JQUERY4U = {};
 
-    validador.UTIL =
+    JQUERY4U.UTIL =
     {
         setupFormValidation: function()
         {
             //form validation rules
-            $("#agregar_fechas").validate({
+            $('#buscar_periodo').validate({
                 rules: {
-				theDate1: {
-                        required: true
-                    },
-				theDate2: {
+					listItem: {
                         required: true
                     }
                 },
 				
-                messages: {				
-                    theDate1: "*",				
-                    theDate2: "*"				
+                messages: {
+					listItem: "* Seleccione un periodo para visualizar"
 				},
+				
+				errorContainer: $("#divErrores"),
+				errorLabelContainer: "#divErrores ul",
+				wrapper: "li",
 							
                 submitHandler: function(form) {
 					form.submit();
+
                 }
 				
             });
         }
     }
-
-    //when the dom has loaded setup form validation rules
     $(D).ready(function($) {
-        validador.UTIL.setupFormValidation();
+        JQUERY4U.UTIL.setupFormValidation();
     });
 
 })(jQuery, window, document);
+  
+
+
+
+
+
+
+
+
+

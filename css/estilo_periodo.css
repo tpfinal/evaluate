@@ -1,6 +1,48 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
 
+
+
+#listItem {
+	width:60%;
+	background-color:#FFF;
+	border:1px solid #DDD;
+	text-align:center;
+	margin-left:20%;
+	font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
+	}
+	
+#listItem:hover {
+box-shadow: inset 0 0 5px 0px green; 
+}
+	
+#listItem optgroup option	{
+	padding:3px 0px 3px 15px;
+	font: 15px 'Open Sans', Helvetica, Arial, sans-serif;
+	border-bottom-width:1px;
+	border-bottom-style:solid;	
+
+	}
+
+#listItem optgroup option:hover	{
+
+background-color: #248348;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /***************************************************************************************************************/
 
 #error1,#error2 {

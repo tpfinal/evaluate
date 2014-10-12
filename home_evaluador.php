@@ -36,7 +36,7 @@ include('php_lib/solo_evaluadores.php');
     </div>
 	<div class="grid_4">
       <div class="opcion">
-		<a href=""><img src="images/seguir_evaluar.jpg" alt="SEGUIR / EVALUAR"/></a>
+		<a href="seguir.php"><img src="images/seguir_evaluar.jpg" alt="SEGUIR / EVALUAR"/></a>
 	  </div>
     </div>
 	<div class="grid_4 prefix_2">
