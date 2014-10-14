@@ -21,28 +21,35 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 </div>
 </div>
 <!--==============================Content (formulario de alta)=================================-->
+<?php
+//incluimos la clase de acceso a datos
+	require('php_lib/ado.periodo.php');
+	$adoP=new adoPeriodo();
+//obtenemos el array de periodos
+	@$periodos=$adoP->getAllPeriodos();
+	//var_dump($periodos); //para ver el contenido del array
+?>
+	
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
-		<form action="" method="post" id="buscar_periodo" class="alta_periodo" >
+		<form action="controlers/seguir_controler.php" method="post" id="buscar_periodo" class="alta_periodo" >
 			<header>Seguir / Evaluar
 				<label class="aclaracion">.:Seleccione el periodo que quiere visualizar:.</label>
             </header>
 			<fieldset>
-
-				<section>
+				<select name="id_periodo" id="listItem">
+				<optgroup class="periodos">
+					<?php
+					foreach($periodos as $key=>$valor) {
+					echo '<option  value='. $key .'>' . $valor .'</option>';
+					}
+					?>
+				</optgroup>
+				</select>
 				
-						<select id="listItem" name="listItem">
-							
-							<option value="" selected>-----</option>
-							<optgroup class="periodos">
-								<option value="1">periodo 1</option>
-								<option value="2">periodo 2</option>
-							</optgroup>
-							
-						</select>
-				</section>
 				<button class="button" type="submit">Buscar</button>
+				
         </fieldset>
         </form>
 		

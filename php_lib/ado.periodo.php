@@ -45,7 +45,7 @@ private $array_periodos=array();
 	if ($id_periodo)
 		{
 			$obj_sQuery=new sQuery();
-			$result=$obj_sQuery->executeQuery("SELECT * FROM periodo WHERE nombre_periodo = $id_periodo"); // ejecuta la consulta para traer el objetivo
+			$result=$obj_sQuery->executeQuery("SELECT * FROM periodo WHERE id_periodo = $id_periodo"); // ejecuta la consulta para traer el objetivo
 			$row=mysql_fetch_array($result);		
 			$this->id=$row['id_periodo'];
 			$this->nombre=$row['nombre_periodo'];
@@ -55,7 +55,10 @@ private $array_periodos=array();
 			
 	//creamos el objeto objetivo con los datos recividos
 		$this->obj_periodo = new periodo($this->nombre,$this->inicio,$this->fin,$this->creador,$this->id);
-		return $this->obj_perfil;
+		
+		//var_dump($this->obj_periodo); //para ver el contenido del objeto
+		
+		return $this->obj_periodo;
 		}
 	}
 
@@ -79,7 +82,7 @@ private $array_periodos=array();
 
 	
 //Borra los registros de las tablas Perfil usando el id del perfil
-		function eliminarPeriodo($id)	
+	function eliminarPeriodo($id)	
 	{
 			$obj_sQuery=new sQuery();
 			$query1="DELETE FROM periodo WHERE id_perfil=$id";
@@ -89,8 +92,8 @@ private $array_periodos=array();
 	}	
 
 //Retorna un array con los nombres de todos los Perfiles y sus IDs como indices
-		function getAllPeriodos()
-		{
+	function getAllPeriodos()
+	{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("SELECT * FROM periodo"); // ejecuta la consulta para traer una lista
 
@@ -104,7 +107,7 @@ private $array_periodos=array();
 		//var_dump($this->array_perfiles); //para ver el contenido del array
 	
 		return $this->array_periodos;
-		}
+	}
 		
 //Guardar fechas de evaluacion del periodo
 
