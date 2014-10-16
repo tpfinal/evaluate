@@ -98,7 +98,7 @@ private $array_periodos=array();
 			$result=$obj_sQuery->executeQuery("SELECT * FROM periodo"); // ejecuta la consulta para traer una lista
 
 	//llenamos el array  con los datos recividos
-	;
+	
 		while($row=mysql_fetch_array($result))
 		{
 		$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
@@ -120,6 +120,29 @@ private $array_periodos=array();
 			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
 	}
 	
+//Guardar fechas de evaluacion del periodo
+
+	function getFechas($id_periodo)
+	{
+			$obj_sQuery=new sQuery();
+			$query1="	SELECT * FROM evaluacion
+						WHERE id_periodo='$id_periodo'";
+			
+			$result=$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
+			var_dump($result);
+	//llenamos el array  con los datos recividos
+	
+		while($row=mysql_fetch_array($result))
+		{
+		$array_fechas[$row['id_evaluacion']]=$row['fecha_evaluacion'];
+		}
+			
+		//var_dump($array_fechas); //para ver el contenido del array
+	
+		return $array_fechas;
+			
+	}
+	
 //Guardar IDs de periodo, empleado, perfil
 
 	function guardarEmpleado($id_empleado,$id_perfil,$id_periodo)
@@ -131,6 +154,25 @@ private $array_periodos=array();
 			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
 	}
 	
+//Retorna un array con los nombres de todos los empleados y sus IDs como indices correspondientes a un periodo
+		function getEmpleados($id_periodo)
+		{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery(" SELECT ep.id_empleado, e.nombre, e.apellido
+												FROM empleados_periodo as ep join empleados as e
+												WHERE ep.id_empleado=e.id_empleado 
+												AND ep.id_periodo=$id_periodo"); 
+
+	//llenamos el array de empleados con los datos recividos
+		while($row=mysql_fetch_array($result))
+		{
+			$this->array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
+		}
+			
+		//var_dump($this->array_empleados); //para ver el contenido del array
+	
+		return $this->array_empleados;
+		}
 }
 
 

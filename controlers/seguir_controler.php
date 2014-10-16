@@ -23,11 +23,22 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	$obj_periodo=$adoP->getPeriodo($id_periodo);
 	//var_dump($obj_periodo);
 	
-//guardamos en session los DATOS
+//guardamos en session los DATOS del Periodo
 	
 	$_SESSION['TEMP']['nombre_perido']=$obj_periodo->getNombre();
 	$_SESSION['TEMP']['inicio']=$obj_periodo->getInicio();
 	$_SESSION['TEMP']['fin']=$obj_periodo->getFin();	
+	
+//guardamos en session un array con las fechas de evaluacion
+
+	$fechas_ev=$adoP->getFechas($id_periodo);
+	$_SESSION['TEMP']['fechas_ev']=$fechas_ev;
+	
+//guardamos en session un array con los empleados
+
+	$empleados=$adoP->getEmpleados($id_periodo);
+	$_SESSION['TEMP']['empleados']=$empleados;
+	//var_dump($empleados);
 	
 //vamos a periodo_vigente.php
 	header('Location: ../periodo_vigente.php');

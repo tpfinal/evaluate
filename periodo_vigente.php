@@ -25,6 +25,9 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	$nombre_periodo=$_SESSION['TEMP']['nombre_perido'];
 	$inicio=$_SESSION['TEMP']['inicio'];
 	$fin=$_SESSION['TEMP']['fin'];
+	$fechas_ev=$_SESSION['TEMP']['fechas_ev'];
+	$empleados=$_SESSION['TEMP']['empleados'];
+	//var_dump($empleados);
 	?>
 	
 	<div class="container_12">
@@ -48,19 +51,28 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					<div class="grid_3">
 						<h5 class="texto">Fechas intermedias</h5>
 							<ul id="lista_fechas">
-								<li> 30/02/2014 </li>
-								<li> 30/05/2014 </li>
-								<li> 30/08/2014 </li>
+							<?php
+							if($fechas_ev)
+							{
+								foreach($fechas_ev as $key){
+								echo "<li> $key </li>";
+								}
+							}
+							?>
 							</ul>
 					</div>
 					
 					<div class="grid_3">
 						<h5 class="texto">Empleados evaluados</h5>
 							<ul id="lista_empleados">
-								<li><a href="detalles_empleado.html"> Juan Perez</a></li>
-								<li><a href=""> Natalia Fernandez</a></li>
-								<li><a href=""> Jose Lopez</a></li>
-								<li><a href=""> Macarena Rodriguez</a></li>
+							<?php
+							if($empleados)
+							{
+								foreach($empleados as $key=>$nombre){
+								echo "<li><a href='detalles_empleado.html?id=$key'> $nombre </a></li>";
+								}
+							}
+							?>
 								
 							</ul>
 					</div>	
