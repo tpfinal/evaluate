@@ -38,7 +38,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="grid_6 prefix_3">
 	
 
-		<form action="controlers/guardar_periodo_controler.php" method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas">
+		<form action="controlers/agregar_evaluaciones_controler.php" method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas">
 
 			<header>Fechas de Evaluacion</header>
 			

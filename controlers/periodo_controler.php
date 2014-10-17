@@ -18,17 +18,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	@$fin=$_POST['theDate2'];
 	@$creador=$id;
 	@$cantidad=$_POST['cantidad'];
-		
-//obtenemos el id que va a tener el periodo
-	//$id_periodo=$adoP->getIdPeriodo('prueba');
-	//echo 'ID_periodo: '.$id_periodo;
 	
 //guardamos en session los DATOS
 	
-	$_SESSION['TEMP']['nombre_perido']=$nombre;
+	$_SESSION['TEMP']['nombre_periodo']=$nombre;
 	$_SESSION['TEMP']['inicio']=$inicio;
 	$_SESSION['TEMP']['fin']=$fin;
-	$_SESSION['TEMP']['cantidad']=$cantidad;	
+	$_SESSION['TEMP']['cantidad']=$cantidad;
+	$_SESSION['TEMP']['creador']=$id;
+
+//echo $_SESSION['TEMP']['creador'];	
 	
 //vamos a agregar_evaluaciones.php
 	header('Location: ../agregar_evaluaciones.php');

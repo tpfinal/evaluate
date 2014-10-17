@@ -44,6 +44,7 @@ function fechaSQL($fecha)
 	
 //Guardamos el Periodo
 	$adoP->guardarPeriodo($obj_periodo);
+
 //obtenemos el id asignado por la BD
 	$id_periodo=$adoP->getIdPeriodo($nombre);
 
@@ -53,6 +54,7 @@ function fechaSQL($fecha)
    		$fecha=$_SESSION['TEMP'][$i];
 		$fechaSQL=fechaSQL($fecha);
 		$adoP->guardarFecha($fechaSQL,$id_periodo);
+		echo $fecha.' ';
    }	
 
 	
