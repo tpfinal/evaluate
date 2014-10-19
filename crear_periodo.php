@@ -44,12 +44,12 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					</label>
 				</section>
 				<section >
-						<input type="text" value="" readonly name="theDate1" placeholder="Fecha de inicio" class="fecha" id="fecha_inicio"/>
+						<input type="text" value="" readonly name="theDate1" placeholder="Fecha de inicio" class="calendario" id="fecha_inicio"/>
 						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate1,'mm/dd/yyyy',this)"/>
 						<p>* La fecha se expresa en el formato mes/dia/ano</p>
 				</section>
 				<section >
-						<input type="text" value="" readonly name="theDate2" placeholder="Fecha de finalizacion" class="fecha"/ id="fecha_final">
+						<input type="text" value="" readonly name="theDate2" placeholder="Fecha de finalizacion" class="calendario"/ id="fecha_final">
 						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate2,'mm/dd/yyyy',this)"/>
 						<p>* La fecha se expresa en el formato mes/dia/ano</p>
 

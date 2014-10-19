@@ -9,7 +9,6 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-	
 <?php include("metadata.php"); ?>
 	 <!--calendar-->
 	<link type="text/css" rel="stylesheet" href="js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css" media="screen"></LINK>
@@ -31,35 +30,29 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	@$inicio=$_SESSION['TEMP']['inicio'];
 	@$fin=$_SESSION['TEMP']['fin'];
 	@$cantidad=$_SESSION['TEMP']['cantidad'];
-
 ?>
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
-	<div class="grid_6 prefix_3">
-	
-
+	<div class="grid_6 prefix_3" id="formulario_agregar_evaluaciones">
 		<form action="controlers/agregar_evaluaciones_controler.php" method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas">
-
 			<header>Fechas de Evaluacion</header>
-			
 			<p class="subtitulo">Periodo desde <?php echo $inicio?> hasta <?php echo $fin?></p>
-			
 			<fieldset>
 			<?php
 			for($i=1 ; $i<=$cantidad ; $i++)
 			{
 			echo'
 				<section class="fechas">
-					 <input type="text" value="" readonly name="theDate'.$i.'" placeholder="Evaluacion N '.$i.'">
+					 <input type="text" class="calendario" value="" readonly name="theDate'.$i.'" placeholder="Evaluacion N '.$i.'">
 					 <input type="button" value="Seleccionar fecha" onclick="displayCalendar(document.crear_periodo.theDate'.$i.',\'mm/dd/yyyy\',this)">
 				</section>
 				';
 			};
 			?>
 				<button class="button" type="submit">Siguiente</button>
-			
 			</fieldset>
-        </form>	
+        </form>
+
 		
 	</div>
     </div>

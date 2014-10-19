@@ -59,52 +59,10 @@
 
 })(jQuery, window, document);
 
-/************************** VALIDACION DEL FORMULARIO DE EVALUAR/SEGUIR UN PERIODO (Valida el dropdownlist) ***********************************/
-
-(function($,W,D)
-{
-    var JQUERY4U = {};
-
-    JQUERY4U.UTIL =
-    {
-        setupFormValidation: function()
-        {
-            //form validation rules
-            $('#buscar_periodo').validate({
-                rules: {
-					listItem: {
-                        required: true
-                    }
-                },
-				
-                messages: {
-					listItem: "* Seleccione un periodo para visualizar"
-				},
-				
-				errorContainer: $("#divErrores"),
-				errorLabelContainer: "#divErrores ul",
-				wrapper: "li",
-							
-                submitHandler: function(form) {
-					form.submit();
-
-                }
-				
-            });
-        }
-    }
-    $(D).ready(function($) {
-        JQUERY4U.UTIL.setupFormValidation();
-    });
-
-})(jQuery, window, document);
-  
 
 
 
 
 
 
-
-
-
+/************************** VALIDACION DEL FORMULARIO DE CARGA DE FECHAS DE EVALUACIONES INTERMEDIAS ***********************************/

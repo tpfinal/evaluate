@@ -74,7 +74,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
-        <a href="alta_perfil.php">
+        <a href="agregar_evaluaciones.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>

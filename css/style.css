@@ -100,10 +100,12 @@ font: 400 17px 'Open Sans', Monospace;
 text-decoration: underline;
 font: 500 17px 'Open Sans', sans-serif;
 }
+
 #lista_fechas{
 margin-top:3.5%;
 font: 500 17px 'Open Sans', Monospace;
 }
+
 #titulo_fechas{
 text-align:center;
 margin-left: 9.5%;
@@ -115,10 +117,14 @@ border-radius: 5px;
 #titulo_fechas h5:hover {
 text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4); 
 }
+
+
 .fecha{
 margin-top:6%;
 font: 500 17px 'Open Sans', Monospace;
 }
+
+
 #flecha_atras img:hover{
 box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4); 
 -webkit-transform: scale(1,1); 
@@ -131,6 +137,7 @@ transform: scale(1.01,1.01);
 -ms-transition: all .2s linear; 
 -o-transition: all .2s linear; 
 transition: all .2s linear; 
+border-radius: 25px;
 }
 #periodos{
 text-align:center;

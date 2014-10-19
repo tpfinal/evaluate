@@ -61,7 +61,7 @@ color: #248348;
  text-align:center;
  }
   
-.fecha {
+.calendario {
 	box-sizing: border-box;
 	width: 50%;
 	height: 39px;
@@ -75,11 +75,11 @@ color: #248348;
 	border-color: #E2E2E2;
 }
 
-.fecha:hover{
+.calendario:hover{
 	border-color: #248348;
 }
 
-.fecha:focus{
+.calendario:focus{
 	border-color: #A7A7A7;
 }
 

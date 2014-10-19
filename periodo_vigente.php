@@ -20,7 +20,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <?php include("menu/menu.php"); ?>
 </div>
 </div>
-<!--==============================Content (formulario de alta)=================================-->
+<!--==============================Content=================================-->
 	<?php
 	$nombre_periodo=$_SESSION['TEMP']['nombre_perido'];
 	$inicio=$_SESSION['TEMP']['inicio'];
@@ -31,7 +31,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	?>
 	
 	<div class="container_12">
-    <div class="content" id="dejar_espacio">
+    <div class="content">
 	
     <p class="subtitulo"><?php echo $nombre_periodo?></p>
 		<div class="content" id="dejar_espacio">

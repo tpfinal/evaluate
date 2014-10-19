@@ -45,10 +45,11 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					</label>					
 				</section>
 				<button class="button" type="submit">Guardar Objetivo</button>
+				<button class="button" type="button" onclick="location='home_evaluador.php'">Finalizar Perfil</button>
+
 			</fieldset>
         </form>	
 		
-		<a href="home_evaluador.php">Finalizar Perfil</a>
 		
 		
 	</div>
