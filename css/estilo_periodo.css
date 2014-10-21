@@ -33,7 +33,45 @@ background-color: #248348;
 
 
 
+#listItem2 {
+	width:50%;
+	background-color:#FFF;
+	border:1px solid #DDD;
+	font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
+	text-align:center;
+	}
+	
+#listItem2:hover {
+box-shadow: inset 0 0 5px 0px green; 
+}
+	
+#listItem2 optgroup option	{
+	padding:3px 0px 3px 15px;
+	font: 15px 'Open Sans', Helvetica, Arial, sans-serif;
+	border-bottom-width:1px;
+	border-bottom-style:solid;	
 
+	}
+
+#listItem2 optgroup option:hover	{
+
+background-color: #248348;
+}
+
+
+
+#asignar_empleados {
+
+margin-top:2px;
+font-size: 17px;
+color: black;
+text-align:center; 
+letter-spacing: 2px;
+
+
+
+
+}
 
 
 

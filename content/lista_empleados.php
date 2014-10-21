@@ -1,4 +1,4 @@
-<div class="grid_12">
+<div class="clear cl1"></div>
 <p class="subtitulo">
 <?php
 
@@ -37,11 +37,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST' or @$_SESSION['TEMP']['quitar']='quitado'
 
 foreach ($lista as $key=>$id)
 	{
+		echo ' <label class="subtitulo2"> ';
 		echo $id[0];
+		echo ' </label> ';
 		echo ' | ';
 		echo $id[1];
 		echo ' | ';
-		echo '<a href="controlers/quitar_controler.php?id='.$key.'">QUITAR</a>';
+		echo '<a href="controlers/quitar_controler.php?id='.$key.'" class="eliminar">QUITAR</a>';
 		echo '</br>';
 		
 	@$_SESSION['TEMP']['quitar']='';
@@ -49,8 +51,9 @@ foreach ($lista as $key=>$id)
 	}
 	
 }
-	echo '</br>';
-	echo '<a href="controlers/agregar_empleados_controler.php">GUARDAR</a>';
+	echo '<a href="controlers/agregar_empleados_controler.php" class="button">Guardar</a>';
+	
+	
+	
 ?>
 </p>
-</div>

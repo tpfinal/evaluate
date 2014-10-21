@@ -33,7 +33,9 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="container_12">
     <div class="content">
 	
-    <p class="subtitulo"><?php echo $nombre_periodo?></p>
+    <div><p class="subtitulo"><?php echo $nombre_periodo?></p></div>
+	
+	
 		<div class="content" id="dejar_espacio">
 		
 			<div class="grid_11" id="titulo_fechas">
