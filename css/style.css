@@ -664,11 +664,7 @@ padding-bottom: 5%;
 margin-top:2%;
 padding-bottom: 5%;
 }
-.titulo{
-font-size: 17px;
-height: 15px;
-padding-top:1px;
-}
+
 .texto3{
 font-size:15px;
 }
@@ -695,11 +691,7 @@ display:none;
 #titulo_fechas{
 margin-left: 0;
 }
-.titulo{
-font-size: 17px;
-height: 15px;
-padding-top:1px;
-}
+
 #lista_objetivos{
 margin:1%;
 font-size:16px;

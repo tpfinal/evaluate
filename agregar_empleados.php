@@ -47,8 +47,10 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		<fieldset>
 		
 		
-		<div id="asignar_empleados">
-		Empleado
+		<div id="asignaciones">
+		
+		<div  id="asignar_empleados">
+		<label>Empleado</label>
 		<select name="id_empleado" id="listItem2">
 		<?php
 			foreach($listaEmpleados as $key=>$valor) {
@@ -57,8 +59,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		?>
 		</select>
 		</div>
-		<div id="asignar_empleados">
-		Perfil
+		<div  id="asignar_perfil">
+		<label>Perfil</label>
 		<select name="id_perfil" id="listItem2">
 		<?php
 			foreach($listaPerfiles as $key=>$valor) {
@@ -68,6 +70,9 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		</select>
 		</div>
 
+		</div>
+		
+		
 				<button class="button" type="submit">Agregar</button>
 		</fieldset>
 		

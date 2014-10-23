@@ -29,7 +29,6 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	@$periodos=$adoP->getAllPeriodos();
 	//var_dump($periodos); //para ver el contenido del array
 ?>
-	
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
@@ -47,25 +46,12 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					?>
 				</optgroup>
 				</select>
-				
 				<button class="button" type="submit">Buscar</button>
-				
         </fieldset>
         </form>
-		
-		
 		<div id="divErrores">
 		<ul id="lista"></ul>		
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	</div>	
     </div>
   <!--==============================Flecha Atras =================================-->

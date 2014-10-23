@@ -35,8 +35,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3" id="formulario_agregar_evaluaciones">
 		<form action="controlers/agregar_evaluaciones_controler.php" method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas">
-			<header>Fechas de Evaluacion</header>
-			<p class="subtitulo">Periodo desde <?php echo $inicio?> hasta <?php echo $fin?></p>
+			<header>Fechas de Evaluacion
+			<p class="aclaracion">Periodo desde <?php echo $inicio?> hasta <?php echo $fin?></p></header>
 			<fieldset>
 			<?php
 			for($i=1 ; $i<=$cantidad ; $i++)
