@@ -8,6 +8,7 @@ private $descripcion;
 private $tipo;
 private $id_perfil;
 
+
 //metodo que obtiene el id del empleado pasando como argumento el numero de dni
 	
 	function getIdByName($name) 
@@ -62,7 +63,7 @@ private $id_perfil;
 
 	}
 	
-//Borra los registros de las tablas Empleados y Usuarios usando el id del 
+//Borra los registros de las tablas Empleados y Usuarios usando el id del objetivo
 		function eliminarObjetivo($id)	
 	{
 			$obj_cliente=new sQuery();
@@ -71,7 +72,60 @@ private $id_perfil;
 			$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
 		
 	}	
+	
+//Regresa un array con los nombres de los objetivos y los id como indices de un empleado
+	function getObjetivos($id_empleado,$id_periodo)	
+	{
+			$obj_cliente=new sQuery();
+			$query1="	SELECT id_objetivo,nombre_objetivo
+						FROM objetivos as o 
+						JOIN empleados_periodo as ep
+						WHERE o.id_perfil=ep.id_perfil
+						AND ep.id_perfil=( 	SELECT id_perfil
+											FROM empleados_periodo
+											WHERE id_empleado=$id_empleado
+											AND id_periodo=$id_periodo )
+						AND ep.id_empleado=$id_empleado
+						AND ep.id_periodo=$id_periodo";
 
+			$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
+			
+//llenamos el array de objetivos con los datos recividos
+		while($row=mysql_fetch_array($result))
+		{
+			$this->array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
+		}
+			
+		//var_dump($this->array_objetivos); //para ver el contenido del array
+	
+		return $this->array_objetivos;
+		
+		
+	}	
+	
+	//Retorna un array con las fechas de evaluacion de un ojetivo
+
+		function getFechasEvaluacion($id_objetivo,$id_empleado,$id_periodo)
+		{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery(" SELECT ev.id_evaluacion,o.nombre_objetivo,ev.fecha_evaluacion
+												FROM objetivos as o 
+												JOIN empleados_periodo as ep ON o.id_perfil=ep.id_perfil
+												JOIN evaluacion as ev ON ev.id_periodo=ep.id_periodo
+												WHERE ep.id_periodo=$id_periodo
+												AND ep.id_empleado=$id_empleado
+												AND o.id_objetivo=$id_objetivo	"); 
+
+	//llenamos el array de empleados con los datos recividos
+		while($row=mysql_fetch_array($result))
+		{
+			$this->array_fechas[$row['id_evaluacion']]=$row['fecha_evaluacion'];
+		}
+			
+		//var_dump($this->array_fechas); //para ver el contenido del array
+	
+		return $this->array_fechas;
+		}
 	
 }
 

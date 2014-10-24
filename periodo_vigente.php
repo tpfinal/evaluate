@@ -69,7 +69,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 							if($empleados)
 							{
 								foreach($empleados as $key=>$nombre){
-								echo "<li><a href='detalles_empleado.html?id=$key'> $nombre </a></li>";
+								echo "<li><a href='detalles_empleado.php?id=$key'> $nombre </a></li>";
 								}
 							}
 							?>

@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	
 //guardamos en session los DATOS del Periodo
 	
+	$_SESSION['TEMP']['id_periodo']=$id_periodo;
 	$_SESSION['TEMP']['nombre_perido']=$obj_periodo->getNombre();
 	$_SESSION['TEMP']['inicio']=$obj_periodo->getInicio();
 	$_SESSION['TEMP']['fin']=$obj_periodo->getFin();	
