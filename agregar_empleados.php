@@ -37,38 +37,53 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	$listaPerfiles=$adoP->getAllPerfiles();
 ?>
 	<div class="container_12">
-    <div class="content" id="dejar_espacio">
+    <div class="content" id="dejar_espacio2">
+	
 	<div class="grid_6 prefix_3">
 	
-		<form action="agregar_empleados.php" method="post" id="empleados" name="empleados" class="abm_perfil">
+		<form action="agregar_empleados.php" method="post" id="empleados" name="empleados" class="alta_periodo">
 			<header>Agregar Empleados al Periodo <?php echo ''?></header>
 			
-			<fieldset>
-		Empleado: 
-		<select name="id_empleado">
+		<fieldset>
+		
+		
+		<div id="asignaciones">
+		
+		<div  id="asignar_empleados">
+		<label>Empleado</label>
+		<select name="id_empleado" id="listItem2">
 		<?php
 			foreach($listaEmpleados as $key=>$valor) {
 			echo '<option  value='. $key .'>' . $valor .'</option>';
 			}
 		?>
 		</select>
-		Perfil: 
-		<select name="id_perfil">
+		</div>
+		<div  id="asignar_perfil">
+		<label>Perfil</label>
+		<select name="id_perfil" id="listItem2">
 		<?php
 			foreach($listaPerfiles as $key=>$valor) {
 			echo '<option value='. $key .'>' . $valor .'</option>';
 			}
 		?>
 		</select>
+		</div>
+
+		</div>
+		
 		
 				<button class="button" type="submit">Agregar</button>
-			
-			</fieldset>
+		</fieldset>
+		
+		<fieldset>	
+		<?php include("content/lista_empleados.php"); ?>
+		</fieldset>
+
         </form>	
 		
 	</div>
 	
-	<?php include("content/lista_empleados.php"); ?>
 	
  </div>
   <!--==============================Flecha Atras =================================-->
