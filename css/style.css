@@ -101,10 +101,20 @@ padding-bottom:30%;
 #lista_empleados{
 margin-top:3.5%;
 font: 400 17px 'Open Sans', Monospace;
+color:#252525;
+list-style-image: url(../images/arrow.png);
+
 }
+
+#lista_empleados li:hover {
+
+list-style-image: url(../images/arrow_printed.png);
+
+}
+
 #lista_empleados a:hover {
 text-decoration: underline;
-font: 500 17px 'Open Sans', sans-serif;
+font: 500 18px 'Open Sans', sans-serif;
 }
 
 #lista_fechas{
@@ -271,13 +281,11 @@ ul.list+h4 {
 
 
 .subtitulo {
-margin-top:2px;
-font-size: 18px;
-color: black;
-text-align:center; 
-letter-spacing: 2px;
-
-
+	font-size: 25px;
+	font-weight: 300;
+	color: #232323;
+	text-align:center;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 .subtitulo2 {
@@ -288,7 +296,9 @@ letter-spacing: 2px;
 font-weight:bold;
 
 }
-
+.centrar {
+	text-align:center;
+	}
 
 
 /****Lists****/

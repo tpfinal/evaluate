@@ -1,5 +1,5 @@
 <div class="clear cl1"></div>
-<p class="subtitulo">
+<p class="centrar">
 <?php
 
  

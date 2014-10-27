@@ -30,17 +30,9 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	//var_dump($empleados);
 	?>
 	<div class="container_12">
-	
-	
 		<div class="content" id="dejar_espacio">
-		
-							    <div class="grid_12" id="titulo"><p class="subtitulo"><?php echo $nombre_periodo?></p></div>
-
-								
+							    <div class="grid_6 prefix_3" id="div_titulo"><label class="subtitulo"><?php echo $nombre_periodo?></label></div>
 			<div class="grid_11" id="titulo_fechas">
-			
-
-			
 					<div class="grid_2">
 					<h5 class="texto">Fecha inicio</h5>
 					<h6 class="fecha"><?php echo $inicio ?></h6>
