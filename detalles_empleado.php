@@ -24,22 +24,37 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <!--==============================Content=================================-->
 <?php
 	require_once('php_lib/conexion.php'); //incluimos la clase conexion
-	require('php_lib/ado.objetivo.php');//incluimos la clase de acceso a datos de empleado
-	$ado=new adoObjetivo();
+	require('php_lib/ado.objetivo.php');//incluimos la clase de acceso a datos de los objetivos
+	require('php_lib/ado.perfil.php');//incluimos la clase de acceso a datos de los perfiles
+	require('model/class.perfil.php');//incluimos la clase perfil
 
+	$ado=new adoObjetivo();
+	$adoP=new adoPerfil();
+	$adoE=new adoEmpleado();
+
+//recibimos por GET el id del empleado 
 $id_empleado=$_GET['id'];
+
+//lo guardamos en session
 $_SESSION['TEMP']['id_empleado']=$id_empleado;
+
+//recuperamos el id_periodo de la session
 $id_periodo=$_SESSION['TEMP']['id_periodo'];
 
-//echo 'id_empleado: '.$id_empleado;
-//echo'</br>';
-//echo 'id_periodo: '.$id_periodo;
-
+//obtenemos un array con los objetivos del empleado de este periodo
 $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);
+
+//nos retorna el objeto perfil correspondiente
+$obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
 
 ?>
 
 <div class="container_12">
+
+<?php echo 'Empleado seleccionado: '.$adoE->getNameEmpleado($id_empleado); ?>
+</br>
+<?php echo 'Perfil asociado: '.$obj_perfil->getNombre(); ?>
+
 <div class="clear cl1" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
 		<div class="grid_6" id="columna_objetivos">
@@ -49,7 +64,7 @@ $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);
 if($objetivos)
 	{
 		foreach($objetivos as $key=>$nombre){
-			echo "<li><a href='evaluar_objetivo.php?id=$key'> $nombre </a></li>";
+			echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre </a></li>";
 		}
 	}
 ?>

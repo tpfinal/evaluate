@@ -112,6 +112,35 @@ private $array_perfiles=array();
 		return $this->array_perfiles;
 		}
 	
+
+//Regresa el objeto perfil del empleado perteneciente a el periodo
+function findPerfil($id_empleado,$id_periodo)	
+	{
+			$obj_cliente=new sQuery();
+			$query1="	SELECT p.id_perfil,p.nombre_perfil,p.descripcion_perfil
+						FROM perfil as p
+						JOIN empleados_periodo as ep
+						ON p.id_perfil=ep.id_perfil
+						WHERE ep.id_empleado=$id_empleado
+						AND ep.id_periodo=$id_periodo";
+
+		$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
+			
+			$row=mysql_fetch_array($result);		
+			$this->id=$row['id_perfil'];
+			$this->nombre=$row['nombre_perfil'];
+			$this->descripcion=$row['descripcion_perfil'];
+			
+	//creamos el objeto objetivo con los datos recividos
+		$this->obj_perfil = new perfil($this->nombre,$this->descripcion,$this->id);
+		
+		//var_dump($this->obj_perfil); //para ver el contenido del objeto
+		
+		return $this->obj_perfil;
+				
+	}		
+		
+	
 }
 
 

@@ -88,7 +88,7 @@ private $id_perfil;
 						AND ep.id_empleado=$id_empleado
 						AND ep.id_periodo=$id_periodo";
 
-			$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
+		$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
 			
 //llenamos el array de objetivos con los datos recividos
 		while($row=mysql_fetch_array($result))
@@ -126,6 +126,43 @@ private $id_perfil;
 	
 		return $this->array_fechas;
 		}
+		
+/////----------------------------METODOS PARA NOTAS------------------------------//////		
+		
+		
+//metodo que almacena los datos en la tabla nota
+	public function guardarNota($id_objetivo,$id_empleado,$id_evaluacion,$nota)
+	{
+	
+		$obj_sQuery=new sQuery();
+		$query="INSERT INTO notas(id_objetivo,id_empleado,id_evaluacion,nota)
+				VALUES('$id_objetivo','$id_empleado','$id_evaluacion','$nota')";
+				
+		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
+		
+	}
+
+	public function getNota($id_objetivo,$id_empleado,$id_evaluacion)
+	{
+	
+		$obj_sQuery=new sQuery();
+		$query="SELECT  nota
+				FROM notas
+				WHERE id_objetivo='$id_objetivo'
+				AND id_empleado='$id_empleado'
+				AND id_evaluacion='$id_evaluacion'";
+				
+		$result=$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
+			
+			$row=mysql_fetch_array($result);
+			$nota=$row['nota'];
+		
+		//var_dump($nota);
+		
+		return $nota;
+		
+	}	
+		
 	
 }
 

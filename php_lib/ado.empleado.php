@@ -144,7 +144,7 @@ private $array_empleados=array();
 	}
 
 //Retorna un array con los nombres de todos los empleados y sus IDs como indices
-		function getAllEmpleados()
+	function getAllEmpleados()
 		{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("SELECT * FROM empleados"); // ejecuta la consulta para traer al cliente 
@@ -160,6 +160,22 @@ private $array_empleados=array();
 		//var_dump($this->array_empleados); //para ver el contenido del array
 	
 		return $this->array_empleados;
+		}
+		
+//Retorna un string con el nombre del empleado por su ID
+	function getNameEmpleado($id)
+		{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery(" SELECT nombre,apellido
+												FROM empleados
+												WHERE id_empleado=$id"); // ejecuta la consulta para traer al cliente 
+			$row=mysql_fetch_array($result);
+			
+			//var_dump($row); //para ver el contenido del array
+	
+		$nombreCompleto=$row['nombre'].' '.$row['apellido'];
+	
+		return $nombreCompleto;
 		}
 
 }
