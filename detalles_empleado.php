@@ -11,6 +11,9 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <html lang="es">
 	<head>
 	<?php include("metadata.php"); ?>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lora:700italic' rel='stylesheet' type='text/css'>
+
 	</head>
  <body class="page1" id="top">
 <!--==============================header=================================--> 
@@ -51,9 +54,18 @@ $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
 
 <div class="container_12">
 
-<?php echo 'Empleado seleccionado: '.$adoE->getNameEmpleado($id_empleado); ?>
-</br>
-<?php echo 'Perfil asociado: '.$obj_perfil->getNombre(); ?>
+<div id="div_titulo">
+
+<label class="subtitulo"><?php echo ''.$adoE->getNameEmpleado($id_empleado); ?></label>
+<label class="subtitulo2"><?php echo ''.$obj_perfil->getNombre(); ?></label>
+
+</div>
+
+
+
+
+
+
 
 <div class="clear cl1" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
@@ -70,6 +82,8 @@ if($objetivos)
 ?>
 			</ul>
 		</div>
+		<!--
+		
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Competencias</h5>
 			<ul id="lista_competencias">
@@ -79,11 +93,15 @@ if($objetivos)
 					<li class="cuatro"> Entusiasta y dinamico</li>
 			</ul>
 		</div>
+		
+		--->
+		
+		
 		</div>
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
-        <a href="seguir.php">
+        <a href="periodo_vigente.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>

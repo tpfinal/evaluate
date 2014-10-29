@@ -58,8 +58,8 @@ list-style-image: url(../images/arrow.png);
 list-style-position: inside;
 font-size:18px;
 padding-bottom:3%;
-font-family: 'Lora', serif;
-font-style:italic;
+
+font-family: 'Josefin Sans', sans-serif;
 }
 #lista_objetivos :hover{
  list-style-image: url(../images/arrow_printed.png);
@@ -138,6 +138,25 @@ box-shadow: 0px 0px 5px #5D9A75;
 }
 
 
+
+
+
+#columna_objetivos h5 {
+box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+border-radius: 5px;
+}
+#columna_objetivos h5:hover {
+text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+ -moz-box-shadow: 0px 0px 5px #5D9A75; 
+-webkit-box-shadow: 0px 0px 5px #5D9A75; 
+box-shadow: 0px 0px 5px #5D9A75;
+}
+
+
+
+
+
+
 .fecha{
 margin-top:6%;
 font: 500 17px 'Open Sans', Monospace;
@@ -207,10 +226,10 @@ a[href^="tel:"] {
 body {
 	position: relative;
 	min-width: 1024px;
-	background-image:url(../images/fondo1.png);
+	background-image:url(../images/fondo.png);
 
     color: #666;
-    font: 300 14px/20px 'Open Sans', sans-serif;
+    font: 300 15px/20px 'Open Sans', sans-serif;
 
 }
 	
@@ -281,11 +300,11 @@ ul.list+h4 {
 
 
 .subtitulo {
-	font-size: 25px;
+	font-size: 23px;
 	font-weight: 300;
-	color: #232323;
+	color: #ffffff;
 	text-align:center;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: 'Lora', serif;
 }
 
 .subtitulo2 {
@@ -702,16 +721,7 @@ display:none;
 margin-left: 0;
 }
 
-#lista_objetivos{
-margin:1%;
-font-size:16px;
-padding-bottom:3%;
-}
-#lista_competencias{
-margin:1%;
-font-size:15px;
-padding-bottom:3%;
-}
+
 .texto3{
 font-size:13px;
 }

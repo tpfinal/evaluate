@@ -10,6 +10,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <html lang="es">
 	<head>
 	<?php include("metadata.php"); ?>
+<link href='http://fonts.googleapis.com/css?family=Lora:700italic' rel='stylesheet' type='text/css'>
 	</head>
  <body class="page1" id="top">
 <!--==============================header=================================--> 
@@ -28,10 +29,16 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	$fechas_ev=$_SESSION['TEMP']['fechas_ev'];
 	$empleados=$_SESSION['TEMP']['empleados'];
 	//var_dump($empleados);
-	?>
-	<div class="container_12">
-		<div class="content" id="dejar_espacio">
-							    <div class="grid_6 prefix_3" id="div_titulo"><label class="subtitulo"><?php echo $nombre_periodo?></label></div>
+	?>		
+
+		<div class="container_12">
+
+				<div class="content" id="dejar_espacio">
+
+<div id="div_titulo"><label class="subtitulo"><?php echo $nombre_periodo?></label></div>
+
+								
+								
 			<div class="grid_11" id="titulo_fechas">
 					<div class="grid_2">
 					<h5 class="texto">Fecha inicio</h5>
