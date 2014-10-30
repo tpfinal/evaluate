@@ -10,6 +10,7 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 //include('php_lib/solo_evaluadores.php');
 
 //incluimos el archivo de la clase empleado y el del ado y creamos el objeto
+require_once('php_lib/conexion.php'); //incluimos la clase conexion
 require('model/class.empleado.php');
 require('php_lib/ado.empleado.php');
 $ado = new adoEmpleado();
@@ -33,10 +34,10 @@ $ado = new adoEmpleado();
 			echo "<br/>";
 			
 			echo "<h2>Test de funciones</h2>";
-			@$rol=mi_rol();
+			$rol=mi_rol();
 			echo 'rol desde funcion: '.@$rol; 
 			echo "<br/>";
-			@$id= $ado->getIdByDni(@$_SESSION['USUARIO']['user']);
+			$id= $ado->getIdByDni(@$_SESSION['USUARIO']['user']);
 			echo 'id desde funcion: '.@$id;
 			
 			echo "<h2>Test de objeto empleado</h2>";
@@ -48,14 +49,13 @@ $ado = new adoEmpleado();
 			echo $obj_empleado->getDni();
 			}else
 			echo '<h3>***SUPER USUARIO***</h3>';
-			
-		//test de adoPerfil
-echo "<h2>Test de funciones ado Perfil</h2>";
-	require('model/class.perfil.php');
+		//getNameEmpleado
+		echo '</br>';
+		var_dump($ado->getNameEmpleado($id));
+		//echo 'Nombre Completo: '.$ado->getNameEmpleado($id);
 		
-	@$array_perfiles=$ado->getAllPerfiles();
-	var_dump($array_perfiles); //para ver el contenido del array
-		
+echo "<h2>Test de la variable TEMP</h2>";	
+	var_dump($_SESSION['TEMP']);
 ?>
         </p>
         <p>Si quieres cerrar la sesión puedes hacer un 

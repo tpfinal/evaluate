@@ -38,10 +38,23 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
                 </label>
 				</section>
 				<section>
-					<label class="input">
-						<input type="text" name="cantidad"  placeholder="Cantidad de evaluaciones"></input>
+					<!--<label class="input">
+						<!--<input type="text" name="cantidad"  placeholder="Cantidad de evaluaciones"></input>-->
+						<input type='radio'  name='cantidad' value='1'>1</input>
+						<input type='radio'  name='cantidad' value='2'>2</input>
+						<input type='radio'  name='cantidad' value='3'>3</input>
+						<input type='radio'  name='cantidad' value='4'>4</input>
+						<input type='radio'  name='cantidad' value='5'>5</input>
+						<input type='radio'  name='cantidad' value='6'>6</input>
+						<input type='radio'  name='cantidad' value='7'>7</input>
+						<input type='radio'  name='cantidad' value='8'>8</input>
+						<input type='radio'  name='cantidad' value='9'>9</input>
+						<input type='radio'  name='cantidad' value='10'>10</input>
+						<input type='radio'  name='cantidad' value='11'>11</input>
+						<input type='radio'  name='cantidad' value='12'>12</input>
+						
 						<b class="tooltip tooltip-bottom-right">Ingrese una cantidad de evaluaciones</b>  
-					</label>
+					<!--</label>-->
 				</section>
 				<section >
 						<input type="text" value="" readonly name="theDate1" placeholder="Fecha de inicio" class="calendario" id="fecha_inicio"/>
