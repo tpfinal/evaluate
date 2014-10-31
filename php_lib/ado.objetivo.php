@@ -96,9 +96,10 @@ private $id_perfil;
 			$this->array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
 		}
 			
+		//var_dump($result);
 		//var_dump($this->array_objetivos); //para ver el contenido del array
 	
-		return $this->array_objetivos;
+		return @$this->array_objetivos;
 		
 		
 	}	
