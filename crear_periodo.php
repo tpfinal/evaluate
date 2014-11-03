@@ -38,8 +38,6 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
                 </label>
 				</section>
 				<section>
-					<!--<label class="input">
-						<!--<input type="text" name="cantidad"  placeholder="Cantidad de evaluaciones"></input>-->
 						<input type='radio'  name='cantidad' value='1'>1</input>
 						<input type='radio'  name='cantidad' value='2'>2</input>
 						<input type='radio'  name='cantidad' value='3'>3</input>
@@ -53,18 +51,20 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 						<input type='radio'  name='cantidad' value='11'>11</input>
 						<input type='radio'  name='cantidad' value='12'>12</input>
 						
-						<p>* Ingrese una cantidad de evaluaciones</p>  
-					<!--</label>-->
+						<label class="aclaracion2">.:Ingrese una cantidad de evaluaciones:.</label>
+
 				</section>
 				<section >
 						<input type="text" value="" readonly name="theDate1" placeholder="Fecha de inicio" class="calendario" id="fecha_inicio"/>
 						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate1,'mm/dd/yyyy',this)"/>
-						<p>* La fecha se expresa en el formato mes/dia/a&ntilde;o</p>
+												
+						<label class="aclaracion2">.:La fecha se expresa en el formato mes/dia/a&ntilde;o:.</label>
 				</section>
 				<section >
 						<input type="text" value="" readonly name="theDate2" placeholder="Fecha de finalizacion" class="calendario"/ id="fecha_final">
 						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate2,'mm/dd/yyyy',this)"/>
-						<p>* La fecha se expresa en el formato mes/dia/a&ntilde;o</p>
+						
+						<label class="aclaracion2">.:La fecha se expresa en el formato mes/dia/a&ntilde;o:.</label>
 
 				</section>
 				<button class="button" type="submit" onclick="return validar_fecha_periodo()">Siguiente</button>

@@ -92,6 +92,14 @@ color: #248348;
 	display: block;
 	color:#248348;
 }
+
+.aclaracion2{
+	font:17px Simplified Arabic Fixed;
+	display: block;
+	color:#248348;
+}
+
+
 label.error {
 	color: red; 
 	font-size: 14px;
