@@ -30,6 +30,8 @@ echo '<h2>Fechas de evaluacion: </h2>';
 
 var_dump($fechas);
 
+echo 'ID evaluacion actual: '.$ado->evaluacionActual($fechas);
+
 if($fechas)
 	{
 		foreach($fechas as $key=>$fecha){

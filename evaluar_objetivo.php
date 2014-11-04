@@ -46,6 +46,9 @@ $descripcion=$obj_objetivo->getDescripcion();
 //array con las fechas de evaluacion
 @$fechas=$ado->getFechasEvaluacion($id_objetivo,$id_empleado,$id_periodo);
 
+//Metodo que obtiene el id de la evaluacion activa
+$actual=$ado->evaluacionActual($fechas);
+
 //var_dump($fechas);
 
 
@@ -73,15 +76,28 @@ $descripcion=$obj_objetivo->getDescripcion();
 						
 						<?php
 						$pos=1;
-						foreach($fechas as $fecha)
+						foreach($fechas as $id_evaluacion=>$fecha)
 						{
 						echo"
 						<tr>
 							<td>$pos</td>
-							<td> $fecha </td>
-							<td>aca va el estado</td>
+							<td> ".sqlajs($fecha)." </td>
+						";	
+						
+						$nota=$ado->getNota($id_objetivo,$id_empleado,$id_evaluacion);
+						
+						if($nota){
+						echo"
+							<td>EVALUADO</td>
+							<td> $nota
+						";
+						}
+						else
+						if($actual==$id_evaluacion){
+						echo"
+							<td>ACTIVO</td>
 							<td>
-							<form action='' method='post' id='ingresar_nota' class='ingresar_nota' name='ingresar_nota'>
+							<form action='controlers/evaluar_controler.php' method='post' id='ingresar_nota' class='ingresar_nota' name='ingresar_nota'>
 										<select id='ddl_notas' name='ddl_notas'>
 											<option value=1>1</option>
 											<option value=2>2</option> 
@@ -95,46 +111,19 @@ $descripcion=$obj_objetivo->getDescripcion();
 							</td>
 						</tr>
 						";
+						}
+						
+						else{
+						echo"
+							<td>PENDIENTE</td>
+							<td> -
+						";
+						}
+						
+	
 						$pos++;
 						}
 						?>
-						<!--
-						<tr>
-							<td>2</td>
-							<td>aca va la fecha de evaluacion</td>
-							<td>aca va el estado</td>
-							<td>
-							<form action="" method="post" id="ingresar_nota" class="ingresar_nota" name="ingresar_nota">
-										<select id="ddl_notas" name="ddl_notas">
-											<option value="1">1</option>
-											<option value="1">2</option> 
-											<option value="1">3</option> 
-											<option value="1">4</option> 
-											<option value="1">5</option> 
-										</select>
-										<button class="button" type="submit"> Evaluar </button>
-							</form>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>3</td>
-							<td>aca va la fecha de evaluacion</td>
-							<td>aca va el estado</td>
-							<td>
-							<form action="" method="post" id="ingresar_nota" class="ingresar_nota" name="ingresar_nota">
-										<select id="ddl_notas" name="ddl_notas">
-											<option value="1">1</option>
-											<option value="1">2</option> 
-											<option value="1">3</option> 
-											<option value="1">4</option> 
-											<option value="1">5</option> 
-										</select>
-										<button class="button" type="submit"> Evaluar </button>
-							</form>
-							</td>
-						</tr>
-						-->
 						
 						</tbody>
 					</table>

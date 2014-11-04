@@ -164,6 +164,7 @@ private $obj_objetivo;
 		
 	}
 
+//metodo que recupera una nota ya guardada
 	public function getNota($id_objetivo,$id_empleado,$id_evaluacion)
 	{
 	
@@ -184,6 +185,23 @@ private $obj_objetivo;
 		return $nota;
 		
 	}	
+	
+//metodo que dado un array de fechas regresa el id de la fecha correspondiente al periodo actual
+// en caso de no haber ninguna fecha que coinsida regresa "0"
+	public function evaluacionActual($arrayDeFechas)
+	{
+	$hoy=date("Y-m-d");
+	$id=0;
+
+	foreach($arrayDeFechas as $key=>$fecha)
+	{
+		if($fecha<=$hoy)
+		{
+			$id=$key;
+		}		
+	}
+	return $id;
+	}
 		
 	
 }
