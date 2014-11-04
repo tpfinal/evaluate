@@ -8,6 +8,7 @@ private $descripcion;
 private $tipo;
 private $id_perfil;
 
+private $obj_objetivo;
 
 //metodo que obtiene el id del empleado pasando como argumento el numero de dni
 	
@@ -21,7 +22,7 @@ private $id_perfil;
 			return $this->id;
 	}
 	
-//metodo que trae los datos del empleado y regresa un objeto empleado(sin los datos de usuario)
+//metodo que trae un objeto OBJETIVO mediante el nombre
 	function getObjetivo($nombre) 
 	{
 	if ($nombre)
@@ -37,6 +38,26 @@ private $id_perfil;
 			
 	//creamos el objeto objetivo con los datos recividos
 		$this->obj_objetivo = new objetivo($this->id,$this->nombre,$this->descripcion,$this->tipo,$this->id_perfil);
+		return $this->obj_objetivo;
+		}
+	}
+	
+//metodo que trae un objeto OBJETIVO mediante el Id
+	function getObjetivoById($id) 
+	{
+	if ($id)
+		{
+			$obj_query=new sQuery();
+			$result=$obj_query->executeQuery("SELECT * FROM objetivos WHERE id_objetivo = $id"); // ejecuta la consulta para traer el objetivo
+			$row=mysql_fetch_array($result);		
+			$this->id=$row['id_objetivo'];
+			$this->nombre=$row['nombre_objetivo'];
+			$this->descripcion=$row['descripcion_objetivo'];
+			$this->tipo=$row['tipo_objetivo'];
+			$this->id_perfil=$row['id_perfil'];
+			
+	//creamos el objeto objetivo con los datos recividos
+		$this->obj_objetivo = new objetivo($this->nombre,$this->descripcion,$this->tipo,$this->id_perfil,$this->id);
 		return $this->obj_objetivo;
 		}
 	}

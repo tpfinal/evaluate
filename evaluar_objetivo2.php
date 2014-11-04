@@ -23,14 +23,43 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 </div>
 </div>
 <!--==============================Content=================================-->
+<?php
+	require_once('php_lib/conexion.php'); //incluimos la clase conexion
+	require('model/class.objetivo.php');//incluimos la clase objetivo
+	require('php_lib/ado.objetivo.php');//incluimos la clase de acceso a datos de empleado
+	include ("php_lib/formato_fechas.php");
+		
+	$ado=new adoObjetivo();
+	$adoE=new adoEmpleado();
+
+$id_objetivo=$_SESSION['TEMP']['id_objetivo'];
+$id_periodo=$_SESSION['TEMP']['id_periodo'];
+$id_empleado=$_SESSION['TEMP']['id_empleado'];
+$id_evaluacion=$_SESSION['TEMP']['id_evaluacion'];
+
+$obj_objetivo=$ado->getObjetivoById($id_objetivo);
+
+$nombre_empleado=$adoE->getNameEmpleado($id_empleado); 
+$nombre_objetivo=$obj_objetivo->getNombre();
+$descripcion=$obj_objetivo->getDescripcion();
+
+//array con las fechas de evaluacion
+@$fechas=$ado->getFechasEvaluacion($id_objetivo,$id_empleado,$id_periodo);
+
+var_dump($fechas);
+
+echo sqlajs($fechas[67]);
+
+?>
+
 <div class="container_12">
 <div id="div_titulo">
-<label class="subtitulo"> nombre del empleado </label>
-<label class="subtitulo2"> nombre del objetivo </label>
+<label class="subtitulo"> <?php echo $nombre_empleado ?> </label>
+<label class="subtitulo2"> <?php echo $nombre_objetivo ?> </label>
 </div>
 			<div class="clear cl2" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
-					<div class="grid_12"><p class="texto3"> Aca iria la descripcion del objetivo</p></div>
+					<div class="grid_12"><p class="texto3"> <?php echo $descripcion ?> </p></div>
 				<div class="grid_8 prefix_2">
 					<table>
 						<thead>
@@ -42,26 +71,33 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 						</tr>
 						</thead>
 						<tbody>
+						
+						<?php
+						foreach($fechas as $fecha)
+						{
+						echo"
 						<tr>
 							<td>1</td>
-							<td>aca va la fecha de evaluacion</td>
+							<td> $fecha </td>
 							<td>aca va el estado</td>
 							<td>
-							<form action="" method="post" id="ingresar_nota" class="ingresar_nota" name="ingresar_nota">
-										<select id="ddl_notas" name="ddl_notas">
-											<option value="1">1</option>
-											<option value="1">2</option> 
-											<option value="1">3</option> 
-											<option value="1">4</option> 
-											<option value="1">5</option> 
+							<form action='' method='post' id='ingresar_nota' class='ingresar_nota' name='ingresar_nota'>
+										<select id='ddl_notas' name='ddl_notas'>
+											<option value=1>1</option>
+											<option value=2>2</option> 
+											<option value=3>3</option> 
+											<option value=4>4</option> 
+											<option value=5>5</option> 
 										</select>
 										
-										
-										
-										<button class="button" type="submit" onsubmit="return validar()"> Evaluar </button>
+										<button class='button' type='submit' onsubmit='return validar()'> Evaluar </button>
 							</form>
 							</td>
 						</tr>
+						";
+						}
+						?>
+						<!--
 						<tr>
 							<td>2</td>
 							<td>aca va la fecha de evaluacion</td>
@@ -79,6 +115,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 							</form>
 							</td>
 						</tr>
+						
 						<tr>
 							<td>3</td>
 							<td>aca va la fecha de evaluacion</td>
@@ -96,6 +133,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 							</form>
 							</td>
 						</tr>
+						-->
+						
 						</tbody>
 					</table>
 			</div>			
