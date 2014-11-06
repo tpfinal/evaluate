@@ -17,7 +17,7 @@ class Conexion  // se declara una clase para hacer la conexion con la base de da
 		
 		
 		// crea la conexion pasandole el servidor , usuario y clave
-		$conect= mysql_pconnect($conection['server'],$conection['user'],$conection['pass']);
+		$conect= @mysql_pconnect($conection['server'],$conection['user'],$conection['pass']);
 
 
 			

@@ -12,7 +12,17 @@ private $descripcion;
 private $obj_perfil;
 private $array_perfiles=array();
 
-
+//metodo que devolvera el proximo id que se generara al insertar un perfil
+	
+	function NextIdPerfil() 
+	{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("SELECT MAX(id_perfil) AS id_perfil FROM perfil"); // ejecuta la consulta para encontrar el id
+			$row=mysql_fetch_array($result);
+			$this->id=$row['id_perfil'];
+			return $this->id+1;;
+			
+	}
 
 		
 //metodo que obtiene el id del perfil pasando como argumento el nombre
@@ -140,6 +150,17 @@ function findPerfil($id_empleado,$id_periodo)
 				
 	}		
 		
+//Metodo que almacena a cual perfil corresponden las competencias
+	public function competencia_perfil($id_competencia,$id_perfil)
+	{
+		$obj_sQuery=new sQuery();
+		$query="INSERT INTO competencias_perfil(id_competencia,id_perfil)
+				VALUES('$id_competencia','$id_perfil')
+			   ";
+				
+		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar los datos
+	}
+	
 	
 }
 

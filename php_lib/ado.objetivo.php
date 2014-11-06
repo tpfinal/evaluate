@@ -120,9 +120,7 @@ private $obj_objetivo;
 		//var_dump($result);
 		//var_dump($this->array_objetivos); //para ver el contenido del array
 	
-		return @$this->array_objetivos;
-		
-		
+		return @$this->array_objetivos;	
 	}	
 	
 	//Retorna un array con las fechas de evaluacion de un ojetivo
@@ -148,7 +146,67 @@ private $obj_objetivo;
 	
 		return $this->array_fechas;
 		}
+
+/////----------------------------METODOS PARA COMPETENCIAS------------------------------//////		
+
+
+
+//Regresa un array con los nombres de los COMPETENCIAS y los id como indices de un PERFIL
+
+	function getCompetencias($id_perfil=null)	
+	{
+	$obj_cliente=new sQuery();
+	
+	if($id_perfil)
+		{
+			$query1="	SELECT id_objetivo,nombre_objetivo
+						FROM objetivos as o 
+						JOIN competencias_perfil as cp
+						WHERE o.id_objetivo=cp.id_competencia
+						AND cp.id_perfil=$id_perfil
+					";
+
+		$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
+			
+	//llenamos el array de objetivos con los datos recividos
+		while($row=mysql_fetch_array($result))
+			{
+				$this->array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
+			}
+			
+		//var_dump($result);
+		//var_dump($this->array_objetivos); //para ver el contenido del array
+	
+		return @$this->array_objetivos;	
+		}
 		
+		else
+		{
+			$query1="	SELECT id_objetivo,nombre_objetivo
+						FROM objetivos as o 
+						WHERE o.tipo_objetivo='c'
+					";
+
+		$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
+			
+		//var_dump($result);
+			
+	//llenamos el array de objetivos con los datos recividos
+		while($row=mysql_fetch_array($result))
+		{
+			$this->array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
+		}
+			
+		//var_dump($result);
+		//var_dump($this->array_objetivos); //para ver el contenido del array
+	
+		return @$this->array_objetivos;	
+		}
+		
+	}
+		
+		
+	
 /////----------------------------METODOS PARA NOTAS------------------------------//////		
 		
 		

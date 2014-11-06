@@ -89,7 +89,7 @@ $actual=$ado->evaluacionActual($fechas);
 						if($nota){
 						echo"
 							<td>EVALUADO</td>
-							<td> $nota
+							<td> <b>$nota</b>
 						";
 						}
 						else

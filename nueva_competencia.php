@@ -23,53 +23,44 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <!--==============================Content (formulario de alta)=================================-->
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
-					
 	<div class="grid_6 prefix_3">
 	
-		<form action="controlers/perfil_controler.php" method="post" id="alta_perfil" class="abm_perfil" >
-			<header>Alta De Perfil
-				<label class="aclaracion">.:Realice el alta de un nuevo perfil:.</label>
-            </header>
+		<form action="controlers/nueva_competencias_controler.php" method="post" id="alta_objetivo" class="abm_perfil">
+			<header>Nueva Competencia</header>
 			<fieldset>
 				<section>
 				<label class="input">
-                            <input type="text" name="nombre_perfil"  placeholder="Nombre"></input>
+                            <input type="text" name="nombre_objetivo"  placeholder="Nombre"></input>
                             <b class="tooltip tooltip-bottom-right">
-							Ingrese un nombre del perfil
+							Ingrese un nombre para la competencia
 							</b>  
                 </label>
 				</section>
 				<section>
 					<label class="input">
-								<input type="text" name="descripcion_perfil"  placeholder="Descripcion"></input>
-								<b class="tooltip tooltip-bottom-right">
-								Ingrese una descripcion para el perfil
-								</b>  
+							<input type="textarea" name="descripcion_objetivo"  placeholder="Descripcion"></input>
+							<b class="tooltip tooltip-bottom-right">
+							Ingrese una descripcion para la competencia
+							</b>  
 					</label>					
 				</section>
+				<button class="button" type="submit">Guardar competencia</button>
 				
-				
-				<button class="button" type="button" onclick="location='nuevo_objetivo.php'">Agregar Objetivos</button>
-				
-				<button class="button" type="button" onclick="location='competencias.php'">Competencias</button>
-				
-        </fieldset>
-		
-		<button class="button" type="submit">Guardar Perfil</button>
-		
-		
-        </form>
-			</div>	
+
+			</fieldset>
 			
-
-    </div>
-
-
+			<!--<button class="button" type="button" onclick="location='home_evaluador.php'">Finalizar Perfil</button>
+			-->
+        </form>	
 		
+		
+		
+	</div>
+    </div>
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
-        <a href="home_evaluador.php">
+        <a href="alta_perfil.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>

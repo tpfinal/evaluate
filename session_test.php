@@ -32,6 +32,7 @@ $ado = new adoEmpleado();
 			echo "<br/>";
 			echo 'rol desde variable: '.@$_SESSION['USUARIO']['rol'];
 			echo "<br/>";
+			echo 'ID Perfil: '.$_SESSION['id_perfil'];
 			
 			echo "<h2>Test de funciones</h2>";
 			$rol=mi_rol();
@@ -39,6 +40,8 @@ $ado = new adoEmpleado();
 			echo "<br/>";
 			$id= $ado->getIdByDni(@$_SESSION['USUARIO']['user']);
 			echo 'id desde funcion: '.@$id;
+			echo "<br/>";
+	
 			
 			echo "<h2>Test de objeto empleado</h2>";
 		//getEmpleado regresa un objeto con los datos del empleado
@@ -55,7 +58,7 @@ $ado = new adoEmpleado();
 		//echo 'Nombre Completo: '.$ado->getNameEmpleado($id);
 		
 echo "<h2>Test de la variable TEMP</h2>";	
-	var_dump($_SESSION['TEMP']);
+	var_dump(@$_SESSION['TEMP']);
 ?>
         </p>
         <p>Si quieres cerrar la sesión puedes hacer un 
