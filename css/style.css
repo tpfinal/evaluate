@@ -61,18 +61,72 @@ padding-bottom:3%;
 
 font-family: 'Josefin Sans', sans-serif;
 }
+
+#lista_objetivos_desactivada{
+color: #000;
+letter-spacing:1px;
+margin:5%;
+list-style-type: disc;
+list-style-image: url(../images/asterisco.png);
+list-style-position: inside;
+font-size:18px;
+padding-bottom:3%;
+
+font-family: 'Josefin Sans', sans-serif;
+}
+
 #lista_objetivos :hover{
  list-style-image: url(../images/arrow_printed.png);
  }
+ 
+ #lista_objetivos li {
+margin: 7px;
+}
+
+#lista_objetivos_desactivada li {
+margin: 7px;
+}
+
  #lista_competencias{
 color: #000;
 letter-spacing:1px;
 margin:5%;
-font-size:19px;
-font-family: 'Open Sans Condensed', sans-serif;
+list-style-type: disc;
+list-style-image: url(../images/arrow.png);
+list-style-position: inside;
+font-size:22px;
+font-family: 'Josefin Sans', sans-serif;
 list-style-type: disc;
 list-style-position: inside;
 }
+
+
+#lista_competencias :hover{
+ list-style-image: url(../images/arrow_printed.png);
+ }
+ 
+ #lista_competencias_desactivada{
+color: #000;
+letter-spacing:1px;
+margin:5%;
+list-style-type: disc;
+list-style-image: url(../images/asterisco.png);
+list-style-position: inside;
+font-size:22px;
+font-family: 'Josefin Sans', sans-serif;
+list-style-type: disc;
+list-style-position: inside;
+}
+
+#lista_competencias li {
+margin: 7px;
+}
+
+#lista_competencias_desactivada li {
+margin: 7px;
+}
+
+
 .uno {
 padding-bottom: 10px;
 list-style-image: url(../images/muy_mal.png);

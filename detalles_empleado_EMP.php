@@ -4,7 +4,7 @@
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
-require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
+// require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -49,23 +49,25 @@ $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
 </div>
 <div class="clear cl1" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
+		
+		
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Objetivos</h5>
-			<ul id="lista_objetivos">
-<?php
-if($objetivos)
-	{
-		foreach($objetivos as $key=>$nombre){
-			echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre </a></li>";
-		}
-	}
-?>
+			<ul id="lista_objetivos_desactivada">
+				<?php
+				if($objetivos)
+					{
+						foreach($objetivos as $key=>$nombre){
+							echo "<li> $nombre </li>";
+						}
+					}
+				?>
 			</ul>
 		</div>
 		
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Competencias</h5>
-			<ul id="lista_competencias_desactivada">
+			<ul id="lista_competencias">
 					<li> Trabajo en equipo</li>
 					<li> Compromiso con las tareas asignadas</li>
 					<li> Comunicacion</li>
