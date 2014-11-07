@@ -292,12 +292,12 @@ box-shadow: inset 0 0 5px 0px #248348;
 	border-color: #A7A7A7;
 }
 	/******************************ESTILO DE TABLA*****************************/
-	table { 
+	#tabla_evaluar table { 
 		width: 100%; 
 		border-collapse: collapse;
 	}
 	/* Zebra striping */
-	tr:nth-of-type(odd) { 
+		#tabla_evaluar  tr:nth-of-type(odd) { 
 		background: #CECECE; 		
 	}
 	#categorias th{
@@ -312,11 +312,11 @@ box-shadow: inset 0 0 5px 0px #248348;
 	#categorias th:hover{
 	background: #248348; 
 	}
-	td{
+		#tabla_evaluar  td{
 		font-size:17px;
 		font-weight:400;
 	}
-	td,th { 
+		#tabla_evaluar  td,th { 
 		padding: 6px; 
 		border: 1px solid #ccc; 
 		text-align:center;
@@ -340,24 +340,29 @@ box-shadow: inset 0 0 5px 0px #248348;
 	only screen and (max-width: 760px),
 	(min-device-width: 768px) and (max-device-width: 1024px)  {
 		/* Force table to not be like tables anymore */
-		table, thead, tbody, th, td, tr { 
+			#tabla_evaluar table,
+			#tabla_evaluar thead,
+			#tabla_evaluar tbody,
+			#tabla_evaluar th,
+			#tabla_evaluar td,
+			#tabla_evaluar tr { 
 			display: block; 
 		}
 		/* Hide table headers (but not display: none;, for accessibility) */
-		thead tr { 
+			#tabla_evaluar thead tr { 
 			position: absolute;
 			top: -9999px;
 			left: -9999px;
 		}
-		tr { border: 1px solid #ccc; }
-		td { 
+			#tabla_evaluar tr { border: 1px solid #ccc; }
+			#tabla_evaluar td { 
 			/* Behave  like a "row" */
 			border: none;
 			border-bottom: 1px solid #eee; 
 			position: relative;
 			padding-left: 50%; 
 		}
-		td:before { 
+			#tabla_evaluar td:before { 
 			/* Now like a table header */
 			position: absolute;
 			/* Top/left values mimic padding */
@@ -372,8 +377,8 @@ box-shadow: inset 0 0 5px 0px #248348;
 		/*
 		Label the data
 		*/
-		td:nth-of-type(1):before { content: "#";	 }
-		td:nth-of-type(2):before { content: "Fecha Evaluacion"; }
-		td:nth-of-type(3):before { content: "Estado"; }
-		td:nth-of-type(4):before { content: "Nota"; }
+			#tabla_evaluar td:nth-of-type(1):before { content: "#";	 }
+			#tabla_evaluar td:nth-of-type(2):before { content: "Fecha Evaluacion"; }
+			#tabla_evaluar td:nth-of-type(3):before { content: "Estado"; }
+			#tabla_evaluar td:nth-of-type(4):before { content: "Nota"; }
 	}

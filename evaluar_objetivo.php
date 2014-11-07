@@ -62,12 +62,12 @@ $actual=$ado->evaluacionActual($fechas);
 			<div class="clear cl2" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
 					<div class="grid_12"><p class="texto3"> <?php echo $descripcion ?> </p></div>
-				<div class="grid_8 prefix_2">
+				<div class="grid_8 prefix_2" id="tabla_evaluar">
 					<table>
 						<thead>
 						<tr id="categorias">
 							<th>#</th>
-							<th>aca va la fecha de evaluacion</th>
+							<th>Fecha De Evaluacion</th>
 							<th>Estado</th>
 							<th>Nota</th>
 						</tr>
