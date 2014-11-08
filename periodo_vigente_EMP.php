@@ -4,7 +4,7 @@
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
-require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
+//brequire('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -66,13 +66,13 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 							</ul>
 					</div>
 					<div class="grid_3">
-						<h5 class="texto">Empleados evaluados</h5>
+						<h5 class="texto">Mis Compa&ntilde;eros</h5>
 							<ul id="lista_empleados">
 							<?php
 							if($empleados)
 							{
 								foreach($empleados as $key=>$nombre){
-								echo "<li><a href='detalles_empleado.php?id=$key'> $nombre </a></li>";
+								echo "<li><a href='detalles_empleado_EMP.php?id=$key'> $nombre </a></li>";
 								}
 							}
 							?>

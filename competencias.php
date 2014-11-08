@@ -40,7 +40,9 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
             </header>
 			<fieldset>
 				<section>
-				<?php
+			<?php
+			if($competencias)
+			{
 				foreach($competencias as $key=>$nombre)
 				{
                     echo"
@@ -48,7 +50,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					</br>
 					";
 				}
-				?>
+			}
+			?>
 				</section>
 				
 				<button class="button" type="submit">Continuar</button>

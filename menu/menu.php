@@ -1,6 +1,9 @@
 <?php
 $rol=@$_SESSION['USUARIO']['rol'];
 switch ($rol) {
+  case 0:
+    $principal='home_empleado.php';
+    break;
   case 1:
     $principal='home_admin.php';
     break;
@@ -8,7 +11,7 @@ switch ($rol) {
     $principal='home_evaluador.php';
     break;
   case 3:
-    $principal='home_empleado.php';
+    $principal='home_admin.php';
     break;
   default:
 	$principal='home.php';
@@ -24,15 +27,18 @@ switch ($rol) {
 			<?php 
 			if ($rol==1){
 			echo "<li><a href='home_admin.php'>Menu Administrador</a></li> ";
+			echo "<li><a href='home_empleado.php'>Menu Empleado</a></a></li> ";
 			}
 			if ($rol==2){
 			echo "<li><a href='home_evaluador.php'>Menu Evaluador</a></li> ";
+			echo "<li><a href='home_empleado.php'>Menu Empleado</a></a></li> ";
 			}
 			if ($rol==3){
 			echo "<li><a href='home_admin.php'>Menu Administrador</a></li> ";
 			echo "<li><a href='home_evaluador.php'>Menu Evaluador</a></li> ";
+			echo "<li><a href='home_empleado.php'>Menu Empleado</a></a></li> ";
 			}
-			if ($rol){
+			if ($rol==0){
 			echo "<li><a href='home_empleado.php'>Menu Empleado</a></a></li> ";
 			}
 			?>

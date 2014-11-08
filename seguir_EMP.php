@@ -25,15 +25,17 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 //incluimos la clase de acceso a datos
 	require('php_lib/ado.periodo.php');
 	$adoP=new adoPeriodo();
-//obtenemos el array de periodos
-	@$periodos=$adoP->getAllPeriodos();
+//obtenemos el array de periodos del usuario logueado
+	$id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
+	@$periodos=$adoP->getPeriodos($id_user);
 	//var_dump($periodos); //para ver el contenido del array
 ?>
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
-		<form action="controlers/seguir_controler.php" method="post" id="buscar_periodo" class="alta_periodo" >
-			<header>Seguir / Evaluar
+		
+		<form action="controlers/seguir_EMP_controler.php" method="post" id="buscar_periodo" class="alta_periodo" >
+			<header>Periodos en los que estoy
 				<label class="aclaracion">.:Seleccione el periodo para evaluar a sus pares:.</label>
             </header>
 			<fieldset>
@@ -49,6 +51,7 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 				<button class="button" type="submit">Buscar</button>
         </fieldset>
         </form>
+		
 		<div id="divErrores">
 		<ul id="lista"></ul>		
 		</div>

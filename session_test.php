@@ -32,7 +32,7 @@ $ado = new adoEmpleado();
 			echo "<br/>";
 			echo 'rol desde variable: '.@$_SESSION['USUARIO']['rol'];
 			echo "<br/>";
-			echo 'ID Perfil: '.$_SESSION['id_perfil'];
+			echo 'ID Perfil: '.@$_SESSION['id_perfil'];
 			
 			echo "<h2>Test de funciones</h2>";
 			$rol=mi_rol();

@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 //lista de competencias selectas para este perfil
 	$competencias=$_SESSION['TEMP']['competencias_selectas'];
 
-	
+//almacenamos en la BD con el metodo "competencia_perfil"
 foreach($competencias as $id_competencia)
 {
 	$adoP->competencia_perfil($id_competencia,$id_perfil);
@@ -46,7 +46,7 @@ foreach($competencias as $id_competencia)
 //borramos las variables temporales de session
 unset($_SESSION['TEMP']);
 	
-//vamos a nuevo_objetivo.php
+//salimos del modulo perfil.php
 	header('Location: ../home_evaluador.php');
 	die();
 } 

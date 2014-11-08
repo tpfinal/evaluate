@@ -91,11 +91,34 @@ private $array_periodos=array();
 		
 	}	
 
-//Retorna un array con los nombres de todos los Perfiles y sus IDs como indices
+//Retorna un array con los nombres de todos los Periodos y sus IDs como indices
 	function getAllPeriodos()
 	{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("SELECT * FROM periodo"); // ejecuta la consulta para traer una lista
+
+	//llenamos el array  con los datos recividos
+	
+		while($row=mysql_fetch_array($result))
+		{
+		$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
+		}
+			
+		//var_dump($this->array_perfiles); //para ver el contenido del array
+	
+		return $this->array_periodos;
+	}
+	
+//Retorna un array con los nombres de los Periodos que corresponden a un Empleado
+	function getPeriodos($id_empleado)
+	{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("	SELECT p.id_periodo,p.nombre_periodo
+												FROM periodo as p
+												JOIN empleados_periodo as ep
+												ON p.id_periodo=ep.id_periodo
+												WHERE ep.id_empleado=$id_empleado
+											  "); // ejecuta la consulta para traer una lista
 
 	//llenamos el array  con los datos recividos
 	
@@ -120,7 +143,7 @@ private $array_periodos=array();
 			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
 	}
 	
-//Guardar fechas de evaluacion del periodo
+//Obtener las fechas de evaluacion de un periodo
 
 	function getFechas($id_periodo)
 	{

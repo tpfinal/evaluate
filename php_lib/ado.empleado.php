@@ -168,7 +168,7 @@ private $array_empleados=array();
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery(" SELECT nombre,apellido
 												FROM empleados
-												WHERE id_empleado=$id"); // ejecuta la consulta para traer al cliente 
+												WHERE id_empleado='$id'"); // ejecuta la consulta para traer el nombre
 			$row=@mysql_fetch_array($result);
 			
 			//var_dump($row); //para ver el contenido del array

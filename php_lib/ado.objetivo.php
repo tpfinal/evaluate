@@ -151,7 +151,7 @@ private $obj_objetivo;
 
 
 
-//Regresa un array con los nombres de los COMPETENCIAS y los id como indices de un PERFIL
+//Regresa un array con los nombres de las COMPETENCIAS y los id como indices de un PERFIL
 
 	function getCompetencias($id_perfil=null)	
 	{

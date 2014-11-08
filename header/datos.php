@@ -3,7 +3,7 @@
 require_once('model/class.empleado.php');
 require_once('php_lib/conexion.php');
 require_once('php_lib/ado.empleado.php');
-$ado = new adoEmpleado();
+$adoE = new adoEmpleado();
 
 //tomamos las variables de session
 $user=$_SESSION['USUARIO']['user'];
@@ -17,15 +17,19 @@ switch ($rol) {
     $rol_name='Evaluador';
     break;
   case 3:
-    $rol_name='Administrador Evaluador';
+    $rol_name='Evaluador - Admin.';
     break;
   default:
 	$rol_name='Empleado';
 	break;
 } 
 if($user!='admin'){
-$obj_empleado=$ado->getEmpleado($user);
-$user=$obj_empleado->getNombre()." ".$obj_empleado->getApellido();
+$id=$adoE->getIdByDni($user);
+$user=$adoE->getNameEmpleado($id);
+
+//$obj_empleado=$ado->getEmpleado($user);
+//$user=$obj_empleado->getNombre()." ".$obj_empleado->getApellido();
+
 }else{
 $user="Super Administrador";	
 }

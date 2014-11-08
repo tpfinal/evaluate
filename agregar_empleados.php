@@ -33,7 +33,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 
 	//recibimos los datos por post
     //@$id_periodo=$_POST['id_periodo'];
-	$listaEmpleados=$ado->getAllEmpleados();
+	$listaEmpleados=$adoE->getAllEmpleados();
 	$listaPerfiles=$adoP->getAllPerfiles();
 ?>
 	<div class="container_12">
