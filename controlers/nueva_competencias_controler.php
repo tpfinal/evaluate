@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	require('../php_lib/ado.objetivo.php');//incluimos la clase de acceso a datos
 	
 	//recibimos los datos por post
-    @$nombre=$_POST['nombre_objetivo'];
-	@$descripcion=$_POST['descripcion_objetivo'];
+    @$nombre=$_POST['nombre_competencia'];
+	@$descripcion=$_POST['descripcion_competencia'];
 	@$tipo='c';
 	//@$id_perfil=$_SESSION['id_perfil'];
 	

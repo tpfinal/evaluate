@@ -77,3 +77,45 @@
     });
 
 })(jQuery, window, document);
+
+
+/************************** VALIDACION DEL FORMULARIO DE ALTA DE COMPETENCIAS ***********************************/
+(function($,W,D)
+{
+    var JQUERY4U = {};
+
+    JQUERY4U.UTIL =
+    {
+        setupFormValidation: function()
+        {
+            //form validation rules
+            $('#alta_competencia').validate({
+                rules: {
+					nombre_competencia: {
+                        required: true
+                    },
+					descripcion_competencia: {
+                        required: true
+                    }
+                },
+				
+                messages: {
+					nombre_competencia: "Ingrese un nombre para la competencia",
+                    descripcion_competencia: "Ingrese una descripcion para la competencia"						
+				},
+				
+                submitHandler: function(form) {
+				alert('Competencia guardada!');
+				form.submit();
+                }
+				
+            });
+        }
+    }
+
+    //when the dom has loaded setup form validation rules
+    $(D).ready(function($) {
+        JQUERY4U.UTIL.setupFormValidation();
+    });
+
+})(jQuery, window, document);
