@@ -24,7 +24,8 @@ foreach($competencias as $key=>$nombre)
 	
 //generamos la evaluacion con la fecha actual
 	$hoy=date("Y-m-d");
-	$id_evaluacion=$adoP->guardarFecha($hoy,$id_periodo);
+	$tipo='c';
+	$id_evaluacion=$adoP->guardarFecha($hoy,$id_periodo,$tipo);
 //var_dump($id_evaluacion);
 
 //Guardamos la nota (requiere id_objetivo, id_empleado,id_evaluacion y nota)

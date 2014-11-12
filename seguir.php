@@ -33,6 +33,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
+		
 		<form action="controlers/seguir_controler.php" method="post" id="buscar_periodo" class="alta_periodo" >
 			<header>Seguir / Evaluar
 				<label class="aclaracion">.:Seleccione el periodo que quiere visualizar:.</label>

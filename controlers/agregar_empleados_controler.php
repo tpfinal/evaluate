@@ -43,12 +43,12 @@ function fechaSQL($fecha)
 	$newFecha = $sql_date->format('Y-m-d'); 
 	return $newFecha;
 }
-
+$tipo='o';
   for($i=1 ; $i<=$cantidad ; $i++)
    {
    		$fecha=$_SESSION['TEMP'][$i];
 		$fechaSQL=fechaSQL($fecha);
-		$adoP->guardarFecha($fechaSQL,$id_periodo);
+		$adoP->guardarFecha($fechaSQL,$id_periodo,$tipo);
 		//echo $fecha.' ';
    }
 

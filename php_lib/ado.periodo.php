@@ -143,7 +143,7 @@ private $array_periodos=array();
 	
 		while($row=mysql_fetch_array($result))
 		{
-		$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
+			$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
 		}
 			
 		//var_dump($this->array_perfiles); //para ver el contenido del array
@@ -154,11 +154,11 @@ private $array_periodos=array();
 //Guardar fechas de evaluacion del periodo
 //retorna el id de la nueva evaluacion guardada
 
-	function guardarFecha($fecha,$id_periodo)
+	function guardarFecha($fecha,$id_periodo,$tipo)
 	{
 			$obj_sQuery=new sQuery();
-			$query1="	INSERT INTO evaluacion (fecha_evaluacion,id_periodo) 
-						VALUES ('$fecha','$id_periodo')";
+			$query1="	INSERT INTO evaluacion (fecha_evaluacion,id_periodo,tipo_evaluacion) 
+						VALUES ('$fecha','$id_periodo','$tipo')";
 			
 			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
 			
@@ -176,10 +176,12 @@ private $array_periodos=array();
 	{
 			$obj_sQuery=new sQuery();
 			$query1="	SELECT * FROM evaluacion
-						WHERE id_periodo='$id_periodo'";
+						WHERE id_periodo='$id_periodo'
+						AND tipo_evaluacion='o'
+						";
 			
 			$result=$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
-			var_dump($result);
+			//var_dump($result);
 	//llenamos el array  con los datos recividos
 	
 		while($row=mysql_fetch_array($result))
