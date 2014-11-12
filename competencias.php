@@ -10,6 +10,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <html lang="es">
 	<head>
 	<?php include("metadata.php"); ?>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	</head>
  <body class="page1" id="top">
 <!--==============================header=================================--> 
@@ -43,13 +44,21 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			<?php
 			if($competencias)
 			{
+				
+				echo "<ul id='lista_checkbox_competencias'>";
+				
 				foreach($competencias as $key=>$nombre)
 				{
                     echo"
-					<input type='checkbox'  name='$key' value='$key'>$nombre</input>
-					</br>
+					
+					<li>
+					<input type='checkbox' id='' name='$key' value='$key' > $nombre  </input>
+					</li>
+					
 					";
 				}
+				echo "</ul>";
+			
 			}
 			?>
 				</section>

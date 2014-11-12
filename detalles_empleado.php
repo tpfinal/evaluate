@@ -28,12 +28,10 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	require('php_lib/ado.objetivo.php');//incluimos la clase de acceso a datos de los objetivos
 	require('php_lib/ado.perfil.php');//incluimos la clase de acceso a datos de los perfiles
 	require('model/class.perfil.php');//incluimos el modelo de la clase perfil
-
 	//creamos los objetos de acceso a datos
 	$ado=new adoObjetivo();
 	$adoP=new adoPerfil();
 	$adoE=new adoEmpleado();
-	
 //recibimos por GET el id del empleado 
 $id_empleado=$_GET['id'];
 
@@ -66,19 +64,21 @@ $competencias=$ado->getCompetencias($obj_perfil->getId());
 		<div class="content" id="dejar_espacio">
 		
 		<div class="grid_6" id="columna_objetivos">
+
 			<h5 class="texto2">Objetivos</h5>
 			<ul id="lista_objetivos">
 				<?php
 				if(@$objetivos)
-					{
+				{
 					foreach($objetivos as $key=>$nombre){
 						echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre </a></li>";
 					}
 				}
+
 				?>
+
 			</ul>
 		</div>
-		
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Competencias</h5>
 			<ul id="lista_competencias_desactivada">
@@ -92,7 +92,6 @@ $competencias=$ado->getCompetencias($obj_perfil->getId());
 				?>
 			</ul>
 		</div>
-		
 		</div>
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>

@@ -1,5 +1,5 @@
 <div class="grid_12">
-<p class="subtitulo">
+<p class="subtitulo2">
 <?php
 
 

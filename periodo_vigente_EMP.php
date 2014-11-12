@@ -83,7 +83,7 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">
-        <a href="seguir.php">
+        <a href="seguir_EMP.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>

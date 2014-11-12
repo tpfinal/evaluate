@@ -49,83 +49,6 @@ text-align: center;
 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 border-radius: 5px;
 }
-#lista_objetivos{
-color: #000;
-letter-spacing:1px;
-margin:5%;
-list-style-type: disc;
-list-style-image: url(../images/arrow.png);
-list-style-position: inside;
-font-size:18px;
-padding-bottom:3%;
-
-font-family: 'Josefin Sans', sans-serif;
-}
-
-#lista_objetivos_desactivada{
-color: #000;
-letter-spacing:1px;
-margin:5%;
-list-style-type: disc;
-list-style-image: url(../images/asterisco.png);
-list-style-position: inside;
-font-size:18px;
-padding-bottom:3%;
-
-font-family: 'Josefin Sans', sans-serif;
-}
-
-#lista_objetivos :hover{
- list-style-image: url(../images/arrow_printed.png);
- }
- 
- #lista_objetivos li {
-margin: 7px;
-}
-
-#lista_objetivos_desactivada li {
-margin: 7px;
-}
-
- #lista_competencias{
-color: #000;
-letter-spacing:1px;
-margin:5%;
-list-style-type: disc;
-list-style-image: url(../images/arrow.png);
-list-style-position: inside;
-font-size:22px;
-font-family: 'Josefin Sans', sans-serif;
-list-style-type: disc;
-list-style-position: inside;
-}
-
-
-#lista_competencias :hover{
- list-style-image: url(../images/arrow_printed.png);
- }
- 
- #lista_competencias_desactivada{
-color: #000;
-letter-spacing:1px;
-margin:5%;
-list-style-type: disc;
-list-style-image: url(../images/asterisco.png);
-list-style-position: inside;
-font-size:22px;
-font-family: 'Josefin Sans', sans-serif;
-list-style-type: disc;
-list-style-position: inside;
-}
-
-#lista_competencias li {
-margin: 7px;
-}
-
-#lista_competencias_desactivada li {
-margin: 7px;
-}
-
 
 .uno {
 padding-bottom: 10px;
@@ -151,64 +74,6 @@ padding-bottom:50%;
 #dejar_espacio2 {
 padding-bottom:30%;
 }
-
-#lista_empleados{
-margin-top:3.5%;
-font: 400 17px 'Open Sans', Monospace;
-color:#252525;
-list-style-image: url(../images/arrow.png);
-
-}
-
-#lista_empleados li:hover {
-
-list-style-image: url(../images/arrow_printed.png);
-
-}
-
-#lista_empleados a:hover {
-text-decoration: underline;
-font: 500 18px 'Open Sans', sans-serif;
-}
-
-#lista_fechas{
-margin-top:3.5%;
-font: 500 17px 'Open Sans', Monospace;
-}
-
-#titulo_fechas{
-text-align:center;
-margin-left: 9.5%;
-}
-#titulo_fechas h5 {
-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-border-radius: 5px;
-}
-#titulo_fechas h5:hover {
-text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
- -moz-box-shadow: 0px 0px 5px #5D9A75; 
--webkit-box-shadow: 0px 0px 5px #5D9A75; 
-box-shadow: 0px 0px 5px #5D9A75;
-}
-
-
-
-
-
-#columna_objetivos h5 {
-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-border-radius: 5px;
-}
-#columna_objetivos h5:hover {
-text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
- -moz-box-shadow: 0px 0px 5px #5D9A75; 
--webkit-box-shadow: 0px 0px 5px #5D9A75; 
-box-shadow: 0px 0px 5px #5D9A75;
-}
-
-
-
-
 
 
 .fecha{
@@ -369,27 +234,22 @@ letter-spacing: 2px;
 font-weight:bold;
 
 }
+
+.subtitulo3 {
+color: #000;
+letter-spacing:1px;
+font-size:20px;
+font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
 .centrar {
 	text-align:center;
 	}
 
 
-/****Lists****/
-ul {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-ul.list {
-    margin-bottom: 8px;
-}
-ul.list li {
-    padding-left: 22px;
-    background: url(../images/marker.png) 0 7px no-repeat;
-}
-ul.list li+li {
-    margin-top: 4px;
-}
+
 /****Links****/
 a {
 	text-decoration: none;

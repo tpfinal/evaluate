@@ -25,12 +25,12 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3">
 	
-		<form action="controlers/nueva_competencias_controler.php" method="post" id="alta_objetivo" class="abm_perfil">
+		<form action="controlers/nueva_competencias_controler.php" method="post" id="alta_competencia" class="abm_perfil">
 			<header>Nueva Competencia</header>
 			<fieldset>
 				<section>
 				<label class="input">
-                            <input type="text" name="nombre_objetivo"  placeholder="Nombre"></input>
+                            <input type="text" name="nombre_competencia"  placeholder="Nombre"></input>
                             <b class="tooltip tooltip-bottom-right">
 							Ingrese un nombre para la competencia
 							</b>  
@@ -38,7 +38,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				</section>
 				<section>
 					<label class="input">
-							<input type="textarea" name="descripcion_objetivo"  placeholder="Descripcion"></input>
+							<input type="textarea" name="descripcion_competencia"  placeholder="Descripcion"></input>
 							<b class="tooltip tooltip-bottom-right">
 							Ingrese una descripcion para la competencia
 							</b>  
