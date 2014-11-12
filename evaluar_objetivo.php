@@ -57,7 +57,8 @@ $actual=$ado->evaluacionActual($fechas);
 <div class="container_12">
 <div id="div_titulo">
 <label class="subtitulo"> <?php echo $nombre_empleado ?> </label>
-<label class="subtitulo2"> <?php echo $nombre_objetivo ?> </label>
+</br>
+<label class="subtitulo2"> <?php echo 'Objetivo: '.$nombre_objetivo ?> </label>
 </div>
 			<div class="clear cl2" id="espacio"></div>
 		<div class="content" id="dejar_espacio">

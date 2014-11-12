@@ -31,31 +31,45 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 	$ado=new adoObjetivo();
 	$adoP=new adoPerfil();
 	$adoE=new adoEmpleado();
+	
 //recibimos por GET el id del empleado 
 $id_empleado=$_GET['id'];
+
 //lo guardamos en session
 $_SESSION['TEMP']['id_empleado']=$id_empleado;
+
 //recuperamos el id_periodo de la session
 $id_periodo=$_SESSION['TEMP']['id_periodo'];
+
 //obtenemos un array con los objetivos del empleado de este periodo
 $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);
+
 //nos retorna el objeto perfil correspondiente
 $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
+//var_dump($obj_perfil->getId());
+
+//obtenemos un array con las competencias del perfil
+$competencias=$ado->getCompetencias($obj_perfil->getId());
+
+//Guardamos el array en session
+$_SESSION['TEMP']['competencias']=$competencias;
+
 ?>
 <div class="container_12">
 <div id="div_titulo">
 <label class="subtitulo"><?php echo ''.$adoE->getNameEmpleado($id_empleado); ?></label>
+</br>
 <label class="subtitulo2"><?php echo ''.$obj_perfil->getNombre(); ?></label>
 </div>
 <div class="clear cl1" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
 		
-		
+		<!--
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Objetivos</h5>
 			<ul id="lista_objetivos_desactivada">
 				<?php
-				if($objetivos)
+				if(@$objetivos)
 					{
 						foreach($objetivos as $key=>$nombre){
 							echo "<li> $nombre </li>";
@@ -64,14 +78,54 @@ $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
 				?>
 			</ul>
 		</div>
+		-->
 		
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Competencias</h5>
 			<ul id="lista_competencias">
-					<li> Trabajo en equipo</li>
-					<li> Compromiso con las tareas asignadas</li>
-					<li> Comunicacion</li>
-					<li> Entusiasta y dinamico</li>
+				
+				
+			
+				<?php
+				if(@$competencias){
+				
+				//IF que activa o desactiva las votaciones de las competencias
+					if(1==1){
+					//Form para evaluar las competencias si estan activas
+						echo "
+						<form action='controlers/evaluar_competencias_controler.php' method='post' id='ingresar_nota' class='ingresar_nota' name='ingresar_nota'>
+						";
+						foreach($competencias as $key=>$nombre){
+							echo "
+							<li> $nombre 
+										<select id='ddl_notas' name='nota_$key'>
+											<option value=1>1</option>
+											<option value=2>2</option> 
+											<option value=3>3</option> 
+											<option value=4>4</option> 
+											<option value=5>5</option> 
+										</select>	
+							</li>
+							";
+						}
+							echo "
+							<button class='button' type='submit' onsubmit='return validar()'> Evaluar </button>
+							</form>
+							";
+					}
+					
+					else{
+					//cuandoi ya se evaluaron las competencias el select no aparecerá
+					foreach($competencias as $key=>$nombre){
+							echo "
+							<li> $nombre </li>
+							";
+							}
+					}
+				}
+				?>
+				
+				
 			</ul>
 		</div>
 		

@@ -26,7 +26,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	require('php_lib/ado.periodo.php');
 	$adoP=new adoPeriodo();
 //obtenemos el array de periodos
-	@$periodos=$adoP->getAllPeriodos();
+	$id_user=$adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
+	@$periodos=$adoP->getMyPeriodos($id_user);
 	//var_dump($periodos); //para ver el contenido del array
 ?>
 	<div class="container_12">

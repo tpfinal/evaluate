@@ -98,32 +98,30 @@ private $obj_objetivo;
 	function getObjetivos($id_empleado,$id_periodo)	
 	{
 			$obj_cliente=new sQuery();
-			$query1="	SELECT id_objetivo,nombre_objetivo
+			$query1="	SELECT DISTINCT id_objetivo,nombre_objetivo
 						FROM objetivos as o 
 						JOIN empleados_periodo as ep
 						WHERE o.id_perfil=ep.id_perfil
-						AND ep.id_perfil=( 	SELECT id_perfil
-											FROM empleados_periodo
-											WHERE id_empleado=$id_empleado
-											AND id_periodo=$id_periodo )
 						AND ep.id_empleado=$id_empleado
-						AND ep.id_periodo=$id_periodo";
+						AND ep.id_periodo=$id_periodo
+						AND o.tipo_objetivo='o'
+						";
 
 		$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
 			
 //llenamos el array de objetivos con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
-			$this->array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
+			$array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
 		}
 			
 		//var_dump($result);
 		//var_dump($this->array_objetivos); //para ver el contenido del array
 	
-		return @$this->array_objetivos;	
+		return @$array_objetivos;	
 	}	
 	
-	//Retorna un array con las fechas de evaluacion de un ojetivo
+//Retorna un array con las fechas de evaluacion de un ojetivo
 
 		function getFechasEvaluacion($id_objetivo,$id_empleado,$id_periodo)
 		{
@@ -134,7 +132,8 @@ private $obj_objetivo;
 												JOIN evaluacion as ev ON ev.id_periodo=ep.id_periodo
 												WHERE ep.id_periodo=$id_periodo
 												AND ep.id_empleado=$id_empleado
-												AND o.id_objetivo=$id_objetivo	"); 
+												AND o.id_objetivo=$id_objetivo	
+												"); 
 
 	//llenamos el array de empleados con los datos recividos
 		while($row=mysql_fetch_array($result))
@@ -150,8 +149,8 @@ private $obj_objetivo;
 /////----------------------------METODOS PARA COMPETENCIAS------------------------------//////		
 
 
-
 //Regresa un array con los nombres de las COMPETENCIAS y los id como indices de un PERFIL
+//si no se ingresa ningun id de perfil regresará un listado completo de todas las competencias
 
 	function getCompetencias($id_perfil=null)	
 	{
@@ -159,25 +158,25 @@ private $obj_objetivo;
 	
 	if($id_perfil)
 		{
-			$query1="	SELECT id_objetivo,nombre_objetivo
+			$query1="	SELECT DISTINCT o.id_objetivo,o.nombre_objetivo
 						FROM objetivos as o 
 						JOIN competencias_perfil as cp
-						WHERE o.id_objetivo=cp.id_competencia
-						AND cp.id_perfil=$id_perfil
+						ON o.id_objetivo=cp.id_competencia
+						WHERE cp.id_perfil=$id_perfil
 					";
 
 		$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
-			
+					
+		//var_dump($result);
+		
 	//llenamos el array de objetivos con los datos recividos
 		while($row=mysql_fetch_array($result))
 			{
-				$this->array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
+				$array_competencias[$row['id_objetivo']]=$row['nombre_objetivo'];
 			}
 			
-		//var_dump($result);
-		//var_dump($this->array_objetivos); //para ver el contenido del array
-	
-		return @$this->array_objetivos;	
+		//var_dump($array_objetivos); //para ver el contenido del array
+		return @$array_competencias;	
 		}
 		
 		else
@@ -194,13 +193,13 @@ private $obj_objetivo;
 	//llenamos el array de objetivos con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
-			$this->array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
+			$array_competencias[$row['id_objetivo']]=$row['nombre_objetivo'];
 		}
 			
 		//var_dump($result);
 		//var_dump($this->array_objetivos); //para ver el contenido del array
 	
-		return @$this->array_objetivos;	
+		return @$array_competencias;	
 		}
 		
 	}

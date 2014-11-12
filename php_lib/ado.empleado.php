@@ -28,12 +28,13 @@ private $array_empleados=array();
 	if ($dni!=0)
 		{
 			$obj_cliente=new sQuery();
-			$result=$obj_cliente->executeQuery("select id_empleado from empleados where dni = $dni"); // ejecuta la consulta para traer al empleado 
+			$result=$obj_cliente->executeQuery("SELECT id_empleado FROM empleados WHERE dni = $dni"); // ejecuta la consulta para traer al empleado 
 			$row=mysql_fetch_array($result);
 			$this->id=$row['id_empleado'];
 			
 			return $this->id;
 		}
+		else return 0;
 	}
 	
 //metodo que trae los datos del empleado y regresa un objeto empleado por el DNI(sin los datos de usuario)

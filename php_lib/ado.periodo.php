@@ -109,6 +109,25 @@ private $array_periodos=array();
 		return $this->array_periodos;
 	}
 	
+//Retorna un array con los periodos creados por un evaluador especifico
+	function getMyPeriodos($id_creador)
+	{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("	SELECT * FROM periodo 
+												WHERE id_creador=$id_creador"); // ejecuta la consulta para traer una lista
+
+	//llenamos el array  con los datos recividos
+	
+		while($row=mysql_fetch_array($result))
+		{
+		$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
+		}
+			
+		//var_dump($this->array_perfiles); //para ver el contenido del array
+	
+		return $this->array_periodos;
+	}
+	
 //Retorna un array con los nombres de los Periodos que corresponden a un Empleado
 	function getPeriodos($id_empleado)
 	{
@@ -133,6 +152,7 @@ private $array_periodos=array();
 	}
 		
 //Guardar fechas de evaluacion del periodo
+//retorna el id de la nueva evaluacion guardada
 
 	function guardarFecha($fecha,$id_periodo)
 	{
@@ -141,7 +161,14 @@ private $array_periodos=array();
 						VALUES ('$fecha','$id_periodo')";
 			
 			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
+			
+			$query2="	SELECT MAX(id_evaluacion) as max FROM evaluacion ";
+			$result=$obj_sQuery->executeQuery($query2); // ejecuta la consulta para  obtener el id del registro nuevo
+			$row=mysql_fetch_array($result);
+
+			return $row['max'];
 	}
+	
 	
 //Obtener las fechas de evaluacion de un periodo
 
@@ -157,7 +184,7 @@ private $array_periodos=array();
 	
 		while($row=mysql_fetch_array($result))
 		{
-		$array_fechas[$row['id_evaluacion']]=$row['fecha_evaluacion'];
+			$array_fechas[$row['id_evaluacion']]=$row['fecha_evaluacion'];
 		}
 			
 		//var_dump($array_fechas); //para ver el contenido del array

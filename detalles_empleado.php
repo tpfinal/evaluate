@@ -36,43 +36,60 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	
 //recibimos por GET el id del empleado 
 $id_empleado=$_GET['id'];
+
 //lo guardamos en session
 $_SESSION['TEMP']['id_empleado']=$id_empleado;
+
 //recuperamos el id_periodo de la session
 $id_periodo=$_SESSION['TEMP']['id_periodo'];
+
 //obtenemos un array con los objetivos del empleado de este periodo
 $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);
+//var_dump($objetivos);
+
 //buscamos el objeto perfil correspondiente
 $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
+//var_dump($obj_perfil);
+
+//obtenemos un array con las competencias del perfil
+$competencias=$ado->getCompetencias($obj_perfil->getId());
+//var_dump($competencias);
+
 ?>
 <div class="container_12">
 <div id="div_titulo">
 <label class="subtitulo"><?php echo ''.$adoE->getNameEmpleado($id_empleado); ?></label>
+</br>
 <label class="subtitulo2"><?php echo ''.$obj_perfil->getNombre(); ?></label>
 </div>
 <div class="clear cl1" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
+		
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Objetivos</h5>
 			<ul id="lista_objetivos">
-<?php
-if($objetivos)
-	{
-		foreach($objetivos as $key=>$nombre){
-			echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre </a></li>";
-		}
-	}
-?>
+				<?php
+				if(@$objetivos)
+					{
+					foreach($objetivos as $key=>$nombre){
+						echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre </a></li>";
+					}
+				}
+				?>
 			</ul>
 		</div>
 		
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Competencias</h5>
 			<ul id="lista_competencias_desactivada">
-					<li> Trabajo en equipo</li>
-					<li> Compromiso con las tareas asignadas</li>
-					<li> Comunicacion</li>
-					<li> Entusiasta y dinamico</li>
+				<?php
+				if(@$competencias)
+					{
+						foreach($competencias as $key=>$nombre){
+							echo "<li> $nombre </li>";
+						}
+					}
+				?>
 			</ul>
 		</div>
 		

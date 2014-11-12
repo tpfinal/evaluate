@@ -32,12 +32,12 @@ $ado = new adoEmpleado();
 			echo "<br/>";
 			echo 'rol desde variable: '.@$_SESSION['USUARIO']['rol'];
 			echo "<br/>";
-			echo 'ID Perfil: '.@$_SESSION['id_perfil'];
 			
 			echo "<h2>Test de funciones</h2>";
 			$rol=mi_rol();
 			echo 'rol desde funcion: '.@$rol; 
 			echo "<br/>";
+			var_dump(@$_SESSION['USUARIO']['user']);
 			$id= $ado->getIdByDni(@$_SESSION['USUARIO']['user']);
 			echo 'id desde funcion: '.@$id;
 			echo "<br/>";
@@ -46,10 +46,9 @@ $ado = new adoEmpleado();
 			echo "<h2>Test de objeto empleado</h2>";
 		//getEmpleado regresa un objeto con los datos del empleado
 			$obj_empleado=$ado->getEmpleado($_SESSION['USUARIO']['user']);
+			echo 'ID usuario: '.$ado->getIdByDni($_SESSION['USUARIO']['user']);
 			if($obj_empleado){
-			echo $obj_empleado->getNombre();
-			echo '</br>';
-			echo $obj_empleado->getDni();
+			var_dump($obj_empleado);
 			}else
 			echo '<h3>***SUPER USUARIO***</h3>';
 		//getNameEmpleado
