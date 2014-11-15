@@ -21,11 +21,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
    for($i=1 ; $i<=$cantidad ; $i++)
    {
 	$_SESSION['TEMP'][$i]=$_POST['theDate'.$i];
+	//var_dump($_SESSION['TEMP'][$i]);
    }
    
-	
 
-	
 //vamos a agregar_empleados.php
 	header('Location: ../agregar_empleados.php');
 	die();

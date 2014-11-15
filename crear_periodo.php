@@ -56,15 +56,15 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				</section>
 				<section >
 						<input type="text" value="" readonly name="theDate1" placeholder="Fecha de inicio" class="calendario" id="fecha_inicio"/>
-						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate1,'mm/dd/yyyy',this)"/>
+						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate1,'dd/mm/yyyy',this)"/>
 												
-						<label class="aclaracion2">.:La fecha se expresa en el formato mes/dia/a&ntilde;o:.</label>
+						<label class="aclaracion2">.:La fecha se expresa en el formato dia/mes/a&ntilde;o:.</label>
 				</section>
 				<section >
 						<input type="text" value="" readonly name="theDate2" placeholder="Fecha de finalizacion" class="calendario"/ id="fecha_final">
-						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate2,'mm/dd/yyyy',this)"/>
+						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate2,'dd/mm/yyyy',this)"/>
 						
-						<label class="aclaracion2">.:La fecha se expresa en el formato mes/dia/a&ntilde;o:.</label>
+						<label class="aclaracion2">.:La fecha se expresa en el formato dia/mes/a&ntilde;o:.</label>
 
 				</section>
 				<button class="button" type="submit" onclick="return validar_fecha_periodo()">Siguiente</button>

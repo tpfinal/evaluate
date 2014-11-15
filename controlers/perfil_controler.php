@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	
 //guardamos en session el los datos del perfil 
 	$_SESSION['TEMP']['nombre_perfil']=$nombre;
-	$_SESSION['TEMP']['nombre_descripcion']=$descripcion;
+	$_SESSION['TEMP']['descripcion_perfil']=$descripcion;
 	
 //creamos el objeto objetivo con los datos recividos
 	$obj_perfil = new perfil($nombre,$descripcion);

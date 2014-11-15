@@ -19,10 +19,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	//$_SESSION['TEMP']['nombre_competencia']=$nombre;
 	
 	
-//creamos el objeto objetivo con los datos recividos
+//creamos el objeto objetivo con los datos de la competencia
 	$obj = new objetivo($nombre,$descripcion,$tipo,0);
+	//var_dump($obj);
 	
-
 //guardamos la competencia en la BD
 	$ado=new adoObjetivo();
 	$ado->guardarObjetivo($obj);

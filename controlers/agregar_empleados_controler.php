@@ -7,9 +7,8 @@ session_start();
     require('../model/class.periodo.php'); //incluimos la clase periodo
 	require_once('../php_lib/conexion.php'); //incluimos la clase conexion
 	require('../php_lib/ado.periodo.php');//incluimos la clase de acceso a datos
-	//require('../php_lib/ado.empleado.php');//incluimos la clase de acceso a datos	
+	require('../php_lib/formato_fechas.php');
 	
-	//$adoE=new adoEmpleado();
 	$adoP=new adoPeriodo();
 	//$id_creador= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 	
@@ -22,56 +21,58 @@ session_start();
 	$id_creador=$_SESSION['TEMP']['creador'];		
 	$cantidad=$_SESSION['TEMP']['cantidad'];
 	
-//GUARDAMOS EL PERIODO//
+$inicio=stdasql($inicio);
+//var_dump($inicio);
+
+$fin=stdasql($fin);
+//var_dump($fin);
 	
 //creamose el objeto periodo
 	@$obj_periodo= new periodo($nombre, $inicio, $fin, $id_creador);
-//var_dump($obj_periodo); //para ver el contenido del objeto
-	
-//Guardamos el Periodo
-	$adoP->guardarPeriodo($obj_periodo);
-
-//obtenemos el id asignado por la BD
-	$id_periodo=$adoP->getIdPeriodo($nombre);
-
-//Guardamos las fechas de EVALUACION//
-  
- //Funcion formato fecha
-function fechaSQL($fecha)
-{
-	$sql_date=new DateTime($fecha);
-	$newFecha = $sql_date->format('Y-m-d'); 
-	return $newFecha;
-}
-$tipo='o';
-  for($i=1 ; $i<=$cantidad ; $i++)
-   {
-   		$fecha=$_SESSION['TEMP'][$i];
-		$fechaSQL=fechaSQL($fecha);
-		$adoP->guardarFecha($fechaSQL,$id_periodo,$tipo);
-		//echo $fecha.' ';
-   }
+    //var_dump($obj_periodo); //para ver el contenido del objeto
 
 	
 //Lista con los nombres y los perfiles de los empleados
 	$lista=$_SESSION['lista'];
 	//echo var_dump($lista);	
-			
+
+if(!$lista)	
+{
+	echo "<script type='text/javascript'> alert('No ha seleccionado empleados');</script>";
+	header('Location: ../agregar_empleados.php');
+	die();
+}
+
+//Guardamos el Periodo y recuperamos el id
+	$id_periodo=$adoP->guardarPeriodo($obj_periodo);
 	
-//guardamos los empleados en la BD
+//obtenemos el id asignado por la BD
+	$id_periodo=$adoP->getIdPeriodo($nombre);
+
+//Guardamos las fechas de EVALUACION
+$tipo='o';
+  for($i=1 ; $i<=$cantidad ; $i++)
+   {
+   		$fecha=$_SESSION['TEMP'][$i];
+		$fechaSQL=stdasql($fecha);
+		$adoP->guardarFecha($fechaSQL,$id_periodo,$tipo);
+		
+		//echo 'evaluacion '.$i;
+		//var_dump($fechaSQL);
+   }	
+   
+//Guardamos las relaciones empleado-periodo en la BD
 foreach ($lista as $key=>$id)
 {
 	$adoP->guardarEmpleado($key,$id[2],$id_periodo);
-	//echo 'key = id_empleado: '.$key;
-	//echo '</br>';
-	//echo 'id_perfil: '.$id[2];
-	//echo '</br>';
 }
+
 //limpiamos las variables guardadas en sesion
 unset($_SESSION['lista']);
 unset($_SESSION['TEMP']);
 
 //vamos al menu principal
+echo "<script type='text/javascript'> alert('Periodo guardado');</script>";
 	header('Location: ../home_evaluador.php');
 	die();
 ?>

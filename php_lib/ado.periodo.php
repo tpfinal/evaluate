@@ -78,6 +78,12 @@ private $array_periodos=array();
 				
 		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
 		
+		$query2="	SELECT MAX(id_periodo) as max FROM periodo ";
+			$result=$obj_sQuery->executeQuery($query2); // ejecuta la consulta para  obtener el id del registro nuevo
+			$row=mysql_fetch_array($result);
+
+			return $row['max'];
+		
 	}
 
 	

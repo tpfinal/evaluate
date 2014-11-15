@@ -11,12 +11,13 @@ public function __construct($nombre,$inicio,$fin,$creador,$id=0)
 {
 	$this->nombre=$nombre;
 //formateamos la fecha al estilo mysql
-	$sql_date = new DateTime($inicio);
-	$this->inicio= $sql_date->format('Y-m-d'); 
+	//$sql_date = new DateTime($inicio);
+	//$this->inicio= $sql_date->format('Y-m-d'); 
+	$this->inicio=$inicio;
 //formateamos la fecha al estilo mysql	
-	$sql_date = new DateTime($fin);
-	$this->fin= $sql_date->format('Y-m-d'); 
-	
+	//$sql_date = new DateTime($fin);
+	//$this->fin= $sql_date->format('Y-m-d'); 
+	$this->fin=$fin;
 	$this->creador=$creador;
 	$this->id=$id;
 }
