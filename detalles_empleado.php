@@ -53,6 +53,11 @@ $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
 $competencias=$ado->getCompetencias($obj_perfil->getId());
 //var_dump($competencias);
 
+foreach($competencias as $key=>$nombre){
+$promedios[$key]=$ado->getAVGcompetencia($key,$id_empleado,$id_periodo);
+}
+//var_dump($promedios);
+
 ?>
 <div class="container_12">
 <div id="div_titulo">
@@ -86,7 +91,7 @@ $competencias=$ado->getCompetencias($obj_perfil->getId());
 				if(@$competencias)
 					{
 						foreach($competencias as $key=>$nombre){
-							echo "<li> $nombre </li>";
+							echo "<li> $nombre $promedios[$key] </li>";
 						}
 					}
 				?>

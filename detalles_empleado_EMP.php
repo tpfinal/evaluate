@@ -54,6 +54,11 @@ $competencias=$ado->getCompetencias($obj_perfil->getId());
 //Guardamos el array en session
 $_SESSION['TEMP']['competencias']=$competencias;
 
+foreach($competencias as $key=>$nombre){
+$promedios[$key]=$ado->getAVGcompetencia($key,$id_empleado,$id_periodo);
+}
+//var_dump($promedios);
+
 ?>
 <div class="container_12">
 <div id="div_titulo">
@@ -62,23 +67,8 @@ $_SESSION['TEMP']['competencias']=$competencias;
 <label class="subtitulo2"><?php echo ''.$obj_perfil->getNombre(); ?></label>
 </div>
 <div class="clear cl1" id="espacio"></div>
+
 		<div class="content" id="dejar_espacio">
-		
-		<!--
-		<div class="grid_6" id="columna_objetivos">
-			<h5 class="texto2">Objetivos</h5>
-			<ul id="lista_objetivos_desactivada">
-				<?php
-				if(@$objetivos)
-					{
-						foreach($objetivos as $key=>$nombre){
-							echo "<li> $nombre </li>";
-						}
-					}
-				?>
-			</ul>
-		</div>
-		-->
 		
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Competencias</h5>
@@ -90,7 +80,9 @@ $_SESSION['TEMP']['competencias']=$competencias;
 				if(@$competencias){
 				
 				//IF que activa o desactiva las votaciones de las competencias
+				
 					if(1==1){
+					
 					//Form para evaluar las competencias si estan activas
 						echo "
 						<form action='controlers/evaluar_competencias_controler.php' method='post' id='ingresar_nota' class='ingresar_nota' name='ingresar_nota'>
@@ -105,6 +97,8 @@ $_SESSION['TEMP']['competencias']=$competencias;
 											<option value=4>4</option> 
 											<option value=5>5</option> 
 										</select>	
+										
+										$promedios[$key]
 							</li>
 							";
 						}
@@ -115,10 +109,12 @@ $_SESSION['TEMP']['competencias']=$competencias;
 					}
 					
 					else{
-					//cuandoi ya se evaluaron las competencias el select no aparecerá
+					//cuando ya se evaluaron las competencias el select no aparecerá
+					if($promedios)
 					foreach($competencias as $key=>$nombre){
+						
 							echo "
-							<li> $nombre </li>
+							<li> $nombre $promedios[$key] </li>
 							";
 							}
 					}
@@ -127,9 +123,24 @@ $_SESSION['TEMP']['competencias']=$competencias;
 				
 				
 			</ul>
+			
 		</div>
-		
+		<!--
+		<div class="grid_6" id="columna_objetivos">
+			<h5 class="texto2">Promedios</h5>
+			<ul id="lista_objetivos_desactivada">
+				<?php
+				if(@$objetivos)
+					{
+						foreach($objetivos as $key=>$nombre){
+							echo "<li> $nombre </li>";
+						}
+					}
+				?>
+			</ul>
 		</div>
+		-->
+	</div>
   <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
 		<div class="grid_1" id="flecha_atras">

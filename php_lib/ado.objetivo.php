@@ -133,6 +133,7 @@ private $obj_objetivo;
 												WHERE ep.id_periodo=$id_periodo
 												AND ep.id_empleado=$id_empleado
 												AND o.id_objetivo=$id_objetivo	
+												AND tipo_evaluacion='o'
 												"); 
 
 	//llenamos el array de empleados con los datos recividos
@@ -208,7 +209,26 @@ private $obj_objetivo;
 	
 /////----------------------------METODOS PARA NOTAS------------------------------//////		
 		
+//metodo que dado el id_evaluacion de una nota retorna su periodo
+public function getPeriodoNota($id_nota, $id_evaluacion)
+{
+		$obj_sQuery=new sQuery();
+		$query="SELECT e.id_periodo
+				FROM notas as n
+				JOIN evaluacion as e
+				ON n.id_evaluacion = e.id_evaluacion
+				WHERE n.id_nota=$id_nota
+				AND n.id_evaluacion=$id_evaluacion
+				";
+				
+		$result=$obj_sQuery->executeQuery($query); // ejecuta la consulta 
 		
+		$row=mysql_fetch_array($result);
+		$id_periodo=$row['id_periodo'];
+		
+		return $id_periodo;	
+}
+
 //metodo que almacena los datos en la tabla nota
 	public function guardarNota($id_objetivo,$id_empleado,$id_evaluacion,$nota)
 	{
@@ -219,12 +239,18 @@ private $obj_objetivo;
 				
 		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
 		
+		$query2="SELECT MAX(id_nota) as max FROM notas ";
+		
+		$result=$obj_sQuery->executeQuery($query2); // ejecuta la consulta para  obtener el id del registro nuevo
+		$row=mysql_fetch_array($result);
+
+		return $row['max'];
+		
 	}
 
 //metodo que recupera una nota ya guardada
 	public function getNota($id_objetivo,$id_empleado,$id_evaluacion)
 	{
-	
 		$obj_sQuery=new sQuery();
 		$query="SELECT  nota
 				FROM notas
@@ -239,8 +265,30 @@ private $obj_objetivo;
 		
 		//var_dump($nota);
 		
-		return $nota;
+		return $nota;	
+	}
+	
+//metodo que calcula el promedio de una competencia
+	public function getAVGcompetencia($id_objetivo,$id_empleado,$id_periodo)
+	{
+		$obj_sQuery=new sQuery();
+		$query="SELECT ROUND( AVG(nota),1 ) AS avg_nota
+				FROM notas as n
+				JOIN evaluacion as e
+				ON n.id_evaluacion=e.id_evaluacion
+				WHERE id_empleado=$id_empleado
+				AND id_objetivo=$id_objetivo
+				AND id_periodo=$id_periodo
+				";
+				
+		$result=$obj_sQuery->executeQuery($query); // ejecuta la consulta 
+			//var_dump($result);
+			$row=mysql_fetch_array($result);
+			$avg_nota=$row['avg_nota'];
 		
+		//var_dump($avg_nota);
+		
+		return $avg_nota;	
 	}	
 	
 //metodo que dado un array de fechas regresa el id de la fecha correspondiente al periodo actual

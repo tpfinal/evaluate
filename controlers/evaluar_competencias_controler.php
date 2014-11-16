@@ -29,10 +29,16 @@ foreach($competencias as $key=>$nombre)
 //var_dump($id_evaluacion);
 
 //Guardamos la nota (requiere id_objetivo, id_empleado,id_evaluacion y nota)
-	$ado->guardarNota($key,$id_empleado,$id_evaluacion,$nota);
+	$id_nota=$ado->guardarNota($key,$id_empleado,$id_evaluacion,$nota);
 	
+	//var_dump($key,$id_empleado,$id_periodo);
+	//$promedios[$key]=$ado->getAVGcompetencia($key,$id_empleado,$id_periodo);
+
 }
-	
+//$_SESSION['TEMP']['promedios']=$promedios;
+
+//var_dump($promedios);
+
 //vamos a detalles_empleado_EMP.php
 	header("Location: ../detalles_empleado_EMP.php?id=$id_empleado");
 	die();

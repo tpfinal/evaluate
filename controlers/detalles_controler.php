@@ -26,7 +26,7 @@ echo $id_periodo;
 echo '</br>';
 
 
-var_dump($fechas);
+//var_dump($fechas);
 
 //funcion que regresa el id de la fecha de evaluacion correspondiente a la fecha actual
 	
