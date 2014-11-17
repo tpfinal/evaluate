@@ -45,6 +45,11 @@ $id_periodo=$_SESSION['TEMP']['id_periodo'];
 $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);
 //var_dump($objetivos);
 
+//obtenemos un array con los promedios de los objetivos
+foreach($objetivos as $key=>$nombre){
+$promedios_objetivos[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
+}
+
 //buscamos el objeto perfil correspondiente
 $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
 //var_dump($obj_perfil);
@@ -53,10 +58,12 @@ $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
 $competencias=$ado->getCompetencias($obj_perfil->getId());
 //var_dump($competencias);
 
+//obtenemos un array con los promedios de las competencias
 foreach($competencias as $key=>$nombre){
-$promedios[$key]=$ado->getAVGcompetencia($key,$id_empleado,$id_periodo);
+$promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 }
-//var_dump($promedios);
+//var_dump($promedios_objetivos);
+//var_dump($promedios_competencias);
 
 ?>
 <div class="container_12">
@@ -76,7 +83,9 @@ $promedios[$key]=$ado->getAVGcompetencia($key,$id_empleado,$id_periodo);
 				if(@$objetivos)
 				{
 					foreach($objetivos as $key=>$nombre){
-						echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre </a></li>";
+						echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre 
+						
+						$promedios_objetivos[$key]</a></li>";
 					}
 				}
 
@@ -91,7 +100,7 @@ $promedios[$key]=$ado->getAVGcompetencia($key,$id_empleado,$id_periodo);
 				if(@$competencias)
 					{
 						foreach($competencias as $key=>$nombre){
-							echo "<li> $nombre $promedios[$key] </li>";
+							echo "<li> $nombre $promedios_competencias[$key] </li>";
 						}
 					}
 				?>

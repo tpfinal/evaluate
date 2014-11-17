@@ -268,8 +268,8 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 		return $nota;	
 	}
 	
-//metodo que calcula el promedio de una competencia
-	public function getAVGcompetencia($id_objetivo,$id_empleado,$id_periodo)
+//metodo que calcula el promedio de un objetivo/competencia
+	public function getAVGobjetivo($id_objetivo,$id_empleado,$id_periodo)
 	{
 		$obj_sQuery=new sQuery();
 		$query="SELECT ROUND( AVG(nota),1 ) AS avg_nota
@@ -307,6 +307,27 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 	}
 	return $id;
 	}
+		
+//metodo que regresa la un date con la fecha_hora de la ultima evaluacion corespondiente a estos datos
+	public function getUltimaEvaluacion($id_objetivo,$id_empleado,$id_periodo)
+	{
+		$obj_sQuery=new sQuery();
+		$query="SELECT max(fecha_hora) AS max
+				FROM notas as n
+				JOIN evaluacion as e
+				ON n.id_evaluacion=e.id_evaluacion
+				WHERE id_empleado=$id_empleado
+				AND id_objetivo=$id_objetivo
+				AND id_periodo=$id_periodo
+				";
+				
+		$result=$obj_sQuery->executeQuery($query); // ejecuta la consulta 
+
+			$row=mysql_fetch_array($result);
+			$max=$row['max'];
+		
+		return $max;	
+	}			
 		
 	
 }

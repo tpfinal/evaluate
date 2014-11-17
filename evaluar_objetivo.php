@@ -82,7 +82,7 @@ $actual=$ado->evaluacionActual($fechas);
 						echo"
 						<tr>
 							<td>$pos</td>
-							<td> ".sqlajs($fecha)." </td>
+							<td> ".sqlastd($fecha)." </td>
 						";	
 						
 						$nota=$ado->getNota($id_objetivo,$id_empleado,$id_evaluacion);

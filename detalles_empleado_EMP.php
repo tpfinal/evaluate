@@ -55,9 +55,22 @@ $competencias=$ado->getCompetencias($obj_perfil->getId());
 $_SESSION['TEMP']['competencias']=$competencias;
 
 foreach($competencias as $key=>$nombre){
-$promedios[$key]=$ado->getAVGcompetencia($key,$id_empleado,$id_periodo);
+$promedios[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
+//var_dump($key);
 }
-//var_dump($promedios);
+
+//Calculos de tiempo
+$ultima_evaluacion=$ado->getUltimaEvaluacion($key,$id_empleado,$id_periodo);
+$ultimaInt = strtotime($ultima_evaluacion);
+$ahora=date("Y-m-d H:i:s");
+$ahoraInt = strtotime($ahora);
+$time = $ahoraInt-$ultimaInt;
+/*
+//VERIFICACION DEL TIEMPO TRANSCURRIDO:
+ECHO "Ultima votacion: $ultima_evaluacion</br>";
+ECHO "Tiempo actual: $ahora</br>";
+echo "Diferencia en segundos: $time";
+*/
 
 ?>
 <div class="container_12">
@@ -74,14 +87,15 @@ $promedios[$key]=$ado->getAVGcompetencia($key,$id_empleado,$id_periodo);
 			<h5 class="texto2">Competencias</h5>
 			<ul id="lista_competencias">
 				
-				
-			
 				<?php
 				if(@$competencias){
 				
 				//IF que activa o desactiva las votaciones de las competencias
-				
-					if(1==1){
+					//time>86400  se activa diariamente
+					//time>604800 se activa semanalmente
+					//time>1296000 se activa cada 15 dias
+			
+					if($time>86400){
 					
 					//Form para evaluar las competencias si estan activas
 						echo "
