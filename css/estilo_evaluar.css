@@ -148,7 +148,7 @@ list-style-position: inside;
  #lista_competencias_desactivada{
 color: #000;
 letter-spacing:1px;
-margin:5%;
+margin-top:5%;
 list-style-type: disc;
 list-style-image: url(../images/asterisco.png);
 list-style-position: inside;
