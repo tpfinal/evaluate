@@ -45,14 +45,15 @@ $ordenado=$adoR->ordenar($empleados);
 <label class="subtitulo"> Ranking de los mejores empleados </label>
 <label class="subtitulo2"> </label>
 </div>
-	<div class="clear cl2" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
 		
-		
-		
-					<div class="grid_12"><p class="texto3"> Los objetivos tienen un peso nominal del 60% por sobre las competencias que tienen un 40%  </p></div>
-				<div class="grid_8 prefix_2">
-					<table>
+			<p class="texto3" id=""> Los objetivos tienen un peso nominal del 60% por sobre las competencias que tienen un 40%  </p>
+
+			<div class="grid_8 prefix_2" id="">
+
+					
+					
+					<table id="tabla_ranking">
 						<thead>
 						<tr id="categorias">
 							<th>#</th>
@@ -73,7 +74,7 @@ $ordenado=$adoR->ordenar($empleados);
 							$notaC=$adoR->getAVGempleado($key,'c');
 							
 							echo"
-							<tr>
+							<tr class=''>
 								<td>$pos</td>
 								<td>$nombre</td>
 								<td>$notaO</td>
@@ -90,14 +91,9 @@ $ordenado=$adoR->ordenar($empleados);
 					</table>
 			</div>			
 		</div>
-<!--==============================Flecha Atras =================================-->
+		</div>
 	    <div class="clear"></div>
-		<div class="grid_1" id="flecha_atras">
-        <a href="periodo_vigente.php">
-          <img src="images/flecha_atras.png" alt="ATRAS">
-        </a>
-		</div>
-		</div>
+
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

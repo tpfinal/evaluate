@@ -3,6 +3,27 @@
 @import "superfish.css";
 
 
+#tabla_ranking{
+text-align:center;
+width: 100%;
+}
+
+
+#tabla_ranking td {
+letter-spacing:1px;
+font-size:22px;
+font-family: 'Josefin Sans', sans-serif;
+padding: 5px;
+
+box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+
+
+
 .eliminar {
 color:#FF0000;
 font-size:15px;
