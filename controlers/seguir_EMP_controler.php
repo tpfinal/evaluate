@@ -18,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	
 //recibimos un id de periodo por post y los guardamos en una variable
     @$id_periodo=$_POST['id_periodo'];
+	
+//recibimos poe session la pagina
+$page=$_SESSION['TEMP']['page'];
 		
 //obtenemos los datos del periodo
 	$obj_periodo=$adoP->getPeriodo($id_periodo);
@@ -45,11 +48,22 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 //guardamos el array en session
 	$_SESSION['TEMP']['empleados']=$empleados;
 	
-	//var_dump($id_user);
-	//var_dump($empleados);
-	
-//vamos a periodo_vigente.php
-	header('Location: ../periodo_vigente_EMP.php');
+if($page==1){
+	//vamos a detalles_objetivos_emp.php
+	header("Location: ../detalles_objetivos_EMP.php?id=$id_user");
 	die();
+	}
+	
+if($page==2){
+	//vamos a detalles_objetivos_emp.php
+	header("Location: ../detalles_objetivos_EMP.php?id=$id_user");
+	die();
+	}	
+	
+if($page==3){
+	//vamos a periodo_vigente.php
+		header('Location: ../periodo_vigente_EMP.php');
+		die();
+	}
 } 
 ?>

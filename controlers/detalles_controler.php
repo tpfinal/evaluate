@@ -18,7 +18,7 @@ $id_periodo=$_SESSION['TEMP']['id_periodo'];
 echo '<h2>Fechas de evaluacion: </h2>';
 @$fechas=$ado->getFechasEvaluacion($id_objetivo,$id_empleado,$id_periodo);
 
-echo $id_objetivo;
+echo 'id_objetivo: '.$id_objetivo;
 echo '</br>';
 echo $id_empleado;
 echo '</br>';
@@ -26,11 +26,11 @@ echo $id_periodo;
 echo '</br>';
 
 
-//var_dump($fechas);
+var_dump($fechas);
 
 //funcion que regresa el id de la fecha de evaluacion correspondiente a la fecha actual
 	
-function evaluacionActual($arrayDeFechas)
+/*function evaluacionActual($arrayDeFechas)
 {
 $hoy=date("Y-m-d");
 $id=0;
@@ -43,9 +43,11 @@ $id=0;
 		}		
 	}
 return $id;
-}
+}*/
 
-$id_evaluacion=evaluacionActual($fechas);
+$id_evaluacion=$ado->evaluacionActual($fechas);
+
+//$id_evaluacion=evaluacionActual($fechas);
 $_SESSION['TEMP']['id_evaluacion']=$id_evaluacion;
 
 echo $_SESSION['TEMP']['id_evaluacion'];

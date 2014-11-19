@@ -25,17 +25,17 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 <div class="content">
     <div class="grid_4 prefix_2">
       <div class="opcion">
-		<a href=""><img src="images/mis_objetivos.jpg" alt="MIS OBJETIVOS"/></a>
+		<a href="seguir_EMP.php?page=1"><img src="images/mis_objetivos.jpg" alt="MIS OBJETIVOS"/></a>
 	  </div>
     </div>
 	<div class="grid_4">
       <div class="opcion">
-		<a href=""><img src="images/mis_competencias.jpg" alt="MIS COMPETENCIAS"/></a>
+		<a href="seguir_EMP.php?page=2"><img src="images/mis_competencias.jpg" alt="MIS COMPETENCIAS"/></a>
 	  </div>
     </div>
 	<div class="grid_4 prefix_2">
       <div class="opcion">
-		<a href="seguir_EMP.php"><img src="images/evaluar_pares.jpg" alt="EVALUAR PARES"/></a>
+		<a href="seguir_EMP.php?page=3"><img src="images/evaluar_pares.jpg" alt="EVALUAR PARES"/></a>
 	  </div>
     </div>
 	<div class="grid_4">

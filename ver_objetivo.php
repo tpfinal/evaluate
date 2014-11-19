@@ -50,7 +50,7 @@ $descripcion=$obj_objetivo->getDescripcion();
 $actual=$ado->evaluacionActual($fechas);
 
 //var_dump($fechas);
-$id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
+
 
 ?>
 
@@ -94,7 +94,7 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 						";
 						}
 						else
-						if($actual==$id_evaluacion and $id_user!=$id_empleado){
+						if($actual==$id_evaluacion){
 						echo"
 							<td>ACTIVO</td>
 							<td>

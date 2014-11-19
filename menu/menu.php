@@ -23,7 +23,7 @@ switch ($rol) {
 <div class="menu_block">
           <nav class="horizontal-nav full-width horizontalNav-notprocessed">
             <ul class="sf-menu">
-				<li><a href="session_test.php">Session Test</a></li><!--linea de prueba temporal-->
+				<!--<li><a href="session_test.php">Session Test</a></li><!--linea de prueba temporal-->
 			<?php 
 			if ($rol==1){
 			echo "<li><a href='home_admin.php'>Menu Administrador</a></li> ";

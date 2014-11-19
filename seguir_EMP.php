@@ -25,10 +25,15 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 //incluimos la clase de acceso a datos
 	require('php_lib/ado.periodo.php');
 	$adoP=new adoPeriodo();
+	
 //obtenemos el array de periodos del usuario logueado
 	$id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 	@$periodos=$adoP->getPeriodos($id_user);
-	//var_dump($periodos); //para ver el contenido del array
+	
+//capturamos el GET
+    @$page=$_GET['page'];
+	$_SESSION['TEMP']['page']=$page;
+
 ?>
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
@@ -57,14 +62,7 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 		</div>
 	</div>	
     </div>
-  <!--==============================Flecha Atras =================================-->
-	    <div class="clear"></div>
-		<div class="grid_1" id="flecha_atras">
-        <a href="home_empleado.php">
-          <img src="images/flecha_atras.png" alt="ATRAS">
-        </a>
-		</div>
-		</div>
+
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>
