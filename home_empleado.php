@@ -40,7 +40,7 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
     </div>
 	<div class="grid_4">
       <div class="opcion">
-		<a href=""><img src="images/ver_historial.jpg" alt="VER HISTORIAL"/></a>
+		<a href="seguir_historial_EMP.php"><img src="images/ver_historial.jpg" alt="VER HISTORIAL"/></a>
 	  </div>
     </div>
 <div class="clear"></div>

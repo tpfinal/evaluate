@@ -41,7 +41,7 @@ include('php_lib/solo_evaluadores.php');
     </div>
 	<div class="grid_4 prefix_2">
       <div class="opcion">
-		<a href=""><img src="images/ver_historial.jpg" alt="VER HISTORIAL"/></a>
+		<a href="seguir_historial.php"><img src="images/ver_historial.jpg" alt="VER HISTORIAL"/></a>
 	  </div>
     </div>
 	<div class="grid_4">

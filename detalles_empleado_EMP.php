@@ -56,11 +56,13 @@ $ultimaInt = strtotime($ultima_evaluacion);
 $ahora=date("Y-m-d H:i:s");
 $ahoraInt = strtotime($ahora);
 $time = $ahoraInt-$ultimaInt;
-/*
+
 //VERIFICACION DEL TIEMPO TRANSCURRIDO:
+/*
 ECHO "Ultima votacion: $ultima_evaluacion</br>";
 ECHO "Tiempo actual: $ahora</br>";
-echo "Diferencia en segundos: $time";
+ECHO "Diferencia en segundos: $time</br>";
+ECHO "86400 = un dia";
 */
 ?>
 <div class="container_12">

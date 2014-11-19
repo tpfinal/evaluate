@@ -109,7 +109,7 @@ private $obj_objetivo;
 
 		$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
 			
-//llenamos el array de objetivos con los datos recividos
+		//llenamos el array de objetivos con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
 			$array_objetivos[$row['id_objetivo']]=$row['nombre_objetivo'];
@@ -139,12 +139,12 @@ private $obj_objetivo;
 	//llenamos el array de empleados con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
-			$this->array_fechas[$row['id_evaluacion']]=$row['fecha_evaluacion'];
+			$array_fechas[$row['id_evaluacion']]=$row['fecha_evaluacion'];
 		}
 			
-		//var_dump($this->array_fechas); //para ver el contenido del array
+		//var_dump($array_fechas); //para ver el contenido del array
 	
-		return $this->array_fechas;
+		return $array_fechas;
 		}
 
 /////----------------------------METODOS PARA COMPETENCIAS------------------------------//////		
@@ -293,6 +293,7 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 	
 //metodo que dado un array de fechas regresa el id de la fecha correspondiente al periodo actual
 // en caso de no haber ninguna fecha que coinsida regresa "0"
+	
 	public function evaluacionActual($arrayDeFechas)
 	{
 	$hoy=date("Y-m-d");
@@ -305,6 +306,24 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 			$id=$key;
 		}		
 	}
+		$obj_sQuery=new sQuery();
+		$query="	SELECT fin_periodo
+					FROM evaluacion as e
+					JOIN periodo as p
+					ON e.id_periodo = p.id_periodo
+					WHERE e.id_evaluacion=$key
+				";
+				
+		$result=$obj_sQuery->executeQuery($query); // ejecuta la consulta 
+			
+			$row=mysql_fetch_array($result);
+			$fecha_fin=$row['fin_periodo'];
+			
+		if($fecha_fin<$hoy)
+		{
+			$id=0;
+		}
+		
 	return $id;
 	}
 		

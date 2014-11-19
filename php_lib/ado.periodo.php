@@ -119,19 +119,44 @@ private $array_periodos=array();
 	function getMyPeriodos($id_creador)
 	{
 			$obj_sQuery=new sQuery();
-			$result=$obj_sQuery->executeQuery("	SELECT * FROM periodo 
-												WHERE id_creador=$id_creador"); // ejecuta la consulta para traer una lista
+			$result=$obj_sQuery->executeQuery("	SELECT * 
+												FROM periodo 
+												WHERE id_creador=$id_creador
+												AND fin_periodo>now()
+												"); // ejecuta la consulta para traer una lista
 
 	//llenamos el array  con los datos recividos
 	
 		while($row=mysql_fetch_array($result))
 		{
-		$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
+			$array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
 		}
 			
-		//var_dump($this->array_perfiles); //para ver el contenido del array
+		//var_dump($array_perfiles); //para ver el contenido del array
 	
-		return $this->array_periodos;
+		return $array_periodos;
+	}
+	
+//Retorna los periodos de un evaluador que ya estan cerrados
+	function getMyPeriodosFinalizados($id_creador)
+	{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("	SELECT * 
+												FROM periodo 
+												WHERE id_creador=$id_creador
+												AND fin_periodo<now()
+												"); // ejecuta la consulta para traer una lista
+
+	//llenamos el array  con los datos recividos
+	
+		while($row=mysql_fetch_array($result))
+		{
+			$array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
+		}
+			
+		//var_dump($array_perfiles); //para ver el contenido del array
+	
+		return $array_periodos;
 	}
 	
 //Retorna un array con los nombres de los Periodos que corresponden a un Empleado
@@ -143,6 +168,7 @@ private $array_periodos=array();
 												JOIN empleados_periodo as ep
 												ON p.id_periodo=ep.id_periodo
 												WHERE ep.id_empleado=$id_empleado
+												AND fin_periodo>now()
 											  "); // ejecuta la consulta para traer una lista
 
 	//llenamos el array  con los datos recividos
@@ -155,6 +181,30 @@ private $array_periodos=array();
 		//var_dump($this->array_perfiles); //para ver el contenido del array
 	
 		return $this->array_periodos;
+	}
+	
+//Retorna un array con los nombres de los Periodos finalizados en los que participo un empleado
+	function getPeriodosFinalizados($id_empleado)
+	{
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("	SELECT p.id_periodo,p.nombre_periodo
+												FROM periodo as p
+												JOIN empleados_periodo as ep
+												ON p.id_periodo=ep.id_periodo
+												WHERE ep.id_empleado=$id_empleado
+												AND fin_periodo<now()
+											  "); // ejecuta la consulta para traer una lista
+
+	//llenamos el array  con los datos recividos
+	
+		while($row=mysql_fetch_array($result))
+		{
+			$array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
+		}
+			
+		//var_dump($array_perfiles); //para ver el contenido del array
+	
+		return $array_periodos;
 	}
 		
 //Guardar fechas de evaluacion del periodo
