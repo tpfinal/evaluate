@@ -239,72 +239,6 @@
 	background-color: #363f45;
 }
 
-/**************************
-*
-*	COLORS & SKINS
-*
-**************************/
-
-/*
-
-.camera_pag  {
-	display: block;
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-	overflow: hidden;
-	z-index: 999;
-	text-align: left;
-
-}
-
-.camera_pag_ul {
- 	overflow: hidden;
-
-
-}
-
-.camera_pag ul li {
-	float: left;
-}
-
-.camera_pag ul li+li {
-	margin-left: 8px;
-}
-
-.camera_pag ul li+li+li {
-	margin-left: 7px;
-}
-
-.camera_pag ul li span {
-	background: url(../images/pagination.png) right 0 no-repeat;
-	display: block;
-	width: 14px;
-	height: 14px;
-	overflow: hidden;
-	color: transparent;
-	text-indent: -100px;
-}
-
-.camera_pag ul li:hover span, .camera_pag ul li.cameracurrent span {
-	cursor: pointer;
-	background-position: 0 0;
-}
-
-
-
-
-
-
-
-
-
-*/
-
-
-
-
-
 
 .camera_command_wrap {
 	left: 0;
@@ -317,7 +251,7 @@
 	margin: 0;
 	padding: 0;
 	text-align: right;
-	
+	padding-bottom:7px;
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
 	-webkit-border-radius: 8px;

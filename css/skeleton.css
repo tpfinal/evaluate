@@ -25,9 +25,11 @@
 	
 	 -moz-box-shadow: 0px 0px 10px #CACACA; 
 	-webkit-box-shadow: 0px 0px 10px #CACACA; 
-	box-shadow: 0px 0px 10px #CACACA;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 
 }
+
+
 .grid_1,
 .grid_2,
 .grid_3,

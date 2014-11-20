@@ -38,20 +38,23 @@ $promedios[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 		
 
 		
-		<div class="grid_6" id="columna_objetivos">
+		<div class="grid_8 prefix_2" id="columna_competencias">
 			<h5 class="texto2">Mis Competencias</h5>
 			<ul id="lista_objetivos_desactivada">
 				<?php
 				if(@$competencias)
 					{
+					echo"<table id='tabla_competencias' class='abm_perfil'><tbody> ";
+
 						foreach($competencias as $key=>$nombre){
 							echo "
-							<li> 
-								$nombre 
-								$promedios[$key]
-							</li>
+							<tr> 
+							<td><li>$nombre</li> </td>
+							<td id='derecha'> $promedios[$key]</td>
+							</tr>
 							";
-						}
+							}
+							echo"</tbody></table>	";
 					}
 				?>
 			</ul>

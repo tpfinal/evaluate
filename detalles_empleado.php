@@ -109,7 +109,7 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 							<tr>
 							<td><li>$nombre</td>
 
-							<td>$promedios_competencias[$key]</td> </li>
+							<td id='derecha'>$promedios_competencias[$key]</td> </li>
 							
 							</tr>
 						

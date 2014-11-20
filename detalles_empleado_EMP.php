@@ -56,7 +56,6 @@ $ultimaInt = strtotime($ultima_evaluacion);
 $ahora=date("Y-m-d H:i:s");
 $ahoraInt = strtotime($ahora);
 $time = $ahoraInt-$ultimaInt;
-
 //VERIFICACION DEL TIEMPO TRANSCURRIDO:
 /*
 ECHO "Ultima votacion: $ultima_evaluacion</br>";
@@ -87,19 +86,11 @@ ECHO "86400 = un dia";
 						echo "
 						<form action='controlers/evaluar_competencias_controler.php' method='post' id='ingresar_nota' class='abm_perfil' name='ingresar_nota'>
 						";
-
-
 						echo"<table id='tabla_competencias'><tbody> ";
-
-						
-						
 						foreach($competencias as $key=>$nombre){
 							echo "
-
 							<tr> 
-							
-							<td>$nombre </td>
-							
+							<td><li>$nombre</li> </td>
 							<td id='derecha'>
 							<select id='ddl_notas' name='nota_$key'>
 											<option value=1>1</option>
@@ -109,38 +100,29 @@ ECHO "86400 = un dia";
 											<option value=5>5</option> 
 							</select>	
 							$promedios[$key]
-							
 							</td>
-							
-							
 							</tr>
-							
-							
-
-										
 							";
 						} echo"</tbody></table>	";
-
 							echo "
 							<button class='button' type='submit' onsubmit='return validar()'> Evaluar </button>
 							</form>
 							";
-							
-
 					}
 					else{
+					echo"<ul id='lista_competencias_desactivada'>";
 					//cuando ya se evaluaron las competencias el select no aparecerá
 					if($promedios)
 					echo"<table id='tabla_competencias' class='abm_perfil'><tbody> ";
 					foreach($competencias as $key=>$nombre){
 							echo "
 							<tr> 
-							<td>$nombre </td>
+							<td><li>$nombre</li> </td>
 							<td id='derecha'> $promedios[$key]</td>
 							</tr>
 							";
 							}
-							echo"</tbody></table>	";
+							echo"</tbody></table> </ul>	";
 					}
 				}
 				?>
@@ -164,8 +146,6 @@ ECHO "86400 = un dia";
 	</div>
 	   </div> 
 	   <div class="clear"></div>
-
-		
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

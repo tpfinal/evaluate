@@ -41,7 +41,7 @@ $promedios[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 <div class="clear cl1" id="espacio"></div>
 	<div class="content" id="dejar_espacio">
 		
-		<div class="grid_6" id="columna_objetivos">
+		<div class="grid_8 prefix_2" id="columna_competencias">
 			<h5 class="texto2">Mis Objetivos</h5>
 			<ul id="lista_objetivos_desactivada">
 				<?php

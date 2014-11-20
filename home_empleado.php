@@ -22,7 +22,7 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 <!--==============================Content=================================-->
   <div class="container_12">
     <div class="clear cl1"></div>
-<div class="content">
+<div class="content" id="dejar_espacio3">
     <div class="grid_4 prefix_2">
       <div class="opcion">
 		<a href="seguir_EMP.php?page=1"><img src="images/mis_objetivos.jpg" alt="MIS OBJETIVOS"/></a>
