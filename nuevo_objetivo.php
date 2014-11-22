@@ -55,18 +55,22 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			
         </form>	
 		
-		
+		<h4>Lista de Objetivos</h4>
+		<?php 
+		@$objetivos=@$_SESSION['TEMP']['objetivos'];
+		if($objetivos){
+			foreach($objetivos as $nombre=>$descripcion)
+			{
+			echo "<li>$nombre";
+			echo ' | ';
+			echo "<a href='controlers/quitar_objetivo_controler.php?objetivo=$nombre' class='button'>Quitar</a></li>";
+			}
+		}
+		?>
 		
 	</div>
     </div>
-  <!--==============================Flecha Atras =================================-->
-	    <div class="clear"></div>
-		<div class="grid_1" id="flecha_atras">
-        <a href="alta_perfil.php">
-          <img src="images/flecha_atras.png" alt="ATRAS">
-        </a>
-		</div>
-		</div>
+
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

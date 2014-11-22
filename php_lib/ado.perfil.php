@@ -88,8 +88,13 @@ private $array_perfiles=array();
 		$query="INSERT INTO perfil(nombre_perfil,descripcion_perfil)
 				VALUES('$this->nombre','$this->descripcion')";
 				
-		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
+		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar perfil
 		
+		$query2="	SELECT MAX(id_perfil) as max FROM perfil ";
+			$result=$obj_sQuery->executeQuery($query2); // ejecuta la consulta para  obtener el id del registro nuevo
+			$row=mysql_fetch_array($result);
+
+			return $row['max'];
 	}
 
 	

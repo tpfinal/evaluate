@@ -1,5 +1,6 @@
 <?php
 $rol=@$_SESSION['USUARIO']['rol'];
+//var_dump($rol);
 switch ($rol) {
   case 0:
     $principal='home_empleado.php';
@@ -25,6 +26,9 @@ switch ($rol) {
             <ul class="sf-menu">
 				<!--<li><a href="session_test.php">Session Test</a></li><!--linea de prueba temporal-->
 			<?php 
+			if ($rol=='0'){
+			echo "<li><a href='home_empleado.php'>Menu Empleado</a></a></li> ";
+			}
 			if ($rol==1){
 			echo "<li><a href='home_admin.php'>Menu Administrador</a></li> ";
 			echo "<li><a href='home_empleado.php'>Menu Empleado</a></a></li> ";
@@ -38,9 +42,7 @@ switch ($rol) {
 			echo "<li><a href='home_evaluador.php'>Menu Evaluador</a></li> ";
 			echo "<li><a href='home_empleado.php'>Menu Empleado</a></a></li> ";
 			}
-			if ($rol==0){
-			echo "<li><a href='home_empleado.php'>Menu Empleado</a></a></li> ";
-			}
+			
 			?>
                  <li><a href="contacto.php">Contacto</a></li>
              </ul>

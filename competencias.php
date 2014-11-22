@@ -52,7 +52,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
                     echo"
 					
 					<li>
-					<input type='checkbox' id='' name='$key' value='$key' > $nombre  </input>
+					<input type='checkbox' id='' checked='checked' name='$key' value='$key' > $nombre  </input>
 					</li>
 					
 					";

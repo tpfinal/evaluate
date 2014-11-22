@@ -21,6 +21,14 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 </div>
 </div>
 <!--==============================Content (formulario de alta)=================================-->
+<script language="javascript">
+function fAgrega()
+{
+	var nombre = document.getElementById("nombre_perfil").value;
+}
+</script>
+	
+	
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 					
@@ -65,15 +73,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
     </div>
 
 
-		
-  <!--==============================Flecha Atras =================================-->
-	    <div class="clear"></div>
-		<div class="grid_1" id="flecha_atras">
-        <a href="home_evaluador.php">
-          <img src="images/flecha_atras.png" alt="ATRAS">
-        </a>
-		</div>
-		</div>
+
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

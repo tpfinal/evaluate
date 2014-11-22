@@ -14,7 +14,7 @@
                         required: true
                     },
 					descripcion_perfil: {
-                        required: true
+                        required: false
                     }
                 },
 				
@@ -53,7 +53,7 @@
                         required: true
                     },
 					descripcion_objetivo: {
-                        required: true
+                        required: false
                     }
                 },
 				
@@ -95,7 +95,7 @@
                         required: true
                     },
 					descripcion_competencia: {
-                        required: true
+                        required: false
                     }
                 },
 				

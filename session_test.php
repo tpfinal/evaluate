@@ -5,7 +5,7 @@ session_start();
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 
-require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
+//require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
 //require('php_lib/solo_administradores.php'); 
 //include('php_lib/solo_evaluadores.php');
 
@@ -27,14 +27,14 @@ $ado = new adoEmpleado();
         <p>
             Si ves esta página es que eres un usuario validado:
 			<?php
-			echo "<h2>Test de variables de sesision</h2>";
+			echo "<h2>Test de variables de session</h2>";
 			echo 'usuario: '.@$_SESSION['USUARIO']['user'];
 			echo "<br/>";
 			echo 'rol desde variable: '.@$_SESSION['USUARIO']['rol'];
 			echo "<br/>";
 			
 			echo "<h2>Test de funciones</h2>";
-			$rol=mi_rol();
+			//$rol=mi_rol();
 			echo 'rol desde funcion: '.@$rol; 
 			echo "<br/>";
 			var_dump(@$_SESSION['USUARIO']['user']);
