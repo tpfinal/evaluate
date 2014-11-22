@@ -53,7 +53,13 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 					?>
 				</optgroup>
 				</select>
-				<button class="button" type="submit">Buscar</button>
+				<?php
+				if($periodos){
+				echo "<button class='button' type='submit'>Continuar</button>";
+				}
+				else
+				echo "<label class='aclaracion'>No hay periodos </label>";
+				?>
         </fieldset>
         </form>
 		

@@ -28,7 +28,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 //obtenemos el array de periodos
 	$id_user=$adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 	@$periodos=$adoP->getMyPeriodos($id_user);
-	//var_dump($periodos); //para ver el contenido del array
+	//var_dump($id_user); //para ver el contenido del array
 ?>
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
@@ -48,9 +48,17 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					?>
 				</optgroup>
 				</select>
-				<button class="button" type="submit">Buscar</button>
+				
+				<?php
+				if($periodos){
+				echo "<button class='button' type='submit'>Continuar</button>";
+				}
+				else
+				echo "<label class='aclaracion'>No hay periodos </label>";
+				?>
         </fieldset>
         </form>
+		
 		<div id="divErrores">
 		<ul id="lista"></ul>		
 		</div>

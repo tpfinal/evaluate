@@ -45,11 +45,11 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			<div class="grid_11" id="titulo_fechas">
 					<div class="grid_2">
 					<h5 class="texto">Fecha inicio</h5>
-					<h6 class="fecha"><?php echo sqlajs($inicio) ?></h6>
+					<h6 class="fecha"><?php echo sqlastd($inicio) ?></h6>
 					</div>
 					<div class="grid_2">
 					<h5 class="texto">Fecha fin</h5>
-					<h6 class="fecha"><?php echo sqlajs($fin) ?></h6>
+					<h6 class="fecha"><?php echo sqlastd($fin) ?></h6>
 					</div>
 					<div class="grid_3">
 						<h5 class="texto">Fechas intermedias</h5>
@@ -58,8 +58,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 							if($fechas_ev)
 							{
 								foreach($fechas_ev as $key){
-								$fechaJs=sqlajs($key);
-								echo "<li> $fechaJs </li>";
+								$fechaStd=sqlastd($key);
+								echo "<li> $fechaStd </li>";
 								}
 							}
 							?>

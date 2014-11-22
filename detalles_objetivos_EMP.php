@@ -26,6 +26,7 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 <?php
 //recibimos poe session la pagina
 $page=$_SESSION['TEMP']['page'];
+
 if($page==1)
 {
 	include('content/mis_objetivos.php');

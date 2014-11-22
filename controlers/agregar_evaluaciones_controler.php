@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 
 
 //tomamos los DATOS del Periodo
-	
 	//$nombre=$_SESSION['TEMP']['nombre_perido'];
 	//$inicio=$_SESSION['TEMP']['inicio'];
 	//$fin=$_SESSION['TEMP']['fin'];
@@ -16,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 		
 //recibimos los datos por session
 	$cantidad=$_SESSION['TEMP']['cantidad'];
+	var_dump($cantidad);
 	
 //recibimos las fechas por post y las guardamos en session
    for($i=1 ; $i<=$cantidad ; $i++)

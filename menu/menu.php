@@ -1,6 +1,8 @@
 <?php
+
 $rol=@$_SESSION['USUARIO']['rol'];
 //var_dump($rol);
+
 switch ($rol) {
   case 0:
     $principal='home_empleado.php';

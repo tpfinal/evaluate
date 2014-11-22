@@ -22,8 +22,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST' ) { // ¿Nos mandan datos por EL FORM?
 	$empleado=$adoE->getEmpleadoById($id_empleado);
 	$perfil=$adoP->getPerfilById($id_perfil);
 	
-
-
 //cargamos el array con los datos
 @$_SESSION['lista'][$id_empleado]=array($empleado->getNombre()." ".$empleado->getApellido(),$perfil->getNombre(),$id_perfil);
 		

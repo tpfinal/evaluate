@@ -12,9 +12,13 @@
 //$id_empleado=$_GET['id'];
 
 $id_empleado= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
+$_SESSION['TEMP']['id_empleado']=$id_empleado;
+//var_dump($id_empleado);
 
 //recuperamos el id_periodo de la session
 $id_periodo=$_SESSION['TEMP']['id_periodo'];
+$_SESSION['TEMP']['id_periodo']=$id_periodo;
+//var_dump($id_periodo);
 
 //obtenemos un array con los objetivos del empleado de este periodo
 $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);
@@ -51,7 +55,7 @@ $promedios[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 						echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre 
 						
 						$promedios[$key]</a></li>";
-					}
+						}
 					}
 				?>
 			</ul>

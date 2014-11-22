@@ -99,7 +99,7 @@ ECHO "86400 = un dia";
 											<option value=4>4</option> 
 											<option value=5>5</option> 
 							</select>	
-							$promedios[$key]
+							<!--$promedios[$key]-->
 							</td>
 							</tr>
 							";

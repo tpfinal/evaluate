@@ -48,9 +48,16 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					?>
 				</optgroup>
 				</select>
-				<button class="button" type="submit">Buscar</button>
+				<?php
+				if($periodos){
+				echo "<button class='button' type='submit'>Continuar</button>";
+				}
+				else
+				echo "<label class='aclaracion'>No hay periodos </label>";
+				?>
         </fieldset>
         </form>
+		
 		<div id="divErrores">
 		<ul id="lista"></ul>		
 		</div>

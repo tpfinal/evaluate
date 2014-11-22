@@ -32,14 +32,17 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	$ado=new adoObjetivo();
 	$adoP=new adoPerfil();
 	$adoE=new adoEmpleado();
+
 //recibimos por GET el id del empleado 
 $id_empleado=$_GET['id'];
 
 //lo guardamos en session
 $_SESSION['TEMP']['id_empleado']=$id_empleado;
+//var_dump($_SESSION['TEMP']['id_empleado']);
 
 //recuperamos el id_periodo de la session
 $id_periodo=$_SESSION['TEMP']['id_periodo'];
+//var_dump($_SESSION['TEMP']['id_periodo']);
 
 //obtenemos un array con los objetivos del empleado de este periodo
 $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);

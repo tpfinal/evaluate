@@ -4,6 +4,10 @@ session_start();
  * 
  */
 
+ //limpiamos las variables guardadas en sesion
+unset($_SESSION['lista']);
+unset($_SESSION['TEMP']);
+ 
 if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario?
    
 	require_once('../php_lib/conexion.php'); //incluimos la clase conexion
@@ -21,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 		
 //obtenemos los datos del periodo
 	$obj_periodo=$adoP->getPeriodo($id_periodo);
-	//var_dump($obj_periodo);
+	var_dump($obj_periodo);
 	
 //guardamos en session los DATOS del Periodo
 	

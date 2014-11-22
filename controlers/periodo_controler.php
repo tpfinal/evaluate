@@ -3,6 +3,10 @@ session_start();
 /*
  * 
  */
+ 
+//limpiamos las variables guardadas en sesion
+unset($_SESSION['lista']);
+unset($_SESSION['TEMP']);
 
 if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario?
     //require('../model/class.periodo.php'); //incluimos la clase periodo
@@ -11,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	
 	$adoE=new adoEmpleado();
 	$id= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
+	//var_dump($id);
 	
 //recibimos los datos por post y los guardamos en variables
     @$nombre=$_POST['nombre_periodo'];

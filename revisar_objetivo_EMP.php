@@ -4,7 +4,7 @@
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
-require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
+//require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -93,27 +93,7 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 							<td> <b>$nota</b>
 						";
 						}
-						else
-						if($actual==$id_evaluacion and $id_user!=$id_empleado){
-						echo"
-							<td>ACTIVO</td>
-							<td>
-							<form action='controlers/evaluar_controler.php' method='post' id='ingresar_nota' class='ingresar_nota' name='ingresar_nota'>
-										<select id='ddl_notas' name='ddl_notas'>
-											<option value=1>1</option>
-											<option value=2>2</option> 
-											<option value=3>3</option> 
-											<option value=4>4</option> 
-											<option value=5>5</option> 
-										</select>
-										
-										<button class='button' type='submit' onsubmit='return validar()'> Evaluar </button>
-							</form>
-							</td>
-						</tr>
-						";
-						}
-						
+
 						else{
 						echo"
 							<td>PENDIENTE</td>

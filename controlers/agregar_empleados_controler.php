@@ -10,9 +10,7 @@ session_start();
 	require('../php_lib/formato_fechas.php');
 	
 	$adoP=new adoPeriodo();
-	//$id_creador= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 	
-
 //tomamos los datos del Periodo de la session
 	
 	$nombre=$_SESSION['TEMP']['nombre_periodo'];
@@ -20,6 +18,7 @@ session_start();
 	$fin=$_SESSION['TEMP']['fin'];
 	$id_creador=$_SESSION['TEMP']['creador'];		
 	$cantidad=$_SESSION['TEMP']['cantidad'];
+
 	
 $inicio=stdasql($inicio);
 //var_dump($inicio);
@@ -30,7 +29,7 @@ $fin=stdasql($fin);
 //creamose el objeto periodo
 	@$obj_periodo= new periodo($nombre, $inicio, $fin, $id_creador);
     //var_dump($obj_periodo); //para ver el contenido del objeto
-
+//die();
 	
 //Lista con los nombres y los perfiles de los empleados
 	$lista=$_SESSION['lista'];
@@ -45,10 +44,8 @@ if(!$lista)
 
 //Guardamos el Periodo y recuperamos el id
 	$id_periodo=$adoP->guardarPeriodo($obj_periodo);
+	//var_dump($id_periodo);
 	
-//obtenemos el id asignado por la BD
-	$id_periodo=$adoP->getIdPeriodo($nombre);
-
 //Guardamos las fechas de EVALUACION
 $tipo='o';
   for($i=1 ; $i<=$cantidad ; $i++)
@@ -56,16 +53,20 @@ $tipo='o';
    		$fecha=$_SESSION['TEMP'][$i];
 		$fechaSQL=stdasql($fecha);
 		$adoP->guardarFecha($fechaSQL,$id_periodo,$tipo);
-		
-		//echo 'evaluacion '.$i;
-		//var_dump($fechaSQL);
+
    }	
+
    
-//Guardamos las relaciones empleado-periodo en la BD
+//Guardamos las relaciones empleado-periodo-perfil en la BD
 foreach ($lista as $key=>$id)
 {
-	$adoP->guardarEmpleado($key,$id[2],$id_periodo);
+	//key = id_empleado
+	//id[2] = id_perfil
+	//id_periodo = id_periodo
+	$adoP->guardarRelacion($key , $id[2] , $id_periodo);
 }
+//var_dump($lista);
+
 
 //limpiamos las variables guardadas en sesion
 unset($_SESSION['lista']);

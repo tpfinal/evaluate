@@ -57,14 +57,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		
 	</div>
     </div>
-  <!--==============================Flecha Atras =================================-->
-	    <div class="clear"></div>
-		<div class="grid_1" id="flecha_atras">
-        <a href="crear_periodo.php">
-          <img src="images/flecha_atras.png" alt="ATRAS">
-        </a>
-		</div>
-		</div>
+
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

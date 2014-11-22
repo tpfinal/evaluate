@@ -40,6 +40,7 @@ private $array_periodos=array();
 
 	
 //metodo que regresa el objeto perfil pasando como parametro el id
+
 	function getPeriodo($id_periodo) 
 	{
 	if ($id_periodo)
@@ -54,27 +55,28 @@ private $array_periodos=array();
 			$this->creador=$row['id_creador'];
 			
 	//creamos el objeto objetivo con los datos recividos
-		$this->obj_periodo = new periodo($this->nombre,$this->inicio,$this->fin,$this->creador,$this->id);
+		$obj_periodo = new periodo($this->nombre,$this->inicio,$this->fin,$this->creador,$this->id);
 		
-		//var_dump($this->obj_periodo); //para ver el contenido del objeto
+		//var_dump($obj_periodo); //para ver el contenido del objeto
 		
-		return $this->obj_periodo;
+		return $obj_periodo;
 		}
 	}
 
 //metodo que almacena los datos del perfil en la BD
+
 	public function guardarPeriodo($obj_periodo)
 	{
-	$this->nombre=$obj_periodo->getNombre();
-	$this->inicio=$obj_periodo->getInicio();
-	$this->fin=$obj_periodo->getFin();
-	$this->creador=$obj_periodo->getIdCreador();
+	$nombre=$obj_periodo->getNombre();
+	$inicio=$obj_periodo->getInicio();
+	$fin=$obj_periodo->getFin();
+	$creador=$obj_periodo->getIdCreador();
 	
 	//var_dump($obj_periodo); //para ver el contenido del objeto
 	
 		$obj_sQuery=new sQuery();
 		$query="INSERT INTO periodo(nombre_periodo,inicio_periodo,fin_periodo,id_creador)
-				VALUES('$this->nombre','$this->inicio','$this->fin','$this->creador')";
+				VALUES('$nombre','$inicio','$fin','$creador')";
 				
 		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
 		
@@ -88,6 +90,7 @@ private $array_periodos=array();
 
 	
 //Borra los registros de las tablas Perfil usando el id del perfil
+
 	function eliminarPeriodo($id)	
 	{
 			$obj_sQuery=new sQuery();
@@ -98,6 +101,7 @@ private $array_periodos=array();
 	}	
 
 //Retorna un array con los nombres de todos los Periodos y sus IDs como indices
+
 	function getAllPeriodos()
 	{
 			$obj_sQuery=new sQuery();
@@ -107,15 +111,16 @@ private $array_periodos=array();
 	
 		while($row=mysql_fetch_array($result))
 		{
-		$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
+			$array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
 		}
 			
-		//var_dump($this->array_perfiles); //para ver el contenido del array
+		//var_dump($array_perfiles); //para ver el contenido del array
 	
-		return $this->array_periodos;
+		return $array_periodos;
 	}
 	
 //Retorna un array con los periodos creados por un evaluador especifico
+
 	function getMyPeriodos($id_creador)
 	{
 			$obj_sQuery=new sQuery();
@@ -126,7 +131,6 @@ private $array_periodos=array();
 												"); // ejecuta la consulta para traer una lista
 
 	//llenamos el array  con los datos recividos
-	
 		while($row=mysql_fetch_array($result))
 		{
 			$array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
@@ -138,6 +142,7 @@ private $array_periodos=array();
 	}
 	
 //Retorna los periodos de un evaluador que ya estan cerrados
+
 	function getMyPeriodosFinalizados($id_creador)
 	{
 			$obj_sQuery=new sQuery();
@@ -148,7 +153,6 @@ private $array_periodos=array();
 												"); // ejecuta la consulta para traer una lista
 
 	//llenamos el array  con los datos recividos
-	
 		while($row=mysql_fetch_array($result))
 		{
 			$array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
@@ -160,6 +164,7 @@ private $array_periodos=array();
 	}
 	
 //Retorna un array con los nombres de los Periodos que corresponden a un Empleado
+
 	function getPeriodos($id_empleado)
 	{
 			$obj_sQuery=new sQuery();
@@ -171,8 +176,7 @@ private $array_periodos=array();
 												AND fin_periodo>now()
 											  "); // ejecuta la consulta para traer una lista
 
-	//llenamos el array  con los datos recividos
-	
+		//llenamos el array  con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
 			$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
@@ -184,6 +188,7 @@ private $array_periodos=array();
 	}
 	
 //Retorna un array con los nombres de los Periodos finalizados en los que participo un empleado
+
 	function getPeriodosFinalizados($id_empleado)
 	{
 			$obj_sQuery=new sQuery();
@@ -195,8 +200,7 @@ private $array_periodos=array();
 												AND fin_periodo<now()
 											  "); // ejecuta la consulta para traer una lista
 
-	//llenamos el array  con los datos recividos
-	
+		//llenamos el array  con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
 			$array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
@@ -238,8 +242,8 @@ private $array_periodos=array();
 			
 			$result=$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 
 			//var_dump($result);
-	//llenamos el array  con los datos recividos
 	
+		//llenamos el array  con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
 			$array_fechas[$row['id_evaluacion']]=$row['fecha_evaluacion'];
@@ -251,9 +255,9 @@ private $array_periodos=array();
 			
 	}
 	
-//Guardar IDs de periodo, empleado, perfil
+//Guardar las relaciones entre los IDs de periodo, empleado y perfil
 
-	function guardarEmpleado($id_empleado,$id_perfil,$id_periodo)
+	function guardarRelacion($id_empleado,$id_perfil,$id_periodo)
 	{
 			$obj_sQuery=new sQuery();
 			$query1="	INSERT INTO empleados_periodo (id_empleado,id_periodo,id_perfil) 
@@ -263,6 +267,7 @@ private $array_periodos=array();
 	}
 	
 //Retorna un array con los nombres de todos los empleados y sus IDs como indices correspondientes a un periodo
+
 		function getEmpleados($id_periodo)
 		{
 			$obj_sQuery=new sQuery();

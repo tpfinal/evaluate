@@ -97,8 +97,8 @@ private $obj_objetivo;
 //Regresa un array con los nombres de los objetivos y los id como indices de un empleado
 	function getObjetivos($id_empleado,$id_periodo)	
 	{
-			$obj_cliente=new sQuery();
-			$query1="	SELECT DISTINCT id_objetivo,nombre_objetivo
+			$obj_query=new sQuery();
+			$query="	SELECT DISTINCT id_objetivo,nombre_objetivo
 						FROM objetivos as o 
 						JOIN empleados_periodo as ep
 						WHERE o.id_perfil=ep.id_perfil
@@ -107,7 +107,7 @@ private $obj_objetivo;
 						AND o.tipo_objetivo='o'
 						";
 
-		$result=$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro del objetivo
+		$result=$obj_query->executeQuery($query); // ejecuta la consulta 
 			
 		//llenamos el array de objetivos con los datos recividos
 		while($row=mysql_fetch_array($result))
@@ -116,7 +116,7 @@ private $obj_objetivo;
 		}
 			
 		//var_dump($result);
-		//var_dump($this->array_objetivos); //para ver el contenido del array
+		//var_dump($array_objetivos); //para ver el contenido del array
 	
 		return @$array_objetivos;	
 	}	
@@ -125,8 +125,8 @@ private $obj_objetivo;
 
 		function getFechasEvaluacion($id_objetivo,$id_empleado,$id_periodo)
 		{
-			$obj_sQuery=new sQuery();
-			$result=$obj_sQuery->executeQuery(" SELECT ev.id_evaluacion,o.nombre_objetivo,ev.fecha_evaluacion
+			$obj_query=new sQuery();
+			$result=$obj_query->executeQuery(" SELECT ev.id_evaluacion,o.nombre_objetivo,ev.fecha_evaluacion
 												FROM objetivos as o 
 												JOIN empleados_periodo as ep ON o.id_perfil=ep.id_perfil
 												JOIN evaluacion as ev ON ev.id_periodo=ep.id_periodo

@@ -4,7 +4,7 @@
  * Simplemente hay que añadir esta línea de PHP al principio.
  */
 require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
-require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
+//require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -48,9 +48,16 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					?>
 				</optgroup>
 				</select>
-				<button class="button" type="submit">Buscar</button>
+				<?php
+				if($periodos){
+				echo "<button class='button' type='submit'>Continuar</button>";
+				}
+				else
+				echo "<label class='aclaracion'>No hay periodos </label>";
+				?>
         </fieldset>
         </form>
+		
 		<div id="divErrores">
 		<ul id="lista"></ul>		
 		</div>

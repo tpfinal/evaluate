@@ -20,39 +20,29 @@ echo '<h2>Fechas de evaluacion: </h2>';
 
 echo 'id_objetivo: '.$id_objetivo;
 echo '</br>';
-echo $id_empleado;
+echo 'id_empleado: '.$id_empleado;
 echo '</br>';
-echo $id_periodo;
+echo 'id_periodo: '.$id_periodo;
 echo '</br>';
-
 
 var_dump($fechas);
 
-//funcion que regresa el id de la fecha de evaluacion correspondiente a la fecha actual
-	
-/*function evaluacionActual($arrayDeFechas)
-{
-$hoy=date("Y-m-d");
-$id=0;
-
-	foreach($arrayDeFechas as $key=>$fecha)
-	{
-		if($fecha<=$hoy)
-		{
-			$id=$key;
-		}		
-	}
-return $id;
-}*/
-
 $id_evaluacion=$ado->evaluacionActual($fechas);
 
-//$id_evaluacion=evaluacionActual($fechas);
 $_SESSION['TEMP']['id_evaluacion']=$id_evaluacion;
 
-echo $_SESSION['TEMP']['id_evaluacion'];
-	
-//vamos a evaluar_objetivo.php
+$rol=@$_SESSION['USUARIO']['rol'];
+echo "rol: "; var_dump($rol);
+echo "page: "; var_dump($_SESSION['TEMP']['page']);
+//die();
+
+if($rol=='0' or @$_SESSION['TEMP']['page']==1)
+	{
+	//Si soy solo un empleado vamos a revisar_objetivo_EMP.php
+	header('Location: ../revisar_objetivo_EMP.php');
+	die();
+	}
+//si no vamos a evaluar_objetivo.php
 	header('Location: ../evaluar_objetivo.php');
 	die();
 
