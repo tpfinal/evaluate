@@ -46,7 +46,7 @@ include('php_lib/solo_evaluadores.php');
     </div>
 	<div class="grid_4">
       <div class="opcion">
-		<a href=""><img src="images/ranking.jpg" alt="RANKING"/></a>
+		<a href="ranking.php"><img src="images/ranking.jpg" alt="RANKING"/></a>
 	  </div>
     </div>
 <div class="clear"></div>
