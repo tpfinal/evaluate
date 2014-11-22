@@ -34,6 +34,14 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	//recibimos los datos por post
     //@$id_periodo=$_POST['id_periodo'];
 	$listaEmpleados=$adoE->getAllEmpleados();
+	
+	//quitamos el usuario logueado del array
+	//si queremos que el usuario pueda agregarse a una evaluacion comentamos estas 2 lineas
+	$id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
+	unset($listaEmpleados[$id_user]);
+	
+	
+	
 	$listaPerfiles=$adoP->getAllPerfiles();
 ?>
 	<div class="container_12">
