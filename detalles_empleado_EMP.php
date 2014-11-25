@@ -90,7 +90,7 @@ ECHO "86400 = un dia";
 						foreach($competencias as $key=>$nombre){
 							echo "
 							<tr> 
-							<td><li>$nombre</li> </td>
+							<td><li><label>$nombre</label></li> </td>
 							<td id='derecha'>
 							<select id='ddl_notas' name='nota_$key'>
 											<option value=1>1</option>

@@ -51,11 +51,22 @@ $promedios[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 				<?php
 				if(@$objetivos)
 					{
+					echo"<table id='tabla_competencias' class='abm_perfil'><tbody> ";
+
 					foreach($objetivos as $key=>$nombre){
-						echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre 
+						echo "
 						
-						$promedios[$key]</a></li>";
+						<tr> 
+							<td><li><a href='controlers/detalles_controler.php?id=$key'>$nombre</a></li> </td>
+							<td id='derecha'> $promedios[$key]</td>
+						</tr>
+						
+						";
 						}
+					
+					
+					echo"</tbody></table>	";
+
 					}
 				?>
 			</ul>

@@ -1,6 +1,23 @@
 @import "reset.css";
 @import "skeleton.css";
 @import "superfish.css";
+
+.aclaracion{
+
+	text-align: center;
+	font:17px Simplified Arabic Fixed;
+	display: block;
+	color:#248348;
+}
+
+
+
+.aclaracion2{
+	font:17px Simplified Arabic Fixed;
+	display: block;
+	color:#248348;
+}
+
 #tabla_ranking{
 text-align:center;
 width: 100%;

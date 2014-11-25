@@ -2,24 +2,6 @@
 
 
 /***************************************************************************************************************/
-
-
-
-
-.aclaracion{
-
-	text-align: center;
-	font:17px Simplified Arabic Fixed;
-	display: block;
-	color:#248348;
-}
-
-
-label.error {
-	color: red; 
-	font-size: 14px;
-	}
-
 #abm_empleados {
 	margin-top: 50px;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);

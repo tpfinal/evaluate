@@ -86,24 +86,15 @@ color: #248348;
 .calendario:focus{
 	border-color: #A7A7A7;
 }
-.aclaracion{
-	text-align: center;
-	font:17px Simplified Arabic Fixed;
-	display: block;
-	color:#248348;
-}
 
-.aclaracion2{
-	font:17px Simplified Arabic Fixed;
-	display: block;
-	color:#248348;
-}
+
 
 
 label.error {
 	color: red; 
 	font-size: 14px;
 	}
+	
   .alta_periodo {
 	margin-top: 50px;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);

@@ -54,7 +54,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				echo "<button class='button' type='submit'>Continuar</button>";
 				}
 				else
-				echo "<label class='aclaracion'>No hay periodos </label>";
+				echo "<label class='aclaracion error'>No hay periodos </label>";
 				?>
         </fieldset>
         </form>

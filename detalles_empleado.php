@@ -32,42 +32,33 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	$ado=new adoObjetivo();
 	$adoP=new adoPerfil();
 	$adoE=new adoEmpleado();
-
 //recibimos por GET el id del empleado 
 $id_empleado=$_GET['id'];
-
 //lo guardamos en session
 $_SESSION['TEMP']['id_empleado']=$id_empleado;
 //var_dump($_SESSION['TEMP']['id_empleado']);
-
 //recuperamos el id_periodo de la session
 $id_periodo=$_SESSION['TEMP']['id_periodo'];
 //var_dump($_SESSION['TEMP']['id_periodo']);
-
 //obtenemos un array con los objetivos del empleado de este periodo
 $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);
 //var_dump($objetivos);
-
 //obtenemos un array con los promedios de los objetivos
 foreach($objetivos as $key=>$nombre){
 $promedios_objetivos[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 }
-
 //buscamos el objeto perfil correspondiente
 $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
 //var_dump($obj_perfil);
-
 //obtenemos un array con las competencias del perfil
 $competencias=$ado->getCompetencias($obj_perfil->getId());
 //var_dump($competencias);
-
 //obtenemos un array con los promedios de las competencias
 foreach($competencias as $key=>$nombre){
 $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 }
 //var_dump($promedios_objetivos);
 //var_dump($promedios_competencias);
-
 ?>
 <div class="container_12">
 <div id="div_titulo">
@@ -77,23 +68,24 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 </div>
 <div class="clear cl1" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
-		
 		<div class="grid_6" id="columna_objetivos">
-
 			<h5 class="texto2">Objetivos</h5>
 			<ul id="lista_objetivos">
 				<?php
 				if(@$objetivos)
 				{
+					echo"<table id='tabla_competencias'><tbody> ";
 					foreach($objetivos as $key=>$nombre){
-						echo "<li><a href='controlers/detalles_controler.php?id=$key'> $nombre 
-						
-						$promedios_objetivos[$key]</a></li>";
+							echo "
+						<tr>
+							<td><li><a href='controlers/detalles_controler.php?id=$key'> $nombre </td>
+							<td id='derecha'>$promedios_objetivos[$key]</a></li></td> </li>
+						</tr>
+						";
 					}
+											echo"</tbody></table>	";
 				}
-
 				?>
-
 			</ul>
 		</div>
 		<div class="grid_6" id="columna_objetivos">
@@ -103,26 +95,15 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 				if(@$competencias)
 					{
 						echo"<table id='tabla_competencias'><tbody> ";
-
-					
 						foreach($competencias as $key=>$nombre){
-						
 						echo"
-						
 							<tr>
 							<td><li>$nombre</td>
-
 							<td id='derecha'>$promedios_competencias[$key]</td> </li>
-							
 							</tr>
-						
 						";
-							
-							
 						}
-						
 						echo"</tbody></table>	";
-						
 					}
 				?>
 			</ul>
