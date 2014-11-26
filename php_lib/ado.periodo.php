@@ -39,7 +39,7 @@ private $array_periodos=array();
 	}
 
 	
-//metodo que regresa el objeto perfil pasando como parametro el id
+//metodo que regresa el objeto periodo pasando como parametro el id
 
 	function getPeriodo($id_periodo) 
 	{
@@ -63,6 +63,30 @@ private $array_periodos=array();
 		}
 	}
 
+//metodo que regresa si un periodo ya existe
+
+	function checkPeriodo($nombre_periodo) 
+	{
+
+			$obj_sQuery=new sQuery();
+			$result=$obj_sQuery->executeQuery("	SELECT nombre_periodo
+												FROM periodo 
+												WHERE nombre_periodo = '$nombre_periodo'
+											"); // ejecuta la consulta
+											
+			@$row=mysql_fetch_array($result);		
+			$nombre=$row['nombre_periodo'];
+			
+			if($nombre){
+				return true;
+			}
+			else
+				return false;
+			
+		
+	}	
+	
+	
 //metodo que almacena los datos del perfil en la BD
 
 	public function guardarPeriodo($obj_periodo)

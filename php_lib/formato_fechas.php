@@ -17,13 +17,15 @@ return $sql;
 }
 
 //convierte una fecha del formato standar (d/m/Y) al formato SQL de la BD(YYYY-mm-dd)
+//funciona en PHP 5.3 o superiores
+/*
 function stdasql($fechaStd)
 {
 	$date = DateTime::createFromFormat('d/m/Y', $fechaStd);
 	$sql=$date->format('Y-m-d');
 
 return $sql;
-}
+}*/
 
 //convierte una fecha del formato SQL de la BD(YYYY-mm-dd) al formato standar (d/m/Y)
 function sqlastd($fechaSql)
@@ -31,6 +33,15 @@ function sqlastd($fechaSql)
 	$std=date("d/m/Y",strtotime($fechaSql));
 
 return $std;
+}
+
+//convierte una fecha del formato standar (d/m/Y) al formato SQL de la BD(YYYY-mm-dd)
+//Funcion para PHP 5.2
+function stdasql($date)
+{
+	$dateInput = explode('/',$date);
+	$ukDate = $dateInput[2].'-'.$dateInput[1].'-'.$dateInput[0];
+	return $ukDate;
 }
 
 
