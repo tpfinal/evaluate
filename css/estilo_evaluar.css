@@ -1,3 +1,36 @@
+
+#tabla_ranking table { 
+		width: 100%; 
+		border-collapse: collapse;
+	}
+	/* Zebra striping */
+		#tabla_ranking  tr:nth-of-type(odd) { 
+		background: #CECECE; 		
+	}
+	#categorias th{
+	background: #333; 
+		color: white; 
+		font-weight: bold; 
+		font-size:15px;
+		text-shadow: 1px 1px 8px #A3A3A3;
+		 border: 1px solid white;
+		padding: 9px;
+	}
+	#categorias th:hover{
+	background: #248348; 
+	}
+		#tabla_ranking  td{
+		font-size:17px;
+		font-weight:400;
+	}
+		#tabla_ranking  td,th { 
+		padding: 6px; 
+		border: 1px solid #ccc; 
+		text-align:center;
+	}
+
+
+
 #tabla_competencias td{
 width:100%;
 padding: 7px;
@@ -496,14 +529,17 @@ box-shadow: inset 0 0 5px 0px #248348;
 	text-shadow: 1px 1px 20px #000;
 	color:#FF0000;
 	}
+	
+	
+	
+	
 	/* 
 	Max width before this PARTICULAR table gets nasty
 	This query will take effect for any screen smaller than 760px
 	and also iPads specifically.
 	*/
 	@media 
-	only screen and (max-width: 760px),
-	(min-device-width: 768px) and (max-device-width: 1024px)  {
+	only screen and (max-width: 1023px){
 		/* Force table to not be like tables anymore */
 			#tabla_evaluar table,
 			#tabla_evaluar thead,
@@ -511,6 +547,14 @@ box-shadow: inset 0 0 5px 0px #248348;
 			#tabla_evaluar th,
 			#tabla_evaluar td,
 			#tabla_evaluar tr { 
+			display: block; 
+		}
+		#tabla_ranking table,
+			#tabla_ranking thead,
+			#tabla_ranking tbody,
+			#tabla_ranking th,
+			#tabla_ranking td,
+			#tabla_ranking tr { 
 			display: block; 
 		}
 		/* Hide table headers (but not display: none;, for accessibility) */
@@ -546,4 +590,41 @@ box-shadow: inset 0 0 5px 0px #248348;
 			#tabla_evaluar td:nth-of-type(2):before { content: "Fecha Evaluacion"; }
 			#tabla_evaluar td:nth-of-type(3):before { content: "Estado"; }
 			#tabla_evaluar td:nth-of-type(4):before { content: "Nota"; }
+			
+	
+	
+	
+	#tabla_ranking thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+			#tabla_ranking tr { border: 1px solid #ccc; }
+			#tabla_ranking td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee; 
+			position: relative;
+			padding-left: 50%; 
+		}
+			#tabla_ranking td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+			font-weight: bold; 
+			box-shadow: 0 1px 1px rgba(1, 1, 1, .2), inset 0 1px 0 rgba(0, 0, 0, 0);
+			}
+		/*
+		Label the data
+		*/
+			#tabla_ranking td:nth-of-type(1):before { content: "#";	 }
+			#tabla_ranking td:nth-of-type(2):before { content: "Nombre"; }
+			#tabla_ranking td:nth-of-type(3):before { content: "P.O"; }
+			#tabla_ranking td:nth-of-type(4):before { content: "P.C"; }
+			#tabla_ranking td:nth-of-type(5):before { content: "C.E"; }
 	}

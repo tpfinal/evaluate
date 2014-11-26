@@ -21,13 +21,6 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 </div>
 </div>
 <!--==============================Content (formulario de alta)=================================-->
-<script language="javascript">
-function fAgrega()
-{
-	var nombre = document.getElementById("nombre_perfil").value;
-}
-</script>
-	
 	
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
@@ -41,7 +34,7 @@ function fAgrega()
 			<fieldset>
 				<section>
 				<label class="input">
-                            <input type="text" name="nombre_perfil"  placeholder="Nombre"></input>
+                            <input type="text" name="nombre_perfil"  placeholder="Nombre" maxlength="40"></input>
                             <b class="tooltip tooltip-bottom-right">
 							Ingrese un nombre del perfil
 							</b>  
@@ -49,7 +42,7 @@ function fAgrega()
 				</section>
 				<section>
 					<label class="input">
-								<input type="text" name="descripcion_perfil"  placeholder="Descripcion"></input>
+								<input type="text" name="descripcion_perfil"  placeholder="Descripcion" maxlength="70"></input>
 								<b class="tooltip tooltip-bottom-right">
 								Ingrese una descripcion para el perfil
 								</b>  

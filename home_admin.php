@@ -23,7 +23,7 @@ require('php_lib/solo_administradores.php');
 </div>
 <!--==============================Content=================================-->
   <div class="container_12">
-    <div class="content" id="dejar_espacio2">
+    <div class="content" id="dejar_espacio3">
 <div class="clear cl1"></div>
     <div class="grid_4 prefix_2">
       <div class="opcion">

@@ -23,14 +23,6 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
 <!--==============================Content (texto - contenido) =================================-->
 	
 <?php include("content/form_alta.php"); ?>
-	
-<!--==============================Flecha Atras =================================-->
-	           <div class="clear"></div>
-		<div class="grid_1" id="flecha_atras">
-        <a href="home_admin.php">
-          <img src="images/flecha_atras.png" alt="ATRAS">
-        </a>
-		</div>
 </div>
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>

@@ -49,7 +49,7 @@ $ordenado=$adoR->ordenar($empleados);
 		
 			<p class="texto3" id=""> Los objetivos tienen un peso nominal del 60% por sobre las competencias que tienen un 40%  </p>
 
-			<div class="grid_8 prefix_2" id="">
+			<div class="grid_10 prefix_1">
 
 					
 					
@@ -89,6 +89,8 @@ $ordenado=$adoR->ordenar($empleados);
 						
 						</tbody>
 					</table>
+						    <div class="clear"></div>
+
 			</div>			
 		</div>
 		</div>

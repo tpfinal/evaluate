@@ -23,7 +23,7 @@ include('php_lib/solo_evaluadores.php');
 <!--==============================Content=================================-->
   <div class="container_12">
     <div class="clear cl1"></div>
-<div class="content" id="dejar_espacio3">
+<div class="content">
     <div class="grid_4">
       <div class="opcion">
 		<a href="alta_perfil.php"><img src="images/crear_perfil.jpg" alt="CREAR PERFIL"/></a>
