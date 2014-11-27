@@ -57,8 +57,21 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		
 	</div>
     </div>
-
+	
+	<div class="clear"></div>
+	   
+	<div class="content" id="dejar_espacio4">
+<!--==============================Flecha Atras =================================-->
+	    <!--	
+		<div class="grid_1" id="flecha_atras">
+        <a href="home_evaluador.php">
+          <img src="images/flecha_atras.png" alt="ATRAS">
+        </a>
+		</div>
+		
 <!--==============================footer=================================-->
+</div>
+
 <?php include("footer/pie.php"); ?>
 </body>
 </html>

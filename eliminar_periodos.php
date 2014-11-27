@@ -1,10 +1,10 @@
 <?php session_start();
-/*
- * PÃ¡gina asegurada
- * Simplemente hay que aÃ±adir esta lÃ­nea de PHP al principio.
+/* 
+ * Página asegurada
+ * Simplemente hay que añadir esta línea de PHP al principio.
  */
-require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la pÃ¡gina de login.php
-require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de 1 y 3
+require('php_lib/include-pagina-restringida.php'); //el incude para vericar que estoy logeado. Si falla salta a la página de login.php
+include('php_lib/solo_evaluadores.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,23 +20,26 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <?php include("menu/menu.php"); ?>
 </div>
 </div>
-<!--==============================Content (formulario de alta)=================================-->
-<?php
+<!--==============================Content=================================-->
+
+  <?php
 //incluimos la clase de acceso a datos
 	require('php_lib/ado.periodo.php');
 	$adoP=new adoPeriodo();
 //obtenemos el array de periodos
 	$id_user=$adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 	@$periodos=$adoP->getMyPeriodos($id_user);
+	
+	//echo @$_SESSION['USUARIO']['rol'];
 	//var_dump($id_user); //para ver el contenido del array
 ?>
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_8 prefix_2">
 		
-		<form action="controlers/seguir_controler.php" method="post" id="buscar_periodo" class="alta_periodo" >
-			<header>Seguir / Evaluar
-				<label class="aclaracion">.:Seleccione el periodo que quiere visualizar:.</label>
+		<form action="controlers/eliminar_periodo_controler.php" method="post" id="buscar_periodo" class="alta_periodo" >
+			<header>Eliminar Periodo
+				<label class="aclaracion">.:Seleccione el periodo que quiere eliminar:.</label>
             </header>
 			<fieldset>
 				<select name="id_periodo" id="listItem">
@@ -51,7 +54,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				
 				<?php
 				if($periodos){
-				echo "<button class='button' type='submit'>Continuar</button>";
+				echo "<button class='button' type='submit'>Eliminar</button>";
 				}
 				else
 				echo "<label class='aclaracion error'>No hay periodos </label>";
@@ -62,20 +65,15 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		<div id="divErrores">
 		<ul id="lista"></ul>		
 		</div>
+		
 	</div>	
-    </div>
-	 <div class="clear"></div>
+ 
 	
-  <!--==============================Flecha Atras =================================-->
-	   <!--
-		<div class="grid_1" id="flecha_atras">
-        <a href="home_evaluador.php">
-          <img src="images/flecha_atras.png" alt="ATRAS">
-        </a>
-		</div>
-	
+ </div>
+<div class="clear"></div>
+
+
 <!--==============================footer=================================-->
-	</div>
 <?php include("footer/pie.php"); ?>
 </body>
 </html>

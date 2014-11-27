@@ -113,14 +113,23 @@ private $array_periodos=array();
 	}
 
 	
-//Borra los registros de las tablas Perfil usando el id del perfil
+//Borra los registros del periodo
 
-	function eliminarPeriodo($id)	
+	function eliminarPeriodo($id_periodo)	
 	{
 			$obj_sQuery=new sQuery();
-			$query1="DELETE FROM periodo WHERE id_perfil=$id";
-
-			$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  borrar el registro 
+			
+			$query1="	DELETE FROM evaluacion WHERE id_periodo=$id_periodo";
+			$obj_sQuery->executeQuery($query1); // borra las evaluaciones
+			
+			$query2="	DELETE FROM notas WHERE id_periodo=$id_periodo ";
+			$obj_sQuery->executeQuery($query2); //borra las notas si las Hubiera
+			
+			$query3="	DELETE FROM empleados_periodo WHERE id_periodo=$id_periodo ";
+			$obj_sQuery->executeQuery($query3); //borra las relaciones	
+			
+			$query4="	DELETE FROM periodo WHERE id_periodo=$id_periodo";
+			$obj_sQuery->executeQuery($query4); // ejecuta la consulta para  borrar el periodo
 		
 	}	
 
@@ -188,7 +197,7 @@ private $array_periodos=array();
 	}
 	
 //Retorna un array con los nombres de los Periodos que corresponden a un Empleado
-
+//y que no estan finalizados
 	function getPeriodos($id_empleado)
 	{
 			$obj_sQuery=new sQuery();
@@ -203,12 +212,12 @@ private $array_periodos=array();
 		//llenamos el array  con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
-			$this->array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
+			$array_periodos[$row['id_periodo']]=$row['nombre_periodo'];
 		}
 			
-		//var_dump($this->array_perfiles); //para ver el contenido del array
+		//var_dump($); //para ver el contenido del array
 	
-		return $this->array_periodos;
+		return $array_periodos;
 	}
 	
 //Retorna un array con los nombres de los Periodos finalizados en los que participo un empleado
@@ -303,13 +312,31 @@ private $array_periodos=array();
 	//llenamos el array de empleados con los datos recividos
 		while($row=mysql_fetch_array($result))
 		{
-			$this->array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
+			$array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
 		}
 			
-		//var_dump($this->array_empleados); //para ver el contenido del array
+		//var_dump($array_empleados); //para ver el contenido del array
 	
-		return $this->array_empleados;
+		return $array_empleados;
 		}
+		
+//Metodo que checkea si el periodo esta siendo utilizado
+	public function checkUsoPeriodo($id_periodo)
+	{
+		$obj_sQuery=new sQuery();
+		$result=$obj_sQuery->executeQuery("	SELECT id_periodo 
+											FROM periodo 
+											WHERE id_periodo=$id_periodo
+											AND inicio_periodo < now()
+										  "); 
+		$row=mysql_fetch_array($result);		
+		$id_periodo=$row['id_periodo'];
+		
+		return $id_periodo;
+		
+	}
+		
+		
 }
 
 

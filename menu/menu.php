@@ -5,15 +5,19 @@ $rol=@$_SESSION['USUARIO']['rol'];
 
 switch ($rol) {
   case 0:
+  //solo empleado 
     $principal='home_empleado.php';
     break;
   case 1:
+  //administrador y empleado
     $principal='home_admin.php';
     break;
   case 2:
+  //evaluador y empleado
     $principal='home_evaluador.php';
     break;
   case 3:
+  //administrador, evaluador y empleado
     $principal='home_admin.php';
     break;
   default:

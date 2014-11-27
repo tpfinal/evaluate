@@ -21,22 +21,56 @@ include('php_lib/solo_evaluadores.php');
 </div>
 </div>
 <!--==============================Content=================================-->
-  <div class="container_12">
-    <div class="clear cl1"></div>
-<div class="content">
-   
-   
-   
-   
-   pagina para cargar los perfiles para eliminar.
-   
-   
-   
-   
+
+  <?php
+//incluimos la clase de acceso a datos
+	require('php_lib/ado.perfil.php');
+	$adoP=new adoPerfil();
+//obtenemos el array de periodos
+	$id_user=$adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
+	@$perfiles=$adoP->getAllPerfiles();
+	//var_dump($id_user); //para ver el contenido del array
+?>
+	<div class="container_12">
+    <div class="content" id="dejar_espacio">
+	<div class="grid_8 prefix_2">
+		
+		<form action="controlers/eliminar_perfil_controler.php" method="post" id="buscar_periodo" class="alta_periodo" >
+			<header>Eliminar Perfil
+				<label class="aclaracion">.:Seleccione el perfil que quiere eliminar:.</label>
+            </header>
+			<fieldset>
+				<select name="id_perfil" id="listItem">
+				<optgroup class="periodos">
+					<?php
+					foreach($perfiles as $key=>$valor) {
+					echo '<option  value='. $key .'>' . $valor .'</option>';
+					}
+					?>
+				</optgroup>
+				</select>
+				
+				<?php
+				if($perfiles){
+				echo "<button class='button' type='submit'>Eliminar</button>";
+				}
+				else
+				echo "<label class='aclaracion error'>No hay perfiles </label>";
+				?>
+        </fieldset>
+        </form>
+		Los perfiles que estan en uso no podran ser eliminados.
+		<div id="divErrores">
+		<ul id="lista"></ul>		
+		</div>
+		
+	</div>	
+ 
 	
+ </div>
 <div class="clear"></div>
-</div>
-</div>
+
+
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

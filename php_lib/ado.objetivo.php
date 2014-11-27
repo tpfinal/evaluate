@@ -84,7 +84,7 @@ private $obj_objetivo;
 
 	}
 	
-//Borra los registros de las tablas Empleados y Usuarios usando el id del objetivo
+//Borra un objetivo en particular
 		function eliminarObjetivo($id)	
 	{
 			$obj_cliente=new sQuery();

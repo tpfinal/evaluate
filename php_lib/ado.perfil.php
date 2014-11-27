@@ -166,6 +166,38 @@ function findPerfil($id_empleado,$id_periodo)
 		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar los datos
 	}
 	
+//Metodo que checkea si el perfil esta siendo utilizado
+	public function checkUsoPerfil($id_perfil)
+	{
+		$obj_sQuery=new sQuery();
+		$query="	SELECT id_perfil
+					FROM empleados_periodo
+					WHERE id_perfil='$id_perfil'
+			   ";
+				
+		$result = $obj_sQuery->executeQuery($query); // ejecuta la consulta 
+		$row=mysql_fetch_array($result);		
+		$id_perfil=$row['id_perfil'];
+		
+		return $id_perfil;
+		
+	}
+	
+//Borra el perfil , sus objetivos y las relaciones con las competencias (no borra competencias)
+	function eliminarPerfil($id_perfil)	
+	{
+			$obj_sQuery=new sQuery();
+			
+			$query1="DELETE FROM objetivos WHERE id_perfil=$id_perfil";
+			$obj_sQuery->executeQuery($query1); //  borra los objetivos
+			
+			$query2="DELETE FROM competencias_perfil WHERE id_perfil=$id_perfil";
+			$obj_sQuery->executeQuery($query2); //  borra las relaciones entre competencias y perfiles
+			
+			$query3="DELETE FROM perfil WHERE id_perfil=$id_perfil";
+			$obj_sQuery->executeQuery($query3); //  borra el perfil	
+	}	
+	
 	
 }
 
