@@ -65,8 +65,8 @@
 						<input type="checkbox"  name="rol2" value="2">Evaluador</input>
 						<label class="aclaracion">*Si no selecciona ninguno, sera un simple empleado.</label>
 					</section>
-                </fieldset>
                     <button class="button" type="submit">Guardar</button>
-            </form>
+                    </fieldset>
+ </form>
 	</div>
 	</div>

@@ -72,7 +72,7 @@ ECHO "86400 = un dia";
 </div>
 <div class="clear cl1" id="espacio"></div>
 		<div class="content" id="dejar_espacio">
-		<div class="grid_8 prefix_2" id="columna_competencias">
+		<div class="grid_10 prefix_1" id="columna_competencias">
 			<h5 class="texto2">Competencias</h5>
 			<ul id="lista_competencias">
 				<?php

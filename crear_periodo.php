@@ -26,14 +26,14 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 <!--==============================Content (formulario de alta)=================================-->
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
-	<div class="grid_6 prefix_3">
+	<div class="grid_8 prefix_2">
 		
 		<form action="controlers/periodo_controler.php" method="post" id="crear_periodo" name="crear_periodo" class="alta_periodo" novalidate="novalidate">
 			<header>Crear Periodo</header>
 			<fieldset>
 				<section>
 				<label class="input">
-                            <input type="text" name="nombre_periodo"  placeholder="Nombre"></input>
+                            <input type="text" name="nombre_periodo"  placeholder="Nombre"  maxlength="40"></input>
                             <b class="tooltip tooltip-bottom-right">Ingrese un nombre para el periodo</b>  
                 </label>
 				</section>

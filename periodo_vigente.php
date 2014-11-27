@@ -38,11 +38,11 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 
 				<div class="content" id="dejar_espacio">
 
-<div id="div_titulo"><label class="subtitulo"><?php echo $nombre_periodo?></label></div>
+				<div id="div_titulo"><label class="subtitulo"><?php echo $nombre_periodo?></label></div>
 
 								
 								
-			<div class="grid_11" id="titulo_fechas">
+			<div class="grid_12" id="titulo_fechas">
 					<div class="grid_2">
 					<h5 class="texto">Fecha inicio</h5>
 					<h6 class="fecha"><?php echo sqlastd($inicio) ?></h6>
@@ -65,7 +65,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 							?>
 							</ul>
 					</div>
-					<div class="grid_3">
+					<div class="grid_4">
 						<h5 class="texto">Empleados evaluados</h5>
 							<ul id="lista_empleados">
 							<?php

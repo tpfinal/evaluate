@@ -496,9 +496,7 @@ transition: all .2s linear;
 .fl1.fl2 {
     clear: both;
 }
-#titulo_fechas{
-margin-left: 8%;
-}
+
 #lista_empleados{
 margin-top:2%;
 font-size: 17px;

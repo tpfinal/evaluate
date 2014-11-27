@@ -22,7 +22,8 @@ text-align:left;
 }
 
  #prueba2 {
-background:yellow;
+ background:yellow;
+
 }
 
 /* Basics */
@@ -37,7 +38,7 @@ background:yellow;
 	}
 
 #container form {	
-	width:101%;
+	width:100%;
 }
 
  

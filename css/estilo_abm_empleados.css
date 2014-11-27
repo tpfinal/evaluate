@@ -96,6 +96,8 @@
 	text-decoration: none;
 	color: #fff;
 	cursor: pointer;
+		border-radius:5px;
+
 }
 
 /**/
@@ -259,7 +261,7 @@
 	-webkit-transition: color 0.3s;
 }
 #abm_empleados .button {
-	background-color: #000000;
+	background-color: #248348;
 	opacity: 0.8;
 	transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
@@ -294,7 +296,7 @@
 }
 #abm_empleados .button:active {
 	opacity: 1;
-	background-color: #248348;
+	background-color: #000000;
 }
 /**/
 /* focus state */

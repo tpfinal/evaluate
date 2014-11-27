@@ -1,11 +1,10 @@
-
 #tabla_ranking table { 
 		width: 100%; 
 		border-collapse: collapse;
 	}
 	/* Zebra striping */
 		#tabla_ranking  tr:nth-of-type(odd) { 
-		background: #CECECE; 		
+		background: #E6E6E6; 		
 	}
 	#categorias th{
 	background: #333; 
@@ -28,19 +27,29 @@
 		border: 1px solid #ccc; 
 		text-align:center;
 	}
-
-
-
+	#tabla_ranking .nombre {
+	width: 50%;
+	}
+	#tabla_ranking .notaO {
+	width: 10%;
+	}
+	#tabla_ranking .notaC {
+	width: 10%;
+	}
+	#tabla_ranking .coeficiente {
+	width: 10%;
+	}
+	#tabla_ranking .posicion {
+	width: 5%;
+	}
 #tabla_competencias td{
 width:100%;
 padding: 7px;
 letter-spacing:1px;
-font-size:22px;
+font-size:20px;
 font-family: 'Josefin Sans', sans-serif;
 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-
 }
-
 #derecha{
 color:green;
 text-align:right;
@@ -48,29 +57,17 @@ text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
  -moz-box-shadow: 0px 0px 3px #5D9A75; 
 -webkit-box-shadow: 0px 0px 3px #5D9A75;
 font-size:24px;
-
 }
-
-
-
-
-
-
-
 #columna_competencias h5{
 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 border-radius: 5px;
 }
-
 #columna_competencias h5:hover{
-
 text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
  -moz-box-shadow: 0px 0px 5px #5D9A75; 
 -webkit-box-shadow: 0px 0px 5px #5D9A75; 
 box-shadow: 0px 0px 5px #5D9A75;
 }
-
-
 #lista_checkbox_competencias{
 color: #000;
 letter-spacing:1px;
@@ -80,18 +77,14 @@ margin:5%;
 list-style-type: disc;
 list-style-image: url(../images/arrow.png);
 list-style-position: inside;
-
 list-style-type: disc;
 list-style-position: inside;
 }
-
 #lista_checkbox_competencias :hover{
  list-style-image: url(../images/arrow_printed.png);
  }
-
-
-
 #lista_empleados{
+margin-left:20%;
 margin-top:3.5%;
 font: 400 17px 'Open Sans', Monospace;
 color:#252525;
@@ -107,14 +100,24 @@ font: 500 18px 'Open Sans', sans-serif;
 #lista_fechas{
 margin-top:3.5%;
 font: 500 17px 'Open Sans', Monospace;
+text-align:center;
+
+}
+
+.fecha{
+text-align:center;
+
 }
 #titulo_fechas{
-text-align:center;
-margin-left: 9.5%;
+margin-left: 4%;
 }
+
+
 #titulo_fechas h5 {
 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 border-radius: 5px;
+text-align:center;
+
 }
 #titulo_fechas h5:hover {
 text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
@@ -135,10 +138,8 @@ box-shadow: 0px 0px 5px #5D9A75;
 #lista_objetivos{
 color: #000;
 letter-spacing:1px;
-margin:5%;
-list-style-type: disc;
-list-style-image: url(../images/arrow.png);
-list-style-position: inside;
+margin-top:5%;
+	
 font-size:18px;
 padding-bottom:3%;
 font-family: 'Josefin Sans', sans-serif;
@@ -146,7 +147,7 @@ font-family: 'Josefin Sans', sans-serif;
 #lista_objetivos_desactivada{
 color: #000;
 letter-spacing:1px;
-margin:5%;
+margin-top:5%;
 list-style-type: disc;
 list-style-image: url(../images/asterisco.png);
 list-style-position: inside;
@@ -154,9 +155,7 @@ font-size:18px;
 padding-bottom:3%;
 font-family: 'Josefin Sans', sans-serif;
 }
-#lista_objetivos :hover{
- list-style-image: url(../images/arrow_printed.png);
- }
+
  #lista_objetivos li {
 margin: 7px;
 }
@@ -171,7 +170,6 @@ font-family: 'Josefin Sans', sans-serif;margin:5%;
 list-style-type: disc;
 list-style-image: url(../images/arrow.png);
 list-style-position: inside;
-
 list-style-type: disc;
 list-style-position: inside;
 }
@@ -182,13 +180,9 @@ list-style-position: inside;
 color: #000;
 letter-spacing:1px;
 margin-top:5%;
-list-style-type: disc;
-list-style-image: url(../images/asterisco.png);
-list-style-position: inside;
 font-size:22px;
 font-family: 'Josefin Sans', sans-serif;
-list-style-type: disc;
-list-style-position: inside;
+
 }
 #lista_competencias li {
 margin: 7px;
@@ -279,6 +273,7 @@ box-shadow: inset 0 0 5px 0px #248348;
 	text-decoration: none;
 	color: #fff;
 	cursor: pointer;
+	border-radius:5px;
 }
 /**/
 /* tooltips */
@@ -441,7 +436,7 @@ box-shadow: inset 0 0 5px 0px #248348;
 	-webkit-transition: color 0.3s;
 }
   .ingresar_nota .button {
-	background-color: #000000;
+	background-color: #248348;
 	opacity: 0.8;
 	transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
@@ -476,7 +471,7 @@ box-shadow: inset 0 0 5px 0px #248348;
 }
   .ingresar_nota .button:active {
 	opacity: 1;
-	background-color: #248348;
+	background-color: #000000;
 }
 /**/
 /* focus state */
@@ -529,17 +524,12 @@ box-shadow: inset 0 0 5px 0px #248348;
 	text-shadow: 1px 1px 20px #000;
 	color:#FF0000;
 	}
-	
-	
-	
-	
 	/* 
 	Max width before this PARTICULAR table gets nasty
 	This query will take effect for any screen smaller than 760px
 	and also iPads specifically.
 	*/
-	@media 
-	only screen and (max-width: 1023px){
+	@media only screen and (max-width: 1023px){
 		/* Force table to not be like tables anymore */
 			#tabla_evaluar table,
 			#tabla_evaluar thead,
@@ -549,20 +539,12 @@ box-shadow: inset 0 0 5px 0px #248348;
 			#tabla_evaluar tr { 
 			display: block; 
 		}
-		#tabla_ranking table,
-			#tabla_ranking thead,
-			#tabla_ranking tbody,
-			#tabla_ranking th,
-			#tabla_ranking td,
-			#tabla_ranking tr { 
-			display: block; 
-		}
 		/* Hide table headers (but not display: none;, for accessibility) */
 			#tabla_evaluar thead tr { 
 			position: absolute;
 			top: -9999px;
 			left: -9999px;
-		}
+			}
 			#tabla_evaluar tr { border: 1px solid #ccc; }
 			#tabla_evaluar td { 
 			/* Behave  like a "row" */
@@ -570,7 +552,7 @@ box-shadow: inset 0 0 5px 0px #248348;
 			border-bottom: 1px solid #eee; 
 			position: relative;
 			padding-left: 50%; 
-		}
+			}
 			#tabla_evaluar td:before { 
 			/* Now like a table header */
 			position: absolute;
@@ -582,7 +564,7 @@ box-shadow: inset 0 0 5px 0px #248348;
 			white-space: nowrap;
 			font-weight: bold; 
 			box-shadow: 0 1px 1px rgba(1, 1, 1, .2), inset 0 1px 0 rgba(0, 0, 0, 0);
-			}
+		}
 		/*
 		Label the data
 		*/
@@ -591,40 +573,11 @@ box-shadow: inset 0 0 5px 0px #248348;
 			#tabla_evaluar td:nth-of-type(3):before { content: "Estado"; }
 			#tabla_evaluar td:nth-of-type(4):before { content: "Nota"; }
 			
-	
-	
-	
-	#tabla_ranking thead tr { 
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
+			
 		}
-			#tabla_ranking tr { border: 1px solid #ccc; }
-			#tabla_ranking td { 
-			/* Behave  like a "row" */
-			border: none;
-			border-bottom: 1px solid #eee; 
-			position: relative;
-			padding-left: 50%; 
-		}
-			#tabla_ranking td:before { 
-			/* Now like a table header */
-			position: absolute;
-			/* Top/left values mimic padding */
-			top: 6px;
-			left: 6px;
-			width: 45%; 
-			padding-right: 10px; 
-			white-space: nowrap;
-			font-weight: bold; 
-			box-shadow: 0 1px 1px rgba(1, 1, 1, .2), inset 0 1px 0 rgba(0, 0, 0, 0);
-			}
-		/*
-		Label the data
-		*/
-			#tabla_ranking td:nth-of-type(1):before { content: "#";	 }
-			#tabla_ranking td:nth-of-type(2):before { content: "Nombre"; }
-			#tabla_ranking td:nth-of-type(3):before { content: "P.O"; }
-			#tabla_ranking td:nth-of-type(4):before { content: "P.C"; }
-			#tabla_ranking td:nth-of-type(5):before { content: "C.E"; }
+	@media only screen and (max-width: 767px){
+	.posicion,.notaC,.notaO {display:none;}
+	
+	
+
 	}

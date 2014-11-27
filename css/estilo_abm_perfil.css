@@ -103,6 +103,7 @@ label.error {
 	text-decoration: none;
 	color: #fff;
 	cursor: pointer;
+	border-radius:5px;
 }
 
 /**/
@@ -266,7 +267,7 @@ label.error {
 	-webkit-transition: color 0.3s;
 }
   .abm_perfil .button {
-	background-color: #000000;
+	background-color: #248348;
 	opacity: 0.8;
 	transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
@@ -301,7 +302,7 @@ label.error {
 }
   .abm_perfil .button:active {
 	opacity: 1;
-	background-color: #248348;
+	background-color: #000000;
 }
 /**/
 /* focus state */

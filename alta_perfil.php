@@ -42,7 +42,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				</section>
 				<section>
 					<label class="input">
-								<input type="text" name="descripcion_perfil"  placeholder="Descripcion" maxlength="70"></input>
+								<input type="text" name="descripcion_perfil"  placeholder="Descripcion" maxlength="60"></input>
 								<b class="tooltip tooltip-bottom-right">
 								Ingrese una descripcion para el perfil
 								</b>  

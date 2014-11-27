@@ -56,11 +56,11 @@ $ordenado=$adoR->ordenar($empleados);
 					<table id="tabla_ranking">
 						<thead>
 						<tr id="categorias">
-							<th>#</th>
-							<th>Nombre del Empleado</th>
-							<th>Promedio Objetivos</th>
-							<th>Promedio Competencias</th>
-							<th>Coeficiente de evaluacion</th>
+							<th class='posicion'>#</th>
+							<th class='nombre'>Nombre del Empleado</th>
+							<th class='notaO'>Promedio Objetivo</th>
+							<th class='notaC'>Promedio Competencia</th>
+							<th class='coeficiente'>Coeficiente Evaluacion</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -75,11 +75,11 @@ $ordenado=$adoR->ordenar($empleados);
 							
 							echo"
 							<tr class=''>
-								<td>$pos</td>
-								<td>$nombre</td>
-								<td>$notaO</td>
-								<td>$notaC</td>
-								<td>$coeficiente</td>
+								<td class='posicion'>$pos</td>
+								<td class='nombre'>$nombre</td>
+								<td class='notaO'>$notaO</td>
+								<td class='notaC'>$notaC</td>
+								<td class='coeficiente'>$coeficiente</td>
 							</tr>";
 						$pos++;
 					

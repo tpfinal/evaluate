@@ -8,7 +8,7 @@ include_once('php_lib/login.lib.php'); //incluimos las funciones
         <div class="grid_4">
         <?php include("logo.php"); ?>
 		</div> 
-		<div class="prefix_6"> 
+		<div class="prefix_4"> 
 	<div id="container">
 		<?php 
 		if (!estoy_logueado()) { // si no estoy logueado
