@@ -53,7 +53,7 @@
                         required: true
                     },
 					descripcion_objetivo: {
-                        required: false
+                        required: true
                     }
                 },
 				

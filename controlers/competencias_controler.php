@@ -29,7 +29,7 @@ foreach($competencias as $key=>$nombre){
 	$_SESSION['TEMP']['competencias_selectas']=$competencias_selectas;
 	
 //volvemos a alta_perfil.php
-	header('Location: ../alta_perfil.php');
+	header('Location: ../nuevo_objetivo.php');
 	die();
 } 
 ?>

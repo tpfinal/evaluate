@@ -21,8 +21,8 @@ session_start();
 	$_SESSION['TEMP']['comenzado']=false;
 
 //volvemos a buscar_registro.php
-	//header('Location: ../eliminar_periodo.php');
-	//die();
+	header('Location: ../eliminar_periodo.php');
+	die();
 			
 	
 	

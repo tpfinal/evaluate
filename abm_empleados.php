@@ -23,7 +23,7 @@ require('php_lib/solo_administradores.php');//restringe acceso a roles diferente
 <!--==============================Content (texto - contenido) =================================-->
 	
 <?php include("content/form_alta.php"); ?>
-</div>
+
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

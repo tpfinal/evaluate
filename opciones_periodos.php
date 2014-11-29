@@ -23,7 +23,7 @@ include('php_lib/solo_evaluadores.php');
 <!--==============================Content=================================-->
   <div class="container_12">
     <div class="clear cl1"></div>
-<div class="content">
+<div class="content" id="dejar_espacio4">
     <div class="grid_4 prefix_2">
       <div class="opcion">
 		<a href="crear_periodo.php"><img src="images/crear_periodo.jpg" alt="CREAR PERIODO"/></a>

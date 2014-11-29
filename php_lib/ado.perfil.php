@@ -38,6 +38,7 @@ private $array_perfiles=array();
 	}
 	
 //metodo que regresa el objeto perfil pasando como parametro el nombre
+
 	function getPerfil($nombre) 
 	{
 	if ($nombre)
@@ -58,6 +59,7 @@ private $array_perfiles=array();
 	}
 	
 //metodo que regresa el objeto perfil pasando como parametro el ID
+
 	function getPerfilById($id) 
 	{
 	if ($id)
@@ -78,7 +80,9 @@ private $array_perfiles=array();
 		}
 	}
 
-//metodo que almacena los datos del perfil en la BD
+//metodo que almacena los datos del perfil en la BD enviando un objeto como parametro
+//retorna el id del nuevo registro
+
 	public function guardarPerfil($obj_perfil)
 	{
 	$this->nombre=$obj_perfil->getNombre();
@@ -98,18 +102,11 @@ private $array_perfiles=array();
 	}
 
 	
-//Borra los registros de las tablas Perfil usando el id del perfil
-		function eliminarPeril($id)	
-	{
-			$obj_cliente=new sQuery();
-			$query1="DELETE FROM perfil WHERE id_perfil=$id";
 
-			$obj_cliente->executeQuery($query1); // ejecuta la consulta para  borrar el registro 
-		
-	}	
 
 //Retorna un array con los nombres de todos los Perfiles y sus IDs como indices
-		function getAllPerfiles()
+
+	function getAllPerfiles()
 		{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("SELECT * FROM perfil"); // ejecuta la consulta para traer los perfiles
@@ -129,7 +126,8 @@ private $array_perfiles=array();
 	
 
 //Regresa el objeto perfil del empleado perteneciente a el periodo
-function findPerfil($id_empleado,$id_periodo)	
+
+	function findPerfil($id_empleado,$id_periodo)	
 	{
 			$obj_cliente=new sQuery();
 			$query1="	SELECT p.id_perfil,p.nombre_perfil,p.descripcion_perfil
@@ -156,6 +154,7 @@ function findPerfil($id_empleado,$id_periodo)
 	}		
 		
 //Metodo que almacena a cual perfil corresponden las competencias
+
 	public function competencia_perfil($id_competencia,$id_perfil)
 	{
 		$obj_sQuery=new sQuery();
@@ -167,6 +166,7 @@ function findPerfil($id_empleado,$id_periodo)
 	}
 	
 //Metodo que checkea si el perfil esta siendo utilizado
+
 	public function checkUsoPerfil($id_perfil)
 	{
 		$obj_sQuery=new sQuery();
@@ -183,7 +183,28 @@ function findPerfil($id_empleado,$id_periodo)
 		
 	}
 	
+//metodo que verifica si el perfil existe
+
+	function checkPerfil($nombre_perfil)	
+	{
+			$obj_sQuery=new sQuery();
+			$query1="SELECT nombre_perfil FROM perfil WHERE nombre_perfil='$nombre_perfil'";
+
+			$result=$obj_sQuery->executeQuery($query1); // ejecuta la consulta 
+			
+			@$row=mysql_fetch_array($result);	
+			
+			$nombre=$row['nombre_perfil'];
+			
+			if($nombre){
+				return true;
+			}
+			else
+				return false;
+	}	
+	
 //Borra el perfil , sus objetivos y las relaciones con las competencias (no borra competencias)
+
 	function eliminarPerfil($id_perfil)	
 	{
 			$obj_sQuery=new sQuery();

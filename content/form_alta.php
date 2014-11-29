@@ -1,6 +1,6 @@
 <div class="container_12">
 	<div class="content" id="dejar_espacio">
-	<div class="grid_8 prefix_2">
+		<div class="grid_8 prefix_2">
 				<form action="controlers/alta_controler.php" method="post" id="abm_empleados" novalidate="novalidate">
 				<header>
                     Alta De Empleados
@@ -67,6 +67,7 @@
 					</section>
                     <button class="button" type="submit">Guardar</button>
                     </fieldset>
- </form>
+				</form>
+		</div>
 	</div>
-	</div>
+</div>

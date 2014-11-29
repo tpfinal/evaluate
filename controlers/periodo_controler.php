@@ -34,7 +34,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	
 //si el nombre ya esta en uso volvemos a crear_periodo.php
 	if($existe){
-	header('Location: ../crear_periodo.php');
+	$_SESSION['MSJ']="* Ya existe un periodo con el nombre $nombre";
+	header("Location: ../crear_periodo.php");
 	die();
 	}
 //si no continuamos normalmente 
@@ -50,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 //echo $_SESSION['TEMP']['creador'];	
 	
 //vamos a agregar_evaluaciones.php
+	//unset($_SESSION['MSJ']);
 	header('Location: ../agregar_evaluaciones.php');
 	die();
 } 

@@ -17,15 +17,16 @@ session_start();
 
 if($enUso==null){
 	$adoP->eliminarPerfil($id_perfil);
-	echo "Perfil eliminado";
+	$_SESSION['MSJ']="* Perfil eliminado";
 	$_SESSION['TEMP']['enUso']=false;
 }
 else{
-	echo "Perfil en uso";
+	$_SESSION['MSJ']="* Perfil en uso";
 	$_SESSION['TEMP']['enUso']=true;
 }
 	
 //volvemos a buscar_registro.php
+	
 	header('Location: ../eliminar_perfiles.php');
 	die();
 			

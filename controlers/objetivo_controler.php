@@ -1,7 +1,7 @@
 <?php
 session_start();
 /*
- * Guarda el objetivo creado
+ * Guarda en session los objetivo creados
  */
 
 if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario?
@@ -15,17 +15,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
     @$nombre=$_POST['nombre_objetivo'];
 	@$descripcion=$_POST['descripcion_objetivo'];
 	@$tipo='o';
-	//@$id_perfil=$_SESSION['id_perfil'];
 	
+	//@$id_perfil=$_SESSION['id_perfil'];
 	//@$id_perfil=$adoP->NextIdPerfil();
 
 //var_dump($id_perfil);
-	
-//creamos el objeto objetivo con los datos recividos
-	//$obj = new objetivo($nombre,$descripcion,$tipo,$id_perfil);
 
 //Guardamos los datos en una variable temporal
-	//$objetivos=array($nombre=>$descripcion);
+	
 	$_SESSION['TEMP']['objetivos'][$nombre]=$descripcion;
 	//var_dump($_SESSION['TEMP']['objetivos']);
 	

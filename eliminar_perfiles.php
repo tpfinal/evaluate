@@ -22,7 +22,11 @@ include('php_lib/solo_evaluadores.php');
 </div>
 <!--==============================Content=================================-->
 
-  <?php
+<?php
+//variable de session
+	@$enUso=$_SESSION['TEMP']['enUso'];
+	//echo 'variable $enUso: '; var_dump($enUso);
+
 //incluimos la clase de acceso a datos
 	require('php_lib/ado.perfil.php');
 	$adoP=new adoPerfil();
@@ -59,7 +63,16 @@ include('php_lib/solo_evaluadores.php');
 				?>
         </fieldset>
         </form>
-		Los perfiles que estan en uso no podran ser eliminados.
+		<?php
+		$mje=@$_SESSION['MSJ'];
+			if(!$mje){
+			echo "Los perfiles que estan en uso no podran ser eliminados";
+			}
+			else{
+			echo $mje;
+			UNSET($_SESSION['MSJ']);
+			}
+		 ?>
 		<div id="divErrores">
 		<ul id="lista"></ul>		
 		</div>

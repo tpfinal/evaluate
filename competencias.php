@@ -23,6 +23,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 </div>
 <!--==============================Content (formulario de alta)=================================-->
 <?php
+
 	//require('php_lib/conexion.php'); //incluimos la clase conexion
 	require('php_lib/ado.objetivo.php');//incluimos la clase de acceso a datos
 	$ado=new adoObjetivo();
@@ -63,7 +64,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			?>
 				</section>
 				
-				<button class="button" type="submit">Continuar</button>
+				<button class="button" type="submit">Siguiente</button>
 				
 				<button class="button" type="button" onclick="location='nueva_competencia.php'">Nueva Competencia</button>
 			
@@ -74,17 +75,18 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 
     </div>
 
-
-		
-  <!--==============================Flecha Atras =================================-->
 	    <div class="clear"></div>
+		
+<!--	<!--==============================Flecha Atras =================================-->
+
 		<div class="grid_1" id="flecha_atras">
         <a href="home_evaluador.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>
-		</div>
+		
 <!--==============================footer=================================-->
+</div>
 <?php include("footer/pie.php"); ?>
 </body>
 </html>

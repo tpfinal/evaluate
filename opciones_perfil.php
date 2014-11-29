@@ -21,9 +21,9 @@ include('php_lib/solo_evaluadores.php');
 </div>
 </div>
 <!--==============================Content=================================-->
-  <div class="container_12">
+ <div class="container_12">
+  <div class="content" id="dejar_espacio4">
     <div class="clear cl1"></div>
-<div class="content">
     <div class="grid_4 prefix_2">
       <div class="opcion">
 		<a href="alta_perfil.php"><img src="images/crear_perfil.jpg" alt="CREAR PERFIL"/></a>
@@ -35,8 +35,9 @@ include('php_lib/solo_evaluadores.php');
 	  </div>
     </div>
 	
-<div class="clear"></div>
-</div>
+	<div class="clear"></div>
+		
+	</div>
 </div>
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>

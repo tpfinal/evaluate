@@ -23,18 +23,18 @@ require('php_lib/solo_administradores.php');
 </div>
 <!--==============================Content=================================-->
   <div class="container_12">
-    <div class="content" id="dejar_espacio3">
-<div class="clear cl1"></div>
-    <div class="grid_4 prefix_2">
-      <div class="opcion">
-		<a href="abm_empleados.php"><img src="images/alta_empleado.jpg" alt="ALTA DE EMPLEADOS"/></a>
-	  </div>
-    </div>
-	<div class="grid_4">
-      <div class="opcion">
-		<a href="buscar_registro.php"><img src="images/buscar_empleado.jpg" alt="BUSCAR EMPLEADOS"/></a>
-	  </div>
-    </div>
+    <div class="content" id="dejar_espacio4">
+		<div class="clear cl1"></div>
+		<div class="grid_4 prefix_2">
+			<div class="opcion">
+				<a href="abm_empleados.php"><img src="images/alta_empleado.jpg" alt="ALTA DE EMPLEADOS"/></a>
+			</div>
+		</div>
+		<div class="grid_4">
+			<div class="opcion">
+				<a href="buscar_registro.php"><img src="images/buscar_empleado.jpg" alt="BUSCAR EMPLEADOS"/></a>
+			</div>
+		</div>
 	<div class="clear"></div>
     </div>
   </div>

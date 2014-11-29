@@ -22,7 +22,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 </div>
 <!--==============================Content (formulario de alta)=================================-->
 	<div class="container_12">
-    <div class="content" id="dejar_espacio">
+    <div class="content" id="dejar_espacio3">
 	<div class="grid_6 prefix_3">
 	
 		<form action="controlers/objetivo_controler.php" method="post" id="alta_objetivo" class="abm_perfil">
@@ -44,10 +44,9 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 							</b>  
 					</label>					
 				</section>
-				<button class="button" type="submit">Guardar Objetivo</button>
+				<button class="button" type="submit">Agregar Objetivo</button>
 				
-				<button class="button" type="button" onclick="location='alta_perfil.php'">Volver</button>
-				
+				<button class="button" type="button" onclick="location='competencias.php'">Volver</button>
 
 			</fieldset>
 			
@@ -65,11 +64,18 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			echo ' | ';
 			echo "<a href='controlers/quitar_objetivo_controler.php?objetivo=$nombre' class='button'>Quitar</a></li>";
 			}
+		echo '</br>';	
+		echo "<button class='button' type='button' onclick=\"location='controlers/guardar_perfil_controler.php'\">Guardar Perfil</button>";
 		}
 		?>
 		
+		</div>
+		<div class="clear"></div>	
+		
 	</div>
-    </div>
+	
+</div>
+ 
 
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>

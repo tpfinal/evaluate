@@ -19,13 +19,11 @@
 	<div class="container_12">
 	<div class="content" >
 			<div class="grid_12" id="about">
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit laoreet odio in pellentesque.
-Aliquam enim ante, pretium non tempor vel, pretium non neque.
-Etiam cursus ante vel purus dictum, a rhoncus justo fringilla.
-Praesent volutpat pretium est at lobortis.</p>
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-Mauris sodales velit nulla. Vestibulum congue aliquam pellentesque. Curabitur non neque id nisi adipiscing tincidunt.
-Vivamus nec feugiat tellus. In hac habitasse platea dictumst.</p>
+ <p>El objetivo general de Evaluate es brindarle a los encargados de los diferentes sectores de su empresa 
+ una herramienta eficaz para realizar un seguimiento y evaluaci&oacute;n del rendimiento de los empleados a su cargo, 
+ donde se contemplar&aacute;n cuestiones objetivas como las acciones que su puesto requiera, 
+ actitudes vinculadas con la relaci&oacute;n entre pares, y objetivos o metas  preestablecidas dise&ntilde;adas 
+ especificamente para un grupo de empleados definido.</p>
 			</div>			
 	</div>
 </div>

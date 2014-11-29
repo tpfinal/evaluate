@@ -75,6 +75,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		<ul id="lista"></ul>
 		<span id="error1" style='display:none'> * La fecha de inicio no puede coincidir con la fecha de finalizacion </br> </span>
 		<span id="error2" style='display:none'> * La fecha de inicio no puede ser posterior a la fecha de finalizacion </br> </span>
+		<?php echo @$_SESSION['MSJ'];UNSET($_SESSION['MSJ']);?>
 	</div>
 						
 						
@@ -82,7 +83,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
     </div>
 	
 	    <div class="clear"></div>
-		<div class="content" id="dejar_espacio4">
+
   <!--==============================Flecha Atras =================================-->
 	<!--
 		<div class="grid_1" id="flecha_atras">

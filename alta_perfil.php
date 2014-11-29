@@ -27,7 +27,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					
 	<div class="grid_6 prefix_3">
 	
-		<form action="controlers/perfil_controler.php" method="post" id="alta_perfil" class="abm_perfil" >
+		<form action="controlers/alta_perfil_controler.php" method="post" id="alta_perfil" class="abm_perfil" >
 			<header>Alta De Perfil
 				<label class="aclaracion">.:Realice el alta de un nuevo perfil:.</label>
             </header>
@@ -49,23 +49,21 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					</label>					
 				</section>
 				
-				
+				<!--
 				<button class="button" type="button" onclick="location='nuevo_objetivo.php'">Agregar Objetivos</button>
-				
 				<button class="button" type="button" onclick="location='competencias.php'">Competencias</button>
-				
+				-->
+				<button class="button" type="submit">Siguiente</button>
         </fieldset>
 		
-		<button class="button" type="submit">Guardar Perfil</button>
-		
-		
+	
         </form>
-			</div>	
-			
-
+		
+		<div class="clear"></div>	
+		<?php echo @$_SESSION['MSJ'];UNSET($_SESSION['MSJ']);?>
+		</div>	
     </div>
-
-
+ </div>
 
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
