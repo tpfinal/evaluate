@@ -28,7 +28,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 //obtenemos el array de periodos
 	$id_user=$adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 	@$periodos=$adoP->getMyPeriodos($id_user);
-	//var_dump($id_user); //para ver el contenido del array
+	//var_dump($id_user); //para ver el id del usuario
+	//var_dump($periodos); //para ver el contenido del array
 ?>
 	<div class="container_12">
     <div class="content" id="dejar_espacio">

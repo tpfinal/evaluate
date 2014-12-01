@@ -37,7 +37,6 @@ $fin=stdasql($fin);
 
 if(!$lista)	
 {
-	echo "<script type='text/javascript'> alert('No ha seleccionado empleados');</script>";
 	header('Location: ../agregar_empleados.php');
 	die();
 }

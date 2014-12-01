@@ -78,7 +78,7 @@ private $obj_objetivo;
 		
 	}
 	
-//metodo que modifica los datos del empleado en la BD
+//metodo que modifica los datos del objetivo en la BD
 	public function updateObjetivo($obj_objetivo)
 	{
 
@@ -152,8 +152,8 @@ private $obj_objetivo;
 
 //Regresa un array con los nombres de las COMPETENCIAS y los id como indices de un PERFIL
 //si no se ingresa ningun id de perfil regresará un listado completo de todas las competencias
-
-	function getCompetencias($id_perfil=null)	
+	
+function getCompetencias($id_perfil=null)	
 	{
 	$obj_cliente=new sQuery();
 	
@@ -210,6 +210,7 @@ private $obj_objetivo;
 /////----------------------------METODOS PARA NOTAS------------------------------//////		
 		
 //metodo que dado el id_evaluacion de una nota retorna su periodo
+
 public function getPeriodoNota($id_nota, $id_evaluacion)
 {
 		$obj_sQuery=new sQuery();
@@ -230,7 +231,8 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 }
 
 //metodo que almacena los datos en la tabla nota
-	public function guardarNota($id_objetivo,$id_empleado,$id_evaluacion,$nota)
+
+public function guardarNota($id_objetivo,$id_empleado,$id_evaluacion,$nota)
 	{
 	
 		$obj_sQuery=new sQuery();
@@ -249,7 +251,8 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 	}
 
 //metodo que recupera una nota ya guardada
-	public function getNota($id_objetivo,$id_empleado,$id_evaluacion)
+
+public function getNota($id_objetivo,$id_empleado,$id_evaluacion)
 	{
 		$obj_sQuery=new sQuery();
 		$query="SELECT  nota
@@ -269,7 +272,8 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 	}
 	
 //metodo que calcula el promedio de un objetivo/competencia
-	public function getAVGobjetivo($id_objetivo,$id_empleado,$id_periodo)
+
+public function getAVGobjetivo($id_objetivo,$id_empleado,$id_periodo)
 	{
 		$obj_sQuery=new sQuery();
 		$query="SELECT ROUND( AVG(nota),1 ) AS avg_nota
@@ -287,14 +291,16 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 			$avg_nota=$row['avg_nota'];
 		
 		//var_dump($avg_nota);
-		
+		if($avg_nota==null){
+		$avg_nota='----';
+		}
 		return $avg_nota;	
 	}	
 	
 //metodo que dado un array de fechas regresa el id de la fecha correspondiente al periodo actual
 // en caso de no haber ninguna fecha que coinsida regresa "0"
 	
-	public function evaluacionActual($arrayDeFechas)
+public function evaluacionActual($arrayDeFechas)
 	{
 	$hoy=date("Y-m-d");
 	$id=0;
@@ -328,7 +334,8 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 	}
 		
 //metodo que regresa la un date con la fecha_hora de la ultima evaluacion corespondiente a estos datos
-	public function getUltimaEvaluacion($id_objetivo,$id_empleado,$id_periodo)
+	
+public function getUltimaEvaluacion($id_objetivo,$id_empleado,$id_periodo)
 	{
 		$obj_sQuery=new sQuery();
 		$query="SELECT max(fecha_hora) AS max

@@ -71,9 +71,11 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		<label>Perfil</label>
 		<select name="id_perfil" id="listItem2">
 		<?php
+		if($listaPerfiles){
 			foreach($listaPerfiles as $key=>$valor) {
 			echo '<option value='. $key .'>' . $valor .'</option>';
 			}
+		}
 		?>
 		</select>
 		</div>
