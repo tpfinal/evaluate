@@ -84,7 +84,7 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 				<?php
 				if(@$objetivos)
 				{
-					echo"<table id='tabla_competencias'><tbody> ";
+					echo"<table id='tabla_objetivos_para_evaluar'><tbody> ";
 					foreach($objetivos as $key=>$nombre){
 							echo "
 						<tr>
@@ -124,6 +124,8 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 	    <div class="clear"></div>
 
 		</div>
+
+
 <!--==============================footer=================================-->
 </div>
 <?php include("footer/pie.php"); ?>
