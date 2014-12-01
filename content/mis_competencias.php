@@ -61,5 +61,6 @@ $promedios[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 		</div>
 		
 	</div>
+ 
+ <div class="clear"></div>
  </div> 
-<div class="clear"></div>

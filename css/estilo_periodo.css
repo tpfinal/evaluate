@@ -1,4 +1,79 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+#tabla_objetivos_para_evaluar td{
+width:100%;
+padding: 7px;
+letter-spacing:1px;
+font-size:22px;
+font-family: 'Josefin Sans', sans-serif;
+box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+font-weight:400; 
+
+}
+
+#tabla_empleados{
+width:100%;
+}
+
+#tabla_empleados .nombre_empleado {
+width: 50%;
+padding-top: 1%;
+font: 20px 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+#tabla_empleados .nombre_perfil {
+width: 30%;
+padding-top: 1%;
+font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
+text-align:center;
+}
+
+#tabla_empleados .quitar_empleado {
+text-align:center;
+width: 20%;
+padding-top: 2%;
+
+}
+
+#tabla_empleados td{
+
+width:100%;
+font-size:20px;
+font-family: 'Josefin Sans', sans-serif;
+box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+#tabla_nuevos_objetivos{
+width:100%;
+}
+
+#tabla_nuevos_objetivos .nombre_objetivo {
+width: 80%;
+padding-top: 1%;
+font: 20px 'Open Sans', Helvetica, Arial, sans-serif;
+}
+#tabla__nuevos_objetivos .quitar_objetivo {
+text-align:center;
+width: 20%;
+padding-top: 2%;
+
+}
+
+#tabla_nuevos_objetivos td{
+
+width:100%;
+font-size:20px;
+font-family: 'Josefin Sans', sans-serif;
+box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+
 #listItem {
 	width:60%;
 	background-color:#FFF;
@@ -20,7 +95,6 @@ box-shadow: inset 0 0 5px 0px green;
 background-color: #248348;
 }
 #listItem2 {
-	width:200px;
 	background-color:#FFF;
 	border:1px solid #DDD;
 	font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
@@ -94,6 +168,13 @@ label.error {
 	color: red; 
 	font-size: 14px;
 	}
+
+label.error2 {
+	color: red; 
+	font-size: 18px;
+	text-align:center;
+	}
+
 	
   .alta_periodo {
 	margin-top: 50px;
@@ -418,16 +499,35 @@ box-shadow: 0 0 5px rgba(0,0,0,.2);
 #asignar_perfil {
 margin-left: 10.5%;
 }
+
+
+
 }
 @media only screen and (max-width: 995px) {
 #asignar_perfil {
 margin-left: 14%;
 }
+
+.perfil {
+display:none;
+}
+
+
+.nombre_perfil {
+display:none;
+}
+
+
 }
 @media only screen and (max-width: 767px) {
 #asignar_perfil {
 margin-left: 11.5%;
 }
+
+  .alta_periodo fieldset {
+	padding: 5px 5px 5px;
+}
+
 }
 @media only screen and (max-width: 479px) {
 #asignaciones{

@@ -82,15 +82,15 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 						echo"
 						<tr>
 							<td>$pos</td>
-							<td> ".sqlastd($fecha)." </td>
+							<td > ".sqlastd($fecha)." </td>
 						";	
 						
 						$nota=$ado->getNota($id_objetivo,$id_empleado,$id_evaluacion);
 						
 						if($nota){
 						echo"
-							<td>EVALUADO</td>
-							<td> <b>$nota</b>
+							<td id='derecha'>EVALUADO</td>
+							<td id='derecha'> <b>$nota</b></td>
 						";
 						}
 						else
@@ -117,7 +117,7 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 						else{
 						echo"
 							<td>PENDIENTE</td>
-							<td> -
+							<td > - </td>
 						";
 						}
 						

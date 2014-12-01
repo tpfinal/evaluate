@@ -128,21 +128,7 @@ ECHO "86400 = un dia";
 				?>
 			</ul>
 		</div>
-		<!--
-		<div class="grid_6" id="columna_objetivos">
-			<h5 class="texto2">Promedios</h5>
-			<ul id="lista_objetivos_desactivada">
-				<?php
-				if(@$objetivos)
-					{
-						foreach($objetivos as $key=>$nombre){
-							echo "<li> $nombre </li>";
-						}
-					}
-				?>
-			</ul>
-		</div>
-		-->
+
 	</div>
 	   </div> 
 	   <div class="clear"></div>

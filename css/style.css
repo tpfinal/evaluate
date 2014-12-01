@@ -11,6 +11,42 @@
 }
 
 
+.button2 {
+	overflow: hidden;
+	outline: none;
+	border: 0;
+	font: 500 15px/20px 'Open Sans', Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer;
+	border-radius:5px;
+	background-color: #000000;
+	position:relative;
+	opacity: 0.6;
+	transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+	padding: 4px;
+}
+
+  .button2:hover {
+	opacity: 1;
+		color: #fff;
+		background-color:#E01212;
+
+}
+  .button2:active {
+	opacity: 1;
+	background-color: #000000;
+		color: #fff;
+
+}
+
+
+
+
 
 .aclaracion2{
 	font:17px Simplified Arabic Fixed;

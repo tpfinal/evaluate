@@ -129,8 +129,9 @@ $actual=$ado->evaluacionActual($fechas);
 					</table>
 			</div>			
 		</div>
+	<div class="clear"></div>
   <!--==============================Flecha Atras =================================-->
-	    <div class="clear"></div>
+	
 		<div class="grid_1" id="flecha_atras">
         <a href="periodo_vigente.php">
           <img src="images/flecha_atras.png" alt="ATRAS">

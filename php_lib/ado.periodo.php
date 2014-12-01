@@ -18,7 +18,7 @@ private $array_periodos=array();
 //metodo que obtiene el id del periodo pasando como argumento el nombre
 //si no se pasa argumento devolvera el proximo id que se generara al insertar un periodo
 	
-	function getIdPeriodo($nombre=null) 
+function getIdPeriodo($nombre=null) 
 	{
 			if($nombre==null)
 			{
@@ -41,7 +41,7 @@ private $array_periodos=array();
 	
 //metodo que regresa el objeto periodo pasando como parametro el id
 
-	function getPeriodo($id_periodo) 
+function getPeriodo($id_periodo) 
 	{
 	if ($id_periodo)
 		{
@@ -65,7 +65,7 @@ private $array_periodos=array();
 
 //metodo que regresa si un periodo ya existe
 
-	function checkPeriodo($nombre_periodo) 
+function checkPeriodo($nombre_periodo) 
 	{
 
 			$obj_sQuery=new sQuery();
@@ -89,7 +89,7 @@ private $array_periodos=array();
 	
 //metodo que almacena los datos del perfil en la BD
 
-	public function guardarPeriodo($obj_periodo)
+public function guardarPeriodo($obj_periodo)
 	{
 	$nombre=$obj_periodo->getNombre();
 	$inicio=$obj_periodo->getInicio();
@@ -115,7 +115,7 @@ private $array_periodos=array();
 	
 //Borra los registros del periodo
 
-	function eliminarPeriodo($id_periodo)	
+function eliminarPeriodo($id_periodo)	
 	{
 			$obj_sQuery=new sQuery();
 			
@@ -135,7 +135,7 @@ private $array_periodos=array();
 
 //Retorna un array con los nombres de todos los Periodos y sus IDs como indices
 
-	function getAllPeriodos()
+function getAllPeriodos()
 	{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("SELECT * FROM periodo"); // ejecuta la consulta para traer una lista
@@ -152,15 +152,15 @@ private $array_periodos=array();
 		return $array_periodos;
 	}
 	
-//Retorna un array con los periodos creados por un evaluador especifico
+//Retorna un array con los periodos creados por un evaluador especifico (NO FINALIZADOS)
 
-	function getMyPeriodos($id_creador)
+function getMyPeriodos($id_creador)
 	{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("	SELECT * 
 												FROM periodo 
 												WHERE id_creador=$id_creador
-												AND fin_periodo>now()
+												AND fin_periodo>=curdate()
 												"); // ejecuta la consulta para traer una lista
 
 	//llenamos el array  con los datos recividos
@@ -174,15 +174,15 @@ private $array_periodos=array();
 		return $array_periodos;
 	}
 	
-//Retorna los periodos de un evaluador que ya estan cerrados
+//Retorna los periodos de un evaluador que ya estan cerrados (FINALIZADOS)
 
-	function getMyPeriodosFinalizados($id_creador)
+function getMyPeriodosFinalizados($id_creador)
 	{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("	SELECT * 
 												FROM periodo 
 												WHERE id_creador=$id_creador
-												AND fin_periodo<now()
+												AND fin_periodo<curdate()
 												"); // ejecuta la consulta para traer una lista
 
 	//llenamos el array  con los datos recividos
@@ -198,7 +198,8 @@ private $array_periodos=array();
 	
 //Retorna un array con los nombres de los Periodos que corresponden a un Empleado
 //y que no estan finalizados
-	function getPeriodos($id_empleado)
+
+function getPeriodos($id_empleado)
 	{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("	SELECT p.id_periodo,p.nombre_periodo
@@ -206,7 +207,7 @@ private $array_periodos=array();
 												JOIN empleados_periodo as ep
 												ON p.id_periodo=ep.id_periodo
 												WHERE ep.id_empleado=$id_empleado
-												AND fin_periodo>now()
+												AND fin_periodo>=curdate()
 											  "); // ejecuta la consulta para traer una lista
 
 		//llenamos el array  con los datos recividos
@@ -222,7 +223,7 @@ private $array_periodos=array();
 	
 //Retorna un array con los nombres de los Periodos finalizados en los que participo un empleado
 
-	function getPeriodosFinalizados($id_empleado)
+function getPeriodosFinalizados($id_empleado)
 	{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("	SELECT p.id_periodo,p.nombre_periodo
@@ -230,7 +231,7 @@ private $array_periodos=array();
 												JOIN empleados_periodo as ep
 												ON p.id_periodo=ep.id_periodo
 												WHERE ep.id_empleado=$id_empleado
-												AND fin_periodo<now()
+												AND fin_periodo<curdate()
 											  "); // ejecuta la consulta para traer una lista
 
 		//llenamos el array  con los datos recividos
@@ -247,7 +248,7 @@ private $array_periodos=array();
 //Guardar fechas de evaluacion del periodo
 //retorna el id de la nueva evaluacion guardada
 
-	function guardarFecha($fecha,$id_periodo,$tipo)
+function guardarFecha($fecha,$id_periodo,$tipo)
 	{
 			$obj_sQuery=new sQuery();
 			$query1="	INSERT INTO evaluacion (fecha_evaluacion,id_periodo,tipo_evaluacion) 
@@ -265,7 +266,7 @@ private $array_periodos=array();
 	
 //Obtener las fechas de evaluacion de un periodo
 
-	function getFechas($id_periodo)
+function getFechas($id_periodo)
 	{
 			$obj_sQuery=new sQuery();
 			$query1="	SELECT * FROM evaluacion
@@ -290,7 +291,7 @@ private $array_periodos=array();
 	
 //Guardar las relaciones entre los IDs de periodo, empleado y perfil
 
-	function guardarRelacion($id_empleado,$id_perfil,$id_periodo)
+function guardarRelacion($id_empleado,$id_perfil,$id_periodo)
 	{
 			$obj_sQuery=new sQuery();
 			$query1="	INSERT INTO empleados_periodo (id_empleado,id_periodo,id_perfil) 
@@ -301,7 +302,7 @@ private $array_periodos=array();
 	
 //Retorna un array con los nombres de todos los empleados y sus IDs como indices correspondientes a un periodo
 
-		function getEmpleados($id_periodo)
+function getEmpleados($id_periodo)
 		{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery(" SELECT ep.id_empleado, e.nombre, e.apellido
@@ -321,7 +322,8 @@ private $array_periodos=array();
 		}
 		
 //Metodo que checkea si el periodo esta siendo utilizado
-	public function checkUsoPeriodo($id_periodo)
+
+public function checkUsoPeriodo($id_periodo)
 	{
 		$obj_sQuery=new sQuery();
 		$result=$obj_sQuery->executeQuery("	SELECT id_periodo 
@@ -335,6 +337,22 @@ private $array_periodos=array();
 		return $id_periodo;
 		
 	}
+	
+//Metodo que retorna el creador de un periodo
+
+public function getCreadorPeriodo($id_periodo)
+	{
+		$obj_sQuery=new sQuery();
+		$result=$obj_sQuery->executeQuery("	SELECT id_creador
+											FROM periodo 
+											WHERE id_periodo='$id_periodo'
+										  "); 
+		$row=mysql_fetch_array($result);		
+		$id_creador=$row['id_creador'];
+		
+		return $id_creador;
+		
+	}	
 		
 		
 }

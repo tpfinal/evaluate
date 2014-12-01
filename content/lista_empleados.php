@@ -33,20 +33,33 @@ if ($_SERVER['REQUEST_METHOD']=='POST' ) { // ¿Nos mandan datos por EL FORM?
 	
 if ($_SERVER['REQUEST_METHOD']=='POST' or @$_SESSION['TEMP']['quitar']='quitado' and $lista)	{	
 
+
+	echo " <table id='tabla_empleados'> ";
+
+
 foreach ($lista as $key=>$id)
 	{
-		echo ' <label class="subtitulo2"> ';
+	
+		echo " <tr> ";
+	
+		echo "<td class='nombre_empleado'>";
 		echo $id[0];
-		echo ' </label> ';
-		echo ' | ';
+		echo "</td>";
+		echo "<td class='nombre_perfil'>";
 		echo $id[1];
-		echo ' | ';
-		echo '<a href="controlers/quitar_controler.php?id='.$key.'" class="eliminar">QUITAR</a>';
-		echo '</br>';
+		echo "</td>";
+		echo '<td class="quitar_empleado"> <a href="controlers/quitar_controler.php?id='.$key.'" class="button2">QUITAR</a></td>';
+
+		echo "</tr>";
 		
 	@$_SESSION['TEMP']['quitar']='';
-	
+
 	}
+	
+	echo " </table> "; 
+	
+	
+	
 	
 }
 	echo '<a href="controlers/agregar_empleados_controler.php" class="button">Guardar</a>';

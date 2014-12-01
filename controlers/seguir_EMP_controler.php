@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario
 	//$id= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 	
 //recibimos un id de periodo por post y los guardamos en una variable
-    @$id_periodo=$_POST['id_periodo'];
+ @$id_periodo=$_POST['id_periodo'];
 	
-//recibimos poe session la pagina
+//recibimos por session la pagina
 $page=$_SESSION['TEMP']['page'];
 		
 //obtenemos los datos del periodo

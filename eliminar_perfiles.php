@@ -62,20 +62,21 @@ include('php_lib/solo_evaluadores.php');
 				echo "<label class='aclaracion error'>No hay perfiles </label>";
 				?>
         </fieldset>
-        </form>
 		<?php
 		$mje=@$_SESSION['MSJ'];
+		
+		
 			if(!$mje){
-			echo "Los perfiles que estan en uso no podran ser eliminados";
+			echo " <label class='aclaracion'>Los perfiles que estan en uso no podran ser eliminados </label>";
 			}
 			else{
-			echo $mje;
+			echo" <label class='error2'> $mje</label>";
 			UNSET($_SESSION['MSJ']);
 			}
 		 ?>
-		<div id="divErrores">
-		<ul id="lista"></ul>		
-		</div>
+		         </form>
+
+
 		
 	</div>	
  

@@ -24,7 +24,6 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="container_12">
     <div class="content" id="dejar_espacio3">
 	<div class="grid_6 prefix_3">
-	
 		<form action="controlers/objetivo_controler.php" method="post" id="alta_objetivo" class="abm_perfil">
 			<header>Nuevo Objetivo</header>
 			<fieldset>
@@ -45,38 +44,37 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 					</label>					
 				</section>
 				<button class="button" type="submit">Agregar Objetivo</button>
-				
 				<button class="button" type="button" onclick="location='competencias.php'">Volver</button>
-
 			</fieldset>
-			
-			
-			
-        </form>	
-		
-		<h4>Lista de Objetivos</h4>
-		<?php 
+			</form>	
+			</div>
+		<div class="grid_8 prefix_2">
+		<form id="alta_objetivo" class="abm_perfil">
+			<header>Objetivos Agregados</header>
+			<fieldset>
+					<?php 
 		@$objetivos=@$_SESSION['TEMP']['objetivos'];
 		if($objetivos){
+			echo "<table id='tabla_nuevos_objetivos'>";
 			foreach($objetivos as $nombre=>$descripcion)
 			{
-			echo "<li>$nombre";
-			echo ' | ';
-			echo "<a href='controlers/quitar_objetivo_controler.php?objetivo=$nombre' class='button'>Quitar</a></li>";
+			echo "<tr>";
+			echo "<td class='nombre_objetivo'>$nombre</td>";
+			echo "<td class='quitar_objetivo'> <a href='controlers/quitar_objetivo_controler.php?objetivo=$nombre' class='button2'>Quitar</a></td>";        
+			echo "</tr>";
 			}
-		echo '</br>';	
-		echo "<button class='button' type='button' onclick=\"location='controlers/guardar_perfil_controler.php'\">Guardar Perfil</button>";
+		echo "</table>";
+		echo "</fieldset>";
+		echo "<fieldset>";
+				echo "<button class='button' type='button' onclick=\"location='controlers/guardar_perfil_controler.php'\">Guardar Perfil</button>";
+		echo "</fieldset>";
 		}
 		?>
-		
-		</div>
+		</form>
+			</div>
 		<div class="clear"></div>	
-		
 	</div>
-	
 </div>
- 
-
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>

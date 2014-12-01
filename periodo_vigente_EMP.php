@@ -23,22 +23,31 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 </div>
 <!--==============================Content=================================-->
 	<?php
-	
+	require('php_lib/ado.periodo.php'); //incluimos la clase de acceso a datos de periodo
 	include ("php_lib/formato_fechas.php");
+	$adoP=new adoPeriodo();
 	
+	$id_periodo=$_SESSION['TEMP']['id_periodo'];
 	$nombre_periodo=$_SESSION['TEMP']['nombre_perido'];
 	$inicio=$_SESSION['TEMP']['inicio'];
 	$fin=$_SESSION['TEMP']['fin'];
 	$fechas_ev=$_SESSION['TEMP']['fechas_ev'];
 	$empleados=$_SESSION['TEMP']['empleados'];
 	//var_dump($empleados);
+	
+	$id_creador=$adoP->getCreadorPeriodo($id_periodo);
+	$evaluador=$adoE->getNameEmpleado($id_creador);
+
 	?>		
 
 		<div class="container_12">
 
 				<div class="content" id="dejar_espacio">
 
-<div id="div_titulo"><label class="subtitulo"><?php echo $nombre_periodo?></label></div>
+		<div id="div_titulo"><label class="subtitulo"><?php echo $nombre_periodo?></label>
+		</br>
+		<label class="subtitulo2"><?php echo "Evaluador: $evaluador"; ?></label>	
+		</div>
 
 								
 								
@@ -80,15 +89,17 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 					</div>	
 			</div>
 		</div>
+			    <div class="clear"></div>
   <!--==============================Flecha Atras =================================-->
-	    <div class="clear"></div>
+
 		<div class="grid_1" id="flecha_atras">
         <a href="seguir_EMP.php">
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>
-		</div>
+	
 <!--==============================footer=================================-->
+	</div>
 <?php include("footer/pie.php"); ?>
 </body>
 </html>

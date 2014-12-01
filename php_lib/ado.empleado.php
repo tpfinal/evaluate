@@ -23,7 +23,7 @@ private $array_empleados=array();
 
 //metodo que obtiene el id del empleado pasando como argumento el numero de dni
 	
-	function getIdByDni($dni=0) // 
+function getIdByDni($dni=0) // 
 	{
 	if ($dni!=0)
 		{
@@ -38,7 +38,8 @@ private $array_empleados=array();
 	}
 	
 //metodo que trae los datos del empleado y regresa un objeto empleado por el DNI(sin los datos de usuario)
-	function getEmpleado($dni=0) // declara el constructor, si trae el numero de cliente lo busca , si no, no hace nada.
+
+function getEmpleado($dni=0) // declara el constructor, si trae el numero de cliente lo busca , si no, no hace nada.
 	{
 	if ($dni!=0)
 		{
@@ -59,7 +60,8 @@ private $array_empleados=array();
 	}
 	
 //metodo que trae los datos del empleado y regresa un objeto empleado por el ID(sin los datos de usuario)
-	function getEmpleadoById($id=0) // declara el constructor, si trae el numero de cliente lo busca , si no, no hace nada.
+
+function getEmpleadoById($id=0) // declara el constructor, si trae el numero de cliente lo busca , si no, no hace nada.
 	{
 	if ($id!=0)
 		{
@@ -80,7 +82,8 @@ private $array_empleados=array();
 	}
 
 //metodo que almacena los datos del empleado en la BD
-	public function guardarEmpleado($obj_empleado)
+
+public function guardarEmpleado($obj_empleado)
 	{
 	$this->nombre=$obj_empleado->getNombre();
 	$this->apellido=$obj_empleado->getApellido();
@@ -108,7 +111,8 @@ private $array_empleados=array();
 	}
 	
 //metodo que modifica los datos del empleado en la BD
-	public function updateEmpleado($obj_empleado)
+
+public function updateEmpleado($obj_empleado)
 	{
 	$this->nombre=$obj_empleado->getNombre();
 	$this->apellido=$obj_empleado->getApellido();
@@ -135,7 +139,8 @@ private $array_empleados=array();
 	}
 	
 //Borra los registros de las tablas Empleados y Usuarios usando el id del 
-		function eliminarEmpleado($id)	
+
+function eliminarEmpleado($id)	
 	{
 			$obj_cliente=new sQuery();
 			$query1="DELETE FROM empleados WHERE id_empleado=$id";
@@ -145,7 +150,8 @@ private $array_empleados=array();
 	}
 
 //Retorna un array con los nombres de todos los empleados y sus IDs como indices
-	function getAllEmpleados()
+
+function getAllEmpleados()
 		{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("SELECT * FROM empleados"); // ejecuta la consulta para traer al cliente 
@@ -164,7 +170,8 @@ private $array_empleados=array();
 		}
 		
 //Retorna un string con el nombre del empleado por su ID
-	function getNameEmpleado($id)
+
+function getNameEmpleado($id)
 		{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery(" SELECT nombre,apellido
