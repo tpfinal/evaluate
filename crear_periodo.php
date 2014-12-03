@@ -51,20 +51,20 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 						<input type='radio'  name='cantidad' value='11'>11</input>
 						<input type='radio'  name='cantidad' value='12'>12</input>
 						
-						<label class="aclaracion2">.:Ingrese una cantidad de evaluaciones:.</label>
+						<label class="aclaracion2">.:Cantidad de evaluaciones:.</label>
 
 				</section>
 				<section >
 						<input type="text" value="" readonly name="theDate1" placeholder="Fecha de inicio" class="calendario" id="fecha_inicio"/>
 						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate1,'dd/mm/yyyy',this)"/>
 												
-						<label class="aclaracion2">.:La fecha se expresa en el formato dia/mes/a&ntilde;o:.</label>
+						<label class="aclaracion2">.:Formato dia/mes/a&ntilde;o:.</label>
 				</section>
 				<section >
 						<input type="text" value="" readonly name="theDate2" placeholder="Fecha de finalizacion" class="calendario"/ id="fecha_final">
 						<input type="button" value="Calendario" onclick="displayCalendar(document.crear_periodo.theDate2,'dd/mm/yyyy',this)"/>
 						
-						<label class="aclaracion2">.:La fecha se expresa en el formato dia/mes/a&ntilde;o:.</label>
+						<label class="aclaracion2">.:Formato dia/mes/a&ntilde;o:.</label>
 
 				</section>
 				<button class="button" type="submit" onclick="return validar_fecha_periodo()">Siguiente</button>

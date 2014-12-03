@@ -1,7 +1,7 @@
 @import "reset.css";
 @import "skeleton.css";
 @import "superfish.css";
-
+@import url(http://fonts.googleapis.com/css?family=Neucha);
 .aclaracion{
 
 	text-align: center;
@@ -175,12 +175,13 @@ background-color: #292929;
  			background-color: #C8DFCA;
 			font-size: 0.875em;
 			border: 1px solid #fff;
-			text-align: justify;
-			font-family: 'Dorsa', sans-serif;
+			text-align: center;
 			margin-bottom:2%;
+			font-size:19px;
+font-family: 'Neucha', cursive;
 }
 #about p {
- 			padding: 7px 7px 7px 7px;
+ 			padding: 7px;
 }
 html {
 	width: 100%;

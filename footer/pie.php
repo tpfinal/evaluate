@@ -4,13 +4,13 @@
       <div class="grid_12">
         <div class="socials">
       <section id="facebook">
-        <a href="#" target="_blank"><span  class="tooltip" title="Seguinos en Facebook">f</span></a>
+        <a href="https://www.facebook.com/EvaluateOficial" target="_blank"><span  class="tooltip" title="Seguinos en Facebook">f</span></a>
         </section>
         <section id="twitter">
-        <a href="#" target="_blank"><span id="twitter-default" class="tooltip" title="Seguinos en Twitter">t</span></a>
+        <a href="https://twitter.com/EvaluateOk" target="_blank"><span id="twitter-default" class="tooltip" title="Seguinos en Twitter">t</span></a>
         </section>      
         <section id="google">
-        <a href="#" target="_blank"><span id="google-default" class="tooltip" title="Seguinos en Google +">g<span>+</span></span></a>
+        <a href="https://plus.google.com/u/0/113947012024704639679/posts?hl=es" target="_blank"><span id="google-default" class="tooltip" title="Seguinos en Google +">g<span>+</span></span></a>
         </section>    
         </div>
         <div class="copy">
