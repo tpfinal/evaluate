@@ -44,8 +44,11 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			{
 			echo'
 				<section class="fechas">
-					 <input type="text" class="calendario" value="" readonly name="theDate'.$i.'" placeholder="Evaluacion N '.$i.'">
-					 <input type="button" value="Seleccionar fecha" onclick="displayCalendar(document.crear_periodo.theDate'.$i.',\'dd/mm/yyyy\',this)">
+					 <input type="text" class="calendario" value=""
+					 readonly name="theDate'.$i.'" placeholder="Evaluacion N '.$i.'">
+					 
+					 <input type="button" value="Seleccionar fecha"
+					 onclick="displayCalendar(document.crear_periodo.theDate'.$i.',\'dd/mm/yyyy\',this)">
 				</section>
 				';
 			};

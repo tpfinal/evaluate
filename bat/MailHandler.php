@@ -11,8 +11,6 @@ if(!isset($_POST['nombre']) ||
 !isset($_POST['telefono']) ||
 !isset($_POST['mensaje'])) {
 
-echo "<b>Ocurrio un error y el formulario no ha sido enviado. </b><br />";
-echo "Por favor, vuelva atras y verifique la informacion ingresada<br />";
 die();
 }
 
@@ -29,6 +27,7 @@ $headers = 'From: '.$email_from."\r\n".
 'X-Mailer: PHP/' . phpversion();
 @mail($email_to, $email_subject, $email_message, $headers);
 
-echo "¡El formulario se ha enviado con exito!";
+header('Location: ../contacto.php');
+
 }
 ?>
