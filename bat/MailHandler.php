@@ -1,79 +1,34 @@
 <?php
+if(isset($_POST['email'])) {
 
-	//SMTP server settings	
-	$host = "smtp.host.com";
-    $port = "587";
-    $username = "";
-    $password = "";
-	
-	
-	$messageBody = "";
-	
-	if($_POST['name']!='false'){
-		$messageBody .= '<p>Visitor: ' . $_POST["name"] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
-	if($_POST['email']!='false'){
-		$messageBody .= '<p>Email Address: ' . $_POST['email'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}else{
-		$headers = '';
-	}
-	if($_POST['phone']!='false'){		
-		$messageBody .= '<p>Phone Number: ' . $_POST['phone'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}	
-	if($_POST['message']!='false'){
-		$messageBody .= '<p>Message: ' . $_POST['message'] . '</p>' . "\n";
-	}
-	
-	if($_POST["stripHTML"] == 'true'){
-		$messageBody = strip_tags($messageBody);
-	}
-	
-	if($host=="" or $username=="" or $password==""){
-		$owner_email = $_POST["owner_email"];
-		$headers = 'From:' . $_POST["email"] . "\r\n" . 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
-		$subject = 'A message from your site visitor ' . $_POST["name"];
-		
-		try{
-			if(!mail($owner_email, $subject, $messageBody, $headers)){
-				throw new Exception('mail failed');
-				}else{
-				echo 'mail sent';
-			}
-			}catch(Exception $e){
-			echo $e->getMessage() ."\n";
-		}
-	}else{	
-		require_once 'Mail.php';
+// Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
+$email_to = "contacto.evaluate@gmail.com";
+$email_subject = "Contacto desde el sitio web";
 
-		$to = $_POST["owner_email"];
-		$subject = 'A message from your site visitor ' . $_POST["name"];
-		$headers = array (
-		'From' => 'From:' . $_POST["email"] . "\r\n" . 'Content-Type: text/plain; charset=UTF-8' . "\r\n",
-		'To' => $to,
-		'Subject' => $subject);
-		
-		$smtp = Mail::factory(
-					'smtp',
-					array (
-						'host' => $host,
-						'port' => $port,
-						'auth' => true,
-						'username' => $username,
-						'password' => $password));
+// Aquí se deberían validar los datos ingresados por el usuario
+if(!isset($_POST['nombre']) ||
+!isset($_POST['email']) ||
+!isset($_POST['telefono']) ||
+!isset($_POST['mensaje'])) {
 
-		$mail = $smtp->send($to, $headers, $messageBody);
-		
-		try{
-			if(PEAR::isError($mail)){
-				echo $mail->getMessage();
-				}else{
-				echo 'mail sent';
-			}
-			}catch(Exception $mail){
-			echo $mail->getMessage() ."\n";
-		}
-	}	
+echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+die();
+}
+
+$email_message = "Detalles del formulario de contacto:\n\n";
+$email_message .= "Nombre: " . $_POST['nombre'] . "\n";
+$email_message .= "E-mail: " . $_POST['email'] . "\n";
+$email_message .= "Teléfono: " . $_POST['telefono'] . "\n";
+$email_message .= "Comentarios: " . $_POST['mensaje'] . "\n\n";
+
+
+// Ahora se envía el e-mail usando la función mail() de PHP
+$headers = 'From: '.$email_from."\r\n".
+'Reply-To: '.$email_from."\r\n" .
+'X-Mailer: PHP/' . phpversion();
+@mail($email_to, $email_subject, $email_message, $headers);
+
+echo "¡El formulario se ha enviado con éxito!";
+}
 ?>
