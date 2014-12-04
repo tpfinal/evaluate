@@ -172,7 +172,8 @@ function getAllEmpleados()
 //Retorna un string con el nombre del empleado por su ID
 
 function getNameEmpleado($id)
-		{
+	{
+		if($id){
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery(" SELECT nombre,apellido
 												FROM empleados
@@ -185,6 +186,7 @@ function getNameEmpleado($id)
 	
 		return $nombreCompleto;
 		}
+	}
 
 }
 

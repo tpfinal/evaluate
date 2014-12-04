@@ -46,6 +46,10 @@ $descripcion=$obj_objetivo->getDescripcion();
 //array con las fechas de evaluacion
 @$fechas=$ado->getFechasEvaluacion($id_objetivo,$id_empleado,$id_periodo);
 
+/************** Cambio solo para deploy en PHP 5.2 ****************/
+       // $fechas = array_reverse($fechas, true);
+/******************************************************************/
+
 //Metodo que obtiene el id de la evaluacion activa
 $actual=$ado->evaluacionActual($fechas);
 

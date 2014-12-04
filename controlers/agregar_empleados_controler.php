@@ -72,7 +72,6 @@ unset($_SESSION['lista']);
 unset($_SESSION['TEMP']);
 
 //vamos al menu principal
-echo "<script type='text/javascript'> alert('Periodo guardado');</script>";
 	header('Location: ../home_evaluador.php');
 	die();
 ?>

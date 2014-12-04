@@ -13,7 +13,7 @@ session_start();
 	$id=$ado->getIdByDni($_SESSION['borrar']);
 	
 	//eliminados empleaqdo y usuario
-	$ado->EliminarEmpleado($id); 
+	$ado->eliminarEmpleado($id); 
 	
 	//guardamos en la variable de session una bandera
 	$_SESSION['borrar']='borrado';

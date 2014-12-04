@@ -47,8 +47,10 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 				<select name="id_periodo" id="listItem">
 				<optgroup class="periodos">
 					<?php
-					foreach($periodos as $key=>$valor) {
-					echo '<option  value='. $key .'>' . $valor .'</option>';
+					if($periodos){
+						foreach($periodos as $key=>$valor) {
+						echo '<option  value='. $key .'>' . $valor .'</option>';
+						}
 					}
 					?>
 				</optgroup>

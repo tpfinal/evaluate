@@ -60,7 +60,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
         </form>
 		
 		<div class="clear"></div>	
-		<?php echo @$_SESSION['MSJ'];UNSET($_SESSION['MSJ']);?>
+		<span id='error2'><?php echo @$_SESSION['MSJ'];UNSET($_SESSION['MSJ']);?></span>
 		</div>	
     </div>
  </div>

@@ -47,8 +47,10 @@ include('php_lib/solo_evaluadores.php');
 				<select name="id_perfil" id="listItem">
 				<optgroup class="periodos">
 					<?php
-					foreach($perfiles as $key=>$valor) {
-					echo '<option  value='. $key .'>' . $valor .'</option>';
+					if($perfiles){
+						foreach($perfiles as $key=>$valor) {
+						echo '<option  value='. $key .'>' . $valor .'</option>';
+						}
 					}
 					?>
 				</optgroup>

@@ -6,7 +6,8 @@ class adoRanking
 {
 
 //Retorna un string con el nombre del empleado por su ID
-	function getNameEmpleado($id)
+
+function getNameEmpleado($id)
 		{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery(" SELECT nombre,apellido
@@ -22,7 +23,8 @@ class adoRanking
 		}
 
 //Retorna un array con los nombres de todos los empleados y sus IDs como indices
-	function getAllEmpleados()
+
+function getAllEmpleados()
 		{
 			$obj_sQuery=new sQuery();
 			$result=$obj_sQuery->executeQuery("SELECT * FROM empleados"); // ejecuta la consulta para traer al cliente 
@@ -32,12 +34,13 @@ class adoRanking
 	;
 		while($row=mysql_fetch_array($result))
 		{
-		$this->array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
+			$array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
 		}
 			
-		//var_dump($this->array_empleados); //para ver el contenido del array
+			//var_dump($array_empleados); //para ver el contenido del array
 	
-		return $this->array_empleados;
+		unset($array_empleados[0]);
+		return $array_empleados;
 		}
 
 //Retorna un array con los nombres de todos los Perfiles y sus IDs como indices

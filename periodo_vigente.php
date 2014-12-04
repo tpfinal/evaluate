@@ -33,8 +33,12 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	$inicio=$_SESSION['TEMP']['inicio'];
 	$fin=$_SESSION['TEMP']['fin'];
 	$fechas_ev=$_SESSION['TEMP']['fechas_ev'];
+	
+/************** Cambio solo para deploy en PHP 5.2 ****************/
+       // $fechas_ev = array_reverse($fechas_ev, true);
+/******************************************************************/
+	
 	$empleados=$_SESSION['TEMP']['empleados'];
-	//var_dump($empleados);
 	
 	$id_creador=$adoP->getCreadorPeriodo($id_periodo);
 	$evaluador=$adoE->getNameEmpleado($id_creador);
