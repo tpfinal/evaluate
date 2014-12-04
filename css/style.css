@@ -173,13 +173,17 @@ padding-bottom:50%;
 #dejar_espacio2 {
 padding-bottom:30%;
 }
-
 #dejar_espacio3 {
-padding-bottom:15%;
-}
-#dejar_espacio4 {
 padding-bottom:26.4%;
 }
+#dejar_espacio4 {
+padding-bottom:15%;
+}
+
+#dejar_espacio5 {
+padding-bottom:20px;
+}
+
 .fecha{
 margin-top:6%;
 font: 500 17px 'Open Sans', Monospace;

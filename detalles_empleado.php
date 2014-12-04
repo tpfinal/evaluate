@@ -69,7 +69,7 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 //var_dump($promedios_competencias);
 
 ?>
-<div class="container_12">
+<div class="container_12" id="dejar_espacio5">
 <div id="div_titulo">
 <label class="subtitulo"><?php echo ''.$adoE->getNameEmpleado($id_empleado); ?></label>
 </br>
@@ -88,7 +88,7 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 					foreach($objetivos as $key=>$nombre){
 							echo "
 						<tr>
-							<td><li><a href='controlers/detalles_controler.php?id=$key'>$nombre</td>
+							<td class=''><li><a href='controlers/detalles_controler.php?id=$key'>$nombre</td>
 							<td id='derecha'>$promedios_objetivos[$key]</a></li></td> </li>
 						</tr>
 						";
@@ -98,7 +98,8 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 				?>
 			</ul>
 		</div>
-		
+
+
 		<div class="grid_6" id="columna_objetivos">
 			<h5 class="texto2">Competencias</h5>
 			<ul id="lista_competencias_desactivada">
@@ -121,7 +122,7 @@ $promedios_competencias[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo
 		</div>
 
 		</div>
-	    <div class="clear"></div>
+	    <div class="clear cls" id=""></div>
 
 		</div>
 

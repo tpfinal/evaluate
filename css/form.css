@@ -18,14 +18,12 @@
 	margin-bottom:1%;
 }
 #form_contacto input:hover{
-text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
  -moz-box-shadow: 0px 0px 5px #5D9A75; 
 -webkit-box-shadow: 0px 0px 5px #5D9A75; 
 box-shadow: 0px 0px 5px #5D9A75;
 	border: none;
 }
 #form_contacto input:focus{
-text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
  -moz-box-shadow: 0px 0px 5px black; 
 -webkit-box-shadow: 0px 0px 5px black; 
 box-shadow: 0px 0px 5px black;
@@ -50,14 +48,12 @@ box-shadow: 0px 0px 5px black;
     padding: 5px 18px 6px;
 }
 #form_contacto textarea:hover{
-text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
  -moz-box-shadow: 0px 0px 5px #5D9A75; 
 -webkit-box-shadow: 0px 0px 5px #5D9A75; 
 box-shadow: 0px 0px 5px #5D9A75;
 	border: none;
 }
 #form_contacto textarea:focus{
-text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
  -moz-box-shadow: 0px 0px 5px black; 
 -webkit-box-shadow: 0px 0px 5px black; 
 box-shadow: 0px 0px 5px black;

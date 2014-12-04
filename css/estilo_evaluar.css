@@ -42,21 +42,33 @@
 	#tabla_ranking .posicion {
 	width: 5%;
 	}
-#tabla_competencias td{
+
+#tabla_competencias {
 width:100%;
+
+}
+	
+#tabla_competencias td{
+
 padding: 7px;
 font-size:20px;
 font-family: 'Josefin Sans', sans-serif;
 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
+
+
+
 #derecha{
 color:green;
-text-align:right;
+text-align:center;
 text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
  -moz-box-shadow: 0px 0px 3px #5D9A75; 
 -webkit-box-shadow: 0px 0px 3px #5D9A75;
 font-size:24px;
+width:15%;
 }
+
+
 #columna_competencias h5{
 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 border-radius: 5px;
