@@ -47,7 +47,7 @@ if(!$lista)
 	
 //Guardamos las fechas de EVALUACION
 $tipo='o';
-  for($i=1 ; $i<=$cantidad ; $i++)
+  for($i=0 ; $i<$cantidad ; $i++)
    {
    		$fecha=$_SESSION['TEMP']['evaluaciones'][$i];
 		$adoP->guardarFecha($fecha,$id_periodo,$tipo);
