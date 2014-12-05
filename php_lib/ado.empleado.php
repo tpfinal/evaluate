@@ -161,12 +161,14 @@ function getAllEmpleados()
 	;
 		while($row=mysql_fetch_array($result))
 		{
-		$this->array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
+			$array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
 		}
 			
-		//var_dump($this->array_empleados); //para ver el contenido del array
-	
-		return $this->array_empleados;
+		//var_dump($array_empleados); //para ver el contenido del array
+		
+		unset ( $array_empleados[1]);
+		
+		return $array_empleados;
 		}
 		
 //Retorna un string con el nombre del empleado por su ID

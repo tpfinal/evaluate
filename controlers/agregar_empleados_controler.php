@@ -49,10 +49,8 @@ if(!$lista)
 $tipo='o';
   for($i=1 ; $i<=$cantidad ; $i++)
    {
-   		$fecha=$_SESSION['TEMP'][$i];
-		$fechaSQL=stdasql($fecha);
-		$adoP->guardarFecha($fechaSQL,$id_periodo,$tipo);
-
+   		$fecha=$_SESSION['TEMP']['evaluaciones'][$i];
+		$adoP->guardarFecha($fecha,$id_periodo,$tipo);
    }	
 
    

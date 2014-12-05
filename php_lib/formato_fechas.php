@@ -44,5 +44,21 @@ function stdasql($date)
 	return $ukDate;
 }
 
+function ordenar($arraySql){
+
+	foreach($arraySql as $fechaSql)
+	{
+		$fechaJs=sqlajs($fechaSql);
+		$arrayJs[]=$fechaJs;
+	}
+		sort($arrayJs);
+		
+		foreach($arrayJs as $fechaJs)
+	{
+		$fechaSql=jsasql($fechaJs);
+		$arraySqlOrdenado[]=$fechaSql;	
+	}	
+	return $arraySqlOrdenado;
+}
 
 ?>

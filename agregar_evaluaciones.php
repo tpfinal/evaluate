@@ -54,6 +54,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 			};
 			?>
 				<button class="button" type="submit">Siguiente</button>
+				<span id='error1'><?php echo @$_SESSION['MSJ'];UNSET($_SESSION['MSJ']);?></span>
 			</fieldset>
         </form>
 

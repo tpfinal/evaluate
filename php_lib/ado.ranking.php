@@ -35,11 +35,13 @@ function getAllEmpleados()
 		while($row=mysql_fetch_array($result))
 		{
 			$array_empleados[$row['id_empleado']]=$row['nombre'].' '.$row['apellido'];
-		}
-			
-			//var_dump($array_empleados); //para ver el contenido del array
-	
+		}	
+
 		unset($array_empleados[0]);
+		unset($array_empleados[1]);
+		
+		//var_dump($array_empleados); //para ver el contenido del array
+		
 		return $array_empleados;
 		}
 
@@ -54,7 +56,7 @@ function getAllEmpleados()
 	;
 		while($row=mysql_fetch_array($result))
 		{
-		$array_perfiles[$row['id_perfil']]=$row['nombre_perfil'];
+			$array_perfiles[$row['id_perfil']]=$row['nombre_perfil'];
 		}
 			
 		//var_dump($this->array_perfiles); //para ver el contenido del array

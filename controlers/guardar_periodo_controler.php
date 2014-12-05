@@ -2,7 +2,7 @@
 session_start();
 /*
  * 
- */
+ *
 
 if ($_SERVER['REQUEST_METHOD']=='POST') { // ¿Nos mandan datos por el formulario?
     require('../model/class.periodo.php'); //incluimos la clase periodo
@@ -61,5 +61,6 @@ function fechaSQL($fecha)
 //vamos a agregar_empleados.php
 	header('Location: ../agregar_empleados.php');
 	die();
-} 
+	
+} */
 ?>
