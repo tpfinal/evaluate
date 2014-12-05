@@ -204,7 +204,7 @@ label.error2 {
 	background-color: #E5E5E5;
 }
   .alta_periodo fieldset {
-	padding: 25px 30px 5px;
+	padding: 12px 15px 5px;
 	border: none;
 	background-color: #F0F0F0;
 }
@@ -542,4 +542,16 @@ text-align:center;
 #asignar_perfil {
 margin-left: 0px;
 }
+
+  .alta_periodo fieldset {
+	padding: 1px 10px 5px;
+
+}
+
+.alta_periodo .button {
+	float: none;
+	padding: 0 10px;
+	margin-left:35%;
+}
+
 }
