@@ -13,6 +13,30 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	 <!--calendar-->
 	<link type="text/css" rel="stylesheet" href="js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css" media="screen"></LINK>
 	<SCRIPT type="text/javascript" src="js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script>
+	 function muestra(id){
+        var span = document.getElementById(id);
+         span.style.display=''; //damos un atributo display:'' que muestra el div     
+	  }  
+	$(document).ready(function(){
+	$("#boton_submit").click(function(){
+	var contador =0;
+		$(".calendario").each(function(index, element) {
+		if (element.value =='') {
+				contador++;
+		}
+		});
+		if (contador >= 1){
+			muestra('error3');
+			return false;
+		}
+		else {
+		return true;
+		}
+	});
+});
+	</script>	
 	</head>
  <body class="page1" id="top">
 <!--==============================header=================================--> 
@@ -34,11 +58,12 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 	<div class="grid_6 prefix_3" id="formulario_agregar_evaluaciones">
-		
-		<form action="controlers/agregar_evaluaciones_controler.php" method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas">
+		<form method="post" name="crear_periodo" class="alta_periodo" id="agregar_fechas" action="controlers/agregar_evaluaciones_controler.php">
 			<header>Fechas de Evaluacion
 			<p class="aclaracion">Periodo desde <?php echo $inicio?> hasta <?php echo $fin?></p></header>
 			<fieldset>
+						<input type="hidden" id="fecha_inicio" value="<?php echo $inicio ?>"> </input>
+						<input type="hidden" id="fecha_fin" value="<?php echo $fin ?>"> </input>
 			<?php
 			for($i=1 ; $i<=$cantidad ; $i++)
 			{
@@ -46,24 +71,20 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 				<section class="fechas">
 					 <input type="text" class="calendario" value=""
 					 readonly name="theDate'.$i.'" placeholder="Evaluacion N '.$i.'">
-					 
 					 <input type="button" value="Seleccionar fecha"
 					 onclick="displayCalendar(document.crear_periodo.theDate'.$i.',\'dd/mm/yyyy\',this)">
 				</section>
 				';
 			};
 			?>
-				<button class="button" type="submit">Siguiente</button>
-				<span id='error1'><?php echo @$_SESSION['MSJ'];UNSET($_SESSION['MSJ']);?></span>
+				<button class="button" id="boton_submit" type="submit">Siguiente</button>
 			</fieldset>
+			<span id="error3" style='display:none'> * Ninguna Fecha puede quedar vacia!...</span>
+			<span class='error3'><?php echo @$_SESSION['MSJ'];UNSET($_SESSION['MSJ']);?></span>
         </form>
-
-		
 	</div>
     </div>
-	
 	<div class="clear"></div>
-	   
 	<div class="content" id="dejar_espacio4">
 <!--==============================Flecha Atras =================================-->
 	    <!--	
@@ -72,10 +93,8 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
           <img src="images/flecha_atras.png" alt="ATRAS">
         </a>
 		</div>
-		
 <!--==============================footer=================================-->
 </div>
-
 <?php include("footer/pie.php"); ?>
 </body>
 </html>

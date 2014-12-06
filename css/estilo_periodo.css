@@ -1,11 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext);
-
 #tabla_objetivos_para_evaluar {
 width:100%;
 }
-
-
 #tabla_objetivos_para_evaluar td{
 padding: 7px;
 letter-spacing:1px;
@@ -13,52 +10,34 @@ font-size:20px;
 font-family: 'Bree Serif', serif;
 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
 #tabla_empleados{
 width:100%;
 }
-
 #tabla_empleados .nombre_empleado {
 width: 50%;
 padding-top: 1%;
 font: 20px 'Open Sans', Helvetica, Arial, sans-serif;
 }
-
 #tabla_empleados .nombre_perfil {
 width: 30%;
 padding-top: 1%;
 font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
 text-align:center;
 }
-
 #tabla_empleados .quitar_empleado {
 text-align:center;
 width: 20%;
 padding-top: 2%;
-
 }
-
 #tabla_empleados td{
-
 width:100%;
 font-size:20px;
 font-family: 'Josefin Sans', sans-serif;
 box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
-
-
-
 #tabla_nuevos_objetivos{
 width:100%;
 }
-
 #tabla_nuevos_objetivos .nombre_objetivo {
 width: 80%;
 padding-top: 1%;
@@ -68,18 +47,13 @@ font: 20px 'Open Sans', Helvetica, Arial, sans-serif;
 text-align:center;
 width: 20%;
 padding-top: 2%;
-
 }
-
 #tabla_nuevos_objetivos td{
-
 width:100%;
 font-size:20px;
 font-family: 'Josefin Sans', sans-serif;
 box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
-
-
 #listItem {
 	width:60%;
 	background-color:#FFF;
@@ -138,6 +112,12 @@ text-align:center;
 #error1,#error2 {
 color:red;
 }
+#error3, .error3{
+color:red;
+letter-spacing:1px;
+font-size:14px;
+font-family: 'Bree Serif', serif;
+}
 .fecha_subtitulo{
 color: #248348;
 }
@@ -166,22 +146,15 @@ color: #248348;
 .calendario:focus{
 	border-color: #A7A7A7;
 }
-
-
-
-
 label.error {
 	color: red; 
 	font-size: 14px;
 	}
-
 label.error2 {
 	color: red; 
 	font-size: 18px;
 	text-align:center;
 	}
-
-	
   .alta_periodo {
 	margin-top: 50px;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -276,7 +249,6 @@ label.error2 {
 	color: #fff;
 	cursor: pointer;
 		border-radius:5px;
-
 }
 /**/
 /* tooltips */
@@ -497,43 +469,29 @@ border-radius:2px;
 background-color: #759280;
 box-shadow: 0 0 5px rgba(0,0,0,.2);
 }
-
-
-
-
 @media only screen and (max-width: 1279px) {
 #asignar_perfil {
 margin-left: 10.5%;
 }
-
-
-
 }
 @media only screen and (max-width: 995px) {
 #asignar_perfil {
 margin-left: 14%;
 }
-
 .perfil {
 display:none;
 }
-
-
 .nombre_perfil {
 display:none;
 }
-
-
 }
 @media only screen and (max-width: 767px) {
 #asignar_perfil {
 margin-left: 11.5%;
 }
-
   .alta_periodo fieldset {
 	padding: 5px 5px 5px;
 }
-
 }
 @media only screen and (max-width: 479px) {
 #asignaciones{
@@ -542,16 +500,12 @@ text-align:center;
 #asignar_perfil {
 margin-left: 0px;
 }
-
   .alta_periodo fieldset {
 	padding: 1px 10px 5px;
-
 }
-
 .alta_periodo .button {
 	float: none;
 	padding: 0 10px;
 	margin-left:35%;
 }
-
 }
