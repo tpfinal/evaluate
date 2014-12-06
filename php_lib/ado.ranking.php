@@ -227,7 +227,7 @@ function findPerfil($id_empleado,$id_periodo)
 			$ordenado[$key]=$coeficiente;
 		}	
 		//var_dump($sumas);
-		arsort($ordenado);
+		@arsort($ordenado);
 		return $ordenado;
 	}
 	

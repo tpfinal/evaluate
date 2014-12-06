@@ -14,7 +14,7 @@
         </section>    
         </div>
         <div class="copy">
-        <a href="Manual de usuario.doc">Manual Del Usuario </a>| Evaluate &copy; 2014 |<a href="#">Todos los derechos reservados</a> <br>
+        <a href="Manual de usuario.pdf">Manual Del Usuario </a>| Evaluate &copy; 2014 |<a href="#">Todos los derechos reservados</a> <br>
         </div>
          
       </div>
