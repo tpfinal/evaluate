@@ -116,12 +116,12 @@ private $array_perfiles=array();
 	;
 		while($row=mysql_fetch_array($result))
 		{
-		$this->array_perfiles[$row['id_perfil']]=$row['nombre_perfil'];
+			$array_perfiles[$row['id_perfil']]=$row['nombre_perfil'];
 		}
 			
 		//var_dump($this->array_perfiles); //para ver el contenido del array
 	
-		return $this->array_perfiles;
+		return $array_perfiles;
 		}
 	
 

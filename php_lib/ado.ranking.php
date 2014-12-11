@@ -199,7 +199,7 @@ function findPerfil($id_empleado,$id_periodo)
 				
 		$result=$obj_sQuery->executeQuery($query); // ejecuta la consulta 
 			//var_dump($result);
-			$row=mysql_fetch_array($result);
+			$row=@mysql_fetch_array($result);
 			$avg_nota=$row['avg_nota'];
 		
 		//var_dump($avg_nota);

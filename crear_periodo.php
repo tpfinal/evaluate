@@ -84,7 +84,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
     </div>
 	
 	    <div class="clear"></div>
-
+</div>
   <!--==============================Flecha Atras =================================-->
 	<!--
 		<div class="grid_1" id="flecha_atras">
@@ -94,7 +94,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 		</div>
 		
 <!--==============================footer=================================-->
-</div>
+
 <?php include("footer/pie.php"); ?>
 </body>
 </html>

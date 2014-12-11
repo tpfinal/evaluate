@@ -21,12 +21,22 @@ include('php_lib/solo_evaluadores.php');
 </div>
 </div>
 <!--==============================Content=================================-->
+<?php
+if(@$_SESSION['alert'])
+{
+ //var_dump(@$_SESSION['alert']);
+   echo "<script languaje='javascript'>alert('Alerta: ".$_SESSION['alert']."')</script>";
+   unset($_SESSION['alert']);
+}
+?>
+
+
   <div class="container_12">
     <div class="clear cl1"></div>
 <div class="content" id="dejar_espacio4">
     <div class="grid_4 prefix_2">
       <div class="opcion">
-		<a href="crear_periodo.php"><img src="images/crear_periodo.jpg" alt="CREAR PERIODO"/></a>
+		<a href="controlers/opciones_periodo_controler.php"><img src="images/crear_periodo.jpg" alt="CREAR PERIODO"/></a>
 	  </div>
     </div>
 	<div class="grid_4">
@@ -38,7 +48,18 @@ include('php_lib/solo_evaluadores.php');
 <div class="clear"></div>
 </div>
 </div>
+
+
 <!--==============================footer=================================-->
 <?php include("footer/pie.php"); ?>
 </body>
 </html>
+
+<?php
+if(@$_SESSION['alert'])
+{
+   echo "<script languaje='javascript'>Alert('Importante:".$_SESSION['alert']."')</script>";
+   unset($_SESSION['alert']);
+}
+?>
+

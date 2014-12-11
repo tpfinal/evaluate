@@ -63,7 +63,7 @@
 				},
 				
                 submitHandler: function(form) {
-				alert('Objetivo guardado!');
+				//alert('Objetivo guardado!');
 				form.submit();
                 }
 				

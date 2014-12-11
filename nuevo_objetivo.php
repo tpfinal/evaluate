@@ -24,6 +24,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="container_12">
     <div class="content" id="dejar_espacio3">
 	<div class="grid_6 prefix_3">
+		
 		<form action="controlers/objetivo_controler.php" method="post" id="alta_objetivo" class="abm_perfil">
 			<header>Nuevo Objetivo</header>
 			<fieldset>
@@ -43,10 +44,14 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 							</b>  
 					</label>					
 				</section>
+				
 				<button class="button" type="submit">Agregar Objetivo</button>
+				
 				<button class="button" type="button" onclick="location='competencias.php'">Volver</button>
+			
 			</fieldset>
-			</form>	
+		</form>	
+			
 			</div>
 		<div class="grid_8 prefix_2">
 		<form id="alta_objetivo" class="abm_perfil">
