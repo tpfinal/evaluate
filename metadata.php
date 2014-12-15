@@ -16,7 +16,6 @@
 	<link rel="stylesheet" href="css/estilo_abm_empleados.css"/> <!--CSS DE LOS FORMULARIOS DE ABM EMPLEADOS -->
 	<link rel="stylesheet" href="css/estilo_abm_perfil.css"/> <!--CSS DE LOS FORMULARIOS DE ABM PERFILES -->
 	<link rel="stylesheet" href="css/estilo_periodo.css"/> <!--CSS DE LOS FORMULARIOS DE PERIODOS Y EVALUACIONES -->
-    
 
 
 	<script src="js/jquery.mobile.customized.min.js"></script>

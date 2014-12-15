@@ -34,7 +34,7 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	<div class="container_12">
     <div class="content" id="dejar_espacio">
 					
-	<div class="grid_6 prefix_3">
+	<div class="grid_8 prefix_2">
 	
 		<form action="controlers/competencias_controler.php" method="post" id="alta_perfil" class="abm_perfil" >
 			<header>Establecer Competencias

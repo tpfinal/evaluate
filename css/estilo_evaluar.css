@@ -587,7 +587,7 @@ box-shadow: inset 0 0 5px 0px #248348;
 			
 		}
 	@media only screen and (max-width: 767px){
-	.posicion,.notaC,.notaO {display:none;}
+	.notaC,.notaO {display:none;}
 	
 	
 

@@ -17,6 +17,8 @@
 		if (primera == segunda){
 			//alert("La fecha de inicio no puede coincidir con la fecha de finalizacion");
 		
+			alert ("fecha 1"+primera+" \n fecha 2" +segunda);
+		
 			muestra('error1');
 			return false;
 
