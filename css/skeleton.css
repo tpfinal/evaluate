@@ -342,7 +342,7 @@
 ================================================== */
     /* Note: Design for a width of 480px */
     @media only screen and (min-width: 480px) and (max-width: 767px) {
-        .container_12 { width: 420px; }
+        .container_12 { width: 480px; }
         .grid_1,
 		.grid_2,
 		.grid_3,
@@ -366,7 +366,7 @@
         .container_12 .grid_9,
         .container_12 .grid_10,
         .container_12 .grid_11,
-        .container_12 .grid_12{width: 420px;}
+        .container_12 .grid_12{width: 480px;}
 		/* Prefix Extra Space >> 12 Columns */
 		.container_12 .prefix_1,
 		.container_12 .prefix_2,
