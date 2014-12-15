@@ -247,7 +247,6 @@ a[href^="tel:"] {
 }
 body {
 	position: relative;
-	min-width: 1024px;
     color: #666;
     font: 300 15px/20px 'Open Sans', sans-serif;
 	background-color: #DDDDDD;
@@ -521,21 +520,18 @@ transition: all .2s linear;
 }
 #toTop {
     display: none;
-    text-decoration: none;
     position: fixed;
     bottom: 40px;
     left: 51%;
-    margin-left: 500px;
+    margin-left: 400px;
     overflow: hidden;
     width: 42px;
     height: 45px;
-    border: none;
-    text-indent: -999px;
-    z-index: 20;
     background: url(../images/totop.png) no-repeat left 0;
     transition: 0s ease;
     -o-transition: 0s ease;
     -webkit-transition: 0s ease;
+	border-radius:7px;
 }
 #toTop:hover {
     outline: none;
