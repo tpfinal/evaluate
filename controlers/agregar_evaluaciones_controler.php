@@ -37,7 +37,7 @@ for($i=1 ; $i<=$cantidad ; $i++)
    }
    
 //$fechas =$fechasPost;
-   var_dump($fechas);
+   //var_dump($fechas);
    
 $fechas_copia = array_unique($fechas);
 	

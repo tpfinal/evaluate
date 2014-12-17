@@ -134,6 +134,7 @@ private $obj_objetivo;
 												AND ep.id_empleado=$id_empleado
 												AND o.id_objetivo=$id_objetivo	
 												AND tipo_evaluacion='o'
+												ORDER BY ev.fecha_evaluacion;
 												"); 
 
 	//llenamos el array de empleados con los datos recividos

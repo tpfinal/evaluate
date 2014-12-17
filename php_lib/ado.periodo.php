@@ -272,6 +272,7 @@ function getFechas($id_periodo)
 			$query1="	SELECT * FROM evaluacion
 						WHERE id_periodo='$id_periodo'
 						AND tipo_evaluacion='o'
+						ORDER BY fecha_evaluacion;
 						";
 			
 			$result=$obj_sQuery->executeQuery($query1); // ejecuta la consulta para  guardar el registro 

@@ -85,7 +85,7 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 						{
 						echo"
 						<tr>
-							<td>$pos</td>
+							<td>$id_evaluacion</td>
 							<td > ".sqlastd($fecha)." </td>
 						";	
 						
@@ -104,11 +104,11 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 							<td>
 							<form action='controlers/evaluar_controler.php' method='post' id='ingresar_nota' class='ingresar_nota' name='ingresar_nota'>
 										<select id='ddl_notas' name='ddl_notas'>
-											<option value=1>1</option>
-											<option value=2>2</option> 
-											<option value=3>3</option> 
+											<option value=5>5</option>
 											<option value=4>4</option> 
-											<option value=5>5</option> 
+											<option value=3>3</option> 
+											<option value=2>2</option> 
+											<option value=1>1</option> 
 										</select>
 										
 										<button class='button' type='submit' onsubmit='return validar()'> Evaluar </button>

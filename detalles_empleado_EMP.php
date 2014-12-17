@@ -93,11 +93,11 @@ ECHO "86400 = un dia";
 							<td><li><label>$nombre</label></li> </td>
 							<td id='derecha'>
 							<select id='ddl_notas' name='nota_$key'>
-											<option value=1>1</option>
-											<option value=2>2</option> 
-											<option value=3>3</option> 
+											<option value=5>5</option>
 											<option value=4>4</option> 
-											<option value=5>5</option> 
+											<option value=3>3</option> 
+											<option value=2>2</option> 
+											<option value=1>1</option> 
 							</select>	
 							<!--$promedios[$key]-->
 							</td>
@@ -129,6 +129,32 @@ ECHO "86400 = un dia";
 			</ul>
 		</div>
 
+						<div class="grid_3 prefix_4" id="aclaracion_notas">
+
+						<div class="paper">
+								<div class="tape"></div>
+								<div class="red-line first"></div>
+								<div class="red-line"></div>
+								
+								
+								<ul id="lines">	
+
+									<label class="texto"> .: Notas :. </label>
+
+									<li></li>
+									<li> <label class="numero cinco">5</label> - Excelente</li>
+									<li> <label class="numero cuatro">4</label> - Muy Bueno</li>
+									<li> <label class="numero tres">3</label> - Bueno</li>
+									<li> <label class="numero dos">2</label> - Regular</li>
+									<li> <label class="numero uno">1</label> - Mal</li>
+									<li></li>
+								</ul>
+								<div class="left-shadow"></div>
+								<div class="right-shadow"></div>
+							</div><!--end paper-->					
+				</div>
+		
+		
 	</div>
 	   </div> 
 	   <div class="clear"></div>
