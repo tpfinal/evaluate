@@ -120,7 +120,7 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 						
 						else{
 						echo"
-							<td>PENDIENTE</td>
+							<td>SIN EVALUAR</td>
 							<td > - </td>
 						";
 						}
@@ -132,7 +132,37 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 						
 						</tbody>
 					</table>
-			</div>			
+			</div>	
+
+				<div class="grid_3 prefix_4" id="aclaracion_notas">
+
+						<div class="paper">
+								<div class="tape"></div>
+								<div class="red-line first"></div>
+								<div class="red-line"></div>
+								
+								
+								<ul id="lines">	
+
+									<label class="texto"> .: Notas :. </label>
+
+									<li></li>
+									<li> <label class="numero cinco">5</label> - Excelente</li>
+									<li> <label class="numero cuatro">4</label> - Muy Bueno</li>
+									<li> <label class="numero tres">3</label> - Bueno</li>
+									<li> <label class="numero dos">2</label> - Regular</li>
+									<li> <label class="numero uno">1</label> - Mal</li>
+									<li></li>
+								</ul>
+								<div class="left-shadow"></div>
+								<div class="right-shadow"></div>
+							</div><!--end paper-->					
+				</div>
+
+
+
+
+			
 		</div>
 		</div>
 <!--==============================footer=================================-->

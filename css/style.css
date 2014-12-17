@@ -146,22 +146,6 @@ text-align: center;
 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 border-radius: 5px;
 }
-.uno {
-padding-bottom: 10px;
-list-style-image: url(../images/muy_mal.png);
-}
-.dos{
-padding-bottom: 10px;
-list-style-image: url(../images/mal.png);
-}
-.tres {
-padding-bottom: 10px;
-list-style-image: url(../images/regular.png);
-}
-.cuatro {
-padding-bottom: 10px;
-list-style-image: url(../images/muy_bueno.png);
-}
 #dejar_espacio {
 padding-bottom:50%;
 }

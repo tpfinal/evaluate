@@ -1,3 +1,155 @@
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+
+#aclaracion_notas {
+
+margin-top: 50px;
+padding-bottom: 15px;
+}
+
+.numero {
+
+color: #000;
+font-size:20px;
+padding-left:10px;
+padding-right:10px;
+		font-weight: bold; 
+border-radius:5px;
+}
+
+.uno {
+
+background:red;
+
+}
+.dos{
+
+background: #FFA230;
+}
+.tres {
+background: #FFEF30;
+
+}
+.cuatro {
+
+background: #B6EEA8;
+}
+.cinco{
+
+background: #00B200;
+}
+
+
+
+
+.paper{
+	position:relative;
+	width:300px;
+	height:250px;
+	background-color:#F7F1BC;
+	border:1px solid #e3e3e3;
+	text-align:center;
+}
+
+.red-line {
+	height:250px;
+	width:1px;
+	background-color:#ef8b8b;
+	float:left;
+	margin-left:4px;
+}
+.first {
+	margin-left:40px;
+}
+ul#lines {
+	margin-top:40px;
+}
+ul#lines li {
+	height:28px;
+	line-height:28px;
+	color:#4d84c8;
+	font-family:Georgia;
+	font-style:italic;
+	font-size:18px;
+	width:225px;
+	border-top:1px solid #AFAFAF;
+	padding-left:65px;
+	text-align:left;
+}
+.tape{
+	position:absolute;
+	top:-15px; right:80px;
+	width: 130px;
+	height: 35px;
+	background-color:#CEC5A2;
+	opacity:0.7	;
+	border-left: 1px dashed rgba(0, 0, 0, 0.1);
+	border-right: 1px dashed rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0px 0px 1px 0px #cccccc;
+	-moz-box-shadow: 0px 0px 1px 0px #cccccc;
+	box-shadow: 0px 0px 1px 0px #cccccc;
+	-webkit-transform: rotate(-2deg) skew(0,0) translate(0%,-5px);
+	-moz-transform: rotate(-2deg) skew(0,0) translate(0%,-5px);
+	-o-transform: rotate(-2deg) skew(0,0) translate(0%,-5px);
+	transform: rotate(-2deg) skew(0,0) translate(0%,-5px);
+}
+.left-shadow{
+	width: 140px;
+	height: 140px;
+	bottom:-5px; left:-12px;
+	position:absolute;
+	z-index:-6;
+	display: inline-block;
+	-webkit-box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.4);
+	-moz-transform: scale(1) rotate(274deg) translate(20px, 25px) skew(9deg, 0deg);
+	-webkit-transform: scale(1) rotate(274deg) translate(20px, 25px) skew(9deg, 0deg);
+	-o-transform: scale(1) rotate(274deg) translate(20px, 25px) skew(9deg, 0deg);
+	-ms-transform: scale(1) rotate(274deg) translate(20px, 25px) skew(9deg, 0deg);
+	transform: scale(1) rotate(274deg) translate(20px, 25px) skew(9deg, 0deg);
+}
+.right-shadow{
+	width: 140px;
+	height: 140px;
+	bottom:-13px; right:-4px;
+	position:absolute;
+	z-index:-6;
+	display: inline-block;
+	-webkit-box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.4);
+	-moz-transform: scale(1) rotate(184deg) translate(20px, 25px) skew(9deg, 0deg);
+	-webkit-transform: scale(1) rotate(184deg) translate(20px, 25px) skew(9deg, 0deg);
+	-o-transform: scale(1) rotate(184deg) translate(20px, 25px) skew(9deg, 0deg);
+	-ms-transform: scale(1) rotate(184deg) translate(20px, 25px) skew(9deg, 0deg);
+	transform: scale(1) rotate(184deg) translate(20px, 25px) skew(9deg, 0deg);
+}
+
+
+
+
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+/*************************************************/
+
+
+
+
+
+
+
+
+
 #tabla_ranking table { 
 		width: 100%; 
 		border-collapse: collapse;
