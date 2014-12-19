@@ -34,7 +34,7 @@ $user=$adoE->getNameEmpleado($id);
 $user="Super Administrador";	
 }
 ?>
-<form action="php_lib/logout.php" enctype="multipart/form-data" method="post">
+<form action="php_lib/logout.php" method="post">
 				<span class="user"><?php echo $user?></span>
 				<span class="rol">|<?php echo $rol_name?>| </span>
 				<input type="submit" value="Logout"/>

@@ -85,7 +85,7 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 						{
 						echo"
 						<tr>
-							<td>$id_evaluacion</td>
+							<td>$pos</td>
 							<td > ".sqlastd($fecha)." </td>
 						";	
 						

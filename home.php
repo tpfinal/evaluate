@@ -21,8 +21,8 @@
 			<div class="grid_12" id="about">
  <p>El objetivo general de Evaluate es brindarle a los encargados de los diferentes sectores de su empresa 
  una herramienta eficaz para realizar un seguimiento y evaluaci&oacute;n del rendimiento de los empleados a su cargo, 
- donde se contemplar&aacute;n cuestiones objetivas como las acciones que su puesto requiera, 
- actitudes vinculadas con la relaci&oacute;n entre pares, y objetivos o metas  preestablecidas dise&ntilde;adas 
+ donde se contemplar&aacute;n cuestiones objetivas a las acciones que su puesto requiera.
+ Se evaluaran actitudes vinculadas con la relaci&oacute;n entre pares, y objetivos o metas preestablecidas por un superior dise&ntilde;adas 
  especificamente para un grupo de empleados definido.</p>
 			</div>			
 	</div>

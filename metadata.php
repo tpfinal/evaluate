@@ -1,4 +1,5 @@
      <title>Evaluate</title>
+	 <meta  charset="utf-8" />
      <meta name = "format-detection" content = "telephone=no" />
      <link rel="icon" href="images/favicon.ico">
      <link rel="shortcut icon" href="images/favicon.ico" />
