@@ -31,19 +31,31 @@ require('php_lib/include-pagina-restringida.php'); //el incude para vericar que 
 	$ado=new adoObjetivo();
 	$adoP=new adoPerfil();
 	$adoE=new adoEmpleado();
+	
+//obtenemos el usuario logueado	
+	$user=$_SESSION['USUARIO']['user'];
+	$id_votante=$adoE->getIdByDni($user);
+	
 //recibimos por GET el id del empleado 
 $id_empleado=$_GET['id'];
+
 //lo guardamos en session
 $_SESSION['TEMP']['id_empleado']=$id_empleado;
+
 //recuperamos el id_periodo de la session
 $id_periodo=$_SESSION['TEMP']['id_periodo'];
+
 //obtenemos un array con los objetivos del empleado de este periodo
 $objetivos=$ado->getObjetivos($id_empleado,$id_periodo);
+
 //nos retorna el objeto perfil correspondiente
 $obj_perfil=$adoP->findPerfil($id_empleado,$id_periodo);
+
 //var_dump($obj_perfil->getId());
+
 //obtenemos un array con las competencias del perfil
 $competencias=$ado->getCompetencias($obj_perfil->getId());
+
 //Guardamos el array en session
 $_SESSION['TEMP']['competencias']=$competencias;
 foreach($competencias as $key=>$nombre){
@@ -51,7 +63,7 @@ $promedios[$key]=$ado->getAVGobjetivo($key,$id_empleado,$id_periodo);
 //var_dump($key);
 }
 //Calculos de tiempo
-$ultima_evaluacion=$ado->getUltimaEvaluacion($key,$id_empleado,$id_periodo);
+$ultima_evaluacion=$ado->getUltimaEvaluacion($key,$id_empleado,$id_periodo,$id_votante);
 $ultimaInt = strtotime($ultima_evaluacion);
 $ahora=date("Y-m-d H:i:s");
 $ahoraInt = strtotime($ahora);

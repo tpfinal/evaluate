@@ -23,11 +23,11 @@ class Conexion  // se declara una clase para hacer la conexion con la base de da
 			
 		if ($conect) // si la conexion fue exitosa , selecciona la base
 		{
-			/*
+			
 			mysql_query("SET NAMES 'utf8'");
 			mysql_query("SET CHARACTER SET utf8");
 			mysql_query("SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
-			*/
+			
 			
 			mysql_select_db($conection['base']);			
 			$this->con=$conect;

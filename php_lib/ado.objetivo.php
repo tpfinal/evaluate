@@ -233,12 +233,12 @@ public function getPeriodoNota($id_nota, $id_evaluacion)
 
 //metodo que almacena los datos en la tabla nota
 
-public function guardarNota($id_objetivo,$id_empleado,$id_evaluacion,$nota)
+public function guardarNota($id_objetivo,$id_empleado,$id_evaluacion,$nota,$id_votante)
 	{
 	
 		$obj_sQuery=new sQuery();
-		$query="INSERT INTO notas(id_objetivo,id_empleado,id_evaluacion,nota)
-				VALUES('$id_objetivo','$id_empleado','$id_evaluacion','$nota')";
+		$query="INSERT INTO notas(id_objetivo,id_empleado,id_evaluacion,nota,id_votante)
+				VALUES('$id_objetivo','$id_empleado','$id_evaluacion','$nota','$id_votante')";
 				
 		$obj_sQuery->executeQuery($query); // ejecuta la consulta para insertar objetivo
 		
@@ -336,7 +336,7 @@ public function evaluacionActual($arrayDeFechas)
 		
 //metodo que regresa la un date con la fecha_hora de la ultima evaluacion corespondiente a estos datos
 	
-public function getUltimaEvaluacion($id_objetivo,$id_empleado,$id_periodo)
+public function getUltimaEvaluacion($id_objetivo,$id_empleado,$id_periodo,$id_votante)
 	{
 		$obj_sQuery=new sQuery();
 		$query="SELECT max(fecha_hora) AS max
@@ -346,6 +346,7 @@ public function getUltimaEvaluacion($id_objetivo,$id_empleado,$id_periodo)
 				WHERE id_empleado=$id_empleado
 				AND id_objetivo=$id_objetivo
 				AND id_periodo=$id_periodo
+				AND id_votante=$id_votante
 				";
 				
 		$result=$obj_sQuery->executeQuery($query); // ejecuta la consulta 
