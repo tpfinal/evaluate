@@ -323,7 +323,7 @@ public function evaluacionActual($arrayDeFechas)
 				
 		$result=$obj_sQuery->executeQuery($query); // ejecuta la consulta 
 			
-			$row=mysql_fetch_array($result);
+			$row=@mysql_fetch_array($result);
 			$fecha_fin=$row['fin_periodo'];
 			
 		if($fecha_fin<$hoy)
