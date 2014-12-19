@@ -28,36 +28,26 @@ require('php_lib/solo_evaluadores.php');//restringe acceso a roles diferentes de
 	require('model/class.objetivo.php');//incluimos la clase objetivo
 	require('php_lib/ado.objetivo.php');//incluimos la clase de acceso a datos de empleado
 	include ("php_lib/formato_fechas.php");
-		
 	$ado=new adoObjetivo();
 	$adoE=new adoEmpleado();
-
 $id_objetivo=$_SESSION['TEMP']['id_objetivo'];
 $id_periodo=$_SESSION['TEMP']['id_periodo'];
 $id_empleado=$_SESSION['TEMP']['id_empleado'];
 $id_evaluacion=$_SESSION['TEMP']['id_evaluacion'];
-
 $obj_objetivo=$ado->getObjetivoById($id_objetivo);
-
 $nombre_empleado=$adoE->getNameEmpleado($id_empleado); 
 $nombre_objetivo=$obj_objetivo->getNombre();
 $descripcion=$obj_objetivo->getDescripcion();
-
 //array con las fechas de evaluacion
 @$fechas=$ado->getFechasEvaluacion($id_objetivo,$id_empleado,$id_periodo);
-
 /************** Cambio solo para deploy en PHP 5.2 ****************/
        // $fechas = array_reverse($fechas, true);
 /******************************************************************/
-
 //Metodo que obtiene el id de la evaluacion activa
 $actual=$ado->evaluacionActual($fechas);
-
 //var_dump($fechas);
 $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
-
 ?>
-
 <div class="container_12">
 <div id="div_titulo">
 <label class="subtitulo"> <?php echo $nombre_empleado ?> </label>
@@ -78,7 +68,6 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 						</tr>
 						</thead>
 						<tbody>
-						
 						<?php
 						$pos=1;
 						foreach($fechas as $id_evaluacion=>$fecha)
@@ -88,13 +77,38 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 							<td>$pos</td>
 							<td > ".sqlastd($fecha)." </td>
 						";	
-						
 						$nota=$ado->getNota($id_objetivo,$id_empleado,$id_evaluacion);
-						
-						if($nota){
+						if($nota=='1'){
 						echo"
-							<td id='derecha'>EVALUADO</td>
-							<td id='derecha'> <b>$nota</b></td>
+							<td id=''>EVALUADO</td>
+							<td id='derecha' class='numero uno'> $nota </td>
+						";
+						}
+						else if ($nota=='2')
+						{
+						echo"
+							<td id=''>EVALUADO</td>
+							<td id='derecha' class='numero dos'> $nota </td>
+						";
+						}
+						else if ($nota=='3')
+						{
+						echo"
+							<td id=''>EVALUADO</td>
+							<td id='derecha' class='numero tres'> $nota </td>
+						";
+						}
+						else if ($nota=='4')
+						{
+						echo"
+							<td id=''>EVALUADO</td>
+							<td id='derecha' class='numero cuatro'> $nota </td>
+						";
+						}else if ($nota=='5')
+						{
+						echo"
+							<td id=''>EVALUADO</td>
+							<td id='derecha' class='numero cinco'> $nota </td>
 						";
 						}
 						else
@@ -110,42 +124,31 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 											<option value=2>2</option> 
 											<option value=1>1</option> 
 										</select>
-										
 										<button class='button' type='submit' onsubmit='return validar()'> Evaluar </button>
 							</form>
 							</td>
 						</tr>
 						";
 						}
-						
 						else{
 						echo"
 							<td>SIN EVALUAR</td>
 							<td > - </td>
 						";
 						}
-						
-	
 						$pos++;
 						}
 						?>
-						
 						</tbody>
 					</table>
 			</div>	
-
 				<div class="grid_3 prefix_4" id="aclaracion_notas">
-
 						<div class="paper">
 								<div class="tape"></div>
 								<div class="red-line first"></div>
 								<div class="red-line"></div>
-								
-								
 								<ul id="lines">	
-
 									<label class="texto"> .: Notas :. </label>
-
 									<li></li>
 									<li> <label class="numero cinco">5</label> - Excelente</li>
 									<li> <label class="numero cuatro">4</label> - Muy Bueno</li>
@@ -158,11 +161,6 @@ $id_user= $adoE->getIdByDni(@$_SESSION['USUARIO']['user']);
 								<div class="right-shadow"></div>
 							</div><!--end paper-->					
 				</div>
-
-
-
-
-			
 		</div>
 		</div>
 <!--==============================footer=================================-->
